@@ -29,9 +29,9 @@ const AboutUs = () => {
           <p className="poppins-semibold text-lg">Community Members</p>
         </div>
       </div>
-      <div className="text-center  absolute left-[50%] bottom-8">
+      <div className="text-center  pt-12">
         <Button className="bg-[#140D53]  hover:bg-[#140D53]  rounded-2xl ">
-          <a href="#" className=" flex px-2">
+          <a href="#brands" className=" flex px-2">
             Sell Now <ChevronDown className="h-6 w-6 ml-2" />
           </a>
         </Button>

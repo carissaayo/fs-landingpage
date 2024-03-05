@@ -10,9 +10,9 @@ const HowItWorks = () => {
         <p className="text-xl">Find out how selling to Fairshop works </p>
       </div>
       <CardsCon />
-      <div className="text-center  absolute left-[50%] bottom-8">
+      <div className="text-center  pt-0">
         <Button className="bg-[#140D53]  hover:bg-[#140D53]  rounded-2xl ">
-          <a href="#" className=" flex px-2">
+          <a href="#brands" className=" flex px-2">
             Sell Now <ChevronDown className="h-6 w-6 ml-2" />
           </a>
         </Button>

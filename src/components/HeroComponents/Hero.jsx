@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 
 const Hero = () => {
   return (
-    <section className="bg-[#0E0C4D] w-full con__height py-12  px-32  text-white relative poppins-regular">
+    <section className="bg-[#0E0C4D] w-full hero__height py-12  px-32  text-white relative poppins-regular">
       <div className="flex items-center justify-between w-full gap-8 ">
         <div className="flex-1">
           <h2 className="text-white poppins-extrabold text-[40px] mb-4 w-4/5">
@@ -20,9 +20,9 @@ const Hero = () => {
           <img src={heroImg} alt="" />
         </div>
       </div>
-      <div className="text-center  absolute left-[50%] bottom-12">
+      <div className="text-center  pt-20">
         <Button className="bg-white bg-opacity-10 hover:bg-white hover:bg-opacity-10 rounded-2xl">
-          <a href="#" className=" flex">
+          <a href="#brands" className=" flex">
             Sell Now <ChevronDown className="h-6 w-6 ml-2" />
           </a>
         </Button>

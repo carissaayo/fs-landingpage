@@ -5,10 +5,14 @@ import { Button } from "../ui/button";
 
 import logoImg from "../../assets/images/FairShop New Logo PNG 4 1.png";
 
-const Nav = () => {
+const Nav = ({ scroll }) => {
   const [buyOrSell, setBuyOrSell] = useState("sell");
   return (
-    <section className="bg-[#0E0C4D] w-full flex items-center justify-between py-6  px-32  poppins-regular">
+    <section
+      className={`z-20 bg-[#0E0C4D] w-full flex items-center justify-between py-6  px-32  poppins-regular ${
+        scroll ? "sticky" : ""
+      }`}
+    >
       <div className="flex-1">
         <Link to="/" className="text-white poppins-extrabold text-[40px]">
           <img src={logoImg} alt="" />

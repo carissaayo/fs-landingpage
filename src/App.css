@@ -2,14 +2,72 @@ html {
   scroll-behavior: smooth;
 }
 
-.con__height {
+.hero__height {
   height: calc(100vh - 100px);
+}
+.con__height {
+  height: 100vh;
+  /* padding-top: 220px; */
 }
 .img-bg {
   background-image: url("../src/assets/images/page-title-bg\ 4.png");
   background-repeat: no-repeat;
   background-position: 0% bottom;
 }
+
+/* Sticky Navbar Starts*/
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+/* Sticky Navbar Ends */
+
+/* Scrll To Top Starts */
+.top-to-btm {
+  position: relative;
+}
+.icon-position {
+  position: fixed;
+  bottom: 40px;
+  right: 25px;
+  z-index: 20;
+}
+.icon-style {
+  background-color: #130d52;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  color: #fff;
+  cursor: pointer;
+  animation: movebtn 3s ease-in-out infinite;
+  transition: all 0.5s ease-in-out;
+}
+.icon-style:hover {
+  animation: none;
+  background: #fff;
+  color: #130d52;
+  border: 2px solid #130d52;
+}
+@keyframes movebtn {
+  0% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(20px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  75% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+/* Scrll To Top Ends*/
 
 /* Swiper js */
 .swiper {

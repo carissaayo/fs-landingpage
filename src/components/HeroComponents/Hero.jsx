@@ -22,7 +22,9 @@ const Hero = () => {
       </div>
       <div className="text-center  absolute left-[50%] bottom-12">
         <Button className="bg-white bg-opacity-10 hover:bg-white hover:bg-opacity-10 rounded-2xl">
-          Sell Now <ChevronDown className="h-6 w-6 ml-2" />
+          <a href="#" className=" flex">
+            Sell Now <ChevronDown className="h-6 w-6 ml-2" />
+          </a>
         </Button>
       </div>
     </section>

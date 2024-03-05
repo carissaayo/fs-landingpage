@@ -1,0 +1,24 @@
+import { ChevronDown } from "lucide-react";
+import { Button } from "../ui/button";
+import CardsCon from "./CardsCon";
+
+const HowItWorks = () => {
+  return (
+    <section className="w-full con__height py-12  px-32  relative poppins-regular bg-[#8D8D8D] bg-opacity-5 text-[#0C0F4D]">
+      <div className="text-center ">
+        <h1 className="poppins-semibold text-3xl mb-4">How it works</h1>
+        <p className="text-xl">Find out how selling to Fairshop works </p>
+      </div>
+      <CardsCon />
+      <div className="text-center  absolute left-[50%] bottom-8">
+        <Button className="bg-[#140D53]  hover:bg-[#140D53]  rounded-2xl ">
+          <a href="#" className=" flex px-2">
+            Sell Now <ChevronDown className="h-6 w-6 ml-2" />
+          </a>
+        </Button>
+      </div>
+    </section>
+  );
+};
+
+export default HowItWorks;

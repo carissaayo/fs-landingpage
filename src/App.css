@@ -5,7 +5,26 @@ html {
 .con__height {
   height: calc(100vh - 100px);
 }
+.img-bg {
+  background-image: url("../src/assets/images/page-title-bg\ 4.png");
+  background-repeat: no-repeat;
+  background-position: 0% bottom;
+}
 
+/* Swiper js */
+.swiper {
+  width: 100%;
+  height: 400px !important;
+  padding: 0 40px;
+  position: relative !important;
+  --swiper-navigation-size: 20px;
+  --swiper-navigation-top-offset: 40%;
+  --swiper-navigation-sides-offset: 0px;
+  --swiper-navigation-color: black;
+  --swiper-pagination-color: black;
+}
+
+/* Google Font */
 .poppins-regular {
   font-family: "Poppins", sans-serif;
   font-weight: 400;

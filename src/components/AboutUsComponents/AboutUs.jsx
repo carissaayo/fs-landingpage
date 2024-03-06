@@ -30,7 +30,7 @@ const AboutUs = () => {
         </div>
       </div>
       <div className="text-center  pt-12">
-        <Button className="bg-[#140D53]  hover:bg-[#140D53]  rounded-2xl   ">
+        <Button className="bg-[#D3D2DE] hover:bg-[#D3D2DE] md:bg-[#140D53]  md:hover:bg-[#140D53] text-[#130D52] md:text-white ]  rounded-2xl   ">
           <a href="#brands" className=" flex px-2">
             Sell Now <ChevronDown className="h-6 w-6 ml-2" />
           </a>

@@ -8,7 +8,7 @@ import linkedinLogo from "../../assets/images/mdi_linkedin.png";
 const Footer = () => {
   return (
     <section className="w-full  bg-[#FAFAFA] px-32  relative poppins-regular  py-20 ">
-      <div className="flex justify-between mb-8">
+      <div className="flex justify-between mb-8 gap-8">
         <div className="flex-1 flex flex-col gap-4">
           <Link to="/">
             <img src={footerLogo} alt="" className="mb-4 w-[150px]" />

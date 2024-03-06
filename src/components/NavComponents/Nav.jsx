@@ -1,17 +1,20 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+
 import NavMenu from "./NavMenu";
 import { Button } from "../ui/button";
 
 import logoImg from "../../assets/images/FairShop New Logo PNG 4 1.png";
+import { useGeneralStore } from "../../store/generalStore";
 
 const Nav = ({ scroll }) => {
-  const [buyOrSell, setBuyOrSell] = useState("sell");
+  const buyOrSell = useGeneralStore((state) => state.buyOrSell);
+  const setBuyOrSell = useGeneralStore((state) => state.setBuyOrSell);
+  console.log(buyOrSell);
+
   return (
     <section
-      className={`z-20 bg-[#0E0C4D] w-full flex items-center justify-between py-6  px-32  poppins-regular ${
-        scroll ? "sticky" : ""
-      }`}
+      className={`${scroll ? "sticky" : ""}
+      hidden md:flex z-20 bg-[#0E0C4D] w-full  items-center justify-between py-6   px-16 lg:px-20 2xl:px-32  poppins-regular  `}
     >
       <div className="flex-1">
         <Link to="/" className="text-white poppins-extrabold text-[40px]">
@@ -24,14 +27,22 @@ const Nav = ({ scroll }) => {
             <Link
               onClick={() => setBuyOrSell("sell")}
               to="/"
-              className="w-1/2 text-center bg-[#292761] py-3 rounded-l-lg text-white"
+              className={`w-1/2 text-center py-3 rounded-l-lg  ${
+                buyOrSell === "sell"
+                  ? "bg-[#292761] text-white "
+                  : "text-[#C0C0C0]"
+              }`}
             >
               Sell
             </Link>
             <Link
               onClick={() => setBuyOrSell("buy")}
               to="/buy"
-              className="w-1/2 text-center text-[#C0C0C0]"
+              className={`w-1/2 text-center py-3 ${
+                buyOrSell === "buy"
+                  ? "bg-[#292761] text-white "
+                  : "text-[#C0C0C0]"
+              }`}
             >
               Buy
             </Link>

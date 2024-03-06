@@ -10,10 +10,10 @@ import FAQs from "../components/FAQsComponents/FAQs";
 import Footer from "../components/FooterComponents/Footer";
 import { ChevronUp } from "lucide-react";
 import MobileNav from "../components/MobileComponents/MobileNav";
-const Home = () => {
+import SellCon from "../components/SellComponents/SellCon";
+const Buy = () => {
   const [showTopBtn, setShowTopBtn] = useState(false);
   const [scroll, setScroll] = useState(false);
-  const [buyOrSell, setBuyOrSell] = useState("sell");
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -38,11 +38,10 @@ const Home = () => {
   return (
     <main className="w-full h-full relative">
       <Nav scroll={scroll} />
-      <section className="">
+      <section className="hidden md:block">
         <MobileNav />
         <Hero />
-        <Brands />
-        <HowItWorks />
+        <SellCon />
       </section>
       <AboutUs />
       <Testimonial />
@@ -58,4 +57,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Buy;

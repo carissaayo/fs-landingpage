@@ -15,6 +15,23 @@ html {
   background-position: 0% bottom;
 }
 
+.sell-hero-bg {
+  background: rgb(14, 12, 77);
+  background: linear-gradient(
+    90deg,
+    rgba(14, 12, 77, 1) 0%,
+    rgba(20, 39, 124, 1) 54%
+  );
+}
+
+/* .nav__transform {
+  transform: translateY(-10%);
+  transition: transform 2s ease-in-out 1s;
+}
+div.nav__transform.active {
+  transform: translateY(0);
+} */
+
 /* Sticky Navbar Starts*/
 .sticky {
   position: fixed;

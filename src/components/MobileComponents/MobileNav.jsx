@@ -11,7 +11,7 @@ const MobileNav = () => {
   return (
     <section
       className={`${scroll ? "sticky" : ""}
-        md:hidden  z-20 bg-[#0E0C4D] w-full   py-6   px-16  poppins-regular  `}
+        md:hidden  z-20 bg-[#0E0C4D] w-full   py-6   px-8  poppins-regular  `}
     >
       <div className="relative">
         <div className="flex w-full items-center justify-between">
@@ -22,7 +22,7 @@ const MobileNav = () => {
           </div>
           <div className="">
             <Menu
-              className={`w-16 h-16 text-white  ${openMobile && "rotate-90"}`}
+              className={`w-12 h-12 text-white  ${openMobile && "rotate-90"}`}
               onClick={() => setOpenMobile(!openMobile)}
             />
           </div>

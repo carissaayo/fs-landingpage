@@ -14,6 +14,13 @@ html {
   background-repeat: no-repeat;
   background-position: 0% bottom;
 }
+@media (max-width: 840px) {
+  .img-bg {
+    background-image: url("../src/assets/images/page-title-bg\ 5.png");
+    background-repeat: no-repeat;
+    background-position: right bottom;
+  }
+}
 
 .sell-hero-bg {
   background: rgb(14, 12, 77);
@@ -97,6 +104,12 @@ div.nav__transform.active {
   --swiper-navigation-sides-offset: 0px;
   --swiper-navigation-color: black;
   --swiper-pagination-color: black;
+}
+
+@media (max-width: 1280px) {
+  .swiper {
+    padding: 0 20px;
+  }
 }
 
 /* Google Font */

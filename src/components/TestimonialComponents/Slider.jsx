@@ -11,10 +11,10 @@ const Slider = () => {
   return (
     <>
       <Swiper
-        spaceBetween={50}
+        spaceBetween={window.innerWidth > 1024 ? 50 : 20}
         slidesPerView={3}
         // onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
+        // onSwiper={(swiper) => console.log(swiper)}
         navigation={true}
         pagination={{
           clickable: true,

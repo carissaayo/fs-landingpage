@@ -7,12 +7,12 @@ import {
 
 const FAQs = () => {
   return (
-    <section className="w-full con__height bg-white px-32  relative poppins-regular  pt-20 ">
+    <section className="w-full md:con__height bg-white  px-8  md:px-16 lg:px-20 2xl:px-32  relative poppins-regular  pt-20 pb-12">
       <h1 className="poppins-bold text-3xl text-center mb-28">
         Frequently Asked Questions
       </h1>
       <div className="w-full ">
-        <div className="w-1/2 flex item-center justify-center mx-auto">
+        <div className="md:w-[70%] 2xl:w-1/2 flex item-center justify-center mx-auto">
           <Accordion type="single" collapsible className="w-full ">
             <AccordionItem value="item-1" className="border-none mb-8">
               <AccordionTrigger className="border border-gray-100 p-4 no-underline hover:no-underline">

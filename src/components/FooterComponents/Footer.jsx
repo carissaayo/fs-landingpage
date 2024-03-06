@@ -7,13 +7,13 @@ import linkedinLogo from "../../assets/images/mdi_linkedin.png";
 
 const Footer = () => {
   return (
-    <section className="w-full  bg-[#FAFAFA] px-32  relative poppins-regular  py-20 ">
-      <div className="flex justify-between mb-8 gap-8">
+    <section className="w-full  bg-[#FAFAFA] px-8  md:px-16 lg:px-20 2xl:px-32  relative poppins-regular  py-20 ">
+      <div className="flex flex-col lg:flex-row  justify-between mb-8  gap-16 md:gap-8">
         <div className="flex-1 flex flex-col gap-4">
           <Link to="/">
             <img src={footerLogo} alt="" className="mb-4 w-[150px]" />
           </Link>
-          <p className="">
+          <p className="w-[70%] lg:w-full poppins-semibold">
             The easiest place to sell your smartphones faster and conveniently
           </p>
           <div className="flex items-center gap-6 ">
@@ -22,9 +22,9 @@ const Footer = () => {
             <img src={linkedinLogo} className="" />
           </div>
         </div>
-        <div className="flex-[1.5] text-lg flex justify-between">
+        <div className="flex-[1.5] text-lg flex flex-col lg:flex-row justify-between gap-4 lg:gap-0">
           <ul className="">
-            <li className="mb-8 poppins-semibold">
+            <li className=" mb-4 lg:mb-8 poppins-semibold">
               <Link to="/">Quick Links</Link>
             </li>
             <li className="mb-2">
@@ -39,7 +39,7 @@ const Footer = () => {
           </ul>
 
           <ul className="">
-            <li className="mb-8 poppins-semibold">
+            <li className="mb-4 lg:mb-8 poppins-semibold">
               <Link to="/">Legal</Link>
             </li>
             <li className="mb-2">
@@ -54,7 +54,7 @@ const Footer = () => {
           </ul>
 
           <ul className="">
-            <li className="mb-8 poppins-semibold">
+            <li className="mb-4 lg:mb-8 poppins-semibold">
               <Link to="/">Company</Link>
             </li>
             <li className="mb-2">
@@ -66,7 +66,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <hr className="border-[#F3F3F3] mb-12" />
+      <hr className="border-[#F3F3F3] mb-8 lg:mb-12" />
       <p className="w-full text-center">
         Fairshop 2024. © All Rights Reserved.
       </p>

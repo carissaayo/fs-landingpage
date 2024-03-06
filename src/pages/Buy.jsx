@@ -1,9 +1,5 @@
 import { useEffect, useState } from "react";
 
-import Hero from "../components/HeroComponents/Hero";
-import Nav from "../components/NavComponents/Nav";
-import Brands from "../components/BrandComponents/Brands";
-import HowItWorks from "../components/HowItWorksComponents/HowItWorks";
 import AboutUs from "../components/AboutUsComponents/AboutUs";
 import Testimonial from "../components/TestimonialComponents/Testimonial";
 import FAQs from "../components/FAQsComponents/FAQs";
@@ -11,6 +7,9 @@ import Footer from "../components/FooterComponents/Footer";
 import { ChevronUp } from "lucide-react";
 import MobileNav from "../components/MobileComponents/MobileNav";
 import SellCon from "../components/SellComponents/SellCon";
+import Nav from "../components/NavComponents/Nav";
+import BuyHero from "../components/BuyHeroComponents/BuyHero";
+import HowItWorks from "../components/HowItWorksComponents/HowItWorks";
 const Buy = () => {
   const [showTopBtn, setShowTopBtn] = useState(false);
   const [scroll, setScroll] = useState(false);
@@ -38,11 +37,12 @@ const Buy = () => {
   return (
     <main className="w-full h-full relative">
       <Nav scroll={scroll} />
-      <section className="hidden md:block">
-        <MobileNav />
-        <Hero />
-        <SellCon />
-      </section>
+
+      <MobileNav />
+      <BuyHero />
+      <SellCon />
+      <HowItWorks />
+
       <AboutUs />
       <Testimonial />
       <FAQs />

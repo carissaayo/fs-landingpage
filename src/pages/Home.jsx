@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 
-import Hero from "../components/HeroComponents/Hero";
-import Nav from "../components/NavComponents/Nav";
-import Brands from "../components/BrandComponents/Brands";
-import HowItWorks from "../components/HowItWorksComponents/HowItWorks";
-import AboutUs from "../components/AboutUsComponents/AboutUs";
-import Testimonial from "../components/TestimonialComponents/Testimonial";
-import FAQs from "../components/FAQsComponents/FAQs";
-import Footer from "../components/FooterComponents/Footer";
+import Nav from "../components/CoreComponents/NavComponents/Nav";
+import Brands from "../components/HomeComponents/BrandComponents/Brands";
+import HowItWorks from "../components/HomeComponents/HowItWorksComponents/HowItWorks";
+import AboutUs from "../components/HomeComponents/AboutUsComponents/AboutUs";
+import Testimonial from "../components/HomeComponents/TestimonialComponents/Testimonial";
+import FAQs from "../components/HomeComponents/FAQsComponents/FAQs";
+import Footer from "../components/CoreComponents/FooterComponents/Footer";
 import { ChevronUp } from "lucide-react";
-import MobileNav from "../components/MobileComponents/MobileNav";
+import MobileNav from "../components/CoreComponents/MobileComponents/MobileNav";
+import Hero from "../components/HomeComponents/HeroComponents/Hero";
+import BuyHero from "../components/HomeComponents/BuyNav.jsx/BuyHero";
 const Home = () => {
   const [showTopBtn, setShowTopBtn] = useState(false);
   const [scroll, setScroll] = useState(false);
@@ -29,6 +30,7 @@ const Home = () => {
       }
     });
   }, []);
+  useEffect(() => goToTop(), []);
   const goToTop = () => {
     window.scrollTo({
       top: 0,
@@ -40,6 +42,7 @@ const Home = () => {
       <Nav scroll={scroll} />
       <section className="">
         <MobileNav />
+        {/* <Hero /> */}
         <Hero />
         <Brands />
         <HowItWorks />

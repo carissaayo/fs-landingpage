@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu } from "lucide-react";
-import { useGeneralStore } from "../../store/generalStore";
-import logoImg from "../../assets/images/FairShop New Logo PNG 4 1.png";
-import avatarImg from "../../assets/images/testi2.png";
-const MobileNav = () => {
+import { useGeneralStore } from "../../../store/generalStore";
+import logoImg from "../../../assets/images/FairShop New Logo PNG 4 1.png";
+import avatarImg from "../../../assets/images/testi2.png";
+const MobileNav = ({ scroll }) => {
   const [openMobile, setOpenMobile] = useState(false);
   const buyOrSell = useGeneralStore((state) => state.buyOrSell);
   const setBuyOrSell = useGeneralStore((state) => state.setBuyOrSell);

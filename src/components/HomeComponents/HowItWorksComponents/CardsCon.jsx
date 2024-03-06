@@ -1,7 +1,7 @@
 // import CardItem from "./CardItem";
-import imageA from "../../assets/images/using-phone 4.png";
-import imageB from "../../assets/images/using-phone (1) 2.png";
-import imageC from "../../assets/images/using-phone (7) 2.png";
+import imageA from "../../../assets/images/using-phone 4.png";
+import imageB from "../../../assets/images/using-phone (1) 2.png";
+import imageC from "../../../assets/images/using-phone (7) 2.png";
 
 const CardsCon = () => {
   return (

@@ -2,7 +2,7 @@
 
 import * as React from "react";
 
-import { cn } from "../../lib/utils";
+import { cn } from "../../../lib/utils";
 
 import {
   NavigationMenu,
@@ -11,7 +11,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "../ui/navigation-menu";
+} from "../../ui/navigation-menu";
 
 const NavMenu = () => {
   return (

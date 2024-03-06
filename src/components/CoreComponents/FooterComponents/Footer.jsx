@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 
-import footerLogo from "../../assets/images/footerlogo.png";
-import facebookLogo from "../../assets/images/ri_facebook-fill.png";
-import instagramLogo from "../../assets/images/ri_instagram-fill.png";
-import linkedinLogo from "../../assets/images/mdi_linkedin.png";
+import footerLogo from "../../../assets/images/footerlogo.png";
+import facebookLogo from "../../../assets/images/ri_facebook-fill.png";
+import instagramLogo from "../../../assets/images/ri_instagram-fill.png";
+import linkedinLogo from "../../../assets/images/mdi_linkedin.png";
 
 const Footer = () => {
   return (

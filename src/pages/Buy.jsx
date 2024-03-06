@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 
-import AboutUs from "../components/AboutUsComponents/AboutUs";
-import Testimonial from "../components/TestimonialComponents/Testimonial";
-import FAQs from "../components/FAQsComponents/FAQs";
-import Footer from "../components/FooterComponents/Footer";
+import AboutUs from "../components/HomeComponents/AboutUsComponents/AboutUs";
+import Testimonial from "../components/HomeComponents/TestimonialComponents/Testimonial";
+import FAQs from "../components/HomeComponents/FAQsComponents/FAQs";
+import Footer from "../components/CoreComponents/FooterComponents/Footer";
 import { ChevronUp } from "lucide-react";
-import MobileNav from "../components/MobileComponents/MobileNav";
-import SellCon from "../components/SellComponents/SellCon";
-import Nav from "../components/NavComponents/Nav";
-import BuyHero from "../components/BuyHeroComponents/BuyHero";
-import HowItWorks from "../components/HowItWorksComponents/HowItWorks";
+import MobileNav from "../components/CoreComponents/MobileComponents/MobileNav";
+import SellCon from "../components/HomeComponents/SellComponents/SellCon";
+import Nav from "../components/CoreComponents/NavComponents/Nav";
+import BuyHero from "../components/HomeComponents/BuyNav.jsx/BuyHero";
+import HowItWorks from "../components/HomeComponents/HowItWorksComponents/HowItWorks";
 const Buy = () => {
   const [showTopBtn, setShowTopBtn] = useState(false);
   const [scroll, setScroll] = useState(false);
@@ -34,6 +34,8 @@ const Buy = () => {
       behavior: "smooth",
     });
   };
+  useEffect(() => goToTop(), []);
+
   return (
     <main className="w-full h-full relative">
       <Nav scroll={scroll} />

@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 
-import testi1 from "../../assets/images/testi1.png";
+import testi1 from "../../../assets/images/testi1.png";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";

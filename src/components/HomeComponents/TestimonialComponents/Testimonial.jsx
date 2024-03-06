@@ -1,6 +1,6 @@
 import Slider from "./Slider";
 import TestiCard from "./TestiCard";
-import testi1 from "../../assets/images/testi1.png";
+import testi1 from "../../../assets/images/testi1.png";
 
 const Testimonial = () => {
   return (

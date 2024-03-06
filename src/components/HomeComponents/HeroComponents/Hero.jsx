@@ -1,8 +1,6 @@
+import { Button } from "../../ui/button";
 import { ChevronDown } from "lucide-react";
-import { Button } from "../ui/button";
-
-import heroImg from "../../assets/images/hero.png";
-
+import heroImg from "../../../assets/images/hero.png";
 const Hero = () => {
   return (
     <section

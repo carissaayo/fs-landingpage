@@ -1,12 +1,12 @@
 import { MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Badge } from "../ui/badge";
-import phoneImg from "../../assets/images/phoneImg.png";
+import { Badge } from "../../ui/badge";
+import phoneImg from "../../../assets/images/phoneImg.png";
 
 const SellCard = () => {
   return (
     <Link
-      to="/buy"
+      to="/gadgets/123"
       className="flex flex-col border border-gray-200 rounded-3xl"
     >
       <div className="w-full">

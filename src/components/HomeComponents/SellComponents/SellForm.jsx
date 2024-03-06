@@ -1,13 +1,13 @@
 import RangeSlider from "react-range-slider-input";
 import "react-range-slider-input/dist/style.css";
-import { Label } from "../ui/label";
+import { Label } from "../../ui/label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../ui/select";
+} from "../../ui/select";
 import { Search } from "lucide-react";
 
 const SellForm = () => {

@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
 import NavMenu from "./NavMenu";
-import { Button } from "../ui/button";
+import { Button } from "../../ui/button";
 
-import logoImg from "../../assets/images/FairShop New Logo PNG 4 1.png";
-import { useGeneralStore } from "../../store/generalStore";
+import logoImg from "../../../assets/images/FairShop New Logo PNG 4 1.png";
+import { useGeneralStore } from "../../../store/generalStore";
 
 const Nav = ({ scroll }) => {
   const buyOrSell = useGeneralStore((state) => state.buyOrSell);

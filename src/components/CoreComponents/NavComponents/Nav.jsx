@@ -10,7 +10,7 @@ import { useEffect } from "react";
 const Nav = ({ scroll, isBuy }) => {
   const buyOrSell = useGeneralStore((state) => state.buyOrSell);
   const setBuyOrSell = useGeneralStore((state) => state.setBuyOrSell);
-  console.log(buyOrSell);
+  // console.log(buyOrSell);
   useEffect(() => {
     if (isBuy === 1) {
       setBuyOrSell("buy");

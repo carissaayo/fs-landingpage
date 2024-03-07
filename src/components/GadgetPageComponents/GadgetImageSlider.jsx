@@ -48,7 +48,7 @@ const GadgetImageSlider = () => {
             <ChevronLeft
               onClick={onClick}
               disabled={disabled}
-              className="absolute top-[210px] cursor-pointer text-white  z-10 h-16 w-16"
+              className="absolute top-[150px] sm:top-[210px] cursor-pointer text-white  z-10 h-16 w-16"
             />
           </div>
         )}
@@ -57,7 +57,7 @@ const GadgetImageSlider = () => {
             <ChevronRight
               onClick={onClick}
               disabled={disabled}
-              className="absolute top-[210px] right-0 cursor-pointer text-white  z-10 h-16 w-16"
+              className="absolute top-[150px] sm:top-[210px] right-0 cursor-pointer text-white  z-10 h-16 w-16"
             />
           </div>
         )}

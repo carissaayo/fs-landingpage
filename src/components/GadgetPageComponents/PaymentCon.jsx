@@ -9,6 +9,7 @@ import {
 } from "../ui/select";
 import { ChevronUp } from "lucide-react";
 import { Button } from "../ui/button";
+import PaymentDialog from "../PaymentSignUpComponents/PaymentDialog";
 
 const PaymentCon = () => {
   return (
@@ -151,12 +152,8 @@ const PaymentCon = () => {
           </div>
         </RadioGroup>
       </div>
-      {/* Submit Btn */}
-      <div className="w-full ">
-        <Button className="bg-[#0E0C4D] border-[#B1B1B1] hover:bg-[#0E0C4D] hover:border-[#B1B1B1] w-full py-8 text-lg">
-          Next
-        </Button>
-      </div>
+      {/* Register Dialog and Next Btn*/}
+      <PaymentDialog />
     </>
   );
 };

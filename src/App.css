@@ -31,9 +31,6 @@ html {
   );
 }
 
-.gallery {
-  width: 345px !important;
-}
 /* .nav__transform {
   transform: translateY(-10%);
   transition: transform 2s ease-in-out 1s;

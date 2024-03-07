@@ -1,17 +1,19 @@
-import { ChevronRight, ChevronUp } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
-import Footer from "../components/CoreComponents/FooterComponents/Footer";
-import MobileNav from "../components/CoreComponents/MobileComponents/MobileNav";
-import Nav from "../components/CoreComponents/NavComponents/Nav";
+import { ChevronRight, ChevronUp } from "lucide-react";
 
 import { Button } from "../components/ui/button";
+
+import { Textarea } from "../components/ui/textarea";
+
+import Nav from "../components/CoreComponents/NavComponents/Nav";
+import MobileNav from "../components/CoreComponents/MobileComponents/MobileNav";
+import Footer from "../components/CoreComponents/FooterComponents/Footer";
+import GoBack from "../components/CoreComponents/Core/GoBack";
+
 import PaymentCon from "../components/GadgetPageComponents/PaymentCon";
 import GadgetImageSlider from "../components/GadgetPageComponents/GadgetImageSlider";
-import { Label } from "@radix-ui/react-label";
-import { Textarea } from "../components/ui/textarea";
-import { useEffect, useState } from "react";
-import GoBack from "../components/CoreComponents/Core/GoBack";
+import { Label } from "../components/ui/label";
 
 const GadgetPage = () => {
   const [showTopBtn, setShowTopBtn] = useState(false);

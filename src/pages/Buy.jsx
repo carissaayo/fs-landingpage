@@ -38,7 +38,7 @@ const Buy = () => {
 
   return (
     <main className="w-full h-full relative">
-      <Nav scroll={scroll} />
+      <Nav scroll={scroll} isBuy={1} />
 
       <MobileNav />
       <BuyHero />

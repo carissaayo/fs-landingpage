@@ -5,11 +5,19 @@ import { Button } from "../../ui/button";
 
 import logoImg from "../../../assets/images/FairShop New Logo PNG 4 1.png";
 import { useGeneralStore } from "../../../store/generalStore";
+import { useEffect } from "react";
 
-const Nav = ({ scroll }) => {
+const Nav = ({ scroll, isBuy }) => {
   const buyOrSell = useGeneralStore((state) => state.buyOrSell);
   const setBuyOrSell = useGeneralStore((state) => state.setBuyOrSell);
   console.log(buyOrSell);
+  useEffect(() => {
+    if (isBuy === 1) {
+      setBuyOrSell("buy");
+    } else {
+      setBuyOrSell("sell");
+    }
+  }, [isBuy]);
 
   return (
     <section

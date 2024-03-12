@@ -48,7 +48,7 @@ const Checkout = () => {
   return (
     <main className="w-full h-full relative">
       <Nav scroll={scroll} isBuy={1} />
-      <MobileNav />
+      <MobileNav scroll={scroll} isBuy={1} />
       <section className="px-8 md:px-16 lg:px-20 2xl:px-32 poppins-regular pb-12 ">
         {/* Mobile Go Back */}
         <GoBack />

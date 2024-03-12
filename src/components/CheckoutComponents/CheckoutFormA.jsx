@@ -19,7 +19,7 @@ const CheckoutFormA = () => {
           <Label className="">
             First Name <span className="text-[#E40C0C]">*</span>
           </Label>
-          <Input className="border p-4" />
+          <Input className="border border-gray-300 p-4" />
         </div>
 
         {/* Last Name */}
@@ -27,7 +27,7 @@ const CheckoutFormA = () => {
           <Label className="">
             Last Name <span className="text-[#E40C0C]">*</span>
           </Label>
-          <Input className="border p-4" />
+          <Input className="border border-gray-300 border-gray-300 p-4" />
         </div>
       </div>
 
@@ -36,7 +36,7 @@ const CheckoutFormA = () => {
         <Label className="">
           BVN <span className="text-[#E40C0C]">*</span>
         </Label>
-        <Input className="border p-4" />
+        <Input className="border border-gray-300 p-4" />
       </div>
 
       {/* Banks */}
@@ -44,8 +44,8 @@ const CheckoutFormA = () => {
         <Label className="">
           Select Bank <span className="text-[#E40C0C]">*</span>
         </Label>
-        <Select>
-          <SelectTrigger className="wfull">
+        <Select className="">
+          <SelectTrigger className="full border-gray-300">
             <SelectValue placeholder="Select A Bank" />
           </SelectTrigger>
           <SelectContent>
@@ -66,7 +66,7 @@ const CheckoutFormA = () => {
         <Label className="">
           Account Number <span className="text-[#E40C0C]">*</span>
         </Label>
-        <Input type="password" className="border p-4" />
+        <Input type="password" className="border border-gray-300 p-4" />
       </div>
     </section>
   );

@@ -153,7 +153,7 @@ const PaymentCon = () => {
         </RadioGroup>
       </div>
       {/* Register Dialog and Next Btn*/}
-      <PaymentDialog />
+      <PaymentDialog title="Next" />
     </>
   );
 };

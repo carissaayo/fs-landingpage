@@ -4,7 +4,7 @@ import { Label } from "../ui/label";
 const CheckoutFormC = () => {
   return (
     <>
-      <p className="text-[#898686] mb-4 text-lg">
+      <p className="text-[#898686] mb-4   xs:text-lg">
         Please provide 3 Guarantor details
       </p>
       {/* First Guarantor */}
@@ -18,7 +18,7 @@ const CheckoutFormC = () => {
             <Label className="">
               First Name <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border p-4" />
+            <Input className="border border-gray-300 p-4" />
           </div>
 
           {/* Last Name */}
@@ -26,7 +26,7 @@ const CheckoutFormC = () => {
             <Label className="">
               Last Name <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border p-4" />
+            <Input className="border border-gray-300 p-4" />
           </div>
         </div>
 
@@ -36,7 +36,7 @@ const CheckoutFormC = () => {
             <Label className="">
               Relationship <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border p-4" />
+            <Input className="border border-gray-300 p-4" />
           </div>
 
           {/* Phone Number */}
@@ -44,7 +44,7 @@ const CheckoutFormC = () => {
             <Label className="">
               Contact Phone Number <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border p-4" />
+            <Input className="border border-gray-300 p-4" />
           </div>
         </div>
       </section>
@@ -60,7 +60,7 @@ const CheckoutFormC = () => {
             <Label className="">
               First Name <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border p-4" />
+            <Input className="border border-gray-300 p-4" />
           </div>
 
           {/* Last Name */}
@@ -68,7 +68,7 @@ const CheckoutFormC = () => {
             <Label className="">
               Last Name <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border p-4" />
+            <Input className="border border-gray-300 p-4" />
           </div>
         </div>
 
@@ -78,7 +78,7 @@ const CheckoutFormC = () => {
             <Label className="">
               Relationship <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border p-4" />
+            <Input className="border border-gray-300 p-4" />
           </div>
 
           {/* Phone Number */}
@@ -86,7 +86,7 @@ const CheckoutFormC = () => {
             <Label className="">
               Contact Phone Number <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border p-4" />
+            <Input className="border border-gray-300 p-4" />
           </div>
         </div>
       </section>
@@ -102,7 +102,7 @@ const CheckoutFormC = () => {
             <Label className="">
               First Name <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border p-4" />
+            <Input className="border border-gray-300 p-4" />
           </div>
 
           {/* Last Name */}
@@ -110,7 +110,7 @@ const CheckoutFormC = () => {
             <Label className="">
               Last Name <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border p-4" />
+            <Input className="border border-gray-300 p-4" />
           </div>
         </div>
 
@@ -120,7 +120,7 @@ const CheckoutFormC = () => {
             <Label className="">
               Relationship <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border p-4" />
+            <Input className="border border-gray-300 p-4" />
           </div>
 
           {/* Phone Number */}
@@ -128,7 +128,7 @@ const CheckoutFormC = () => {
             <Label className="">
               Contact Phone Number <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border p-4" />
+            <Input className="border border-gray-300 p-4" />
           </div>
         </div>
       </section>

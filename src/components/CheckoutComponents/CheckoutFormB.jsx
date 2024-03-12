@@ -19,7 +19,7 @@ const CheckoutFormB = () => {
           <Label className="">
             Phone Number <span className="text-[#E40C0C]">*</span>
           </Label>
-          <Input className="border p-4" />
+          <Input className="border border-gray-300 p-4" />
         </div>
 
         {/* Email */}
@@ -27,7 +27,7 @@ const CheckoutFormB = () => {
           <Label className="">
             Email <span className="text-[#E40C0C]">*</span>
           </Label>
-          <Input className="border p-4" />
+          <Input className="border border-gray-300 p-4" />
         </div>
       </div>
 
@@ -59,7 +59,7 @@ const CheckoutFormB = () => {
           <Label className="">
             City<span className="text-[#E40C0C]">*</span>
           </Label>
-          <Input className="border p-4" />
+          <Input className="border border-gray-300 p-4" />
         </div>
       </div>
 
@@ -68,7 +68,7 @@ const CheckoutFormB = () => {
         <Label className="">
           Address <span className="text-[#E40C0C]">*</span>
         </Label>
-        <Input type="password" className="border p-4" />
+        <Input type="password" className="border border-gray-300 p-4" />
       </div>
 
       <div className="flex flex-col sm:flex-row justify-between gap-6 ">
@@ -78,7 +78,7 @@ const CheckoutFormB = () => {
             LGA <span className="text-[#E40C0C]">*</span>
           </Label>
           <Select>
-            <SelectTrigger className="wfull">
+            <SelectTrigger className="wfull border-gray-300">
               <SelectValue placeholder="Select Your LGA" />
             </SelectTrigger>
             <SelectContent>
@@ -99,7 +99,7 @@ const CheckoutFormB = () => {
           <Label className="">
             NIN<span className="text-[#E40C0C]">*</span>
           </Label>
-          <Input className="border p-4" />
+          <Input className="border border-gray-300 p-4" />
         </div>
       </div>
     </section>

@@ -1,28 +1,13 @@
-import React, { useRef, useState } from "react";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-import gadgetImg from "../../assets/images/gadget.png";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/navigation";
-import "swiper/css/thumbs";
-
-// import "./styles.css";
-
-// import required modules
-import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
+
+import gadgetImg from "../../assets/images/gadget.png";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
   {
     original: gadgetImg,
     thumbnail: gadgetImg,
-    originalWidth: 0,
-    originalHeight: "200px",
   },
   {
     original: gadgetImg,
@@ -35,11 +20,10 @@ const images = [
 ];
 
 const GadgetImageSlider = () => {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
-
   return (
     <section className="w-full relative">
       <ImageGallery
+        showIndex={window.innerWidth < 480}
         items={images}
         showFullscreenButton={false}
         showPlayButton={false}

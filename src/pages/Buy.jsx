@@ -40,7 +40,7 @@ const Buy = () => {
     <main className="w-full h-full relative">
       <Nav scroll={scroll} isBuy={1} />
 
-      <MobileNav />
+      <MobileNav isBuy={1} scroll={scroll} />
       <BuyHero />
       <SellCon />
       <HowItWorks />

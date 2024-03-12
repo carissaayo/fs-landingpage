@@ -15,17 +15,18 @@ import {
 
 const NavMenu = () => {
   return (
-    <NavigationMenu>
+    <NavigationMenu className="bg-transparent hover:bg-transparent  text-white">
       <NavigationMenuList>
-        <NavigationMenuItem className="bg-transparent hover:bg-transparent text-white">
-          <NavigationMenuTrigger className="bg-transparent hover:bg-transparent text-white hover:text-white focus:bg-transparent">
+        <NavigationMenuItem className="bg-transparent hover:bg-transparent  text-white">
+          <NavigationMenuTrigger className="bg-transparent  hover:bg-transparent  text-white hover:text-white focus:bg-transparent">
             About Us
           </NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="  p-4 min-w-[150px] ">
-              <ListItem href="/docs" title="Contact Us" />
-              <ListItem href="/docs/installation" title="Contact Us" />
-              <ListItem href="/docs/primitives/typography" title="Contact Us" />
+          <NavigationMenuContent className="">
+            <ul className="  p-4 min-w-[200px] ">
+              <ListItem href="/how-it-works" title="How it Works" />
+              <ListItem href="/about-us" title="About us" />
+              <ListItem href="/testimonials" title="Testimonials" />
+              <ListItem href="/FAQ" title="FAQs" />
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>

@@ -1,24 +1,21 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ChevronRight, ChevronUp } from "lucide-react";
+import { ChevronLeft, ChevronRight, ChevronUp } from "lucide-react";
 
 import { Button } from "../components/ui/button";
-
-import { Textarea } from "../components/ui/textarea";
+import { Label } from "../components/ui/label";
 
 import Nav from "../components/CoreComponents/NavComponents/Nav";
 import MobileNav from "../components/CoreComponents/MobileComponents/MobileNav";
 import Footer from "../components/CoreComponents/FooterComponents/Footer";
 import GoBack from "../components/CoreComponents/Core/GoBack";
-
 import PaymentCon from "../components/GadgetPageComponents/PaymentCon";
 import GadgetImageSlider from "../components/GadgetPageComponents/GadgetImageSlider";
-import { Label } from "../components/ui/label";
+import { Badge } from "../components/ui/badge";
 
 const GadgetPage = () => {
   const [showTopBtn, setShowTopBtn] = useState(false);
   const [scroll, setScroll] = useState(false);
-  const [buyOrSell, setBuyOrSell] = useState("sell");
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -34,7 +31,7 @@ const GadgetPage = () => {
       }
     });
   }, []);
-  useEffect(() => goToTop(), []);
+  // useEffect(() => goToTop(), []);
   const goToTop = () => {
     window.scrollTo({
       top: 0,
@@ -44,51 +41,96 @@ const GadgetPage = () => {
   return (
     <main className="">
       <Nav isBuy={1} scroll={scroll} />
-      <MobileNav />
-      <section className="px-8 md:px-16 lg:px-20 2xl:px-32 poppins-regular pb-12 ">
+      <MobileNav isBuy={1} scroll={scroll} />
+      <section className="xs:px-8 md:px-16 lg:px-20 2xl:px-32 poppins-regular pb-12 ">
         {/* Mobile Go Back */}
-        <GoBack />
-        <div className="hidden sm:block py-6 poppins-semibold">
+        {/* <GoBack /> */}
+        <div className="px-8 xs:px-0 py-6 poppins-semibold ">
           <p className="flex items-center xs:gap-1 sm:gap-4 text-sm sm:text-base">
-            <Link to="/">Home</Link>
-            <span className="">
+            <Link to="/" className="flex xs:block items-center">
+              <span className="inline-block xs:hidden">
+                <ChevronLeft className="h-4 w-4" />
+              </span>
+              Home
+            </Link>
+            <span className="hidden sm:inline-block">
               <ChevronRight className="h-4 w-4" />
             </span>
             <Link
               to="/gadgets"
-              className="bg-[#F1F1F1]  px-2 sm:px-4 py-2 rounded-sm"
+              className="bg-[#F1F1F1]  px-2 sm:px-4 py-2 rounded-sm hidden sm:inline-block"
             >
               Phones
             </Link>
-            <span className="">
+            <span className="hidden sm:inline-block">
               <ChevronRight className="h-4 w-4" />
             </span>
-            <span className="">Iphone 12 - 6GB 124 Internal Memory</span>
+            <span className="hidden sm:inline-block">
+              Iphone 12 - 6GB 124 Internal Memory
+            </span>
           </p>
         </div>
 
-        <section className="flex flex-col md:flex-row  justify-center md:justify-between my-6 gap-12 lg:gap-20 xs:w-[90%] sm:w-[80%] md:w-full mx-auto">
+        <section className="flex flex-col md:flex-row  justify-center md:justify-between my-6 gap-12 lg:gap-20 xs:w-[90%] sm:w-[80%] md:w-full mx-auto relative">
           <div className="flex-1">
-            <div className="max-w-[560px] mb-10">
-              {/* <img src={gadgetImg} alt="" className="" /> */}
+            <div className="max-w-[560px] h-[600px] xs:h-auto mb-10">
               <GadgetImageSlider />
             </div>
             <div className="w-full border-b border-gray-100 mb-10"></div>
 
             {/* Description Con */}
-            <div className="border border-gray-100 px-4 py-6 rounded-xl flex flex-col gap-6">
+            <div className="border border-gray-100 px-4 py-6 rounded-xl hidden xs:flex flex-col gap-6">
               <Label className="poppins-semibold text-2xl ">Description</Label>
-              <Textarea
-                placeholder="iPhone 14 Plus, 160.8 x 78.1 x 7.8 mm (6.33 x 3.07 x 0.31 in),"
-                className="border-none placeholder:text-[#898686] p-4"
-              />
+              <p className="border-none placeholder:text-[#898686] p-4">
+                Iphone 12 256gb uk used factory unlocked. Black color, in
+                excellent working condition. Very Neat with good battery health
+              </p>
             </div>
           </div>
 
           {/* Second row */}
-          <div className="flex-1 w-full">
+          <div className="xs:flex-1   w-[95%] xs:w-full relative top-[-440px] h-full xs:top-0 px-4   xs:px-0 mx-auto bg-white rounded-t-xl pt-8">
+            {/* Mobile */}
+            <section className="block xs:hidden">
+              <h1 className="  poppins-semibold text-2xl mb-4">
+                Iphone 11 pro
+              </h1>
+              <h2 className="poppins-semibold text-3xl mb-4">₦301,490</h2>
+              <Badge className="bg-[#E9F3FF] hover:bg-[#E9F3FF] text-black hover:text-black text-base  px-3 mb-10">
+                Used
+              </Badge>
+              <div className="grid grid-cols-2 gap-4 mb-4">
+                <div className="flex flex-col gap-2">
+                  <h1 className="poppins-medium">Apple</h1>
+                  <p className="text-[#8A8A8A] text-sm">BRAND </p>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <h1 className="poppins-medium">Iphone 12</h1>
+                  <p className="text-[#8A8A8A] text-sm">MODEL </p>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <h1 className="poppins-medium">Used</h1>
+                  <p className="text-[#8A8A8A] text-sm">CONDITION </p>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <h1 className="poppins-medium">Used</h1>
+                  <p className="text-[#8A8A8A] text-sm">SECOND CONDITION </p>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <h1 className="poppins-medium">256 GB</h1>
+                  <p className="text-[#8A8A8A] text-sm">INTERNAL STORAGE</p>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <h1 className="poppins-medium">256 GB</h1>
+                  <p className="text-[#8A8A8A] text-sm">CARD SLOT</p>
+                </div>
+              </div>
+            </section>
             <div className="w-full">
-              <h1 className="poppins-semibold text-3xl mb-10">Iphone 11 pro</h1>
+              <h1 className=" hidden xs:block poppins-semibold text-3xl mb-10">
+                Iphone 11 pro
+              </h1>
               <hr className="w-full border-b border-gray-100 mb-10" />
               <h1 className="poppins-semibold text-2xl mb-4">Payment Method</h1>
               <p className="text-[#898686]">

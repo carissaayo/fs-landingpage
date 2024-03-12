@@ -2,30 +2,44 @@ import { Plus } from "lucide-react";
 import { Button } from "../../ui/button";
 import SellCard from "./SellCard";
 import SellForm from "./SellForm";
+import { ScrollArea, ScrollBar } from "../../ui/scroll-area";
+
+const SellContainer = ({ title }) => {
+  return (
+    <div className="w-full pt-60 lg:pt-0 mb-10">
+      <h1 className="poppins-medium text-xl mb-8 w-full text-[#130D52] bg-[#130D52] bg-opacity-10 p-4">
+        {title}
+      </h1>
+      <ScrollArea className=" w-full  ">
+        <div className="flex items-center  gap-8 mb-6">
+          <SellCard />
+          <SellCard />
+          <SellCard />
+          <SellCard />
+          <SellCard />
+          <SellCard />
+          <SellCard />
+          <SellCard />
+          <div className="text-center   flex items-center justify-center bg-[#EAE9EF]  w-[200px] h-[200px] rounded-xl  ">
+            <div className="flex gap-4">
+              <Plus className="h-5 w-5 " />
+              View More
+            </div>
+          </div>
+        </div>
+        <ScrollBar orientation="horizontal" className="" />
+      </ScrollArea>
+    </div>
+  );
+};
 
 const SellCon = () => {
   return (
     <section className="w-full   pt-32 pb-20 lg:pt-32 lg:pb-32  px-4 xs:px-8 sm:px-12 md:px-16 lg:px-20 2xl:px-32  relative poppins-regular">
       <SellForm />
-      <div className="w-full pt-60 lg:pt-0">
-        <h1 className="poppins-bold text-2xl mb-8">Featured Devices</h1>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-y-8 gap-x-4 xs:gap-x-8 sm:gap-x-6 md:gap-x-10 lg:gap-x-8 xl:gap-x-16 ">
-          <SellCard />
-          <SellCard />
-          <SellCard />
-          <SellCard />
-          <SellCard />
-          <SellCard />
-          <SellCard />
-          <SellCard />
-        </div>
-        <div className="text-center  pt-12 w-full flex justify-center">
-          <Button className="bg-[#292761] hover:bg-[##292761] rounded-2xl flex gap-2">
-            <Plus className="h-5 w-5 " />
-            Load More Phones
-          </Button>
-        </div>
-      </div>
+      <SellContainer title="Popular smartphones" />
+      <SellContainer title="Iphones" />
+      <SellContainer title="Other Phones" />
     </section>
   );
 };

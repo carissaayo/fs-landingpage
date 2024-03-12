@@ -6,11 +6,12 @@ import { Button } from "../../ui/button";
 import logoImg from "../../../assets/images/FairShop New Logo PNG 4 1.png";
 import { useGeneralStore } from "../../../store/generalStore";
 import { useEffect } from "react";
+import LoggedInNav from "./LoggedInNav";
 
 const Nav = ({ scroll, isBuy }) => {
   const buyOrSell = useGeneralStore((state) => state.buyOrSell);
   const setBuyOrSell = useGeneralStore((state) => state.setBuyOrSell);
-  // console.log(buyOrSell);
+  const isLoggedIn = true;
   useEffect(() => {
     if (isBuy === 1) {
       setBuyOrSell("buy");
@@ -56,16 +57,22 @@ const Nav = ({ scroll, isBuy }) => {
             </Link>
           </div>
         </div>
-        <div className="flex flex-1 gap-12">
+        <div className="flex justify-between flex-1 gap-12">
           <NavMenu />
-          <div className="flex gap-4 items-center">
-            <Button className="bg-white hover:bg-white text-[#0E0C4D] hover:text-[#0E0C4D] text-base rounded-2xl">
-              Login
-            </Button>
-            <Button className="bg-[#00FFFC] hover:bg-[#00FFFC] text-[#0E0C4D] hover:text-[#0E0C4D] text-base rounded-2xl">
-              Sign Up
-            </Button>
-          </div>
+          {isLoggedIn ? (
+            <div className="">
+              <LoggedInNav />
+            </div>
+          ) : (
+            <div className="flex gap-4 items-center">
+              <Button className="bg-white hover:bg-white text-[#0E0C4D] hover:text-[#0E0C4D] text-base rounded-2xl">
+                Login
+              </Button>
+              <Button className="bg-[#00FFFC] hover:bg-[#00FFFC] text-[#0E0C4D] hover:text-[#0E0C4D] text-base rounded-2xl">
+                Sign Up
+              </Button>
+            </div>
+          )}
         </div>
       </div>
     </section>

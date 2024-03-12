@@ -7,7 +7,7 @@ const SellCard = () => {
   return (
     <Link
       to="/gadgets/123"
-      className="flex flex-col border border-gray-200 rounded-3xl"
+      className="flex flex-col border border-gray-200 rounded-3xl min-w-[200px] lg:min-w-[250px]"
     >
       <div className="w-full">
         <img src={phoneImg} alt="" className="w-full" />

@@ -4,7 +4,10 @@ import CardsCon from "./CardsCon";
 
 const HowItWorks = () => {
   return (
-    <section className="w-full md:con__height py-12   xs:px-16  md:px-16 lg:px-20 2xl:px-32  relative poppins-regular bg-[#FAFAFA] md:bg-[#8D8D8D] md:bg-opacity-5 text-[#0C0F4D]">
+    <section
+      id="how-it-works"
+      className="w-full md:con__height py-12   xs:px-16  md:px-16 lg:px-20 2xl:px-32  relative poppins-regular bg-[#FAFAFA] md:bg-[#8D8D8D] md:bg-opacity-5 text-[#0C0F4D]"
+    >
       <div className="text-center ">
         <h1 className="poppins-semibold text-3xl mb-4">How it works</h1>
         <p className="px-2 xs:px-0 text-lg xs:text-xl">

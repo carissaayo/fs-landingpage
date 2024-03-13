@@ -8,6 +8,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "../../ui/dropdown-menu";
+import { Link } from "react-router-dom";
 
 const LoggedInNav = () => {
   return (
@@ -28,7 +29,9 @@ const LoggedInNav = () => {
         </DropdownMenuItem>
         <DropdownMenuItem className="text-base">
           {" "}
-          <p className="">My Transactions</p>
+          <Link to="/transactions" className="">
+            My Transactions
+          </Link>
         </DropdownMenuItem>
         <DropdownMenuItem className="text-base">
           {" "}

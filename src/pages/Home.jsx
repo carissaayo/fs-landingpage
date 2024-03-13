@@ -36,7 +36,7 @@ const Home = () => {
       }
     });
   }, []);
-  // useEffect(() => goToTop(), []);
+  useEffect(() => goToTop(), []);
   const goToTop = () => {
     window.scrollTo({
       top: 0,
@@ -44,10 +44,10 @@ const Home = () => {
     });
   };
   return (
-    <main className="w-full h-full relative">
+    <main className="w-full h-full relative ">
       <Nav scroll={scroll} />
       <section className="">
-        <MobileNav />
+        <MobileNav scroll={scroll} />
         <Hero />
         <section id="sell" className="relative bg-white ">
           <div className="h-[80px] bg-white rounded-t-2xl absolute left-[2%] top-[-40px] w-[95%] mx-auto z-10"></div>

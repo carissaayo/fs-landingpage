@@ -2,16 +2,15 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight, ChevronUp } from "lucide-react";
 
+import { Badge } from "../components/ui/badge";
 import { Button } from "../components/ui/button";
 import { Label } from "../components/ui/label";
 
 import Nav from "../components/CoreComponents/NavComponents/Nav";
 import MobileNav from "../components/CoreComponents/MobileComponents/MobileNav";
 import Footer from "../components/CoreComponents/FooterComponents/Footer";
-import GoBack from "../components/CoreComponents/Core/GoBack";
 import PaymentCon from "../components/GadgetPageComponents/PaymentCon";
 import GadgetImageSlider from "../components/GadgetPageComponents/GadgetImageSlider";
-import { Badge } from "../components/ui/badge";
 
 const GadgetPage = () => {
   const [showTopBtn, setShowTopBtn] = useState(false);
@@ -43,8 +42,7 @@ const GadgetPage = () => {
       <Nav isBuy={1} scroll={scroll} />
       <MobileNav isBuy={1} scroll={scroll} />
       <section className="xs:px-8 md:px-16 lg:px-20 2xl:px-32 poppins-regular pb-12 ">
-        {/* Mobile Go Back */}
-        {/* <GoBack /> */}
+        {/* GoBack  */}
         <div className="px-8 xs:px-0 py-6 poppins-semibold ">
           <p className="flex items-center xs:gap-1 sm:gap-4 text-sm sm:text-base">
             <Link to="/" className="flex xs:block items-center">

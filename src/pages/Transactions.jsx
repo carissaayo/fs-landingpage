@@ -37,7 +37,7 @@ const Transactions = () => {
       <Nav scroll={scroll} isBuy={1} />
 
       <MobileNav isBuy={1} scroll={scroll} />
-      <section className="xs:px-8 md:px-16 lg:px-20 2xl:px-32 poppins-regular pb-12">
+      <section className=" px-4 xs:px-8 md:px-16 lg:px-20 2xl:px-32 poppins-regular pb-12">
         {/* GoBack  */}
         <div className="px-8 xs:px-0 py-6 poppins-semibold ">
           <p className="flex items-center xs:gap-1 sm:gap-4 text-sm sm:text-base">

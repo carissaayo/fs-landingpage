@@ -29,7 +29,11 @@ const MobileNav = ({ scroll, isBuy }) => {
         <div className="flex w-full items-center justify-between">
           <div className="flex-1">
             <Link to="/" className="text-white poppins-extrabold text-[40px]">
-              <img src={logoImg} alt="" className="w-[100px] h-[50px]" />
+              <img
+                src={logoImg}
+                alt=""
+                className="w-[80px] xs:w-[100px] xs:h-[50px]"
+              />
             </Link>
           </div>
           <div className="flex-1 flex items-center justify-end gap-6">

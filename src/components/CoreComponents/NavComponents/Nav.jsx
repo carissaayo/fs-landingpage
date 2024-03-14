@@ -27,7 +27,11 @@ const Nav = ({ scroll, isBuy }) => {
     >
       <div className="flex-1">
         <Link to="/" className="text-white poppins-extrabold text-[40px]">
-          <img src={logoImg} alt="" />
+          <img
+            src={logoImg}
+            alt=""
+            className="w-[30px] h-1/5 sm:w-auto sm:h-auto"
+          />
         </Link>
       </div>
       <div className="flex items-center flex-[1.5]">

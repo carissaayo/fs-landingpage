@@ -8,7 +8,7 @@ import { useGeneralStore } from "../../../store/generalStore";
 import { useEffect } from "react";
 import LoggedInNav from "./LoggedInNav";
 
-const Nav = ({ scroll, isBuy }) => {
+const Nav = ({ isBuy }) => {
   const buyOrSell = useGeneralStore((state) => state.buyOrSell);
   const setBuyOrSell = useGeneralStore((state) => state.setBuyOrSell);
   const isLoggedIn = true;
@@ -22,16 +22,12 @@ const Nav = ({ scroll, isBuy }) => {
 
   return (
     <section
-      className={`${scroll ? "sticky" : ""}
-      hidden md:flex z-20 bg-[#0E0C4D] w-full  items-center justify-between py-6   px-16 lg:px-20 2xl:px-32  poppins-regular  `}
+      className={`
+      hidden md:flex z-20 bg-[#0E0C4D] w-full  items-center justify-between py-6   px-16 lg:px-20 2xl:px-32  poppins-regular fixed `}
     >
       <div className="flex-1">
         <Link to="/" className="text-white poppins-extrabold text-[40px]">
-          <img
-            src={logoImg}
-            alt=""
-            className="w-[30px] h-1/5 sm:w-auto sm:h-auto"
-          />
+          <img src={logoImg} alt="" className="" />
         </Link>
       </div>
       <div className="flex items-center flex-[1.5]">

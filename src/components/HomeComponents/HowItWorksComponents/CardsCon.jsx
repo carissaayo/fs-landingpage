@@ -5,7 +5,7 @@ import imageC from "../../../assets/images/using-phone (7) 2.png";
 
 const CardsCon = () => {
   return (
-    <div className="my-12 flex  flex-col md:flex-row items-center justify-between sm:w-[90%] md:w-full  gap-20 md:gap-6 xl:gap-20 px-6 sm:px-12 md:px-0 mx-auto ">
+    <div className="my-12 flex  flex-col md:flex-row items-center justify-between sm:w-[90%] md:w-full  gap-6 md:gap-6 xl:gap-20 px-6 sm:px-12 md:px-0 mx-auto ">
       <div className="bg-white border border-[#E3E0E0] flex flex-col items-center  justify-center md:justify-start gap-8 rounded-xl md:flex-1 h-[440px] lg:h-[400px] w-full">
         <div className=" md:pt-8">
           <img src={imageA} alt="" className="" />

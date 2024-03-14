@@ -1,8 +1,8 @@
 import { Search } from "lucide-react";
 import { Button } from "../../ui/button";
-import BrandsCon from "./BrandsCon";
 
 import Steps from "./Steps";
+import Models from "./Models";
 
 const ModelsCon = ({ stepContent }) => {
   return (
@@ -43,7 +43,7 @@ const ModelsCon = ({ stepContent }) => {
       </div>
 
       <div className="">
-        <BrandsCon number={3} />
+        <Models number={3} />
       </div>
     </section>
   );

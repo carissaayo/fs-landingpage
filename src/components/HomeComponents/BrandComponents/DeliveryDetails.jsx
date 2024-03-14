@@ -10,15 +10,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../../ui/select";
-import { useGeneralStore } from "../../../store/generalStore";
 import Steps from "./Steps";
 
 const DeliveryDetails = ({ stepContent }) => {
-  const showContent = useGeneralStore((state) => state.showContent);
-  const setShowContent = useGeneralStore((state) => state.setShowContent);
   return (
     <section
-      id="brands"
       className={` ${
         stepContent === 4
           ? "translate-x-0 w-full md:con__height px-4 xs:px-8 sm:px-12 md:px-16 lg:px-20 2xl:px-32  relative poppins-regular py-12 md:py-0"

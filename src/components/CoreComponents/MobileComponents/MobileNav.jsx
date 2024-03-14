@@ -22,7 +22,7 @@ const MobileNav = ({ scroll, isBuy }) => {
   }, [isBuy]);
   return (
     <section
-      className={`${scroll ? "sticky" : ""}
+      className={`${scroll ? "fixed" : ""}
         md:hidden  z-20 bg-[#0E0C4D] w-full left-0   py-6   px-4  poppins-regular relative `}
     >
       <div className="relative">

@@ -1,80 +1,25 @@
-import { useEffect, useState } from "react";
-import { ChevronRight, ChevronUp } from "lucide-react";
-import { Link } from "react-router-dom";
-
 import { RadioGroup, RadioGroupItem } from "../components/ui/radio-group";
 import { Label } from "../components/ui/label";
 import { Button } from "../components/ui/button";
 
 import Nav from "../components/CoreComponents/NavComponents/Nav";
 import MobileNav from "../components/CoreComponents/MobileComponents/MobileNav";
-import Footer from "../components/CoreComponents/FooterComponents/Footer";
 
 import CheckoutFormA from "../components/CheckoutComponents/CheckoutFormA";
 import CheckoutFormB from "../components/CheckoutComponents/CheckoutFormB";
 import CheckoutFormC from "../components/CheckoutComponents/CheckoutFormC";
 import CheckoutFormD from "../components/CheckoutComponents/CheckoutFormD";
-
-import { useGeneralStore } from "../store/generalStore";
 import Steps from "../components/CheckoutComponents/Steps";
 
 const Checkout = () => {
-  const [showTopBtn, setShowTopBtn] = useState(false);
-  const [scroll, setScroll] = useState(false);
-
-  const showCheckoutContent = useGeneralStore(
-    (state) => state.showCheckoutContent
-  );
-  const setCheckoutContent = useGeneralStore(
-    (state) => state.setCheckoutContent
-  );
-
-  const checkoutStep = useGeneralStore((state) => state.checkoutStep);
-  const setCheckoutStep = useGeneralStore((state) => state.setCheckoutStep);
-
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      setScroll(window.scrollY > 10);
-    });
-  });
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 400) {
-        setShowTopBtn(true);
-      } else {
-        setShowTopBtn(false);
-      }
-    });
-  }, []);
-  useEffect(() => goToTop(), []);
-  const goToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
   return (
     <main className="w-full h-full relative">
-      <Nav scroll={scroll} isBuy={1} />
+      <Nav isBuy={1} />
       <MobileNav scroll={scroll} isBuy={1} />
-      <section className="px-6 sm:px-8 md:px-16 lg:px-20 2xl:px-32 poppins-regular ">
-        {/*  Go Back */}
 
-        <div className="hidden sm:block py-6 poppins-semibold">
-          <p className="flex items-center xs:gap-1 sm:gap-4 text-sm sm:text-base">
-            <Link to="/">Home</Link>
-            <span className="">
-              <ChevronRight className="h-4 w-4" />
-            </span>
-            <span className="bg-[#F1F1F1]  px-2 sm:px-4 py-2 rounded-sm">
-              Checkout
-            </span>
-          </p>
-        </div>
-        <Steps />
-      </section>
-      <section className="flex flex-col lg:flex-row justify-between px-8 md:px-16 lg:px-20 2xl:px-32 poppins-regular pb-12 gap-12  xl:gap-32 xs:w-[80%] sm:w-full mx-auto sm:mx-0">
+      <section className="flex flex-col lg:flex-row justify-between px-8 md:px-16 lg:px-20 2xl:px-32 poppins-regular pb-12 gap-12  xl:gap-32 xs:w-[80%] sm:w-full mx-auto sm:mx-0 pt-36">
         <div className="flex-1 lg:flex-[1.5] relative">
+          <Steps />
           {/* KYC Details 1 */}
           <CheckoutFormA />
 
@@ -178,22 +123,8 @@ const Checkout = () => {
               </div>
             </RadioGroup>
           </div>
-          {/* Checkout Btn */}
-          <div className="w-full ">
-            <Button className="bg-[#0E0C4D] border-[#B1B1B1] hover:bg-[#0E0C4D] hover:border-[#B1B1B1] w-full py-8 text-lg">
-              Buy Now
-            </Button>
-          </div>
         </div>
       </section>
-
-      <Footer />
-      <div className="top-to-btm">
-        {" "}
-        {showTopBtn && (
-          <ChevronUp className="icon-position icon-style" onClick={goToTop} />
-        )}{" "}
-      </div>
     </main>
   );
 };

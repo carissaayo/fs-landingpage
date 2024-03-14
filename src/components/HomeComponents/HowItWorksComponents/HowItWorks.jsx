@@ -10,7 +10,7 @@ const HowItWorks = () => {
     >
       <div className="text-center ">
         <h1 className="poppins-semibold text-3xl mb-4">How it works</h1>
-        <p className="px-2 xs:px-0 text-lg xs:text-xl">
+        <p className="px-2 xs:px-0 text-lg xs:text-xl w-4/5 mx-auto xs:w-full xs:mx-0">
           Find out how selling to Fairshop works{" "}
         </p>
       </div>

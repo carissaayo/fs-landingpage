@@ -26,7 +26,7 @@ const SellForm = () => {
         </div>
       </div>
 
-      <div className="w-full xl:flex-1 lg:border-x px-8 flex flex-col justify-start gap-4">
+      <div className="w-full xl:flex-1 lg:border-x px-4  flex flex-col justify-start gap-4">
         <Label className="poppins-semibold text-xl ">Phone Model</Label>
         <Select>
           <SelectTrigger className="border-gray-400">
@@ -46,7 +46,7 @@ const SellForm = () => {
         </Select>
       </div>
 
-      <div className="w-full xl:flex-1 lg:border-l px-8 flex flex-col justify-start gap-4">
+      <div className="w-full xl:flex-1 lg:border-l px-4 flex flex-col justify-start gap-4">
         <Label className="poppins-semibold text-xl ">Price Range</Label>
 
         <Select className="block">

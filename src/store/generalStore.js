@@ -23,4 +23,6 @@ export const useGeneralStore = create((set) => ({
   setGadget: (value) => set({ gadget: value }),
   teamIndex: 1,
   setTeamIndex: (value) => set({ teamIndex: value }),
+  phoneBrand: "",
+  setPhoneBrand: (value) => set({ phoneBrand: value }),
 }));

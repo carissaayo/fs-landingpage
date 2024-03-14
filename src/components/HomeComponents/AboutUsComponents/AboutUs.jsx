@@ -4,13 +4,13 @@ import { Button } from "../../ui/button";
 const AboutUs = () => {
   return (
     <section className="w-full md:con__height bg-white px-4 xs:px-8  md:px-16 lg:px-20 2xl:px-32   relative poppins-regular text-[#0C0F4D] py-8 pt-12">
-      <div className="mb-6">
+      <div className="mb-6 text-center sm:text-left">
         <h1 className="poppins-bold text-3xl mb-4"> About Us</h1>
         <p className="poppins-semibold text-black text-lg xs:text-2xl md:w-[40%]">
           Fairshop is the easiest place to sell your device conveniently
         </p>
       </div>
-      <p className="md:w-3/4 text-lg text-[#111111] mb-20">
+      <p className="md:w-3/4 text-lg text-[#111111] mb-20 text-center sm:text-left">
         Our vision is to be the leading provider of smartphone financing
         solutions, helping to bridge the digital divide and bring the latest
         technology to people all over the world.

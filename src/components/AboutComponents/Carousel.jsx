@@ -5,7 +5,7 @@ import ProcurementCon from "./ProcurementCon";
 
 const Carousel = () => {
   return (
-    <div className="flex-1 flex flex-col gap-16 pt-8">
+    <div className="flex-1 flex flex-col gap-16 xl:pt-8">
       <TeamCon />
       <BusinessCon />
       <OperationsCon />

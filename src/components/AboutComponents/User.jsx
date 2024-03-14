@@ -1,28 +1,28 @@
 import userImg from "../../assets/images/user.png";
 const User = () => {
   return (
-    <section className="relative w-full  px-8 md:px-16 lg:px-20 2xl:px-32 h-[400px] mb-10">
-      <div className="absolute bg-white  rounded-lg flex justify-between items-center gap-8 top-[-50%] w-[85%] border pb-8">
+    <section className="relative w-full  px-8 md:px-16 lg:px-20 2xl:px-32 h-[850px] xs:h-[800px] md:h-[500px] lg:h-[400px] mb-10">
+      <div className="absolute bg-white  rounded-lg flex  flex-col md:flex-row justify-between items-start top-[-50%] w-[85%] border pb-8 left-[8%] md:left-auto ">
         {/* About */}
-        <div className="flex-1 border-r-2 border-opacity-20 border-[#0E0C4D]  flex flex-col gap-4">
-          <div className="bg-[#00FFFC] bg-opacity-5 py-6 px-2 flex items-center justify-center">
+        <div className=" w-full flex-[2] xl:flex-1  flex flex-col gap-6">
+          <div className="bg-[#00FFFC] bg-opacity-15 py-6 px-2 flex items-center justify-center">
             <div className="poppins-semibold text-xl text-[#0E0C4D] flex gap-2 items-center">
               <div className=" w-[15px] h-[15px] border-[#0E0C4D]  border-4 rounded-full"></div>
               <p className="">Founder’s Story</p>
             </div>
           </div>
 
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center px-4">
             <img src={userImg} alt="" className="" />
           </div>
           <div className="w-full flex flex-col justify-center items-center">
-            <p className="poppins-semi-bold">Winner Akako</p>
+            <p className="poppins-semibold">Winner Akako</p>
             <p className="poppins-medium">CEO / CO-FOUNDER</p>
           </div>
         </div>
         {/* Words */}
-        <div className="flex-[2] py-20">
-          <div className="w-4/5 mx-auto text-lg flex flex-col gap-4">
+        <div className="flex-[3] xl:flex-[2] pt-12 xl:py-20 md:border-l-2  border-[#0E0C4D] border-opacity-20">
+          <div className="w-[90%] xl:w-4/5 mx-auto lg:text-lg flex flex-col gap-4">
             <p className="">
               I tested positive for COVID on the 31st of December, 2020. The
               result came in very late at night and I couldn’t travel home. I

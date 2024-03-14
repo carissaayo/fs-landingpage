@@ -15,7 +15,7 @@ const PeopleSlider = () => {
     <section className="relative w-full mx-auto  px-8 md:px-16 lg:px-20 2xl:px-32  mb-10 py-12 poppins-regular">
       <h1 className="poppins-semibold text-2xl mb-6 px-12">People</h1>
       <Swiper
-        spaceBetween={window.innerWidth > 1024 ? 50 : 20}
+        spaceBetween={30}
         slidesPerView={3}
         navigation={true}
         pagination={{
@@ -28,30 +28,73 @@ const PeopleSlider = () => {
         loop={true}
         grabCursor={true}
         modules={[Pagination, Navigation, Autoplay]}
-        className="swiper "
+        className="swiper about hidden md:block"
       >
-        <SwiperSlide>
+        <SwiperSlide className="swiper-item">
           <PersonCard image={user1} name="Winner Akako" post="CEO / CTO" />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="swiper-item">
           <PersonCard image={user2} name="Winner Akako" post="CEO / CTO" />
         </SwiperSlide>{" "}
-        <SwiperSlide>
+        <SwiperSlide className="swiper-item">
           <PersonCard image={user3} name="Winner Akako" post="CEO / CTO" />
         </SwiperSlide>{" "}
-        <SwiperSlide>
+        <SwiperSlide className="swiper-item">
           <PersonCard image={user1} name="Winner Akako" post="CEO / CTO" />
         </SwiperSlide>{" "}
-        <SwiperSlide>
+        <SwiperSlide className="swiper-item">
           <PersonCard image={user2} name="Winner Akako" post="CEO / CTO" />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="swiper-item">
           <PersonCard image={user3} name="Winner Akako" post="CEO / CTO" />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="swiper-item">
           <PersonCard image={user1} name="Winner Akako" post="CEO / CTO" />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="swiper-item">
+          <PersonCard image={user2} name="Winner Akako" post="CEO / CTO" />
+        </SwiperSlide>
+      </Swiper>
+
+      {/* Mobile and less than 840px */}
+      <Swiper
+        spaceBetween={30}
+        slidesPerView={2}
+        navigation={true}
+        pagination={{
+          clickable: true,
+        }}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        loop={true}
+        grabCursor={true}
+        modules={[Pagination, Navigation, Autoplay]}
+        className="swiper mobile"
+      >
+        <SwiperSlide className="swiper-item">
+          <PersonCard image={user1} name="Winner Akako" post="CEO / CTO" />
+        </SwiperSlide>
+        <SwiperSlide className="swiper-item">
+          <PersonCard image={user2} name="Winner Akako" post="CEO / CTO" />
+        </SwiperSlide>{" "}
+        <SwiperSlide className="swiper-item">
+          <PersonCard image={user3} name="Winner Akako" post="CEO / CTO" />
+        </SwiperSlide>{" "}
+        <SwiperSlide className="swiper-item">
+          <PersonCard image={user1} name="Winner Akako" post="CEO / CTO" />
+        </SwiperSlide>{" "}
+        <SwiperSlide className="swiper-item">
+          <PersonCard image={user2} name="Winner Akako" post="CEO / CTO" />
+        </SwiperSlide>
+        <SwiperSlide className="swiper-item">
+          <PersonCard image={user3} name="Winner Akako" post="CEO / CTO" />
+        </SwiperSlide>
+        <SwiperSlide className="swiper-item">
+          <PersonCard image={user1} name="Winner Akako" post="CEO / CTO" />
+        </SwiperSlide>
+        <SwiperSlide className="swiper-item">
           <PersonCard image={user2} name="Winner Akako" post="CEO / CTO" />
         </SwiperSlide>
       </Swiper>

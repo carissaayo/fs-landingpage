@@ -41,7 +41,7 @@ const CheckoutFormA = () => {
             <Label className="">
               Last Name <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border border-gray-300 border-gray-300 p-4" />
+            <Input className="border border-gray-300p-4" />
           </div>
         </div>
 

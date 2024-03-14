@@ -112,6 +112,38 @@ div.nav__transform.active {
   }
 }
 
+/* Swiper js For About us page*/
+.swiper.about .swiper.mobile {
+  width: 100%;
+  height: 400px !important;
+  padding: 0 40px;
+  position: relative !important;
+  --swiper-navigation-size: 20px;
+  --swiper-navigation-top-offset: 40%;
+  --swiper-navigation-sides-offset: 0px;
+  --swiper-navigation-color: black;
+  --swiper-pagination-color: black;
+}
+
+@media (max-width: 840px) {
+  .swiper.about {
+    display: none !important;
+  }
+  .swiper.mobile {
+    display: block !important;
+    height: 450px !important;
+  }
+  .swiper.mobile > .swiper-item {
+    height: 400px !important;
+  }
+}
+
+@media (min-width: 841px) {
+  .swiper.mobile {
+    display: none !important;
+  }
+}
+
 /*  */
 /* Google Font */
 .poppins-regular {

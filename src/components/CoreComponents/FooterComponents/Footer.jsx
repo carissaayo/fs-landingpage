@@ -22,7 +22,7 @@ const Footer = () => {
             <img src={linkedinLogo} className="" />
           </div>
         </div>
-        <div className="flex-[1.5] text-lg flex flex-col lg:flex-row justify-between gap-4 lg:gap-0">
+        <div className="flex-[1.5] flex flex-col lg:flex-row justify-between gap-4 lg:gap-0">
           <ul className="">
             <li className=" mb-4 lg:mb-8 poppins-semibold">
               <Link to="/">Quick Links</Link>

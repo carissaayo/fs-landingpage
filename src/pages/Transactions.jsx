@@ -1,42 +1,14 @@
-import { useEffect, useState } from "react";
+import { ChevronLeft, ChevronRight, ChevronUp } from "lucide-react";
+import { Link } from "react-router-dom";
+
 import Nav from "../components/CoreComponents/NavComponents/Nav";
 import MobileNav from "../components/CoreComponents/MobileComponents/MobileNav";
 import Footer from "../components/CoreComponents/FooterComponents/Footer";
-import { ChevronLeft, ChevronRight, ChevronUp } from "lucide-react";
-import { Link } from "react-router-dom";
 import TransactionsTab from "../components/TransactionComponents/TransactionsTab";
 
 const Transactions = () => {
-  const [showTopBtn, setShowTopBtn] = useState(false);
-  const [scroll, setScroll] = useState(false);
-  const [stepContent, setStepContent] = useState(1);
-
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      setScroll(window.scrollY > 10);
-    });
-  });
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 400) {
-        setShowTopBtn(true);
-      } else {
-        setShowTopBtn(false);
-      }
-    });
-  }, []);
-  useEffect(() => goToTop(), []);
-  const goToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
   return (
     <main className="w-full h-full relative">
-      <Nav scroll={scroll} isBuy={1} />
-
-      <MobileNav isBuy={1} scroll={scroll} />
       <section className=" px-4 xs:px-8 md:px-16 lg:px-20 2xl:px-32 poppins-regular pb-12">
         {/* GoBack  */}
         <div className="px-8 xs:px-0 py-6 poppins-semibold ">
@@ -68,14 +40,6 @@ const Transactions = () => {
         {/* Tabs */}
         <TransactionsTab />
       </section>
-
-      <Footer />
-      <div className="top-to-btm">
-        {" "}
-        {showTopBtn && (
-          <ChevronUp className="icon-position icon-style" onClick={goToTop} />
-        )}{" "}
-      </div>
     </main>
   );
 };

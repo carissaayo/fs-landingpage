@@ -35,17 +35,6 @@ const MobileNav = ({ scroll, isBuy }) => {
           <div className="flex-1 flex items-center justify-end gap-6">
             <div className="w-[120px]  rounded-xl  border-[#292761] border-2 flex items-center justify-between">
               <Link
-                onClick={() => setBuyOrSell("sell")}
-                to="/sell"
-                className={`w-1/2 text-center py-2 rounded-l-lg  ${
-                  buyOrSell === "sell"
-                    ? "bg-[#292761] text-white "
-                    : "text-[#C0C0C0]"
-                }`}
-              >
-                Sell
-              </Link>
-              <Link
                 onClick={() => setBuyOrSell("buy")}
                 to="/"
                 className={`w-1/2 text-center py-2 ${
@@ -55,6 +44,17 @@ const MobileNav = ({ scroll, isBuy }) => {
                 }`}
               >
                 Buy
+              </Link>
+              <Link
+                onClick={() => setBuyOrSell("sell")}
+                to="/sell"
+                className={`w-1/2 text-center py-2 rounded-l-lg  ${
+                  buyOrSell === "sell"
+                    ? "bg-[#292761] text-white "
+                    : "text-[#C0C0C0]"
+                }`}
+              >
+                Sell
               </Link>
             </div>
             <div className="">

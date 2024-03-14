@@ -34,19 +34,8 @@ const Nav = ({ scroll, isBuy }) => {
         <div className="flex-1">
           <div className="w-[150px]  rounded-xl  border-[#292761] border-2 flex items-center justify-between">
             <Link
-              onClick={() => setBuyOrSell("sell")}
-              to="/"
-              className={`w-1/2 text-center py-3 rounded-l-lg  ${
-                buyOrSell === "sell"
-                  ? "bg-[#292761] text-white "
-                  : "text-[#C0C0C0]"
-              }`}
-            >
-              Sell
-            </Link>
-            <Link
               onClick={() => setBuyOrSell("buy")}
-              to="/buy"
+              to="/"
               className={`w-1/2 text-center py-3 ${
                 buyOrSell === "buy"
                   ? "bg-[#292761] text-white "
@@ -55,9 +44,20 @@ const Nav = ({ scroll, isBuy }) => {
             >
               Buy
             </Link>
+            <Link
+              onClick={() => setBuyOrSell("sell")}
+              to="/sell"
+              className={`w-1/2 text-center py-3 rounded-l-lg  ${
+                buyOrSell === "sell"
+                  ? "bg-[#292761] text-white "
+                  : "text-[#C0C0C0]"
+              }`}
+            >
+              Sell
+            </Link>
           </div>
         </div>
-        <div className="flex justify-between flex-1 gap-12">
+        <div className="flex justify-end flex-1 gap-20">
           <NavMenu />
           {isLoggedIn ? (
             <div className="">

@@ -2,7 +2,7 @@ import buyHeroImg from "../../../assets/images/hero-buy.png";
 
 const BuyHero = () => {
   return (
-    <section className=" w-full md:hero__height   text-center md:text-left  px-8 md:px-16 lg:px-20 2xl:px-32  text-white relative poppins-regular  sell-hero-bg  pt-20  md:pt-20  pb-32 lg:pt-12  2xl:pt-20 lg:pb-40 ">
+    <section className=" w-full md:hero__height   text-center md:text-left  px-8 md:px-16 lg:px-20 2xl:px-32   bg-[#0E0C4D] text-white relative poppins-regular   pt-20  md:pt-20  pb-32 lg:pt-12  2xl:pt-20 lg:pb-40 ">
       <div className="flex flex-col md:flex-row items-center justify-between w-full  gap-12 md:gap-4 2xl:gap-8">
         <div className="md:flex-1  mb-8">
           <h2 className="text-white poppins-medium text-2xl   md:text-[40px]  leading-[50px] mb-8   2xl:w-4/5">

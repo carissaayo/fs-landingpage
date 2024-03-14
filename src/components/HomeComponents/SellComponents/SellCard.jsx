@@ -7,10 +7,10 @@ const SellCard = () => {
   return (
     <Link
       to="/gadgets/123"
-      className="flex flex-col border border-gray-200 rounded-3xl min-w-[200px] lg:min-w-[250px]"
+      className="flex flex-col border border-gray-200  min-w-[200px] lg:min-w-[250px]"
     >
-      <div className="w-full">
-        <img src={phoneImg} alt="" className="w-full" />
+      <div className="w-full flex items-center  justify-center py-6">
+        <img src={phoneImg} alt="" className="w-[80%]" />
       </div>
       <div className="flex flex-col gap-4 px-4 py-4">
         <h1 className="text-left">Apple Macbook Air 13 Inch</h1>

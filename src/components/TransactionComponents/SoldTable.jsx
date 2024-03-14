@@ -11,8 +11,8 @@ import SoldRow from "./SoldRow";
 
 const SoldTable = () => {
   return (
-    <ScrollArea className="w-full overflow-x-scroll">
-      <Table className="w-full min-w-[800px]   mb-4">
+    <ScrollArea className="w-full ">
+      <Table className=" min-w-[800px]   mb-4">
         <TableHeader>
           <TableRow className="bg-[#F3F3F3] text-black">
             <TableHead className="text-black">Name/Device</TableHead>

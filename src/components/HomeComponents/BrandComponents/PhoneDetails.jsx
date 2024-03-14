@@ -154,11 +154,6 @@ const PhoneDetails = ({ stepContent }) => {
             </Select>
           </div>
         </div>
-        <div className="w-full flex items-center justify-center">
-          <Button className="bg-[#0E0C4D] border-[#B1B1B1] hover:bg-[#0E0C4D] hover:border-[#B1B1B1] w-1/2 py-8 text-lg rounded-xl">
-            Continue
-          </Button>
-        </div>
       </div>
     </section>
   );

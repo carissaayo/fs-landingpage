@@ -21,7 +21,7 @@ const User = () => {
           </div>
         </div>
         {/* Words */}
-        <div className="flex-[2]">
+        <div className="flex-[2] py-20">
           <div className="w-4/5 mx-auto text-lg flex flex-col gap-4">
             <p className="">
               I tested positive for COVID on the 31st of December, 2020. The

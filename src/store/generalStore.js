@@ -4,8 +4,11 @@ export const useGeneralStore = create((set) => ({
   buyOrSell: "sell",
   setBuyOrSell: (value) => set({ buyOrSell: value }),
   showContent: 1,
-
   setShowContent: (value) => set({ showContent: value }),
+  showCheckoutContent: 1,
+  setCheckoutContent: (value) => set({ showCheckoutContent: value }),
+  checkoutStep: 1,
+  setCheckoutStep: (value) => set({ checkoutStep: value }),
   imageList: [],
   setImageList: (value) => set({ imageList: value }),
   previewImage: false,
@@ -18,4 +21,6 @@ export const useGeneralStore = create((set) => ({
   setUrlList: (value) => set({ urlList: value }),
   gadget: [],
   setGadget: (value) => set({ gadget: value }),
+  teamIndex: 1,
+  setTeamIndex: (value) => set({ teamIndex: value }),
 }));

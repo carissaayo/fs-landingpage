@@ -12,13 +12,11 @@ import PersonCard from "./PersonCard";
 
 const PeopleSlider = () => {
   return (
-    <section className="relative w-[80%] mx-auto  px-8 md:px-16 lg:px-20 2xl:px-32  mb-10 py-12 poppins-regular">
+    <section className="relative w-full mx-auto  px-8 md:px-16 lg:px-20 2xl:px-32  mb-10 py-12 poppins-regular">
       <h1 className="poppins-semibold text-2xl mb-6 px-12">People</h1>
       <Swiper
         spaceBetween={window.innerWidth > 1024 ? 50 : 20}
         slidesPerView={3}
-        // onSlideChange={() => console.log("slide change")}
-        // onSwiper={(swiper) => console.log(swiper)}
         navigation={true}
         pagination={{
           clickable: true,

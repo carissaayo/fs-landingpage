@@ -1,28 +1,36 @@
 import { useEffect, useState } from "react";
+import { ChevronRight, ChevronUp } from "lucide-react";
+import { Link } from "react-router-dom";
+
+import { RadioGroup, RadioGroupItem } from "../components/ui/radio-group";
+import { Label } from "../components/ui/label";
+import { Button } from "../components/ui/button";
+
 import Nav from "../components/CoreComponents/NavComponents/Nav";
 import MobileNav from "../components/CoreComponents/MobileComponents/MobileNav";
 import Footer from "../components/CoreComponents/FooterComponents/Footer";
-import { ChevronRight, ChevronUp } from "lucide-react";
-import GoBack from "../components/CoreComponents/Core/GoBack";
-import { Link } from "react-router-dom";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "../components/ui/accordion";
 
 import CheckoutFormA from "../components/CheckoutComponents/CheckoutFormA";
 import CheckoutFormB from "../components/CheckoutComponents/CheckoutFormB";
 import CheckoutFormC from "../components/CheckoutComponents/CheckoutFormC";
 import CheckoutFormD from "../components/CheckoutComponents/CheckoutFormD";
-import { RadioGroup, RadioGroupItem } from "../components/ui/radio-group";
-import { Label } from "../components/ui/label";
-import { Button } from "../components/ui/button";
+
+import { useGeneralStore } from "../store/generalStore";
+import Steps from "../components/CheckoutComponents/Steps";
+
 const Checkout = () => {
   const [showTopBtn, setShowTopBtn] = useState(false);
   const [scroll, setScroll] = useState(false);
-  const [buyOrSell, setBuyOrSell] = useState("sell");
+
+  const showCheckoutContent = useGeneralStore(
+    (state) => state.showCheckoutContent
+  );
+  const setCheckoutContent = useGeneralStore(
+    (state) => state.setCheckoutContent
+  );
+
+  const checkoutStep = useGeneralStore((state) => state.checkoutStep);
+  const setCheckoutStep = useGeneralStore((state) => state.setCheckoutStep);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -49,9 +57,9 @@ const Checkout = () => {
     <main className="w-full h-full relative">
       <Nav scroll={scroll} isBuy={1} />
       <MobileNav scroll={scroll} isBuy={1} />
-      <section className="px-8 md:px-16 lg:px-20 2xl:px-32 poppins-regular pb-12 ">
-        {/* Mobile Go Back */}
-        <GoBack />
+      <section className="px-6 sm:px-8 md:px-16 lg:px-20 2xl:px-32 poppins-regular ">
+        {/*  Go Back */}
+
         <div className="hidden sm:block py-6 poppins-semibold">
           <p className="flex items-center xs:gap-1 sm:gap-4 text-sm sm:text-base">
             <Link to="/">Home</Link>
@@ -63,56 +71,45 @@ const Checkout = () => {
             </span>
           </p>
         </div>
+        <Steps />
       </section>
       <section className="flex flex-col lg:flex-row justify-between px-8 md:px-16 lg:px-20 2xl:px-32 poppins-regular pb-12 gap-12  xl:gap-32 xs:w-[80%] sm:w-full mx-auto sm:mx-0">
-        <div className="flex-1 lg:flex-[1.5]">
+        <div className="flex-1 lg:flex-[1.5] relative">
           {/* KYC Details 1 */}
-          <Accordion type="single" collapsible className="mb-10">
-            <AccordionItem value="item-1">
-              <AccordionTrigger className="hover:no-underline poppins-bold text-lg">
-                KYC details (1)
-              </AccordionTrigger>
-              <AccordionContent>
-                <CheckoutFormA />
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+          <CheckoutFormA />
 
           {/* KYC Details 2 */}
 
-          <Accordion type="single" collapsible className="mb-10">
-            <AccordionItem value="item-1">
-              <AccordionTrigger className="hover:no-underline poppins-bold text-lg">
-                KYC details (2)
-              </AccordionTrigger>
-              <AccordionContent>
-                <CheckoutFormB />
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+          <CheckoutFormB />
           {/* Guarantor Details */}
-          <Accordion type="single" collapsible className="mb-10">
-            <AccordionItem value="item-1">
-              <AccordionTrigger className="hover:no-underline poppins-bold text-lg">
-                Guarantors Details
-              </AccordionTrigger>
-              <AccordionContent>
-                <CheckoutFormC />
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+
+          <CheckoutFormC />
 
           {/* Delivery Details */}
-          <Accordion type="single" collapsible className="mb-10">
-            <AccordionItem value="item-1">
-              <AccordionTrigger className="hover:no-underline poppins-bold text-lg">
-                Delivery Address
-              </AccordionTrigger>
-              <AccordionContent>
-                <CheckoutFormD />
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+
+          <CheckoutFormD />
+          <div className="w-full flex justify-center sm:justify-end items-center  gap-6 mb-10">
+            <Button
+              className="w-28 bg-[#F0F0F0] hover:bg-[#F0F0F0] text-black hover:text-black text-base rounded-2xl border border-[#ACACAC] h-[50px]"
+              onClick={() => {
+                if (showCheckoutContent === 1 || checkoutStep === 1) return;
+                setCheckoutContent(showCheckoutContent - 1);
+                setCheckoutStep(checkoutStep - 1);
+              }}
+            >
+              Back
+            </Button>
+            <Button
+              className="bg-[#0C0F4D] hover:bg-[#0C0F4D] rounded-2xl w-28 h-[50px]"
+              onClick={() => {
+                if (showCheckoutContent === 4 || checkoutStep === 4) return;
+                setCheckoutContent(showCheckoutContent + 1);
+                setCheckoutStep(checkoutStep + 1);
+              }}
+            >
+              Next
+            </Button>
+          </div>
         </div>
         <div className="flex-1">
           {/* Payment Summary */}

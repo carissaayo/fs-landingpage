@@ -1,9 +1,19 @@
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
+import { useGeneralStore } from "../../store/generalStore";
 
 const CheckoutFormC = () => {
+  const showCheckoutContent = useGeneralStore(
+    (state) => state.showCheckoutContent
+  );
   return (
-    <>
+    <section
+      className={` ${
+        showCheckoutContent === 3
+          ? "translate-x-0 w-full relative poppins-regular "
+          : "translate-x-[-200%] h-0"
+      }`}
+    >
       <p className="text-[#898686] mb-4   xs:text-lg">
         Please provide 3 Guarantor details
       </p>
@@ -132,7 +142,7 @@ const CheckoutFormC = () => {
           </div>
         </div>
       </section>
-    </>
+    </section>
   );
 };
 

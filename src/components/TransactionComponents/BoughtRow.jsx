@@ -1,11 +1,11 @@
+import { useState } from "react";
+import { X } from "lucide-react";
+import { Drawer } from "@mui/material";
+
+import { Button } from "../ui/button";
 import { TableCell, TableRow } from "../ui/table";
 
 import phoneImg from "../../assets/images/gadget.png";
-import { Button } from "../ui/button";
-import { X } from "lucide-react";
-import { useState } from "react";
-import { Drawer } from "@mui/material";
-import { ScrollArea, ScrollBar } from "../ui/scroll-area";
 
 const BoughtRow = () => {
   const [openDetails, setOpenDetails] = useState(false);

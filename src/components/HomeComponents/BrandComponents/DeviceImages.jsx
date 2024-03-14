@@ -106,26 +106,11 @@ const DeviceImages = ({ stepContent }) => {
               />
             </div>
           </label>
-          {/* </FileUploader> */}
         </div>
       </div>
 
-      {/* <div className="w-full flex items-center justify-center mb-10">
-        <Button
-          disabled={!imageList.length === 4}
-          className="bg-[#0E0C4D] border-[#B1B1B1] hover:bg-[#0E0C4D] hover:border-[#B1B1B1] w-1/2 py-8 text-lg rounded-xl"
-          //  onClick={() => setShowContent(4)}
-        >
-          Continue
-        </Button>
-      </div> */}
       <ImageList />
-      <PaymentDialog title="Next" />
-      <AlertDialog
-        className="w-full"
-        open={previewImage}
-        // onOpenChange={addToList}
-      >
+      <AlertDialog className="w-full" open={previewImage}>
         <AlertDialogTrigger className="w-full"></AlertDialogTrigger>
         <AlertDialogContent>
           <AlertDialogHeader>
@@ -142,11 +127,6 @@ const DeviceImages = ({ stepContent }) => {
               className="w-1/2"
               onClick={() => addToList(showImage)}
             >
-              {/* <Button
-                className="bg-[#0E0C4D] border-[#B1B1B1] hover:bg-[#0E0C4D] hover:border-[#B1B1B1]  py-2 text-lg rounded-xl w-full"
-               
-              >
-              </Button> */}
               Continue
             </AlertDialogAction>
           </AlertDialogFooter>

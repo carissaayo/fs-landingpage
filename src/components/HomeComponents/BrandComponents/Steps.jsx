@@ -14,9 +14,9 @@ const Steps = ({ step }) => {
 
         {/* 2 */}
         <div
-          className={`rounded-full  h-[30px] w-[30px]  flex items-center justify-center text-white ${
+          className={`rounded-full  h-[30px] w-[30px]  flex items-center justify-center  ${
             step > 1
-              ? "bg-[#0E0C4D]"
+              ? "bg-[#0E0C4D] text-white"
               : " border text-[#858585] border-[#3858585]"
           }`}
         >
@@ -31,9 +31,9 @@ const Steps = ({ step }) => {
 
         {/* 3 */}
         <div
-          className={`rounded-full  h-[30px] w-[30px]  flex items-center justify-center text-white ${
+          className={`rounded-full  h-[30px] w-[30px]  flex items-center justify-center  ${
             step > 2
-              ? "bg-[#0E0C4D]"
+              ? "bg-[#0E0C4D] text-white"
               : " border text-[#858585] border-[#3858585]"
           }`}
         >
@@ -47,9 +47,9 @@ const Steps = ({ step }) => {
         ></div>
         {/* 4 */}
         <div
-          className={`rounded-full h-[30px] w-[30px]  flex items-center justify-center text-white ${
+          className={`rounded-full h-[30px] w-[30px]  flex items-center justify-center  ${
             step >= 4
-              ? "bg-[#0E0C4D]"
+              ? "bg-[#0E0C4D] text-white"
               : " border text-[#858585] border-[#3858585]"
           }`}
         >
@@ -63,9 +63,9 @@ const Steps = ({ step }) => {
         ></div>
         {/* 5 */}
         <div
-          className={`rounded-full  h-[30px] w-[30px]  flex items-center justify-center text-white ${
+          className={`rounded-full  h-[30px] w-[30px]  flex items-center justify-center  ${
             step === 5
-              ? "bg-[#0E0C4D]"
+              ? "bg-[#0E0C4D] text-white"
               : " border text-[#858585] border-[#3858585]"
           }`}
         >

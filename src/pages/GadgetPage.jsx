@@ -30,7 +30,7 @@ const GadgetPage = () => {
       }
     });
   }, []);
-  // useEffect(() => goToTop(), []);
+  useEffect(() => goToTop(), []);
   const goToTop = () => {
     window.scrollTo({
       top: 0,
@@ -51,15 +51,7 @@ const GadgetPage = () => {
               </span>
               Home
             </Link>
-            <span className="hidden sm:inline-block">
-              <ChevronRight className="h-4 w-4" />
-            </span>
-            <Link
-              to="/gadgets"
-              className="bg-[#F1F1F1]  px-2 sm:px-4 py-2 rounded-sm hidden sm:inline-block"
-            >
-              Phones
-            </Link>
+
             <span className="hidden sm:inline-block">
               <ChevronRight className="h-4 w-4" />
             </span>

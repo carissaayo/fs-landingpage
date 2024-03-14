@@ -8,11 +8,11 @@ import About from "./pages/About";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/sell",
     element: <Home />,
   },
   {
-    path: "/buy",
+    path: "/",
     element: <Buy />,
   },
   {

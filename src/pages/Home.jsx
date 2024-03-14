@@ -13,7 +13,7 @@ import Hero from "../components/HomeComponents/HeroComponents/Hero";
 
 import ModelsCon from "../components/HomeComponents/BrandComponents/ModelsCon";
 import PhoneDetails from "../components/HomeComponents/BrandComponents/PhoneDetails";
-import { useGeneralStore } from "../store/generalStore";
+
 import DeliveryDetails from "../components/HomeComponents/BrandComponents/DeliveryDetails";
 import DeviceImages from "../components/HomeComponents/BrandComponents/DeviceImages";
 import { Button } from "../components/ui/button";
@@ -56,7 +56,7 @@ const Home = () => {
           <PhoneDetails stepContent={stepContent} />
           <DeliveryDetails stepContent={stepContent} />
           <DeviceImages stepContent={stepContent} />
-          <div className="w-full flex justify-center dm:justify-end items-center sm:pr-32 gap-6 mb-10">
+          <div className="w-full flex justify-center sm:justify-end items-center sm:pr-32 gap-6 mb-10">
             <Button
               disbaled={stepContent === 1}
               className="w-28 bg-[#F0F0F0] hover:bg-[#F0F0F0] text-black hover:text-black text-base rounded-2xl border border-[#ACACAC] h-[50px]"
@@ -65,7 +65,7 @@ const Home = () => {
                 setStepContent(stepContent - 1);
               }}
             >
-              Prev
+              Back
             </Button>
             <Button
               disbaled={stepContent === 5}

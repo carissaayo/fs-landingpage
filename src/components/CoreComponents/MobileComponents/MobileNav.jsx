@@ -36,7 +36,7 @@ const MobileNav = ({ scroll, isBuy }) => {
             <div className="w-[120px]  rounded-xl  border-[#292761] border-2 flex items-center justify-between">
               <Link
                 onClick={() => setBuyOrSell("sell")}
-                to="/"
+                to="/sell"
                 className={`w-1/2 text-center py-2 rounded-l-lg  ${
                   buyOrSell === "sell"
                     ? "bg-[#292761] text-white "
@@ -47,7 +47,7 @@ const MobileNav = ({ scroll, isBuy }) => {
               </Link>
               <Link
                 onClick={() => setBuyOrSell("buy")}
-                to="/buy"
+                to="/"
                 className={`w-1/2 text-center py-2 ${
                   buyOrSell === "buy"
                     ? "bg-[#292761] text-white "

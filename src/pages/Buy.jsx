@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 import AboutUs from "../components/HomeComponents/AboutUsComponents/AboutUs";
 import Testimonial from "../components/HomeComponents/TestimonialComponents/Testimonial";
 import FAQs from "../components/HomeComponents/FAQsComponents/FAQs";
@@ -5,9 +7,19 @@ import SellCon from "../components/HomeComponents/SellComponents/SellCon";
 import BuyHero from "../components/HomeComponents/BuyNav.jsx/BuyHero";
 import HowItWorks from "../components/HomeComponents/HowItWorksComponents/HowItWorks";
 const Buy = () => {
+  const goToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+  useEffect(() => goToTop(), []);
+
   return (
     <main className="w-full h-full relative">
-      <BuyHero />
+      <section className="pt-12 md:pt-0">
+        <BuyHero />
+      </section>
       <SellCon />
       <HowItWorks />
 

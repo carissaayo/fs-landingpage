@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { CircleUserRoundIcon, LogOut, Menu, X } from "lucide-react";
 
 import { useGeneralStore } from "../../../store/generalStore";
@@ -12,18 +12,21 @@ const MobileNav = ({ scroll, isBuy }) => {
   const [openMobile, setOpenMobile] = useState(false);
   const buyOrSell = useGeneralStore((state) => state.buyOrSell);
   const setBuyOrSell = useGeneralStore((state) => state.setBuyOrSell);
+  const location = useLocation();
+  const sellLinkUrl = "/sell";
 
   useEffect(() => {
-    if (isBuy === 1) {
-      setBuyOrSell("buy");
-    } else {
+    console.log(location);
+    if (location.pathname.includes(sellLinkUrl)) {
       setBuyOrSell("sell");
+    } else {
+      setBuyOrSell("buy");
     }
-  }, [isBuy]);
+  }, [location.pathname]);
   return (
     <section
-      className={`${scroll ? "fixed" : ""}
-        md:hidden  z-20 bg-[#0E0C4D] w-full left-0   py-6   px-4  poppins-regular relative `}
+      className={`
+        md:hidden  z-20 bg-[#0E0C4D] w-full left-0   py-6   px-4  poppins-regular  fixed`}
     >
       <div className="relative">
         <div className="flex w-full items-center justify-between">

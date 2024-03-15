@@ -1,7 +1,7 @@
 import { Badge } from "../../ui/badge";
 import { useGeneralStore } from "../../../store/generalStore";
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 const brands = [
   "apple",
   "google",
@@ -18,8 +18,7 @@ const brands = [
 const Models = () => {
   const setShowContent = useGeneralStore((state) => state.setShowContent);
   const [model, setModel] = useState("");
-  const location = useLocation();
-  console.log(location);
+
   return (
     <div className="grid grid-cols-3 xs:grid-cols-4 sm:grid-cols-6 gap-4 xs:gap-6 sm:gap-6   my-12">
       {brands.map((phone, i) => (

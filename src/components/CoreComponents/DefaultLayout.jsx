@@ -23,7 +23,6 @@ const DefaultLayout = () => {
       }
     });
   }, []);
-  useEffect(() => goToTop(), []);
   const goToTop = () => {
     window.scrollTo({
       top: 0,
@@ -34,8 +33,8 @@ const DefaultLayout = () => {
   return (
     <main className="w-full h-full relative ">
       <Nav />
-      <MobileNav />
-      <Outlet />
+      <MobileNav scroll={scroll} />
+      <Outlet goToTop={goToTop} />
 
       <Footer />
       <div className="top-to-btm">

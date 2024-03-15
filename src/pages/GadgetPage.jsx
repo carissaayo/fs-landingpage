@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 import { Badge } from "../components/ui/badge";
 import { Button } from "../components/ui/button";
 import { Label } from "../components/ui/label";
@@ -6,9 +8,17 @@ import PaymentCon from "../components/GadgetPageComponents/PaymentCon";
 import GadgetImageSlider from "../components/GadgetPageComponents/GadgetImageSlider";
 
 const GadgetPage = () => {
+  const goToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+  useEffect(() => goToTop(), []);
+
   return (
     <main className="">
-      <section className="xs:px-8 md:px-16 lg:px-20 2xl:px-32 poppins-regular pb-12 pt-32">
+      <section className="xs:px-8 md:px-16 lg:px-20 2xl:px-32 poppins-regular pb-12  pt-16 md:pt-32">
         <section className="flex flex-col md:flex-row  justify-center md:justify-between my-6 gap-12 lg:gap-20 xs:w-[90%] sm:w-[80%] md:w-full mx-auto relative">
           <div className="flex-1">
             <div className="max-w-[560px] h-[600px] xs:h-auto mb-10">
@@ -103,7 +113,7 @@ const GadgetPage = () => {
                 Enter your first deposit below
               </p>
 
-              <div className="flex items-center gap-3 mt-4  border lg:border-b border-gray-200    rounded-xl py-1">
+              <div className="flex items-center gap-3 mt-4  border lg:border-b border-gray-200    rounded-xl">
                 <span className="bg-[#130D52] text-white poppins-semibold text-xl p-2 sm:p-4 px-6 rounded-l-xl">
                   ₦
                 </span>

@@ -1,12 +1,21 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import PhoneDetails from "../../components/HomeComponents/BrandComponents/PhoneDetails";
 
 const DeviceDetails = () => {
+  const goToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+  useEffect(() => goToTop(), []);
+
   return (
     <main className="w-full h-full relative ">
       <section className="">
-        <section id="sell" className="relative bg-white pt-32 ">
+        <section id="sell" className="relative bg-white pt-12 md:pt-32 ">
           <PhoneDetails stepContent={3} />
         </section>
         <div className="w-full flex justify-center sm:justify-end items-center  gap-6 mb-10 sm:pr-16">

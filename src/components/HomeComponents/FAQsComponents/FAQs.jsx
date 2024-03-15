@@ -14,7 +14,7 @@ const FAQs = () => {
       <div className="w-full ">
         <div className="md:w-[70%] 2xl:w-1/2 flex item-center justify-center mx-auto">
           <Accordion type="single" collapsible className="w-full ">
-            <AccordionItem value="item-1" className="border-none mb-8">
+            <AccordionItem value="item-1" className="border-none mb-4">
               <AccordionTrigger className="border border-gray-300 p-4 no-underline hover:no-underline">
                 What is Fairshop about?
               </AccordionTrigger>
@@ -25,7 +25,7 @@ const FAQs = () => {
                 beatae. Quidem porro placeat animi eaque.
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="item-2" className="border-none mb-8">
+            <AccordionItem value="item-2" className="border-none mb-4">
               <AccordionTrigger className="border border-gray-300 p-4 no-underline hover:no-underline">
                 How can I sell on Fairshop?
               </AccordionTrigger>
@@ -36,7 +36,7 @@ const FAQs = () => {
                 beatae. Quidem porro placeat animi eaque.
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="item-3" className="border-none mb-8">
+            <AccordionItem value="item-3" className="border-none mb-4">
               <AccordionTrigger className="border border-gray-300 p-4 no-underline hover:no-underline">
                 How does Payment work on Fairshop?
               </AccordionTrigger>
@@ -48,7 +48,7 @@ const FAQs = () => {
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-4" className="border-none mb-8">
+            <AccordionItem value="item-4" className="border-none mb-4">
               <AccordionTrigger className="border border-gray-300 p-4 no-underline hover:no-underline">
                 How can i reach your customer service support?
               </AccordionTrigger>

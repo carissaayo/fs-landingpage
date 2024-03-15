@@ -1,12 +1,18 @@
-import { ChevronLeft, ChevronRight, ChevronUp } from "lucide-react";
+import { useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-import Nav from "../components/CoreComponents/NavComponents/Nav";
-import MobileNav from "../components/CoreComponents/MobileComponents/MobileNav";
-import Footer from "../components/CoreComponents/FooterComponents/Footer";
 import TransactionsTab from "../components/TransactionComponents/TransactionsTab";
 
 const Transactions = () => {
+  const goToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+  useEffect(() => goToTop(), []);
+
   return (
     <main className="w-full h-full relative">
       <section className=" px-4 xs:px-8 md:px-16 lg:px-20 2xl:px-32 poppins-regular pb-12">

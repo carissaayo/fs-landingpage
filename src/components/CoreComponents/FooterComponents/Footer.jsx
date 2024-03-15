@@ -9,11 +9,11 @@ const Footer = () => {
   return (
     <section className="w-full  bg-[#FAFAFA] px-8  md:px-16 lg:px-20 2xl:px-32  relative poppins-regular  py-20 ">
       <div className="flex flex-col lg:flex-row  justify-between mb-8  gap-16 md:gap-8">
-        <div className="flex-1 flex flex-col gap-4">
+        <div className="flex-1 flex flex-col gap-2">
           <Link to="/">
-            <img src={footerLogo} alt="" className="mb-4 w-[150px]" />
+            <img src={footerLogo} alt="" className=" w-[150px]" />
           </Link>
-          <p className="w-[70%] lg:w-full poppins-semibold">
+          <p className="w-[70%] lg:w-full poppins-semibold mb-4">
             The easiest place to sell your smartphones faster and conveniently
           </p>
           <div className="flex items-center gap-6 ">

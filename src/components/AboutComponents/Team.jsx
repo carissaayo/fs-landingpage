@@ -1,4 +1,3 @@
-import { Star } from "lucide-react";
 import Carousel from "./Carousel";
 import { useGeneralStore } from "../../store/generalStore";
 

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import NavMenu from "./NavMenu";
 import { Button } from "../../ui/button";
@@ -12,13 +12,17 @@ const Nav = ({ isBuy }) => {
   const buyOrSell = useGeneralStore((state) => state.buyOrSell);
   const setBuyOrSell = useGeneralStore((state) => state.setBuyOrSell);
   const isLoggedIn = true;
+  const location = useLocation();
+  const sellLinkUrl = "/sell";
+
   useEffect(() => {
-    if (isBuy === 1) {
-      setBuyOrSell("buy");
-    } else {
+    console.log(location);
+    if (location.pathname.includes(sellLinkUrl)) {
       setBuyOrSell("sell");
+    } else {
+      setBuyOrSell("buy");
     }
-  }, [isBuy]);
+  }, [location.pathname]);
 
   return (
     <section

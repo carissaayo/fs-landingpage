@@ -1,6 +1,5 @@
+import { Upload } from "lucide-react";
 import { Button } from "../../ui/button";
-import { Input } from "../../ui/input";
-import { Label } from "../../ui/label";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -13,11 +12,8 @@ import {
   AlertDialogTrigger,
 } from "../../ui/alert-dialog";
 import { useGeneralStore } from "../../../store/generalStore";
-import { FileUploader } from "react-drag-drop-files";
-import { useState } from "react";
-import { Upload } from "lucide-react";
+
 import ImageList from "./ImageList";
-import PaymentDialog from "../../PaymentSignUpComponents/PaymentDialog";
 import Steps from "./Steps";
 
 const DeviceImages = ({ stepContent }) => {
@@ -28,8 +24,6 @@ const DeviceImages = ({ stepContent }) => {
 
   const imageList = useGeneralStore((state) => state.imageList);
   const setImageList = useGeneralStore((state) => state.setImageList);
-  const showContent = useGeneralStore((state) => state.showContent);
-  const setShowContent = useGeneralStore((state) => state.setShowContent);
   const imageName = useGeneralStore((state) => state.imageName);
   const setImageName = useGeneralStore((state) => state.setImageName);
   const urlList = useGeneralStore((state) => state.urlList);
@@ -112,19 +106,25 @@ const DeviceImages = ({ stepContent }) => {
       <ImageList />
       <AlertDialog className="w-full" open={previewImage}>
         <AlertDialogTrigger className="w-full"></AlertDialogTrigger>
-        <AlertDialogContent>
+        <AlertDialogContent className="w-[80%] md:w-full">
           <AlertDialogHeader>
             <AlertDialogTitle>Image Preview</AlertDialogTitle>
             <AlertDialogDescription>
-              <img src={showImage} alt="" className="" />
+              <div className="flex items-center justify-center">
+                <img
+                  src={showImage}
+                  alt=""
+                  className="h-[200px] w-[250px] md:w-auto md:h-auto"
+                />
+              </div>
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter className="w-full ">
-            <AlertDialogCancel className="w-1/2" onClick={handleCancel}>
+            <AlertDialogCancel className="sm:w-1/2" onClick={handleCancel}>
               Cancel
             </AlertDialogCancel>
             <AlertDialogAction
-              className="w-1/2"
+              className="sm:w-1/2"
               onClick={() => addToList(showImage)}
             >
               Continue

@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 import { RadioGroup, RadioGroupItem } from "../components/ui/radio-group";
 import { Label } from "../components/ui/label";
 import { Button } from "../components/ui/button";
@@ -10,8 +12,25 @@ import CheckoutFormB from "../components/CheckoutComponents/CheckoutFormB";
 import CheckoutFormC from "../components/CheckoutComponents/CheckoutFormC";
 import CheckoutFormD from "../components/CheckoutComponents/CheckoutFormD";
 import Steps from "../components/CheckoutComponents/Steps";
+import { useGeneralStore } from "../store/generalStore";
 
 const Checkout = () => {
+  const showCheckoutContent = useGeneralStore(
+    (state) => state.showCheckoutContent
+  );
+  const checkoutStep = useGeneralStore((state) => state.checkoutStep);
+  const setCheckoutContent = useGeneralStore(
+    (state) => state.setCheckoutContent
+  );
+  const setCheckoutStep = useGeneralStore((state) => state.setCheckoutStep);
+  const goToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+  useEffect(() => goToTop(), []);
+
   return (
     <main className="w-full h-full relative">
       <Nav isBuy={1} />

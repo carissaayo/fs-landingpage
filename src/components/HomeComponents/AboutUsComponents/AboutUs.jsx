@@ -1,4 +1,4 @@
-import { ChevronDown } from "lucide-react";
+import { Plus } from "lucide-react";
 import { Button } from "../../ui/button";
 
 const AboutUs = () => {
@@ -30,9 +30,9 @@ const AboutUs = () => {
         </div>
       </div>
       <div className="text-center  pt-12">
-        <Button className="bg-[#D3D2DE] hover:bg-[#D3D2DE] md:bg-[#140D53]  md:hover:bg-[#140D53] text-[#130D52] md:text-white ]  rounded-2xl   ">
-          <a href="#brands" className=" flex px-2">
-            Sell Now <ChevronDown className="h-6 w-6 ml-2" />
+        <Button className="bg-[#D3D2DE] hover:bg-[#D3D2DE] md:bg-[#140D53]  md:hover:bg-[#140D53] text-[rgb(19,13,82)] md:text-white ]  rounded-2xl   ">
+          <a href="#brands" className=" flex px-2 items-center">
+            Sell Now <Plus className="h-4 w-4 ml-2" />
           </a>
         </Button>
       </div>

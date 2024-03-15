@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Button } from "../../ui/button";
 import { Input } from "../../ui/input";
 import { Label } from "../../ui/label";
@@ -42,7 +41,7 @@ const PhoneDetails = ({ stepContent }) => {
       <Steps step={3} />
 
       <div className="mb-20 flex flex-col gap-12">
-        <div className="flex flex-col sm:flex-row justify-between gap-20  ">
+        <div className="flex flex-col sm:flex-row justify-between gap-12 sm:gap-20  ">
           {/* First Name */}
           <div className="flex-1 flex flex-col gap-4">
             <Label className="">
@@ -56,28 +55,36 @@ const PhoneDetails = ({ stepContent }) => {
             <Label className="">
               Fault condition <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Select>
-              <SelectTrigger className="  border-gray-500 p-4 py-6">
-                <SelectValue
-                  placeholder="Select the Phones Fault Condition"
-                  className=""
-                />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectGroup>
-                  <SelectLabel>Select the fault</SelectLabel>
-                  <SelectItem value="apple">Broken Screen</SelectItem>
-                  <SelectItem value="banana">Banana</SelectItem>
-                  <SelectItem value="blueberry">Blueberry</SelectItem>
-                  <SelectItem value="grapes">Grapes</SelectItem>
-                  <SelectItem value="pineapple">Pineapple</SelectItem>
-                </SelectGroup>
-              </SelectContent>
-            </Select>
+            <select
+              name=""
+              id=""
+              className="border border-gray-500 p-4 rounded-lg"
+              defaultValue=""
+              placeholder="Select the Phones Fault Condition"
+            >
+              <option value="apple" className="">
+                Broken Screen
+              </option>
+              <option value="apple" className="">
+                Broken Screen
+              </option>{" "}
+              <option value="apple" className="">
+                Broken Screen
+              </option>{" "}
+              <option value="apple" className="">
+                Broken Screen
+              </option>{" "}
+              <option value="apple" className="">
+                Broken Screen
+              </option>{" "}
+              <option value="apple" className="">
+                Broken Screen
+              </option>
+            </select>
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-between gap-20 ">
+        <div className="flex flex-col sm:flex-row justify-between gap-12 sm:gap-20 ">
           {/* First Name */}
           <div className="flex-1 flex flex-col gap-4">
             <Label className="">
@@ -91,68 +98,101 @@ const PhoneDetails = ({ stepContent }) => {
             <Label className="">
               Phone Type <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Select>
-              <SelectTrigger className="p-4 py-6 border-gray-500">
-                <SelectValue placeholder="e.g fairly used or brand new" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectGroup>
-                  <SelectLabel>Select the phone type</SelectLabel>
-                  <SelectItem value="apple">Broken Screen</SelectItem>
-                  <SelectItem value="banana">Banana</SelectItem>
-                  <SelectItem value="blueberry">Blueberry</SelectItem>
-                  <SelectItem value="grapes">Grapes</SelectItem>
-                  <SelectItem value="pineapple">Pineapple</SelectItem>
-                </SelectGroup>
-              </SelectContent>
-            </Select>
+            <select
+              name=""
+              id=""
+              className="border border-gray-500 p-4 rounded-lg"
+              defaultValue=""
+              placeholder="Select the Phones Fault Condition"
+            >
+              <option value="apple" className="">
+                Broken Screen
+              </option>
+              <option value="apple" className="">
+                Broken Screen
+              </option>{" "}
+              <option value="apple" className="">
+                Broken Screen
+              </option>{" "}
+              <option value="apple" className="">
+                Broken Screen
+              </option>{" "}
+              <option value="apple" className="">
+                Broken Screen
+              </option>{" "}
+              <option value="apple" className="">
+                Broken Screen
+              </option>
+            </select>
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-between gap-20 ">
+        <div className="flex flex-col sm:flex-row justify-between gap-12 sm:gap-20 ">
           {/* First Name */}
           <div className="flex-1 flex flex-col gap-4">
             <Label className="">
               Screen Condition <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Select>
-              <SelectTrigger className="p-4 py-6 border-gray-500">
-                <SelectValue placeholder="Select the Screen Condition" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectGroup>
-                  <SelectLabel>Select the fault</SelectLabel>
-                  <SelectItem value="apple">Broken Screen</SelectItem>
-                  <SelectItem value="banana">Banana</SelectItem>
-                  <SelectItem value="blueberry">Blueberry</SelectItem>
-                  <SelectItem value="grapes">Grapes</SelectItem>
-                  <SelectItem value="pineapple">Pineapple</SelectItem>
-                </SelectGroup>
-              </SelectContent>
-            </Select>
+            <select
+              name=""
+              id=""
+              className="border border-gray-500 p-4 rounded-lg"
+              defaultValue=""
+              placeholder="Select the Phones Fault Condition"
+            >
+              <option value="apple" className="">
+                Broken Screen
+              </option>
+              <option value="apple" className="">
+                Broken Screen
+              </option>{" "}
+              <option value="apple" className="">
+                Broken Screen
+              </option>{" "}
+              <option value="apple" className="">
+                Broken Screen
+              </option>{" "}
+              <option value="apple" className="">
+                Broken Screen
+              </option>{" "}
+              <option value="apple" className="">
+                Broken Screen
+              </option>
+            </select>
           </div>
 
-          {/* Last Name */}
+          {/* Fault */}
           <div className="flex-1 flex flex-col gap-4">
             <Label className="">
               How long have you been using the device?
               <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Select>
-              <SelectTrigger className="border-gray-500 p-4 py-6">
-                <SelectValue placeholder="Select the number of months" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectGroup>
-                  <SelectLabel>Select the fault</SelectLabel>
-                  <SelectItem value="apple">Broken Screen</SelectItem>
-                  <SelectItem value="banana">Banana</SelectItem>
-                  <SelectItem value="blueberry">Blueberry</SelectItem>
-                  <SelectItem value="grapes">Grapes</SelectItem>
-                  <SelectItem value="pineapple">Pineapple</SelectItem>
-                </SelectGroup>
-              </SelectContent>
-            </Select>
+            <select
+              name=""
+              id=""
+              className="border border-gray-500 p-4 rounded-lg"
+              defaultValue=""
+              placeholder="Select the Phones Fault Condition"
+            >
+              <option value="apple" className="">
+                Broken Screen
+              </option>
+              <option value="apple" className="">
+                Broken Screen
+              </option>{" "}
+              <option value="apple" className="">
+                Broken Screen
+              </option>{" "}
+              <option value="apple" className="">
+                Broken Screen
+              </option>{" "}
+              <option value="apple" className="">
+                Broken Screen
+              </option>{" "}
+              <option value="apple" className="">
+                Broken Screen
+              </option>
+            </select>
           </div>
         </div>
       </div>

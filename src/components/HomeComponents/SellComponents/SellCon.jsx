@@ -5,7 +5,7 @@ import { ScrollArea, ScrollBar } from "../../ui/scroll-area";
 
 const SellContainer = ({ title }) => {
   return (
-    <div className="w-full  mb-10">
+    <div className="w-full  mb-2">
       <h1 className="poppins-medium text-xl mb-8 w-full text-[#130D52] bg-[#130D52] bg-opacity-10 p-4">
         {title}
       </h1>
@@ -34,7 +34,7 @@ const SellContainer = ({ title }) => {
 
 const SellCon = () => {
   return (
-    <section className="w-full   pt-32 pb-20 lg:pt-32 lg:pb-32  px-4 xs:px-8 sm:px-12 md:px-16 lg:px-20 2xl:px-32  relative poppins-regular">
+    <section className="w-full   pt-52 pb-20 lg:pt-32 lg:pb-32  px-4 xs:px-8 sm:px-12 md:px-16 lg:px-20 2xl:px-32  relative poppins-regular">
       <SellForm />
       <div className="pt-60 lg:pt-0">
         <SellContainer title="Popular smartphones" />

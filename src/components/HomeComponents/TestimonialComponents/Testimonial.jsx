@@ -18,7 +18,7 @@ const Testimonial = () => {
       <div className="relative w-full hidden md:block">
         <Slider />
       </div>
-      <div className="flex flex-col md:hidden gap-12">
+      <div className="flex flex-col md:hidden gap-6">
         <TestiCard image={testi1} />
         <TestiCard image={testi1} />
         <TestiCard image={testi1} />

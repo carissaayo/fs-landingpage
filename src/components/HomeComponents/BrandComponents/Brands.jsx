@@ -14,7 +14,7 @@ const Brands = ({ stepContent }) => {
           : "translate-x-[-100%] h-0"
       }`}
     >
-      <div className="w-full items-center justify-center md:justify-between flex mb-2 pt-12">
+      <div className="w-full items-center justify-center md:justify-between flex mb-2 md:pt-12">
         <h1 className="poppins-semibold text-xl xs:text-3xl">
           Sell your smartphone
         </h1>

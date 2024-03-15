@@ -10,11 +10,11 @@ const ModelsCon = ({ stepContent }) => {
       id="brands"
       className={` ${
         stepContent === 2
-          ? "translate-x-0 w-full md:con__height px-4 xs:px-8 sm:px-12 md:px-16 lg:px-20 2xl:px-32  relative poppins-regular py-12 md:py-0"
+          ? "translate-x-0 w-full md:con__height px-4 xs:px-8 sm:px-12 md:px-16 lg:px-20 2xl:px-32  relative poppins-regular  "
           : "translate-x-[-100%] absolute h-0"
       }`}
     >
-      <div className="w-full items-center justify-center md:justify-between flex mb-4 pt-12">
+      <div className="w-full items-center justify-center md:justify-between flex mb-4 md:pt-12">
         <h1 className="poppins-semibold text-xl xs:text-3xl">
           Select Phone Model
         </h1>

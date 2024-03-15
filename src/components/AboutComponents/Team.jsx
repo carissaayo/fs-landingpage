@@ -5,7 +5,7 @@ import { useGeneralStore } from "../../store/generalStore";
 const Team = () => {
   const setTeamIndex = useGeneralStore((state) => state.setTeamIndex);
   return (
-    <section className="w-full h-[800px] xs:h-[600px]  sm:h-[500px] bg-[#0E0C4D] flex  sm:items-center justify-center pt-12 ">
+    <section className="w-full  h-[830px] xs:h-[600px]  sm:h-[500px] bg-[#0E0C4D] flex  sm:items-center justify-center pt-12 ">
       <div className=" w-[90%] xs:w-[80%] xl:w-[60%] h-[300px] flex flex-col sm:flex-row justify-between gap-12 md:gap-4 text-white">
         <div className="flex flex-col md:flex-1  gap-8 text-center sm:text-left">
           <p className=" poppins-medium">

@@ -1,8 +1,8 @@
 import userImg from "../../assets/images/user.png";
 const User = () => {
   return (
-    <section className="relative w-full  px-8 md:px-16 lg:px-20 2xl:px-32 h-[850px] xs:h-[800px] md:h-[500px] lg:h-[400px] mb-10">
-      <div className="absolute bg-white  rounded-lg flex  flex-col md:flex-row justify-between items-start top-[-50%] w-[85%] border pb-8 left-[8%] md:left-auto ">
+    <section className="relative w-full  px-8 md:px-16 lg:px-20 2xl:px-32 h-[1100px] xs:h-[910px] sm:h-[800px] md:h-[500px] lg:h-[400px] mb-10">
+      <div className="absolute bg-white  rounded-lg flex  flex-col md:flex-row justify-between items-start top-[-20%] ms:top-[-50%] w-[85%] border pb-8 left-[8%] md:left-auto ">
         {/* About */}
         <div className=" w-full flex-[2] xl:flex-1  flex flex-col gap-6">
           <div className="bg-[#00FFFC] bg-opacity-15 py-6 px-2 flex items-center justify-center">

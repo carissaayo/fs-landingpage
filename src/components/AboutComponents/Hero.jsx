@@ -2,7 +2,7 @@ const AboutHero = () => {
   return (
     <section
       className=" w-full  h-screen  text-center md:text-left  px-8 md:px-16 lg:px-20 2xl:px-32  text-white relative poppins-regular 
-       bg-[#0E0C4D]   pb-16   sm:pb-20  lg:pb-12 pt-48  2xl:pb-[200px]
+       bg-[#0E0C4D]   pb-0     lg:pb-12 pt-48  2xl:pb-[200px]
   "
     >
       <div className="flex flex-col md:flex-row items-center justify-between w-full  gap-12 md:gap-4 2xl:gap-8 ">

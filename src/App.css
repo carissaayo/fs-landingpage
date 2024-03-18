@@ -2,7 +2,7 @@ html {
   /* scroll-behavior: smooth; */
 }
 
-.hero__height {
+.gagdet .hero__height {
   height: calc(100vh - 100px);
 }
 .con__height {

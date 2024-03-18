@@ -6,7 +6,7 @@ import { ScrollArea, ScrollBar } from "../ui/scroll-area";
 
 const PaymentSignupForm = () => {
   return (
-    <ScrollArea className="overflow-y-scroll md:overflow-y-hidden h-[90%]  md:h-full w-full bg-white">
+    <ScrollArea className="   md:h-full w-full bg-white">
       <section className="py-6 px-4 overflow-y-scroll md:overflow-y-hidden">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 gap-x-8 w-full mb-10">
           {/* First Name */}

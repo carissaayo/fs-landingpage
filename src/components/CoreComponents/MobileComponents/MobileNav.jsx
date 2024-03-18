@@ -39,30 +39,32 @@ const MobileNav = () => {
               <img src={logoImg} alt="" className="w-[150px] " />
             </Link>
           </div>
-          <div className="flex-1 flex items-center justify-end gap-6">
-            <div className="w-[120px]  rounded-xl  border-[#292761] border-2 flex items-center justify-between">
-              <Link
-                onClick={() => setBuyOrSell("buy")}
-                to="/"
-                className={`w-1/2 text-center py-2 ${
-                  buyOrSell === "buy"
-                    ? "bg-[#292761] text-white "
-                    : "text-[#C0C0C0]"
-                }`}
-              >
-                Buy
-              </Link>
-              <Link
-                onClick={() => setBuyOrSell("sell")}
-                to="/sell"
-                className={`w-1/2 text-center py-2 rounded-l-lg  ${
-                  buyOrSell === "sell"
-                    ? "bg-[#292761] text-white "
-                    : "text-[#C0C0C0]"
-                }`}
-              >
-                Sell
-              </Link>
+          <div className="flex-1 flex items-center justify-end gap-6   ">
+            <div className="fixed bottom-3 w-full items-center justify-center flex z-20">
+              <div className="w-[120px]  rounded-xl  border-[#292761] border-2 flex items-center justify-between">
+                <Link
+                  onClick={() => setBuyOrSell("buy")}
+                  to="/"
+                  className={`w-[100px] text-center py-2 ${
+                    buyOrSell === "buy"
+                      ? "bg-[#292761] text-white "
+                      : "text-[#292761] text bg-white rounded-l-xl"
+                  }`}
+                >
+                  Buy
+                </Link>
+                <Link
+                  onClick={() => setBuyOrSell("sell")}
+                  to="/sell"
+                  className={`w-[100px] text-center py-2 rounded-r-xl  ${
+                    buyOrSell === "sell"
+                      ? "bg-[#292761] text-white "
+                      : "text-[#292761] text bg-white rounded-xl"
+                  }`}
+                >
+                  Sell
+                </Link>
+              </div>
             </div>
             <div className="">
               <Menu

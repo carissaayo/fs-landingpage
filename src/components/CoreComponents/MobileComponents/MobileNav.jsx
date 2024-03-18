@@ -56,10 +56,10 @@ const MobileNav = () => {
                 <Link
                   onClick={() => setBuyOrSell("sell")}
                   to="/sell"
-                  className={`w-[100px] text-center py-2 rounded-r-xl  ${
+                  className={`w-[100px] text-center py-2   ${
                     buyOrSell === "sell"
                       ? "bg-[#292761] text-white "
-                      : "text-[#292761] text bg-white rounded-xl"
+                      : "text-[#292761] text bg-white rounded-r-xl"
                   }`}
                 >
                   Sell

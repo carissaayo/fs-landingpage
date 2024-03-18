@@ -47,7 +47,7 @@ const Nav = ({ isBuy }) => {
               className={`w-1/2 text-center py-3 ${
                 buyOrSell === "buy"
                   ? "bg-[#292761] text-white "
-                  : "text-[#C0C0C0]"
+                  : "text-[#C0C0C0] rounded-l-xl"
               }`}
             >
               Buy
@@ -55,10 +55,10 @@ const Nav = ({ isBuy }) => {
             <Link
               onClick={() => setBuyOrSell("sell")}
               to="/sell"
-              className={`w-1/2 text-center py-3 rounded-l-lg  ${
+              className={`w-1/2 text-center py-3   ${
                 buyOrSell === "sell"
                   ? "bg-[#292761] text-white "
-                  : "text-[#C0C0C0]"
+                  : "text-[#C0C0C0] rounded-r-xl"
               }`}
             >
               Sell

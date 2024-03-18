@@ -40,7 +40,7 @@ const MobileNav = () => {
             </Link>
           </div>
           <div className="flex-1 flex items-center justify-end gap-6   ">
-            <div className="fixed bottom-3 w-full items-center justify-center flex z-20 ">
+            {/* <div className="fixed bottom-3 w-[100%] items-center justify-center flex z-20 ">
               <div className="  rounded-xl  border-[#292761] border-2 flex items-center justify-between bg-[#292761] ">
                 <Link
                   onClick={() => setBuyOrSell("buy")}
@@ -65,7 +65,7 @@ const MobileNav = () => {
                   Sell
                 </Link>
               </div>
-            </div>
+            </div> */}
             <div className="">
               <Menu
                 className={`w-8 h-8 text-white  ${openMobile && "rotate-90"}`}

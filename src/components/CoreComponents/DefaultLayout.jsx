@@ -4,12 +4,13 @@ import MobileNav from "./MobileComponents/MobileNav";
 import Footer from "./FooterComponents/Footer";
 import { ChevronUp } from "lucide-react";
 import { useEffect, useState } from "react";
-// import { useGeneralStore } from "../store/generalStore";
+import { useGeneralStore } from "../../store/generalStore";
 
 const DefaultLayout = () => {
   const [showTopBtn, setShowTopBtn] = useState(false);
   const [scroll, setScroll] = useState(false);
-
+  const buyOrSell = useGeneralStore((state) => state.buyOrSell);
+  const setBuyOrSell = useGeneralStore((state) => state.setBuyOrSell);
   useEffect(() => {
     window.addEventListener("scroll", () => {
       setScroll(window.scrollY > 10);
@@ -39,35 +40,32 @@ const DefaultLayout = () => {
 
       <Footer />
 
-      {/* <div className="fixed ">
-        <div className="flex-1 flex items-center justify-end gap-6">
-          <div className="w-[120px]  rounded-xl  border-[#292761] border-2 flex items-center justify-between">
-            <Link
-              onClick={() => setBuyOrSell("buy")}
-              to="/"
-              className={`w-1/2 text-center py-2 ${
-                buyOrSell === "buy"
-                  ? "bg-[#292761] text-white "
-                  : "text-[#C0C0C0]"
-              }`}
-            >
-              Buy
-            </Link>
-            <Link
-              onClick={() => setBuyOrSell("sell")}
-              to="/sell"
-              className={`w-1/2 text-center py-2 rounded-l-lg  ${
-                buyOrSell === "sell"
-                  ? "bg-[#292761] text-white "
-                  : "text-[#C0C0C0]"
-              }`}
-            >
-              Sell
-            </Link>
-          </div>
-        
+      <div className="fixed bottom-3 w-[100%] items-center justify-center flex z-20 ">
+        <div className="  rounded-xl  border-[#292761] border-2 flex items-center justify-between bg-[#292761] ">
+          <Link
+            onClick={() => setBuyOrSell("buy")}
+            to="/"
+            className={`w-[100px] text-center  rounded-l-xl p-[14px]  ${
+              buyOrSell === "buy"
+                ? "text-[#C0C0C0]"
+                : "bg-[#0E0C4D] text-white "
+            }`}
+          >
+            Buy
+          </Link>
+          <Link
+            onClick={() => setBuyOrSell("sell")}
+            to="/sell"
+            className={`w-[100px] text-center  rounded-r-xl p-[14px] ${
+              buyOrSell === "sell"
+                ? "text-[#C0C0C0] "
+                : "  bg-[#0E0C4D] text-white"
+            }`}
+          >
+            Sell
+          </Link>
         </div>
-      </div> */}
+      </div>
       <div className="top-to-btm">
         {" "}
         {showTopBtn && (

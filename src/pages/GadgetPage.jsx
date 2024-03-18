@@ -37,7 +37,7 @@ const GadgetPage = () => {
           </div>
 
           {/* Second row */}
-          <div className="xs:flex-1   w-[95%] xs:w-full relative top-[-325px] xs:h-full xs:top-0 px-4   xs:px-0 mx-auto bg-white rounded-t-xl pt-8">
+          <div className="xs:flex-1   w-[95%] xs:w-full relative top-[-400px] xxs:top-[-325px] xs:h-full xs:top-0 px-4   xs:px-0 mx-auto bg-white rounded-t-xl pt-8">
             {/* Mobile */}
             <section className="block xs:hidden">
               <h1 className="  poppins-semibold text-2xl mb-4">

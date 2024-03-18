@@ -1,5 +1,5 @@
 import { Button } from "../../ui/button";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Plus } from "lucide-react";
 import heroImg from "../../../assets/images/hero.png";
 const Hero = () => {
   return (
@@ -26,8 +26,8 @@ const Hero = () => {
 
       <div className="text-center  pt-12">
         <Button className="bg-white bg-opacity-10 hover:bg-white hover:bg-opacity-10 rounded-2xl">
-          <a href="#sell" className=" flex">
-            Sell Now <ChevronDown className="h-6 w-6 ml-2" />
+          <a href="#sell" className=" flex items-center">
+            Sell Now <Plus className="h-4 w-4 ml-2" />
           </a>
         </Button>
       </div>

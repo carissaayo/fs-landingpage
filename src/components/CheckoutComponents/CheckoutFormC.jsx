@@ -18,17 +18,17 @@ const CheckoutFormC = () => {
         Please provide 3 Guarantor details
       </p>
       {/* First Guarantor */}
-      <section className="py-6 px-2  flex flex-col gap-6">
+      <section className="py-6 px-2  flex flex-col gap-8 sm:gap-6">
         <p className="text-[#0E0C4D] text-lg poppins-semibold">
           First Guarantor
         </p>
-        <div className="flex flex-col sm:flex-row justify-between gap-6 ">
+        <div className="flex flex-col sm:flex-row justify-between gap-8 sm:gap-6 ">
           {/* First Name */}
           <div className="flex-1 flex flex-col gap-4">
             <Label className="">
               First Name <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border border-gray-300 p-4" />
+            <Input className="border border-gray-300 p-4 py-6" />
           </div>
 
           {/* Last Name */}
@@ -36,17 +36,17 @@ const CheckoutFormC = () => {
             <Label className="">
               Last Name <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border border-gray-300 p-4" />
+            <Input className="border border-gray-300 p-4 py-6" />
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-between gap-6 ">
+        <div className="flex flex-col sm:flex-row justify-between gap-8 sm:gap-6 ">
           {/* Relationship */}
           <div className="flex-1 flex flex-col gap-4">
             <Label className="">
               Relationship <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border border-gray-300 p-4" />
+            <Input className="border border-gray-300 p-4 py-6" />
           </div>
 
           {/* Phone Number */}
@@ -54,23 +54,23 @@ const CheckoutFormC = () => {
             <Label className="">
               Contact Phone Number <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border border-gray-300 p-4" />
+            <Input className="border border-gray-300 p-4 py-6" />
           </div>
         </div>
       </section>
 
       {/* Second Guarantor */}
-      <section className="py-6 px-2  flex flex-col gap-6">
+      <section className="py-6 px-2  flex flex-col gap-8 sm:gap-6">
         <p className="text-[#0E0C4D] text-lg poppins-semibold">
           Second Guarantor
         </p>
-        <div className="flex flex-col sm:flex-row  justify-between gap-6 ">
+        <div className="flex flex-col sm:flex-row  justify-between gap-8 sm:gap-6 ">
           {/* First Name */}
           <div className="flex-1 flex flex-col gap-4">
             <Label className="">
               First Name <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border border-gray-300 p-4" />
+            <Input className="border border-gray-300 p-4 py-6" />
           </div>
 
           {/* Last Name */}
@@ -78,17 +78,17 @@ const CheckoutFormC = () => {
             <Label className="">
               Last Name <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border border-gray-300 p-4" />
+            <Input className="border border-gray-300 p-4 py-6" />
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row   justify-between gap-6 ">
+        <div className="flex flex-col sm:flex-row   justify-between  gap-8 sm:gap-6 ">
           {/* Relationship */}
           <div className="flex-1 flex flex-col gap-4">
             <Label className="">
               Relationship <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border border-gray-300 p-4" />
+            <Input className="border border-gray-300 p-4  py-6" />
           </div>
 
           {/* Phone Number */}
@@ -96,23 +96,23 @@ const CheckoutFormC = () => {
             <Label className="">
               Contact Phone Number <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border border-gray-300 p-4" />
+            <Input className="border border-gray-300 p-4 py-6" />
           </div>
         </div>
       </section>
 
       {/* Third Guarantor */}
-      <section className="py-6 px-2  flex flex-col gap-6">
+      <section className="py-6 px-2  flex flex-col gap-8 sm:gap-6">
         <p className="text-[#0E0C4D] text-lg poppins-semibold">
           Third Guarantor
         </p>
-        <div className="flex flex-col sm:flex-row  justify-between gap-6 ">
+        <div className="flex flex-col sm:flex-row  justify-between gap-8 sm:gap-6 ">
           {/* First Name */}
           <div className="flex-1 flex flex-col gap-4">
             <Label className="">
               First Name <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border border-gray-300 p-4" />
+            <Input className="border border-gray-300 p-4 py-6" />
           </div>
 
           {/* Last Name */}
@@ -120,17 +120,17 @@ const CheckoutFormC = () => {
             <Label className="">
               Last Name <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border border-gray-300 p-4" />
+            <Input className="border border-gray-300 p-4 py-6" />
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-between gap-6 ">
+        <div className="flex flex-col sm:flex-row justify-between gap-8 sm:gap-6 ">
           {/* Relationship */}
           <div className="flex-1 flex flex-col gap-4">
             <Label className="">
               Relationship <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border border-gray-300 p-4" />
+            <Input className="border border-gray-300 p-4 py-6" />
           </div>
 
           {/* Phone Number */}
@@ -138,7 +138,7 @@ const CheckoutFormC = () => {
             <Label className="">
               Contact Phone Number <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border border-gray-300 p-4" />
+            <Input className="border border-gray-300 p-4 py-6" />
           </div>
         </div>
       </section>

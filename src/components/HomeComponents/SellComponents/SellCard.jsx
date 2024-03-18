@@ -6,7 +6,7 @@ import phoneImg from "../../../assets/images/phoneImg.png";
 const SellCard = () => {
   return (
     <Link
-      to="/gadgets/123"
+      to="/buy/gadgets/123"
       className="flex flex-col border border-gray-200  min-w-[200px] lg:min-w-[250px]"
     >
       <div className="w-full flex items-center  justify-center py-6">

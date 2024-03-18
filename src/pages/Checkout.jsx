@@ -26,7 +26,7 @@ const Checkout = () => {
   const goToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      // behavior: "smooth",
     });
   };
   useEffect(() => goToTop(), []);
@@ -36,8 +36,8 @@ const Checkout = () => {
       <Nav isBuy={1} />
       <MobileNav scroll={scroll} isBuy={1} />
 
-      <section className="flex flex-col lg:flex-row justify-between px-8 md:px-16 lg:px-20 2xl:px-32 poppins-regular pb-12 gap-12  xl:gap-32 xs:w-[80%] sm:w-full mx-auto sm:mx-0 pt-36">
-        <div className="flex-1 lg:flex-[1.5] relative">
+      <section className="flex flex-col lg:flex-row justify-between px-8 md:px-16 lg:px-20 2xl:px-32 poppins-regular pb-12 gap-12  xl:gap-32 xs:w-[80%] sm:w-full mx-auto sm:mx-0 pt-24 sm:pt-36">
+        <div className="flex-1 lg:flex-[1.5] relative ">
           <Steps />
           {/* KYC Details 1 */}
           <CheckoutFormA />

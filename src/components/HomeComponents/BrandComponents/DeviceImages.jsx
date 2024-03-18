@@ -42,16 +42,18 @@ const DeviceImages = ({ stepContent }) => {
   };
 
   const addToList = (showImage) => {
-    if (imageList.filter((file) => file.image === showImage.image).length > 0) {
+    if (imageList.filter((file) => file.image === showImage[0]).length > 0) {
       setShowImage("");
       setImageName("");
       setPreviewImage(false);
+
       return;
+    } else {
+      setImageList([...imageList, { image: showImage, name: imageName }]);
+      setShowImage("");
+      setImageName("");
+      setPreviewImage(false);
     }
-    setImageList([...imageList, { image: showImage, name: imageName }]);
-    setShowImage("");
-    setImageName("");
-    setPreviewImage(false);
   };
   const handleCancel = () => {
     setShowImage("");
@@ -62,7 +64,7 @@ const DeviceImages = ({ stepContent }) => {
     <section
       className={` ${
         stepContent === 5
-          ? "translate-x-0 w-full md:con__height px-4 xs:px-8 sm:px-12 md:px-16 lg:px-20 2xl:px-32  relative poppins-regular py-12 md:py-0"
+          ? "translate-x-0 w-full md:con__height px-4 xs:px-8 sm:px-12 md:px-16 lg:px-20 2xl:px-32  relative poppins-regular pt-4   md:py-0"
           : "translate-x-[-100%] absolute h-0"
       }`}
     >

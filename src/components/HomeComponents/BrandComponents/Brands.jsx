@@ -1,11 +1,7 @@
-import { useGeneralStore } from "../../../store/generalStore";
 import { Button } from "../../ui/button";
 import BrandsCon from "./BrandsCon";
-import Steps from "./Steps";
 
 const Brands = ({ stepContent }) => {
-  const showContent = useGeneralStore((state) => state.showContent);
-
   return (
     <section
       className={` ${
@@ -28,7 +24,6 @@ const Brands = ({ stepContent }) => {
       <p className="text-[#111111] text-center md:text-left xs:text-lg md:text-base">
         Please select the brand of smartphone you want to sell
       </p>
-      <Steps step={1} />
 
       <div className="">
         <BrandsCon number={2} />

@@ -1,15 +1,5 @@
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "../ui/select";
-import Steps from "./Steps";
 
 import { useGeneralStore } from "../../store/generalStore";
 
@@ -27,13 +17,13 @@ const CheckoutFormA = () => {
       }`}
     >
       <div className="py-6 px-2  flex flex-col gap-6">
-        <div className="flex flex-col sm:flex-row justify-between gap-6 ">
+        <div className="flex flex-col sm:flex-row justify-between  gap-8 sm:gap-6 ">
           {/* First Name */}
           <div className="flex-1 flex flex-col gap-4">
             <Label className="">
               First Name <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border border-gray-300 p-4" />
+            <Input className="border border-gray-300 p-4 py-6" />
           </div>
 
           {/* Last Name */}
@@ -41,7 +31,7 @@ const CheckoutFormA = () => {
             <Label className="">
               Last Name <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border border-gray-300p-4" />
+            <Input className="border border-gray-300 p-4 py-6" />
           </div>
         </div>
 
@@ -50,7 +40,7 @@ const CheckoutFormA = () => {
           <Label className="">
             BVN <span className="text-[#E40C0C]">*</span>
           </Label>
-          <Input className="border border-gray-300 p-4" />
+          <Input className="border border-gray-300 p-4 py-6" />
         </div>
 
         {/* Banks */}
@@ -58,21 +48,32 @@ const CheckoutFormA = () => {
           <Label className="">
             Select Bank <span className="text-[#E40C0C]">*</span>
           </Label>
-          <Select className="">
-            <SelectTrigger className="full border-gray-300">
-              <SelectValue placeholder="Select A Bank" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectGroup>
-                <SelectLabel>Fruits</SelectLabel>
-                <SelectItem value="apple">Apple</SelectItem>
-                <SelectItem value="banana">Banana</SelectItem>
-                <SelectItem value="blueberry">Blueberry</SelectItem>
-                <SelectItem value="grapes">Grapes</SelectItem>
-                <SelectItem value="pineapple">Pineapple</SelectItem>
-              </SelectGroup>
-            </SelectContent>
-          </Select>
+          <select
+            name=""
+            id=""
+            className="border border-gray-500 p-4 rounded-lg"
+            defaultValue=""
+            placeholder="Select the Phones Fault Condition"
+          >
+            <option value="apple" className="">
+              Broken Screen
+            </option>
+            <option value="apple" className="">
+              Broken Screen
+            </option>{" "}
+            <option value="apple" className="">
+              Broken Screen
+            </option>{" "}
+            <option value="apple" className="">
+              Broken Screen
+            </option>{" "}
+            <option value="apple" className="">
+              Broken Screen
+            </option>{" "}
+            <option value="apple" className="">
+              Broken Screen
+            </option>
+          </select>
         </div>
 
         {/* Account Number */}
@@ -80,7 +81,7 @@ const CheckoutFormA = () => {
           <Label className="">
             Account Number <span className="text-[#E40C0C]">*</span>
           </Label>
-          <Input type="password" className="border border-gray-300 p-4" />
+          <Input type="password" className="border border-gray-300 p-4 py-6" />
         </div>
       </div>
     </section>

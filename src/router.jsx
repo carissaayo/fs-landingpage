@@ -43,11 +43,11 @@ const router = createBrowserRouter([
         element: <Buy />,
       },
       {
-        path: "/gadgets/:id",
+        path: "/buy/gadgets/:id",
         element: <GadgetPage />,
       },
       {
-        path: "/checkout",
+        path: "/buy/checkout",
         element: <Checkout />,
       },
       {

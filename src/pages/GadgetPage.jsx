@@ -11,15 +11,15 @@ const GadgetPage = () => {
   const goToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      // behavior: "smooth",
     });
   };
   useEffect(() => goToTop(), []);
 
   return (
     <main className="">
-      <section className="xs:px-8 md:px-16 lg:px-20 2xl:px-32 poppins-regular pb-12  pt-16 md:pt-32">
-        <section className="flex flex-col md:flex-row  justify-center md:justify-between my-6 gap-12 lg:gap-20 xs:w-[90%] sm:w-[80%] md:w-full mx-auto relative">
+      <section className="xs:px-8 md:px-16 lg:px-20 2xl:px-32 poppins-regular xs:pb-12  pt-16 md:pt-32">
+        <section className="flex flex-col md:flex-row  justify-center md:justify-between xs:my-6 xs:gap-12 lg:gap-20 xs:w-[90%] sm:w-[80%] md:w-full mx-auto relative pt-1">
           <div className="flex-1">
             <div className="max-w-[560px] h-[600px] xs:h-auto mb-10">
               <GadgetImageSlider />
@@ -37,7 +37,7 @@ const GadgetPage = () => {
           </div>
 
           {/* Second row */}
-          <div className="xs:flex-1   w-[95%] xs:w-full relative top-[-440px] h-full xs:top-0 px-4   xs:px-0 mx-auto bg-white rounded-t-xl pt-8">
+          <div className="xs:flex-1   w-[95%] xs:w-full relative top-[-440px] xs:h-full xs:top-0 px-4   xs:px-0 mx-auto bg-white rounded-t-xl pt-8">
             {/* Mobile */}
             <section className="block xs:hidden">
               <h1 className="  poppins-semibold text-2xl mb-4">

@@ -13,16 +13,20 @@ const Nav = ({ isBuy }) => {
   const setBuyOrSell = useGeneralStore((state) => state.setBuyOrSell);
   const isLoggedIn = true;
   const location = useLocation();
-  const sellLinkUrl = "/sell";
+  const sellLinkUrl = "sel";
+  const buyLinkUrl = "buy";
+  let pathname = location.pathname;
+  pathname = pathname.slice(1, 4);
 
   useEffect(() => {
-    console.log(location);
-    if (location.pathname.includes(sellLinkUrl)) {
+    if (pathname === sellLinkUrl) {
       setBuyOrSell("sell");
-    } else {
+    } else if (pathname === buyLinkUrl || location.pathname === "/") {
       setBuyOrSell("buy");
+    } else if (pathname !== buyLinkUrl || pathname !== sellLinkUrl) {
+      setBuyOrSell("");
     }
-  }, [location.pathname]);
+  }, [pathname]);
 
   return (
     <section

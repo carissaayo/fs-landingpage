@@ -7,7 +7,6 @@ import Models from "./Models";
 const ModelsCon = ({ stepContent }) => {
   return (
     <section
-      id="brands"
       className={` ${
         stepContent === 2
           ? "translate-x-0 w-full md:con__height px-4 xs:px-8 sm:px-12 md:px-16 lg:px-20 2xl:px-32  relative poppins-regular  "
@@ -25,7 +24,7 @@ const ModelsCon = ({ stepContent }) => {
           <a href="#how-it-works">How it works</a>
         </Button>
       </div>
-      <p className="text-[#111111] text-center md:text-left xs:text-lg md:text-base mb-12">
+      <p className="text-[#111111] text-center md:text-left xs:text-lg md:text-base mb-4">
         Please select the model of smartphone you want to sell
       </p>
 

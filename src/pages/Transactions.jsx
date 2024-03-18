@@ -8,19 +8,19 @@ const Transactions = () => {
   const goToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      // behavior: "smooth",
     });
   };
   useEffect(() => goToTop(), []);
 
   return (
     <main className="w-full h-full relative">
-      <section className=" px-4 xs:px-8 md:px-16 lg:px-20 2xl:px-32 poppins-regular pb-12">
+      <section className=" px-4 xs:px-8 md:px-16 lg:px-20 2xl:px-32 poppins-regular pb-12 pt-24">
         {/* GoBack  */}
-        <div className="px-8 xs:px-0 py-6 poppins-semibold ">
+        <div className=":px-0 py-6 poppins-semibold ">
           <p className="flex items-center xs:gap-1 sm:gap-4 text-sm sm:text-base">
             <Link to="/" className="flex xs:block items-center">
-              <span className="inline-block xs:hidden">
+              <span className="">
                 <ChevronLeft className="h-4 w-4" />
               </span>
               Home

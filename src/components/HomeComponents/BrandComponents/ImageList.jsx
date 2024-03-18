@@ -22,7 +22,7 @@ const ImageList = () => {
     setPreviewImage(true);
   };
   return (
-    <section className="w-full mb-10">
+    <section className="w-full ">
       {imageList.length > 0 &&
         imageList.map((file) => (
           <div

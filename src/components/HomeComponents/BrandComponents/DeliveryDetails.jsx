@@ -1,15 +1,6 @@
 import { Button } from "../../ui/button";
-import { Input } from "../../ui/input";
 import { Label } from "../../ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "../../ui/select";
+
 import Steps from "./Steps";
 
 const DeliveryDetails = ({ stepContent }) => {
@@ -17,7 +8,7 @@ const DeliveryDetails = ({ stepContent }) => {
     <section
       className={` ${
         stepContent === 4
-          ? "translate-x-0 w-full md:con__height px-4 xs:px-8 sm:px-12 md:px-16 lg:px-20 2xl:px-32  relative poppins-regular py-12 md:py-0"
+          ? "translate-x-0 w-full md:con__height px-4 xs:px-8 sm:px-12 md:px-16 lg:px-20 2xl:px-32  relative poppins-regular pt-4 pb-8 md:py-0"
           : "translate-x-[-100%] absolute h-0"
       }`}
     >
@@ -32,56 +23,76 @@ const DeliveryDetails = ({ stepContent }) => {
           <a href="#how-it-works">How it works</a>
         </Button>
       </div>
-      <p className="text-[#111111] text-center md:text-left xs:text-lg md:text-base mb-12">
+      <p className="text-[#111111] text-center md:text-left xs:text-lg md:text-base mb-4 sm:mb-12">
         Please enter the location you are selling from
       </p>
       <Steps step={4} />
 
-      <div className="mb-20 flex flex-col gap-12">
-        <div className="flex flex-col sm:flex-row justify-between gap-20  ">
-          {/* First Name */}
-          <div className="flex-1 flex flex-col gap-4">
-            <Label className="">
-              State <span className="text-[#E40C0C]">*</span>
-            </Label>
-            <Select>
-              <SelectTrigger className="border-gray-500 p-4 py-6">
-                <SelectValue placeholder="Select State" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectGroup>
-                  <SelectLabel>Select State</SelectLabel>
-                  <SelectItem value="apple">Broken Screen</SelectItem>
-                  <SelectItem value="banana">Banana</SelectItem>
-                  <SelectItem value="blueberry">Blueberry</SelectItem>
-                  <SelectItem value="grapes">Grapes</SelectItem>
-                  <SelectItem value="pineapple">Pineapple</SelectItem>
-                </SelectGroup>
-              </SelectContent>
-            </Select>
-          </div>
+      <div className="flex flex-col sm:flex-row justify-between gap-8 sm:gap-20  ">
+        {/* State */}
+        <div className="flex-1 flex flex-col gap-4">
+          <Label className="">
+            State <span className="text-[#E40C0C]">*</span>
+          </Label>
+          <select
+            name=""
+            id=""
+            className="border border-gray-500 p-4 rounded-lg"
+            defaultValue=""
+            placeholder="Select the Phones Fault Condition"
+          >
+            <option value="apple" className="">
+              Broken Screen
+            </option>
+            <option value="apple" className="">
+              Broken Screen
+            </option>{" "}
+            <option value="apple" className="">
+              Broken Screen
+            </option>{" "}
+            <option value="apple" className="">
+              Broken Screen
+            </option>{" "}
+            <option value="apple" className="">
+              Broken Screen
+            </option>{" "}
+            <option value="apple" className="">
+              Broken Screen
+            </option>
+          </select>
+        </div>
 
-          {/* Last Name */}
-          <div className="flex-1 flex flex-col gap-4">
-            <Label className="">
-              City<span className="text-[#E40C0C]">*</span>
-            </Label>
-            <Select>
-              <SelectTrigger className="border-gray-500 p-4 py-6">
-                <SelectValue placeholder="Select City" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectGroup>
-                  <SelectLabel>Select City</SelectLabel>
-                  <SelectItem value="apple">Broken Screen</SelectItem>
-                  <SelectItem value="banana">Banana</SelectItem>
-                  <SelectItem value="blueberry">Blueberry</SelectItem>
-                  <SelectItem value="grapes">Grapes</SelectItem>
-                  <SelectItem value="pineapple">Pineapple</SelectItem>
-                </SelectGroup>
-              </SelectContent>
-            </Select>
-          </div>
+        {/*  City */}
+        <div className="flex-1 flex flex-col gap-4">
+          <Label className="">
+            City<span className="text-[#E40C0C]">*</span>
+          </Label>
+          <select
+            name=""
+            id=""
+            className="border border-gray-500 p-4 rounded-lg"
+            defaultValue=""
+            placeholder="Select the Phones Fault Condition"
+          >
+            <option value="apple" className="">
+              Broken Screen
+            </option>
+            <option value="apple" className="">
+              Broken Screen
+            </option>{" "}
+            <option value="apple" className="">
+              Broken Screen
+            </option>{" "}
+            <option value="apple" className="">
+              Broken Screen
+            </option>{" "}
+            <option value="apple" className="">
+              Broken Screen
+            </option>{" "}
+            <option value="apple" className="">
+              Broken Screen
+            </option>
+          </select>
         </div>
       </div>
     </section>

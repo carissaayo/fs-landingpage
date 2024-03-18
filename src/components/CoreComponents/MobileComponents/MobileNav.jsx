@@ -7,22 +7,26 @@ import logoImg from "../../../assets/images/FairShop New Logo PNG 4 1.png";
 import { Drawer } from "@mui/material";
 import { Button } from "../../ui/button";
 
-const MobileNav = ({ scroll, isBuy }) => {
+const MobileNav = () => {
   const isLoggedIn = false;
   const [openMobile, setOpenMobile] = useState(false);
   const buyOrSell = useGeneralStore((state) => state.buyOrSell);
   const setBuyOrSell = useGeneralStore((state) => state.setBuyOrSell);
   const location = useLocation();
-  const sellLinkUrl = "/sell";
+  const sellLinkUrl = "sel";
+  const buyLinkUrl = "buy";
+  let pathname = location.pathname;
+  pathname = pathname.slice(1, 4);
 
   useEffect(() => {
-    console.log(location);
-    if (location.pathname.includes(sellLinkUrl)) {
+    if (pathname === sellLinkUrl) {
       setBuyOrSell("sell");
-    } else {
+    } else if (pathname === buyLinkUrl || location.pathname === "/") {
       setBuyOrSell("buy");
+    } else if (pathname !== buyLinkUrl || pathname !== sellLinkUrl) {
+      setBuyOrSell("");
     }
-  }, [location.pathname]);
+  }, [pathname]);
   return (
     <section
       className={`
@@ -32,11 +36,7 @@ const MobileNav = ({ scroll, isBuy }) => {
         <div className="flex w-full items-center justify-between">
           <div className="flex-1">
             <Link to="/" className="text-white poppins-extrabold text-[40px]">
-              <img
-                src={logoImg}
-                alt=""
-                className="w-[80px] xs:w-[100px] xs:h-[50px]"
-              />
+              <img src={logoImg} alt="" className="w-[100px] h-[40px]" />
             </Link>
           </div>
           <div className="flex-1 flex items-center justify-end gap-6">
@@ -85,20 +85,40 @@ const MobileNav = ({ scroll, isBuy }) => {
                   <p className="">Mustapha Sanusi</p>
                 </div>
                 <hr className="" />
-                <Link className="px-4" to="/">
+                <Link
+                  className="px-4"
+                  to="/"
+                  onClick={() => setOpenMobile(false)}
+                >
                   How it works
                 </Link>
-                <Link className="px-4" to="/about-us">
+                <Link
+                  className="px-4"
+                  to="/about-us"
+                  onClick={() => setOpenMobile(false)}
+                >
                   About Us
                 </Link>
-                <Link className="px-4" to="/">
+                <Link
+                  className="px-4"
+                  to="/"
+                  onClick={() => setOpenMobile(false)}
+                >
                   Testimonials
                 </Link>
-                <Link className="px-4" to="/">
+                <Link
+                  className="px-4"
+                  to="/"
+                  onClick={() => setOpenMobile(false)}
+                >
                   FAQ
                 </Link>
                 <hr className="" />
-                <Link className="px-4" to="/transactions">
+                <Link
+                  className="px-4"
+                  to="/transactions"
+                  onClick={() => setOpenMobile(false)}
+                >
                   My Transactions
                 </Link>
                 <hr className="" />

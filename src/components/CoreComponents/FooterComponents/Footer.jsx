@@ -13,7 +13,7 @@ const Footer = () => {
           <Link to="/">
             <img src={footerLogo} alt="" className=" w-[150px]" />
           </Link>
-          <p className="w-[70%] lg:w-full poppins-semibold mb-4">
+          <p className="w-[70%] lg:w-full  mb-4">
             The easiest place to sell your smartphones faster and conveniently
           </p>
           <div className="flex items-center gap-6 ">

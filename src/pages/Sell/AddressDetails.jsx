@@ -6,7 +6,7 @@ const AddressDetails = () => {
   const goToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      // behavior: "smooth",
     });
   };
   useEffect(() => goToTop(), []);

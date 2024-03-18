@@ -36,7 +36,7 @@ const MobileNav = () => {
         <div className="flex w-full items-center justify-between">
           <div className="flex-1">
             <Link to="/" className="text-white poppins-extrabold text-[40px]">
-              <img src={logoImg} alt="" className="w-[100px] h-[40px]" />
+              <img src={logoImg} alt="" className="w-[150px] " />
             </Link>
           </div>
           <div className="flex-1 flex items-center justify-end gap-6">

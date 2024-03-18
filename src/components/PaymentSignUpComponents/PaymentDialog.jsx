@@ -21,7 +21,7 @@ const PaymentDialog = ({ title }) => {
           </Button>
         </div>
       </DialogTrigger>
-      <DialogContent className="w-[80%] sm:w-full min-w-[60%] max-h-[80%] ">
+      <DialogContent className="w-[90%] sm:w-full min-w-[60%] max-h-[90%] bg-white">
         <DialogHeader className="poppins-medium ">
           <DialogTitle className="mb-2">
             Sign up to apply for this device

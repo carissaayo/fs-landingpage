@@ -40,15 +40,15 @@ const MobileNav = () => {
             </Link>
           </div>
           <div className="flex-1 flex items-center justify-end gap-6   ">
-            <div className="fixed bottom-3 w-full items-center justify-center flex z-20">
-              <div className="w-[120px]  rounded-xl  border-[#292761] border-2 flex items-center justify-between">
+            <div className="fixed bottom-3 w-full items-center justify-center flex z-20 ">
+              <div className="  rounded-xl  border-[#292761] border-2 flex items-center justify-between bg-[#292761] ">
                 <Link
                   onClick={() => setBuyOrSell("buy")}
                   to="/"
-                  className={`w-[100px] text-center py-2 ${
+                  className={`w-[100px] text-center  rounded-l-xl p-[14px]  ${
                     buyOrSell === "buy"
-                      ? "bg-[#292761] text-white "
-                      : "text-[#292761] text bg-white rounded-l-xl"
+                      ? "text-[#C0C0C0]"
+                      : "bg-[#0E0C4D] text-white "
                   }`}
                 >
                   Buy
@@ -56,10 +56,10 @@ const MobileNav = () => {
                 <Link
                   onClick={() => setBuyOrSell("sell")}
                   to="/sell"
-                  className={`w-[100px] text-center py-2   ${
+                  className={`w-[100px] text-center  rounded-r-xl p-[14px] ${
                     buyOrSell === "sell"
-                      ? "bg-[#292761] text-white "
-                      : "text-[#292761] text bg-white rounded-r-xl"
+                      ? "text-[#C0C0C0] "
+                      : "  bg-[#0E0C4D] text-white"
                   }`}
                 >
                   Sell

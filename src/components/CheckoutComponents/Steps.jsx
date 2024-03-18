@@ -4,7 +4,7 @@ const Steps = () => {
   const checkoutStep = useGeneralStore((state) => state.checkoutStep);
   const setCheckoutStep = useGeneralStore((state) => state.setCheckoutStep);
   return (
-    <section className="sm:mb-16">
+    <section className="sm:mb-16 text-[10px]">
       <div className="w-full flex items-center my-6">
         {/* 1 */}
 

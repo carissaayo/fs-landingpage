@@ -1,6 +1,6 @@
 const Steps = ({ step }) => {
   return (
-    <section className="mb-8">
+    <section className="mb-8 text-[10px]">
       <div className="w-full flex items-center my-6">
         {/* 1 */}
 

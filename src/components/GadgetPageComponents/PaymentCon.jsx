@@ -73,16 +73,20 @@ const PaymentCon = () => {
           <h1 className="poppins-semibold text-2xl mb-4">Select State</h1>
           <p className="text-[#898686] mb-6">Select your delivery state</p>
           <div className=" flex flex-col justify-start gap-4">
-            <Select>
-              <SelectTrigger className="">
-                <SelectValue placeholder="Lagos - #2000" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="Lagos">Lagos - #2000</SelectItem>
-                <SelectItem value="Kwara">Kwara - #2000</SelectItem>
-                <SelectItem value="Oyo">Oyo - #2000</SelectItem>
-              </SelectContent>
-            </Select>
+            <select
+              className="border border-gray-400 p-4 rounded-lg"
+              defaultValue="Lagos - #2000"
+            >
+              <option value="" className="Lagos">
+                Lagos - #2000
+              </option>{" "}
+              <option value="Kwara " className="">
+                Kwara - #2000
+              </option>{" "}
+              <option value="Oyo" className="">
+                Oyo - #2000
+              </option>{" "}
+            </select>
           </div>
         </div>
       </div>

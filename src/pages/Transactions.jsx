@@ -15,28 +15,7 @@ const Transactions = () => {
 
   return (
     <main className="w-full h-full relative">
-      <section className=" px-4 xs:px-8 md:px-16 lg:px-20 2xl:px-32 poppins-regular pb-12 pt-24">
-        {/* GoBack  */}
-        <div className=":px-0 py-6 poppins-semibold ">
-          <p className="flex items-center xs:gap-1 sm:gap-4 text-sm sm:text-base">
-            <Link to="/" className="flex xs:block items-center">
-              <span className="">
-                <ChevronLeft className="h-4 w-4" />
-              </span>
-              Home
-            </Link>
-            <span className="hidden sm:inline-block">
-              <ChevronRight className="h-4 w-4" />
-            </span>
-            <Link
-              to="/transactions"
-              className="bg-[#F1F1F1]  px-2 sm:px-4 py-2 rounded-sm hidden sm:inline-block"
-            >
-              Transactions
-            </Link>
-          </p>
-        </div>
-
+      <section className=" px-4 xs:px-8 md:px-16 lg:px-20 2xl:px-32 poppins-regular pb-12 pt-32">
         <div className="mb-10">
           <h1 className="poppins-semibold  text-2xl mb-4">
             Transaction History

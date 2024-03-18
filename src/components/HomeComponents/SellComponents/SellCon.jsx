@@ -6,7 +6,7 @@ import { ScrollArea, ScrollBar } from "../../ui/scroll-area";
 const SellContainer = ({ title }) => {
   return (
     <div className="w-full  mb-2">
-      <h1 className="poppins-medium text-xl mb-8 w-full text-[#130D52] bg-[#130D52] bg-opacity-10 p-4">
+      <h1 className="poppins-medium text-xl mb-4 w-full text-[#130D52] bg-[#130D52] bg-opacity-10 p-4">
         {title}
       </h1>
       <ScrollArea className=" w-full  ">

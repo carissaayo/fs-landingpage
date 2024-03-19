@@ -64,11 +64,11 @@ const DeviceImages = ({ stepContent }) => {
     <section
       className={` ${
         stepContent === 5
-          ? "translate-x-0 w-full md:con__height px-4 xs:px-8 sm:px-12 md:px-16 lg:px-20 2xl:px-32  relative poppins-regular pt-4   md:py-0"
+          ? "translate-x-0 w-full md:con__height px-4 xs:px-8 sm:px-12 md:px-16 lg:px-20 2xl:px-32  relative poppins-regular "
           : "translate-x-[-100%] absolute h-0"
       }`}
     >
-      <div className="w-full items-center justify-center md:justify-between flex  pt-12 mb-4">
+      <div className="w-full items-center justify-center md:justify-between flex mb-4">
         <h1 className="poppins-semibold text-xl xs:text-3xl">Phone Images</h1>
         <Button
           variant="link"
@@ -82,27 +82,25 @@ const DeviceImages = ({ stepContent }) => {
       </p>
       <Steps step={5} />
 
-      <div className="mb-10">
-        <div className=" ">
-          <p className="mb-6">
-            Upload File <span className="text-[#E40C0C]">*</span>
-          </p>
+      <div className="">
+        <p className="mb-6">
+          Upload File <span className="text-[#E40C0C]">*</span>
+        </p>
 
-          <label className="border border-dashed h-[300px] w-full flex items-center justify-center cursor-pointer border-gray-500">
-            <div className="flex flex-col justify-center items-center gap-4">
-              <Upload className="h-12 w-12 text-[#979797]" />
-              <p className="text-[#979797]">
-                Drag and drop files here or choose file
-              </p>
-              <input
-                type="file"
-                className="invisible"
-                accept="image/*"
-                onChange={(e) => handleChange(e)}
-              />
-            </div>
-          </label>
-        </div>
+        <label className="border border-dashed h-[300px] w-full flex items-center justify-center cursor-pointer border-gray-500">
+          <div className="flex flex-col justify-center items-center gap-4">
+            <Upload className="h-12 w-12 text-[#979797]" />
+            <p className="text-[#979797]">
+              Drag and drop files here or choose file
+            </p>
+            <input
+              type="file"
+              className="invisible"
+              accept="image/*"
+              onChange={(e) => handleChange(e)}
+            />
+          </div>
+        </label>
       </div>
 
       <ImageList />

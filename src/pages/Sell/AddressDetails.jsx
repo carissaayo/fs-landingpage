@@ -14,10 +14,10 @@ const AddressDetails = () => {
   return (
     <main className="w-full h-full relative">
       <section className="">
-        <section id="sell" className="relative bg-white  pt-12 md:pt-32">
+        <section id="sell" className="relative bg-white  pt-28">
           <DeliveryDetails stepContent={4} />
         </section>
-        <div className="w-full flex justify-center sm:justify-end items-center  gap-6 mb-10 sm:pr-16">
+        <div className="w-full flex justify-center sm:justify-end items-center  gap-6 mt-12 mb-10 sm:pr-16">
           <Link
             to="/sell/brand/model/details"
             className="w-28 bg-[#F0F0F0] hover:bg-[#F0F0F0] text-black text-base rounded-2xl border border-[#ACACAC] h-[50px] flex items-center justify-center"

@@ -8,11 +8,11 @@ const DeliveryDetails = ({ stepContent }) => {
     <section
       className={` ${
         stepContent === 4
-          ? "translate-x-0 w-full md:con__height px-4 xs:px-8 sm:px-12 md:px-16 lg:px-20 2xl:px-32  relative poppins-regular pt-4 pb-8 md:py-0"
+          ? "translate-x-0 w-full md:con__height px-4 xs:px-8 sm:px-12 md:px-16 lg:px-20 2xl:px-32  relative poppins-regular "
           : "translate-x-[-100%] absolute h-0"
       }`}
     >
-      <div className="w-full items-center justify-center md:justify-between flex  pt-12 mb-4">
+      <div className="w-full items-center justify-center md:justify-between flex  mb-4">
         <h1 className="poppins-semibold text-xl xs:text-3xl">
           Location Details
         </h1>
@@ -34,32 +34,34 @@ const DeliveryDetails = ({ stepContent }) => {
           <Label className="">
             State <span className="text-[#E40C0C]">*</span>
           </Label>
-          <select
-            name=""
-            id=""
-            className="border border-gray-500 p-4 rounded-lg"
-            defaultValue=""
-            placeholder="Select the Phones Fault Condition"
-          >
-            <option value="apple" className="">
-              Broken Screen
-            </option>
-            <option value="apple" className="">
-              Broken Screen
-            </option>{" "}
-            <option value="apple" className="">
-              Broken Screen
-            </option>{" "}
-            <option value="apple" className="">
-              Broken Screen
-            </option>{" "}
-            <option value="apple" className="">
-              Broken Screen
-            </option>{" "}
-            <option value="apple" className="">
-              Broken Screen
-            </option>
-          </select>
+          <div className="custom-select">
+            <select
+              name=""
+              id=""
+              className="border border-gray-500 p-4 rounded-lg"
+              defaultValue=""
+              placeholder="Select the Phones Fault Condition"
+            >
+              <option value="apple" className="">
+                Broken Screen
+              </option>
+              <option value="apple" className="">
+                Broken Screen
+              </option>{" "}
+              <option value="apple" className="">
+                Broken Screen
+              </option>{" "}
+              <option value="apple" className="">
+                Broken Screen
+              </option>{" "}
+              <option value="apple" className="">
+                Broken Screen
+              </option>{" "}
+              <option value="apple" className="">
+                Broken Screen
+              </option>
+            </select>
+          </div>
         </div>
 
         {/*  City */}
@@ -67,32 +69,34 @@ const DeliveryDetails = ({ stepContent }) => {
           <Label className="">
             City<span className="text-[#E40C0C]">*</span>
           </Label>
-          <select
-            name=""
-            id=""
-            className="border border-gray-500 p-4 rounded-lg"
-            defaultValue=""
-            placeholder="Select the Phones Fault Condition"
-          >
-            <option value="apple" className="">
-              Broken Screen
-            </option>
-            <option value="apple" className="">
-              Broken Screen
-            </option>{" "}
-            <option value="apple" className="">
-              Broken Screen
-            </option>{" "}
-            <option value="apple" className="">
-              Broken Screen
-            </option>{" "}
-            <option value="apple" className="">
-              Broken Screen
-            </option>{" "}
-            <option value="apple" className="">
-              Broken Screen
-            </option>
-          </select>
+          <div className="custom-select">
+            <select
+              name=""
+              id=""
+              className="border border-gray-500 p-4 rounded-lg"
+              defaultValue=""
+              placeholder="Select the Phones Fault Condition"
+            >
+              <option value="apple" className="">
+                Broken Screen
+              </option>
+              <option value="apple" className="">
+                Broken Screen
+              </option>{" "}
+              <option value="apple" className="">
+                Broken Screen
+              </option>{" "}
+              <option value="apple" className="">
+                Broken Screen
+              </option>{" "}
+              <option value="apple" className="">
+                Broken Screen
+              </option>{" "}
+              <option value="apple" className="">
+                Broken Screen
+              </option>
+            </select>
+          </div>
         </div>
       </div>
     </section>

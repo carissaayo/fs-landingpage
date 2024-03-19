@@ -14,7 +14,7 @@ const PaymentSignupForm = () => {
             <Label className="">
               First Name <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border p-4" />
+            <Input className="border  border-gray-400 p-4 py-6" />
           </div>
 
           {/* Last Name */}
@@ -22,7 +22,7 @@ const PaymentSignupForm = () => {
             <Label className="">
               Last Name <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border p-4" />
+            <Input className="border border-gray-400 p-4 py-6" />
           </div>
 
           {/* Phone Number */}
@@ -30,7 +30,7 @@ const PaymentSignupForm = () => {
             <Label className="">
               Phone Number <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border p-4" />
+            <Input className="border border-gray-400 p-4 py-6" />
           </div>
 
           {/* Email Address */}
@@ -38,7 +38,7 @@ const PaymentSignupForm = () => {
             <Label className="">
               Email Address <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input type="email" className="border p-4" />
+            <Input type="email" className="border border-gray-400 p-4 py-6" />
           </div>
 
           {/* Password */}
@@ -46,7 +46,10 @@ const PaymentSignupForm = () => {
             <Label className="">
               Email Address <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input type="password" className="border p-4" />
+            <Input
+              type="password"
+              className="border border-gray-400 p-4 py-6"
+            />
           </div>
 
           {/* Confirm Password */}
@@ -54,7 +57,10 @@ const PaymentSignupForm = () => {
             <Label className="">
               Confirm Password <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border p-4" type="password" />
+            <Input
+              className="border border-gray-400 p-4 py-6"
+              type="password"
+            />
           </div>
         </div>
         {/* Submit Btn */}

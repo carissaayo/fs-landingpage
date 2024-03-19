@@ -72,7 +72,7 @@ const Steps = ({ step }) => {
           5{" "}
         </div>
       </div>
-      <div className="flex gap-5 xs:gap-8 lg:gap-16 items-center text-[#111111] text-sm sm:text-base">
+      <div className="flex gap-5 xs:gap-8 lg:gap-16 items-center text-[#111111] text-[10px] sm:text-sm md:text-base">
         <p className={`${step === 1 && "poppins-semibold"} `}>Select Brand</p>
         <p className={`${step === 2 && "poppins-semibold"} `}>Select Model</p>
         <p className={`${step === 3 && "poppins-semibold"} `}>Gadget Details</p>

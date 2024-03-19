@@ -4,9 +4,6 @@ import { RadioGroup, RadioGroupItem } from "../components/ui/radio-group";
 import { Label } from "../components/ui/label";
 import { Button } from "../components/ui/button";
 
-import Nav from "../components/CoreComponents/NavComponents/Nav";
-import MobileNav from "../components/CoreComponents/MobileComponents/MobileNav";
-
 import CheckoutFormA from "../components/CheckoutComponents/CheckoutFormA";
 import CheckoutFormB from "../components/CheckoutComponents/CheckoutFormB";
 import CheckoutFormC from "../components/CheckoutComponents/CheckoutFormC";
@@ -26,16 +23,12 @@ const Checkout = () => {
   const goToTop = () => {
     window.scrollTo({
       top: 0,
-      // behavior: "smooth",
     });
   };
   useEffect(() => goToTop(), []);
 
   return (
     <main className="w-full h-full relative">
-      <Nav isBuy={1} />
-      <MobileNav scroll={scroll} isBuy={1} />
-
       <section className="flex flex-col lg:flex-row justify-between px-8 md:px-16 lg:px-20 2xl:px-32 poppins-regular pb-12 gap-12  xl:gap-32 xs:w-[80%] sm:w-full mx-auto sm:mx-0 pt-24 sm:pt-36">
         <div className="flex-1 lg:flex-[1.5] relative ">
           <Steps />
@@ -52,7 +45,8 @@ const Checkout = () => {
           {/* Delivery Details */}
 
           <CheckoutFormD />
-          <div className="w-full flex justify-center sm:justify-end items-center  gap-6 mb-10">
+
+          <div className="w-full flex justify-center sm:justify-end items-center  gap-6 mb-10  ">
             <Button
               className="w-28 bg-[#F0F0F0] hover:bg-[#F0F0F0] text-black hover:text-black text-base rounded-2xl border border-[#ACACAC] h-[50px]"
               onClick={() => {

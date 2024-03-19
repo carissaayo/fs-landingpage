@@ -36,11 +36,11 @@ const DefaultLayout = () => {
     <main className="w-full h-full relative ">
       <Nav />
       <MobileNav scroll={scroll} />
-      <Outlet goToTop={goToTop} />
+      <Outlet />
 
       <Footer />
 
-      <div className="fixed bottom-3 w-[100%] items-center justify-center flex z-20 ">
+      <div className=" fixed bottom-3 w-[100%] items-center justify-center flex md:hidden z-20 ">
         <div className="  rounded-xl  border-[#292761] border-2 flex items-center justify-between bg-[#292761] ">
           <Link
             onClick={() => setBuyOrSell("buy")}

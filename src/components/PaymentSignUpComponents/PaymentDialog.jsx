@@ -31,10 +31,7 @@ const PaymentDialog = ({ title }) => {
             <span className="text-[#0E0C4D]">Log In</span>
           </DialogDescription>
         </DialogHeader>
-        {/* <ScrollArea className=""> */}
         <PaymentSignupForm />
-        {/* <ScrollBar orientation="vertical" /> */}
-        {/* </ScrollArea> */}
       </DialogContent>
     </Dialog>
   );

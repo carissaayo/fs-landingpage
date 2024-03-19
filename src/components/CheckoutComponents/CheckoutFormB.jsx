@@ -22,7 +22,7 @@ const CheckoutFormB = () => {
             <Label className="">
               Phone Number <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border border-gray-300 p-4" />
+            <Input className="border border-gray-400 p-4 py-7" />
           </div>
 
           {/* Email */}
@@ -30,7 +30,7 @@ const CheckoutFormB = () => {
             <Label className="">
               Email <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border border-gray-300 p-4 py-6" />
+            <Input className="border border-gray-400 p-4 py-7" />
           </div>
         </div>
 
@@ -40,32 +40,34 @@ const CheckoutFormB = () => {
             <Label className="">
               State <span className="text-[#E40C0C]">*</span>
             </Label>
-            <select
-              name=""
-              id=""
-              className="border border-gray-500 p-4 rounded-lg"
-              defaultValue=""
-              placeholder="Select the Phones Fault Condition"
-            >
-              <option value="apple" className="">
-                Broken Screen
-              </option>
-              <option value="apple" className="">
-                Broken Screen
-              </option>{" "}
-              <option value="apple" className="">
-                Broken Screen
-              </option>{" "}
-              <option value="apple" className="">
-                Broken Screen
-              </option>{" "}
-              <option value="apple" className="">
-                Broken Screen
-              </option>{" "}
-              <option value="apple" className="">
-                Broken Screen
-              </option>
-            </select>
+            <div className="custom-select">
+              <select
+                name=""
+                id=""
+                className=" border border-gray-500 p-4 rounded-lg"
+                defaultValue=""
+                placeholder="Select the Phones Fault Condition"
+              >
+                <option value="apple" className="">
+                  Broken Screen
+                </option>
+                <option value="apple" className="">
+                  Broken Screen
+                </option>{" "}
+                <option value="apple" className="">
+                  Broken Screen
+                </option>{" "}
+                <option value="apple" className="">
+                  Broken Screen
+                </option>{" "}
+                <option value="apple" className="">
+                  Broken Screen
+                </option>{" "}
+                <option value="apple" className="">
+                  Broken Screen
+                </option>
+              </select>
+            </div>
           </div>
 
           {/*City */}
@@ -73,7 +75,7 @@ const CheckoutFormB = () => {
             <Label className="">
               City<span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border border-gray-300 p-4 py-6" />
+            <Input className="border border-gray-400 p-4 py-7" />
           </div>
         </div>
 
@@ -82,7 +84,7 @@ const CheckoutFormB = () => {
           <Label className="">
             Address <span className="text-[#E40C0C]">*</span>
           </Label>
-          <Input type="password" className="border border-gray-300 p-4 py-6" />
+          <Input type="password" className="border border-gray-400 p-4 py-7" />
         </div>
 
         <div className="flex flex-col sm:flex-row justify-between gap-6 ">
@@ -91,32 +93,34 @@ const CheckoutFormB = () => {
             <Label className="">
               LGA <span className="text-[#E40C0C]">*</span>
             </Label>
-            <select
-              name=""
-              id=""
-              className="border border-gray-500 p-4 rounded-lg"
-              defaultValue=""
-              placeholder="Select the Phones Fault Condition"
-            >
-              <option value="apple" className="">
-                Broken Screen
-              </option>
-              <option value="apple" className="">
-                Broken Screen
-              </option>{" "}
-              <option value="apple" className="">
-                Broken Screen
-              </option>{" "}
-              <option value="apple" className="">
-                Broken Screen
-              </option>{" "}
-              <option value="apple" className="">
-                Broken Screen
-              </option>{" "}
-              <option value="apple" className="">
-                Broken Screen
-              </option>
-            </select>
+            <div className="custom-select">
+              <select
+                name=""
+                id=""
+                className=" border border-gray-500 p-4 rounded-lg"
+                defaultValue=""
+                placeholder="Select the Phones Fault Condition"
+              >
+                <option value="apple" className="">
+                  Broken Screen
+                </option>
+                <option value="apple" className="">
+                  Broken Screen
+                </option>{" "}
+                <option value="apple" className="">
+                  Broken Screen
+                </option>{" "}
+                <option value="apple" className="">
+                  Broken Screen
+                </option>{" "}
+                <option value="apple" className="">
+                  Broken Screen
+                </option>{" "}
+                <option value="apple" className="">
+                  Broken Screen
+                </option>
+              </select>
+            </div>
           </div>
 
           {/*NIN */}
@@ -124,7 +128,7 @@ const CheckoutFormB = () => {
             <Label className="">
               NIN<span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border border-gray-300 p-4 py-6" />
+            <Input className="border border-gray-400 p-4 py-7" />
           </div>
         </div>
       </div>

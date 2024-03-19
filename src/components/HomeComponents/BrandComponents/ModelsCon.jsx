@@ -13,7 +13,7 @@ const ModelsCon = ({ stepContent }) => {
           : "translate-x-[-100%] absolute h-0"
       }`}
     >
-      <div className="w-full items-center justify-center md:justify-between flex mb-4 md:pt-12">
+      <div className="w-full items-center justify-center md:justify-between flex mb-4 ">
         <h1 className="poppins-semibold text-xl xs:text-3xl">
           Select Phone Model
         </h1>

@@ -29,7 +29,7 @@ const ChecoutFormD = () => {
                 <select
                   name=""
                   id=""
-                  className=" border border-gray-500 p-4 rounded-lg"
+                  className=" border border-gray-400 p-4 rounded-lg"
                   defaultValue=""
                   placeholder="Select the Phones Fault Condition"
                 >
@@ -80,7 +80,7 @@ const ChecoutFormD = () => {
             </Label>
             <div className="flex gap-4 xs:gap-8">
               {/* Number Code */}
-              <div className="w-[25%] sm:w-[20%] lg:w-[10%] border  p-3 xs:p-3 xs:px-4 flex rounded-xl">
+              <div className="w-[25%] sm:w-[20%] lg:w-[10%] border border-gray-400  p-3 xs:p-3 xs:px-4 flex rounded-xl">
                 <p className="text-base xs:text-lg">+234</p>
               </div>
 

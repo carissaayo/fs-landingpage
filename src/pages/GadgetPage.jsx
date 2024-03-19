@@ -111,7 +111,7 @@ const GadgetPage = () => {
                 Enter your first deposit below
               </p>
 
-              <div className="flex items-center gap-3 mt-4  border lg:border-b border-gray-200    rounded-xl">
+              <div className="flex items-center gap-3 mt-4  border lg:border-b border-gray-400    rounded-xl">
                 <span className="bg-[#130D52] text-white poppins-semibold text-xl p-2 sm:p-4 px-6 rounded-l-xl">
                   ₦
                 </span>

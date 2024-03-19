@@ -45,7 +45,7 @@ const CheckoutFormB = () => {
               <select
                 name=""
                 id=""
-                className=" border border-gray-500 p-4 rounded-lg"
+                className=" border border-gray-400 p-4 rounded-lg"
                 defaultValue=""
                 placeholder="Select the Phones Fault Condition"
               >
@@ -98,7 +98,7 @@ const CheckoutFormB = () => {
               <select
                 name=""
                 id=""
-                className=" border border-gray-500 p-4 rounded-lg"
+                className=" border border-gray-400 p-4 rounded-lg"
                 defaultValue=""
                 placeholder="Select the Phones Fault Condition"
               >

@@ -87,7 +87,7 @@ const DeviceImages = ({ stepContent }) => {
           Upload File <span className="text-[#E40C0C]">*</span>
         </p>
 
-        <label className="border border-dashed h-[300px] w-full flex items-center justify-center cursor-pointer border-gray-500">
+        <label className="border border-dashed h-[300px] w-full flex items-center justify-center cursor-pointer border-gray-400">
           <div className="flex flex-col justify-center items-center gap-4">
             <Upload className="h-12 w-12 text-[#979797]" />
             <p className="text-[#979797]">

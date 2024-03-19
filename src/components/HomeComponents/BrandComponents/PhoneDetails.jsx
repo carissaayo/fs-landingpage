@@ -38,7 +38,7 @@ const PhoneDetails = ({ stepContent }) => {
             <Label className="">
               Ram <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border border-gray-500 p-4 py-6" />
+            <Input className="border border-gray-400 p-4 py-6" />
           </div>
 
           {/* Fault condition */}
@@ -50,7 +50,7 @@ const PhoneDetails = ({ stepContent }) => {
               <select
                 name=""
                 id=""
-                className="border border-gray-500 p-4 rounded-lg"
+                className="border border-gray-400 p-4 rounded-lg"
                 defaultValue=""
                 placeholder="Select the Phones Fault Condition"
               >
@@ -83,7 +83,7 @@ const PhoneDetails = ({ stepContent }) => {
             <Label className="">
               Storage <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border border-gray-500 p-4 py-6" />
+            <Input className="border border-gray-400 p-4 py-6" />
           </div>
 
           {/* Phone Type */}
@@ -95,7 +95,7 @@ const PhoneDetails = ({ stepContent }) => {
               <select
                 name=""
                 id=""
-                className="border border-gray-500 p-4 rounded-lg"
+                className="border border-gray-400 p-4 rounded-lg"
                 defaultValue=""
                 placeholder="Select the Phones Fault Condition"
               >
@@ -132,7 +132,7 @@ const PhoneDetails = ({ stepContent }) => {
               <select
                 name=""
                 id=""
-                className="border border-gray-500 p-4 rounded-lg"
+                className="border border-gray-400 p-4 rounded-lg"
                 defaultValue=""
                 placeholder="Select the Phones Fault Condition"
               >
@@ -168,7 +168,7 @@ const PhoneDetails = ({ stepContent }) => {
               <select
                 name=""
                 id=""
-                className="border border-gray-500 p-4 rounded-lg"
+                className="border border-gray-400 p-4 rounded-lg"
                 defaultValue=""
                 placeholder="Select the Phones Fault Condition"
               >

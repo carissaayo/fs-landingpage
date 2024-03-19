@@ -1,14 +1,8 @@
+import { ChevronUp } from "lucide-react";
+
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 import { Label } from "../ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "../ui/select";
-import { ChevronUp } from "lucide-react";
-import { Button } from "../ui/button";
+
 import PaymentDialog from "../PaymentSignUpComponents/PaymentDialog";
 
 const PaymentCon = () => {

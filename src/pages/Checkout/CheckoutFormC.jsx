@@ -1,20 +1,21 @@
-import { Input } from "../ui/input";
-import { Label } from "../ui/label";
-import { useGeneralStore } from "../../store/generalStore";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
+import { Input } from "../../components/ui/input";
+import { Label } from "../../components/ui/label";
+
+import { useGeneralStore } from "../../store/generalStore";
 const CheckoutFormC = () => {
-  const showCheckoutContent = useGeneralStore(
-    (state) => state.showCheckoutContent
-  );
+  const setCheckoutStep = useGeneralStore((state) => state.setCheckoutStep);
+  const goToTop = () => {
+    window.scrollTo({
+      top: 0,
+    });
+  };
+  useEffect(() => goToTop(), []);
   return (
-    <section
-      className={` ${
-        showCheckoutContent === 3
-          ? "translate-x-0 w-full relative poppins-regular "
-          : "translate-x-[-200%] h-0"
-      }`}
-    >
-      <div className="pb-6">
+    <section className="w-full ">
+      <div className="mb-6 ">
         <p className="text-[#898686] mb-4   xs:text-lg mt-6">
           Please provide 3 Guarantor details
         </p>
@@ -143,6 +144,22 @@ const CheckoutFormC = () => {
             </div>
           </div>
         </section>
+      </div>
+      <div className="w-full flex justify-center sm:justify-end items-center  gap-6 mb-10  ">
+        <Link
+          to="/buy/checkout/formB"
+          className="w-28 bg-[#F0F0F0] hover:bg-[#F0F0F0] text-black hover:text-black text-base rounded-2xl border border-[#ACACAC] h-[50px] flex items-center justify-center "
+          onClick={() => setCheckoutStep(2)}
+        >
+          Back
+        </Link>
+        <Link
+          to="/buy/checkout/formD"
+          className="bg-[#0C0F4D] hover:bg-[#0C0F4D] rounded-2xl w-28 h-[50px] flex items-center justify-center text-white"
+          onClick={() => setCheckoutStep(4)}
+        >
+          Next
+        </Link>
       </div>
     </section>
   );

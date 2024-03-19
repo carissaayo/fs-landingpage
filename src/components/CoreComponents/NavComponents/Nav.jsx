@@ -31,40 +31,40 @@ const Nav = ({ isBuy }) => {
   return (
     <section
       className={`
-      hidden md:flex z-20 bg-[#0E0C4D] w-full  items-center justify-between py-6   px-16 lg:px-20 2xl:px-32  poppins-regular fixed `}
+      hidden md:flex z-20 bg-[#0E0C4D] w-full  items-center justify-evenly py-6   px-16 lg:px-20 2xl:px-32  poppins-regular fixed `}
     >
       <div className="flex-1">
         <Link to="/" className="text-white poppins-extrabold text-[40px]">
           <img src={logoImg} alt="" className="" />
         </Link>
       </div>
-      <div className="flex items-center flex-[1.5]">
-        <div className="flex-1">
-          <div className="w-[150px]  rounded-xl  border-[#292761] border-2 flex items-center justify-between">
-            <Link
-              onClick={() => setBuyOrSell("buy")}
-              to="/"
-              className={`w-1/2 text-center py-3 ${
-                buyOrSell === "buy"
-                  ? "bg-[#292761] text-white "
-                  : "text-[#C0C0C0] rounded-l-xl"
-              }`}
-            >
-              Buy
-            </Link>
-            <Link
-              onClick={() => setBuyOrSell("sell")}
-              to="/sell"
-              className={`w-1/2 text-center py-3   ${
-                buyOrSell === "sell"
-                  ? "bg-[#292761] text-white "
-                  : "text-[#C0C0C0] rounded-r-xl"
-              }`}
-            >
-              Sell
-            </Link>
-          </div>
+      <div className="flex-1 flex justify-center">
+        <div className="w-[150px]  rounded-xl  border-[#292761] border-2 flex items-center justify-between">
+          <Link
+            onClick={() => setBuyOrSell("buy")}
+            to="/"
+            className={`w-1/2 text-center py-3 ${
+              buyOrSell === "buy"
+                ? "bg-[#292761] text-white "
+                : "text-[#C0C0C0] rounded-l-xl"
+            }`}
+          >
+            Buy
+          </Link>
+          <Link
+            onClick={() => setBuyOrSell("sell")}
+            to="/sell"
+            className={`w-1/2 text-center py-3   ${
+              buyOrSell === "sell"
+                ? "bg-[#292761] text-white "
+                : "text-[#C0C0C0] rounded-r-xl"
+            }`}
+          >
+            Sell
+          </Link>
         </div>
+      </div>
+      <div className="flex items-center flex-1">
         <div className="flex justify-end flex-1 gap-20">
           <NavMenu />
           {isLoggedIn ? (

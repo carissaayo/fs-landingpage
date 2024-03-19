@@ -1,3 +1,4 @@
+/* Custom select styles starts */
 select {
   appearance: none;
   /* safari */
@@ -39,6 +40,7 @@ select {
   border-top: var(--size) solid black;
   top: 55%;
 }
+/* Custom select styles ends */
 
 .gagdet .hero__height {
   height: calc(100vh - 100px);

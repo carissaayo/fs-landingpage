@@ -64,7 +64,7 @@ const PaymentSignupForm = () => {
           </div>
         </div>
         {/* Submit Btn */}
-        <Link to="/buy/checkout">
+        <Link to="/buy/checkout/formA">
           <div className=" flex justify-center w-full">
             <Button className="bg-[#0E0C4D] border-[#B1B1B1] hover:bg-[#0E0C4D] hover:border-[#B1B1B1]  py-4 text-lg w-[50%]">
               Sign up

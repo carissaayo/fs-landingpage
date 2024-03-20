@@ -16,8 +16,8 @@ const CheckoutFormA = () => {
   useEffect(() => goToTop(), []);
   return (
     <section className="w-full ">
-      <div className="py-6 px-2  flex flex-col gap-6 mb-6">
-        <div className="flex flex-col md:flex-row justify-between  gap-8 md:gap-6 ">
+      <div className="py-6 px-2  flex flex-col  gap-8  md:gap-12 mb-6">
+        <div className="flex flex-col md:flex-row justify-between  gap-8 md:gap-20 ">
           {/* First Name */}
           <div className="flex-1 flex flex-col gap-4">
             <Label className="">

@@ -7,7 +7,7 @@ import {
 
 const FAQs = () => {
   return (
-    <section className="w-full md:con__height bg-white  px-12  md:px-32  relative poppins-regular  py-20 ">
+    <section className="w-full md:con__height bg-white  px-6  md:px-32  relative poppins-regular  py-20 ">
       <h1 className="poppins-bold text-3xl text-center  mb-20">
         Frequently Asked Questions
       </h1>

@@ -10,7 +10,7 @@ const SellContainer = ({ title }) => {
         {title}
       </h1>
       <ScrollArea className=" w-full  ">
-        <div className="flex items-center  gap-1 sm:gap-4 md:gap-8 mb-6">
+        <div className="flex items-center  gap-1 md:gap-8 mb-6">
           <SellCard />
           <SellCard />
           <SellCard />
@@ -34,7 +34,7 @@ const SellContainer = ({ title }) => {
 
 const SellCon = () => {
   return (
-    <section className="w-full  px-12  md:px-32  relative poppins-regular pt-40 pb-8">
+    <section className="w-full  px-6  md:px-32  relative poppins-regular pt-40 pb-8">
       <SellForm />
       <div className="pt-60 md:pt-0">
         <SellContainer title="Popular smartphones" />

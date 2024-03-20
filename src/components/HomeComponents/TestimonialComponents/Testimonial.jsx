@@ -4,7 +4,7 @@ import testi1 from "../../../assets/images/testi1.png";
 
 const Testimonial = () => {
   return (
-    <section className="bg-[#FAFAFA] w-full md:con__height  px-12  md:px-32  relative poppins-regular py-16">
+    <section className="bg-[#FAFAFA] w-full md:con__height  px-6  md:px-32  relative poppins-regular py-16">
       <div className="flex items-center justify-center w-full flex-col mb-8">
         <h1 className="poppins-bold text-xl md:text-3xl my-4   md:w-4/5 text-center">
           See what our customers have to say about Fairshop

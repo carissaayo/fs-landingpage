@@ -3,7 +3,7 @@ import { Button } from "../../ui/button";
 
 const AboutUs = () => {
   return (
-    <section className="w-full md:con__height bg-white px-12  md:px-32   relative poppins-regular text-[#0C0F4D] py-12 ">
+    <section className="w-full md:con__height bg-white px-6  md:px-32   relative poppins-regular text-[#0C0F4D] py-12 ">
       <div className="mb-6 text-center md:text-left">
         <h1 className="poppins-bold text-3xl mb-4"> About Us</h1>
         <p className="poppins-semibold text-black text-lg md:text-2xl md:w-[40%]">

@@ -1,7 +1,7 @@
-import { Badge } from "../../ui/badge";
-import { useGeneralStore } from "../../../store/generalStore";
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+
+import { Badge } from "../../ui/badge";
 const brands = [
   " Apple",
   "Google",
@@ -14,12 +14,11 @@ const brands = [
   "Oppo",
   "Other",
 ];
-const BrandsCon = ({ number }) => {
-  const setShowContent = useGeneralStore((state) => state.setShowContent);
+const BrandsCon = () => {
   const [brand, setBrand] = useState("");
 
   return (
-    <div className="grid grid-cols-3 xs:grid-cols-4 sm:grid-cols-6 gap-4 xs:gap-6 sm:gap-6   my-12">
+    <div className="grid grid-cols-3 xs:grid-cols-4 sm:grid-cols-6 gap-4  md:gap-8  my-12">
       {brands.map((phone, i) => (
         <Link to={`/sell/brand/model`} key={i} state={{ brand: phone }}>
           <Badge

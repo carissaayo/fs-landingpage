@@ -20,11 +20,11 @@ const CheckoutFormC = () => {
           Please provide 3 Guarantor details
         </p>
         {/* First Guarantor */}
-        <section className="py-6 px-2  flex flex-col gap-8 md:gap-6">
+        <section className="py-6 px-2  flex flex-col gap-8 md:gap-12">
           <p className="text-[#0E0C4D] text-lg poppins-semibold">
             First Guarantor
           </p>
-          <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-6 ">
+          <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-20 ">
             {/* First Name */}
             <div className="flex-1 flex flex-col gap-4">
               <Label className="">
@@ -42,7 +42,7 @@ const CheckoutFormC = () => {
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-6 ">
+          <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-20 ">
             {/* Relationship */}
             <div className="flex-1 flex flex-col gap-4">
               <Label className="">
@@ -62,11 +62,11 @@ const CheckoutFormC = () => {
         </section>
 
         {/* Second Guarantor */}
-        <section className="py-6 px-2  flex flex-col gap-8 md:gap-6">
+        <section className="py-6 px-2  flex flex-col gap-8 md:gap-12">
           <p className="text-[#0E0C4D] text-lg poppins-semibold">
             Second Guarantor
           </p>
-          <div className="flex flex-col md:flex-row  justify-between gap-8 md:gap-6 ">
+          <div className="flex flex-col md:flex-row  justify-between gap-8 md:gap-20 ">
             {/* First Name */}
             <div className="flex-1 flex flex-col gap-4">
               <Label className="">
@@ -84,7 +84,7 @@ const CheckoutFormC = () => {
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row   justify-between  gap-8 md:gap-6 ">
+          <div className="flex flex-col md:flex-row   justify-between  gap-8 md:gap-20 ">
             {/* Relationship */}
             <div className="flex-1 flex flex-col gap-4">
               <Label className="">
@@ -104,11 +104,11 @@ const CheckoutFormC = () => {
         </section>
 
         {/* Third Guarantor */}
-        <section className="py-6 px-2  flex flex-col gap-8 sm:gap-6">
+        <section className="py-6 px-2  flex flex-col gap-8 sm:gap-12">
           <p className="text-[#0E0C4D] text-lg poppins-semibold">
             Third Guarantor
           </p>
-          <div className="flex flex-col md:flex-row  justify-between gap-8 md:gap-6 ">
+          <div className="flex flex-col md:flex-row  justify-between gap-8 md:gap-20 ">
             {/* First Name */}
             <div className="flex-1 flex flex-col gap-4">
               <Label className="">
@@ -126,7 +126,7 @@ const CheckoutFormC = () => {
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-6 ">
+          <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-20 ">
             {/* Relationship */}
             <div className="flex-1 flex flex-col gap-4">
               <Label className="">

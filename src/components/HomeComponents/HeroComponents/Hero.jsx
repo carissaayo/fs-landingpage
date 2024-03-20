@@ -1,14 +1,14 @@
 import { Button } from "../../ui/button";
-import { ChevronDown, Plus } from "lucide-react";
+import { Plus } from "lucide-react";
 import heroImg from "../../../assets/images/hero.png";
 const Hero = () => {
   return (
     <section
       className=" w-full md:hero__height  text-center md:text-left  px-8 md:px-16 lg:px-20 2xl:px-32  text-white relative poppins-regular 
-       bg-[#0E0C4D]   pb-16 pt-20  md:pt-60  sm:pb-20 lg:pt-12 lg:pb-12 2xl:pt-44  2xl:pb-[130px] 
+       bg-[#0E0C4D]   py-20 md:py-40 
   "
     >
-      <div className="flex flex-col md:flex-row items-center justify-between w-full  gap-12 md:gap-4 2xl:gap-8 ">
+      <div className="flex flex-col md:flex-row items-center justify-between w-full  gap-12 md:gap-8 ">
         <div className="md:flex-1  ">
           <h2 className="text-white poppins-medium text-3xl   md:text-[40px]  leading-[50px] mb-8   2xl:w-4/5">
             Sell your <span className="text-[#00FFFC]">smartphone</span> faster
@@ -24,7 +24,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="text-center  pt-12">
+      <div className="text-center  my-12">
         <Button className="bg-white bg-opacity-10 hover:bg-white hover:bg-opacity-10 rounded-2xl">
           <a href="#sell" className=" flex items-center">
             Sell Now <Plus className="h-4 w-4 ml-2" />

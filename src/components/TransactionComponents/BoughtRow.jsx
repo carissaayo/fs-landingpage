@@ -36,7 +36,7 @@ const BoughtRow = () => {
           anchor="right"
           className=" .MuiDrawer-modal"
         >
-          <div className="min-w-[80vw] xs:min-w-[70vw] sm:min-w-[40vw] pt-4 flex flex-col gap-4  text-base text-[#202020] poppins-meidum px-12">
+          <div className=" md:min-w-[40vw] pt-4 flex flex-col gap-4  text-base text-[#202020] poppins-meidum px-6 md:px-12">
             <div
               className=" flex justify-end hover:cursor-pointer"
               onClick={() => setOpenDetails(false)}
@@ -91,11 +91,11 @@ const BoughtRow = () => {
                 <p className="">Used</p>
               </div>
 
-              <div className="flex justify-between items-center">
+              <div className="flex justify-between items-center gap-2 md:gap-0">
                 <p className="text-[#8B8B8B]">
                   How long have you been using this device?
                 </p>
-                <p className="">2-3 Months</p>
+                <p className="text-center md:text-left">2-3 Months</p>
               </div>
 
               <div className="flex justify-between items-center">

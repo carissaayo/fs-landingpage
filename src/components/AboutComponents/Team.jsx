@@ -11,27 +11,27 @@ const Team = () => {
           <p className=" poppins-medium text-xl">
             Teams <span className="text-[52px] text-[#00FFFC]">.</span>
           </p>
-          <div className="flex flex-col gap-6  md:text-2xl">
-            <div className=" w-full flex flex-col md:flex-row justify-betwen items-center mb-12 gap-6">
+          <div className="flex flex-col gap-12 md:gap-20  md:text-2xl">
+            <div className=" w-full flex flex-col md:flex-row justify-betwen items-center  gap-6">
               <p className=" poppins-medium cursor-pointer flex-1 ">
                 <span className="text-[12px] text-[#00FFFC] ">01</span> Sales
               </p>
               <TeamCon />
             </div>
-            <div className="w-full flex flex-col md:flex-row justify-betwen items-center mb-12 gap-6 md:gap-0">
+            <div className="w-full flex flex-col md:flex-row justify-betwen items-center  gap-6 md:gap-0">
               <p className=" poppins-medium cursor-pointer flex-1">
                 <span className="text-[12px] text-[#00FFFC] ">02</span> Business
               </p>
               <BusinessCon />
             </div>
-            <div className="w-full flex flex-col md:flex-row justify-betwen items-center mb-12 gap-6 md:gap-0">
+            <div className="w-full flex flex-col md:flex-row justify-betwen items-center  gap-6 md:gap-0">
               <p className=" poppins-medium cursor-pointer flex-1">
                 <span className="text-[12px] text-[#00FFFC]">03</span>{" "}
                 Operations
               </p>
               <OperationsCon />
             </div>
-            <div className="w-full flex flex-col md:flex-row justify-betwen items-center mb-12 gap-6 md:gap-0">
+            <div className="w-full flex flex-col md:flex-row justify-betwen items-center  gap-6 md:gap-0">
               <p className=" poppins-medium cursor-pointer flex-1">
                 <span className="text-[12px] text-[#00FFFC] ">04</span>{" "}
                 Procurement

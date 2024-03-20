@@ -30,7 +30,7 @@ const MobileNav = () => {
   return (
     <section
       className={`
-        md:hidden  z-20 bg-[#0E0C4D] w-full left-0   py-6   px-12  poppins-regular  fixed`}
+        md:hidden  z-20 bg-[#0E0C4D] w-full left-0   py-6   px-6  poppins-regular  fixed`}
     >
       <div className="relative">
         <div className="flex w-full items-center justify-between">

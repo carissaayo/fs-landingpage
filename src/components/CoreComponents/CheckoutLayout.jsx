@@ -33,7 +33,7 @@ const CheckoutLayout = () => {
       <Nav />
       <MobileNav scroll={scroll} />
       <main className="w-full h-full relative">
-        <section className="flex flex-col 2xl:flex-row justify-between px-12 md:px-32 poppins-regular pb-12 gap-12  md:gap-20 w-full mx-auto md:mx-0 pt-24 md:pt-36">
+        <section className="flex flex-col 2xl:flex-row justify-between px-6 md:px-32 poppins-regular pb-12 gap-12  md:gap-20 w-full mx-auto md:mx-0 pt-24 md:pt-36">
           <div className="flex-[1.5]   ">
             <Steps />
             <Outlet />

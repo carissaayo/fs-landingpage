@@ -8,7 +8,7 @@ const DeliveryDetails = ({ stepContent }) => {
     <section
       className={` ${
         stepContent === 4
-          ? "translate-x-0 w-full md:con__height px-12 md:px-32  relative poppins-regular "
+          ? "translate-x-0 w-full md:con__height px-6 md:px-32  relative poppins-regular "
           : "translate-x-[-100%] absolute h-0"
       }`}
     >

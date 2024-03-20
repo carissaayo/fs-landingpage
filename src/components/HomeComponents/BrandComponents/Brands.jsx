@@ -5,7 +5,7 @@ const Brands = () => {
   return (
     <section
       className={
-        " w-full md:con__height px-12  md:px-32 poppins-regular py-12 md:py-0"
+        " w-full md:con__height px-6  md:px-32 poppins-regular py-12 md:py-0"
       }
     >
       <div className="w-full items-center justify-center md:justify-between flex mb-2 md:pt-12">

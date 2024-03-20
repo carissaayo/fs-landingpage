@@ -1,4 +1,3 @@
-import { ChevronUp } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 
@@ -13,7 +12,6 @@ import Steps from "../CheckoutComponents/Steps";
 import { useGeneralStore } from "../../store/generalStore";
 
 const CheckoutLayout = () => {
-  const [showTopBtn, setShowTopBtn] = useState(false);
   const [scroll, setScroll] = useState(false);
   const buyOrSell = useGeneralStore((state) => state.buyOrSell);
   const setBuyOrSell = useGeneralStore((state) => state.setBuyOrSell);
@@ -22,15 +20,7 @@ const CheckoutLayout = () => {
       setScroll(window.scrollY > 10);
     });
   });
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 400) {
-        setShowTopBtn(true);
-      } else {
-        setShowTopBtn(false);
-      }
-    });
-  }, []);
+
   const goToTop = () => {
     window.scrollTo({
       top: 0,
@@ -43,8 +33,8 @@ const CheckoutLayout = () => {
       <Nav />
       <MobileNav scroll={scroll} />
       <main className="w-full h-full relative">
-        <section className="flex flex-col lg:flex-row justify-between px-8 md:px-16 lg:px-20 2xl:px-32 poppins-regular pb-12 gap-12  xl:gap-32 xs:w-[80%] sm:w-full mx-auto sm:mx-0 pt-24 sm:pt-36">
-          <div className="flex-1 lg:flex-[1.5] relative ">
+        <section className="flex flex-col 2xl:flex-row justify-between px-12 md:px-32 poppins-regular pb-12 gap-12  md:gap-20 w-full mx-auto md:mx-0 pt-24 md:pt-36">
+          <div className="flex-[1.5]   ">
             <Steps />
             <Outlet />
           </div>
@@ -88,7 +78,7 @@ const CheckoutLayout = () => {
             {/* Payment structure */}
             <div className=" mb-10">
               <RadioGroup defaultValue="0">
-                <div className="flex items-center space-x-2  justify-between  py-4 xs:p-4 rounded-xl">
+                <div className="flex items-center space-x-2  justify-between  p-4 rounded-xl">
                   <div className="flex items-center gap-6">
                     <RadioGroupItem value="0" id="r1" />
                     <Label htmlFor="r1">1st monthly payment</Label>
@@ -148,12 +138,6 @@ const CheckoutLayout = () => {
             Sell
           </Link>
         </div>
-      </div>
-      <div className="top-to-btm">
-        {" "}
-        {showTopBtn && (
-          <ChevronUp className="icon-position icon-style" onClick={goToTop} />
-        )}{" "}
       </div>
     </main>
   );

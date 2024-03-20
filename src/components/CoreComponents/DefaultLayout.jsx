@@ -1,13 +1,13 @@
+import { useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
+
 import Nav from "./NavComponents/Nav";
 import MobileNav from "./MobileComponents/MobileNav";
 import Footer from "./FooterComponents/Footer";
-import { ChevronUp } from "lucide-react";
-import { useEffect, useState } from "react";
+
 import { useGeneralStore } from "../../store/generalStore";
 
 const DefaultLayout = () => {
-  const [showTopBtn, setShowTopBtn] = useState(false);
   const [scroll, setScroll] = useState(false);
   const buyOrSell = useGeneralStore((state) => state.buyOrSell);
   const setBuyOrSell = useGeneralStore((state) => state.setBuyOrSell);
@@ -16,20 +16,15 @@ const DefaultLayout = () => {
       setScroll(window.scrollY > 10);
     });
   });
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 400) {
-        setShowTopBtn(true);
-      } else {
-        setShowTopBtn(false);
-      }
-    });
-  }, []);
   const goToTop = () => {
     window.scrollTo({
       top: 0,
     });
   };
+
+  useEffect(() => {
+    goToTop();
+  }, []);
 
   return (
     <main className="w-full h-full relative ">
@@ -64,12 +59,6 @@ const DefaultLayout = () => {
             Sell
           </Link>
         </div>
-      </div>
-      <div className="top-to-btm">
-        {" "}
-        {showTopBtn && (
-          <ChevronUp className="icon-position icon-style" onClick={goToTop} />
-        )}{" "}
       </div>
     </main>
   );

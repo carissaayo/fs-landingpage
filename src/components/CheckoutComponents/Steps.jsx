@@ -2,10 +2,9 @@ import { useGeneralStore } from "../../store/generalStore";
 
 const Steps = () => {
   const checkoutStep = useGeneralStore((state) => state.checkoutStep);
-  const setCheckoutStep = useGeneralStore((state) => state.setCheckoutStep);
   return (
-    <section className="sm:mb-16 text-[10px]">
-      <div className="w-full flex items-center my-6">
+    <section className="mb-8 text-[10px]">
+      <div className="w-full flex items-center my-6 md:my-0">
         {/* 1 */}
 
         <div
@@ -60,7 +59,7 @@ const Steps = () => {
           4
         </div>
       </div>
-      <div className="flex gap-6 xs:gap-10 sm:gap-8 lg:gap-16 items-center text-[#111111] text-[10px] sm:text-sm md:text-base">
+      <div className="flex gap-6 xs:gap-10 sm:gap-8 lg:gap-16 items-center text-[#111111] text-[10px] ">
         <p className={`${checkoutStep === 1 && "poppins-semibold"} `}>
           KYC details(1)
         </p>

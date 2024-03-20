@@ -18,8 +18,8 @@ const ChecoutFormD = () => {
   return (
     <section className="w-full ">
       <div className="mb-6">
-        <div className="py-6 px-2  flex flex-col gap-8 sm:gap-6 ">
-          <div className="flex flex-col sm:flex-row justify-between gap-8 sm:gap-6 ">
+        <div className="py-6 px-2  flex flex-col gap-8 md:gap-6 ">
+          <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-6 ">
             {/* State*/}
             <div className="flex-1 flex flex-col gap-4">
               <Label className="">
@@ -78,14 +78,14 @@ const ChecoutFormD = () => {
             <Label className="">
               Contact Phone Number <span className="text-[#E40C0C]">*</span>
             </Label>
-            <div className="flex gap-4 xs:gap-8">
+            <div className="flex gap-4 md:gap-8">
               {/* Number Code */}
-              <div className="w-[25%] sm:w-[20%] lg:w-[10%] border border-gray-400  p-3 xs:p-3 xs:px-4 flex rounded-xl">
+              <div className="w-[25%] md:w-[20%]  border border-gray-400  p-3  flex rounded-xl">
                 <p className="text-base xs:text-lg">+234</p>
               </div>
 
               {/* Phone Number */}
-              <div className="w-[75%] sm:w-[80%] lg:w-[90%] flex flex-col gap-4">
+              <div className="w-[75%] md:w-[90%] flex flex-col gap-4">
                 <Input className="border border-gray-400 p-4 py-7 rounded-xl" />
               </div>
             </div>

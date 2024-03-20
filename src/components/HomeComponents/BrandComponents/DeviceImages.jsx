@@ -64,7 +64,7 @@ const DeviceImages = ({ stepContent }) => {
     <section
       className={` ${
         stepContent === 5
-          ? "translate-x-0 w-full md:con__height px-4 xs:px-8 sm:px-12 md:px-16 lg:px-20 2xl:px-32  relative poppins-regular "
+          ? "translate-x-0 w-full md:con__height px-12 md:px-32  relative poppins-regular "
           : "translate-x-[-100%] absolute h-0"
       }`}
     >
@@ -77,7 +77,7 @@ const DeviceImages = ({ stepContent }) => {
           <a href="#how-it-works">How it works</a>
         </Button>
       </div>
-      <p className="text-[#111111] text-center md:text-left xs:text-lg md:text-base mb-12">
+      <p className="text-[#111111] text-center md:text-left md:text-base mb-12">
         Please upload 2 to 4 clear images of your smartphone
       </p>
       <Steps step={5} />

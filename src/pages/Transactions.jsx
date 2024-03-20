@@ -15,7 +15,7 @@ const Transactions = () => {
 
   return (
     <main className="w-full h-full relative">
-      <section className=" px-4 xs:px-8 md:px-16 lg:px-20 2xl:px-32 poppins-regular pb-12 pt-32">
+      <section className=" px-12  md:px-32 poppins-regular pb-12 pt-32">
         <div className="mb-10">
           <h1 className="poppins-semibold  text-2xl mb-4">
             Transaction History

@@ -24,7 +24,7 @@ const Home = () => {
         <Hero />
         <section id="sell" className="relative bg-white ">
           <div className="h-[80px] bg-white rounded-t-2xl absolute left-[2%] top-[-40px] w-[95%] mx-auto z-10"></div>
-          <Brands stepContent={stepContent} />
+          <Brands />
         </section>
 
         <HowItWorks />

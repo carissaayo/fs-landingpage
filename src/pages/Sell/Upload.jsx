@@ -17,7 +17,7 @@ const Upload = () => {
         <section id="sell" className="relative bg-white pt-28 ">
           <DeviceImages stepContent={5} />
         </section>
-        <div className="w-full flex justify-center sm:justify-end items-center  gap-6 mt-12 mb-10 sm:pr-16">
+        <div className="w-full flex justify-center md:justify-end items-center  gap-6 mt-12 mb-10 md:pr-16">
           <Link
             to="/sell/address"
             className="w-28 bg-[#F0F0F0] hover:bg-[#F0F0F0] text-black text-base rounded-2xl border border-[#ACACAC] h-[50px] flex items-center justify-center"

@@ -29,7 +29,7 @@ const Checkout = () => {
 
   return (
     <main className="w-full h-full relative">
-      <section className="flex flex-col lg:flex-row justify-between px-8 md:px-16 lg:px-20 2xl:px-32 poppins-regular pb-12 gap-12  xl:gap-32 xs:w-[80%] sm:w-full mx-auto sm:mx-0 pt-24 sm:pt-36">
+      <section className="flex flex-col md:flex-row justify-between px-12 md:px-32 poppins-regular pb-12 gap-12  md:gap-32 w-[80%] md:w-full mx-auto md:mx-0 pt-24 md:pt-36">
         <div className="flex-1 lg:flex-[1.5] relative ">
           <Steps />
           {/* KYC Details 1 */}

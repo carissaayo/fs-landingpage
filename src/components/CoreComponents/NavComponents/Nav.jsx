@@ -31,7 +31,7 @@ const Nav = ({ isBuy }) => {
   return (
     <section
       className={`
-      hidden md:flex z-20 bg-[#0E0C4D] w-full  items-center justify-evenly py-6   px-16 lg:px-20 2xl:px-32  poppins-regular fixed `}
+      hidden md:flex z-20 bg-[#0E0C4D] w-full  items-center justify-evenly py-6  px-24 lg:px-32 poppins-regular fixed `}
     >
       <div className="flex-1">
         <Link to="/" className="text-white poppins-extrabold text-[40px]">
@@ -43,10 +43,10 @@ const Nav = ({ isBuy }) => {
           <Link
             onClick={() => setBuyOrSell("buy")}
             to="/"
-            className={`w-1/2 text-center py-3 ${
+            className={`w-1/2 text-center py-2 rounded-l-xl ${
               buyOrSell === "buy"
                 ? "bg-[#292761] text-white "
-                : "text-[#C0C0C0] rounded-l-xl"
+                : "text-[#C0C0C0] "
             }`}
           >
             Buy
@@ -54,10 +54,10 @@ const Nav = ({ isBuy }) => {
           <Link
             onClick={() => setBuyOrSell("sell")}
             to="/sell"
-            className={`w-1/2 text-center py-3   ${
+            className={`w-1/2 text-center py-2 rounded-r-xl  ${
               buyOrSell === "sell"
                 ? "bg-[#292761] text-white "
-                : "text-[#C0C0C0] rounded-r-xl"
+                : "text-[#C0C0C0] "
             }`}
           >
             Sell

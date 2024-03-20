@@ -30,7 +30,7 @@ const MobileNav = () => {
   return (
     <section
       className={`
-        md:hidden  z-20 bg-[#0E0C4D] w-full left-0   py-6   px-4  poppins-regular  fixed`}
+        md:hidden  z-20 bg-[#0E0C4D] w-full left-0   py-6   px-12  poppins-regular  fixed`}
     >
       <div className="relative">
         <div className="flex w-full items-center justify-between">
@@ -40,32 +40,6 @@ const MobileNav = () => {
             </Link>
           </div>
           <div className="flex-1 flex items-center justify-end gap-6   ">
-            {/* <div className="fixed bottom-3 w-[100%] items-center justify-center flex z-20 ">
-              <div className="  rounded-xl  border-[#292761] border-2 flex items-center justify-between bg-[#292761] ">
-                <Link
-                  onClick={() => setBuyOrSell("buy")}
-                  to="/"
-                  className={`w-[100px] text-center  rounded-l-xl p-[14px]  ${
-                    buyOrSell === "buy"
-                      ? "text-[#C0C0C0]"
-                      : "bg-[#0E0C4D] text-white "
-                  }`}
-                >
-                  Buy
-                </Link>
-                <Link
-                  onClick={() => setBuyOrSell("sell")}
-                  to="/sell"
-                  className={`w-[100px] text-center  rounded-r-xl p-[14px] ${
-                    buyOrSell === "sell"
-                      ? "text-[#C0C0C0] "
-                      : "  bg-[#0E0C4D] text-white"
-                  }`}
-                >
-                  Sell
-                </Link>
-              </div>
-            </div> */}
             <div className="">
               <Menu
                 className={`w-8 h-8 text-white  ${openMobile && "rotate-90"}`}
@@ -78,7 +52,7 @@ const MobileNav = () => {
               anchor="right"
               className=" .MuiDrawer-modal"
             >
-              <div className="min-w-[70vw] sm:min-w-[50vw] pt-8 flex flex-col gap-4  text-base text-[#202020] poppins-meidum">
+              <div className="min-w-[70vw] pt-8 flex flex-col gap-4  text-base text-[#202020] poppins-meidum">
                 <div className="px-4" onClick={() => setOpenMobile(false)}>
                   <X className="w-6 h-6" />
                 </div>

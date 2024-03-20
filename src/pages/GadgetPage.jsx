@@ -17,15 +17,15 @@ const GadgetPage = () => {
 
   return (
     <main className="">
-      <section className="xs:px-8 md:px-16 lg:px-20 2xl:px-32 poppins-regular xs:pb-12  pt-[75px] md:pt-32">
-        <section className="flex flex-col md:flex-row  justify-center md:justify-between xs:my-6 xs:gap-12 lg:gap-20 xs:w-[90%] sm:w-[80%] md:w-full mx-auto relative pt-1">
+      <section className="px-12 md:px-32 poppins-regular   pt-[75px] md:pt-32">
+        <section className="flex flex-col md:flex-row  justify-center md:justify-between md:my-6 gap-12 md:gap-20  mx-auto relative pt-1">
           <div className="flex-1">
-            <div className="max-w-[560px] max-h-[600px] xs:h-auto mb-10">
+            <div className="max-w-[560px] max-h-[600px] mb-10">
               <GadgetImageSlider />
             </div>
 
             {/* Description Con */}
-            <div className="border border-gray-100 px-4 py-6 rounded-xl hidden xs:flex flex-col gap-6">
+            <div className="border border-gray-100 px-4 py-6 rounded-xl hidden md:flex flex-col gap-6">
               <Label className="poppins-semibold text-2xl ">Description</Label>
               <p className="border-none placeholder:text-[#898686] p-4">
                 Iphone 12 256gb uk used factory unlocked. Black color, in
@@ -35,9 +35,9 @@ const GadgetPage = () => {
           </div>
 
           {/* Second row */}
-          <div className="xs:flex-1   w-[95%] xs:w-full relative top-[-40%] xs:h-full xs:top-0 px-4   xs:px-0 mx-auto bg-white rounded-t-xl pt-8">
+          <div className="md:flex-1   w-full relative top-[-40%] md:h-full md:top-0   mx-auto bg-white rounded-t-xl pt-8">
             {/* Mobile */}
-            <section className="block xs:hidden">
+            <section className="block md:hidden">
               <h1 className="  poppins-semibold text-2xl mb-4">
                 Iphone 11 pro
               </h1>
@@ -74,7 +74,7 @@ const GadgetPage = () => {
               </div>
             </section>
             <div className="w-full">
-              <h1 className=" hidden xs:block poppins-semibold text-3xl mb-10">
+              <h1 className=" hidden md:block poppins-semibold text-3xl mb-10">
                 Iphone 11 pro
               </h1>
               <hr className="w-full border-b border-gray-100 mb-10" />
@@ -111,8 +111,8 @@ const GadgetPage = () => {
                 Enter your first deposit below
               </p>
 
-              <div className="flex items-center gap-3 mt-4  border lg:border-b border-gray-400    rounded-xl">
-                <span className="bg-[#130D52] text-white poppins-semibold text-xl p-2 sm:p-4 px-6 rounded-l-xl">
+              <div className="flex items-center gap-3 mt-4  border md:border-b border-gray-400    rounded-xl">
+                <span className="bg-[#130D52] text-white poppins-semibold text-xl p-2 md:p-4 px-6 rounded-l-xl">
                   ₦
                 </span>
                 <input

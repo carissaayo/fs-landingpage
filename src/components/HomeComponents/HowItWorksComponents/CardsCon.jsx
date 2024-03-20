@@ -5,8 +5,8 @@ import imageC from "../../../assets/images/using-phone (7) 2.png";
 
 const CardsCon = () => {
   return (
-    <div className="my-12 flex  flex-col md:flex-row items-center justify-between sm:w-[90%] md:w-full  gap-6 md:gap-6 xl:gap-20 px-6 sm:px-12 md:px-0 mx-auto ">
-      <div className="bg-white border border-[#E3E0E0] flex flex-col items-center  justify-center md:justify-start gap-8 rounded-xl md:flex-1 h-[440px] lg:h-[400px] w-full">
+    <div className="my-12 flex  flex-col md:flex-row items-center justify-between w-[90%] md:w-full  gap-8 mx-auto ">
+      <div className="bg-white border border-[#E3E0E0] flex flex-col items-center  justify-center md:justify-start gap-8 rounded-xl md:flex-1 min-h-[440px] w-full">
         <div className=" md:pt-8">
           <img src={imageA} alt="" className="" />
         </div>
@@ -15,7 +15,7 @@ const CardsCon = () => {
           Select the brand of the device you want to sell to fairshop
         </p>
       </div>{" "}
-      <div className="bg-white border border-[#E3E0E0] flex flex-col items-center  justify-center md:justify-start gap-8 rounded-xl md:flex-1 h-[440px] lg:h-[400px] w-full">
+      <div className="bg-white border border-[#E3E0E0] flex flex-col items-center  justify-center md:justify-start gap-8 rounded-xl md:flex-1 min-h-[440px] w-full">
         <div className=" md:pt-3">
           <img src={imageB} alt="" className="" />
         </div>
@@ -25,7 +25,7 @@ const CardsCon = () => {
           device
         </p>
       </div>{" "}
-      <div className="bg-white border border-[#E3E0E0] flex flex-col items-center  justify-center md:justify-start  rounded-xl md:flex-1 h-[440px] lg:h-[400px] w-full">
+      <div className="bg-white border border-[#E3E0E0] flex flex-col items-center  justify-center md:justify-start  rounded-xl md:flex-1 min-h-[440px] w-full">
         <div className="md:mb-8">
           <img src={imageC} alt="" className="h-[180px] " />
         </div>

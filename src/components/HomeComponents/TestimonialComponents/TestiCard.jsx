@@ -1,6 +1,6 @@
 const TestiCard = ({ image }) => {
   return (
-    <section className=" px-6 md:px-4 lg:px-6 md:pt-6 bg-white xs:h-[320px] lg:h-[300px] py-8">
+    <section className=" px-6  bg-white min-h-[320px] py-8">
       <div className="flex gap-4  items-center mb-8 md:mb-4">
         <img
           src={image}

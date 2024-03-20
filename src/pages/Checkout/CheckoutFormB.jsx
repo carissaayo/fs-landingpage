@@ -17,7 +17,7 @@ const CheckoutFormB = () => {
   return (
     <section className="w-full ">
       <div className="py-6 px-2  flex flex-col gap-6 mb-6">
-        <div className="flex flex-col sm:flex-row justify-between gap-8 sm:gap-6 ">
+        <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-6 ">
           {/* Phone Number */}
           <div className="flex-1 flex flex-col gap-4">
             <Label className="">
@@ -35,7 +35,7 @@ const CheckoutFormB = () => {
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-between gap-6 ">
+        <div className="flex flex-col md:flex-row justify-between gap-6 ">
           {/* State */}
           <div className="flex-1 flex flex-col gap-4">
             <Label className="">
@@ -88,7 +88,7 @@ const CheckoutFormB = () => {
           <Input type="password" className="border border-gray-400 p-4 py-7" />
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-between gap-6 ">
+        <div className="flex flex-col md:flex-row justify-between gap-6 ">
           {/* LGA */}
           <div className="flex-1 flex flex-col gap-4">
             <Label className="">
@@ -133,7 +133,7 @@ const CheckoutFormB = () => {
           </div>
         </div>
       </div>
-      <div className="w-full flex justify-center sm:justify-end items-center  gap-6 mb-10  ">
+      <div className="w-full flex justify-center md:justify-end items-center  gap-6 mb-10  ">
         <Link
           to="/buy/checkout/formA"
           className="w-28 bg-[#F0F0F0] hover:bg-[#F0F0F0] text-black hover:text-black text-base rounded-2xl border border-[#ACACAC] h-[50px] flex items-center justify-center "

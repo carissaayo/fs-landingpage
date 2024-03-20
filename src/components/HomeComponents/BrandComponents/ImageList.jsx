@@ -26,12 +26,12 @@ const ImageList = () => {
       {imageList.length > 0 &&
         imageList.map((file) => (
           <div
-            className="flex  sm:items-center justify-between border p-3 px-4 rounded-xl gap-4 flex-col sm:flex-row mb-4"
+            className="flex  md:items-center justify-between border p-3 px-4 rounded-xl gap-4 flex-col md:flex-row mb-4"
             key={file.name}
           >
             <div className="flex items-center gap-4 ">
               <img src={file.image} alt="" className="w-[100px] h-[80px]" />
-              <p className="text-sm">{file.name}</p>
+              <p className="text-sm text-wrap">{file.name}</p>
             </div>
             <div className="flex gap-2 w-full">
               <Button

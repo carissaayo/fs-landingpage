@@ -31,7 +31,7 @@ const ImageList = () => {
           >
             <div className="flex items-center gap-4 ">
               <img src={file.image} alt="" className="w-[100px] h-[80px]" />
-              <p className="text-sm truncate">{file.name}</p>
+              <p className="text-sm truncate break-all">{file.name}</p>
             </div>
             <div className="flex gap-2 w-full">
               <Button

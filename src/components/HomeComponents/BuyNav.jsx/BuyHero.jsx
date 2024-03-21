@@ -18,7 +18,7 @@ const BuyHero = () => {
           <img
             src={buyHeroImg}
             alt=""
-            className="md:min-w-[300px] md:min-h-[300px] max-h-[600px] "
+            className="md:min-w-[300px] md:min-h-[300px] max-h-[400px] md:max-h-[500px]  "
           />
         </div>
       </div>

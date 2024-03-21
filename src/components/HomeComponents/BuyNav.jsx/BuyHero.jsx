@@ -2,7 +2,7 @@ import buyHeroImg from "../../../assets/images/hero-buy.png";
 
 const BuyHero = () => {
   return (
-    <section className=" w-full min-h-screen h-screen text-center md:text-left  px-6 md:px-32   bg-[#0E0C4D]  text-white relative poppins-regular md:mt-[-80px] py-10 md:py-20 ">
+    <section className=" w-full min-h-screen h-screen text-center md:text-left  px-6 md:px-32   bg-[#0E0C4D]  text-white relative poppins-regular md:mt-[-80px] py-10 md:py-28 ">
       <div className="flex flex-col md:flex-row items-center justify-between w-full  gap-12 md:gap-8 h-full">
         <div className="md:flex-1 ">
           <h2 className="text-white poppins-medium text-3xl   md:text-[40px]  leading-[50px] mb-8   md:w-[90%]">

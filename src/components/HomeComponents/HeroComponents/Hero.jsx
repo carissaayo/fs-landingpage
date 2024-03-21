@@ -4,7 +4,7 @@ import heroImg from "../../../assets/images/hero.png";
 const Hero = () => {
   return (
     <section
-      className=" w-full md:hero__height  text-center md:text-left  px-8 md:px-16 lg:px-20 2xl:px-32  text-white relative poppins-regular 
+      className=" w-full min-h-screen  text-center md:text-left  px-8 md:px-16 lg:px-20 2xl:px-32  text-white poppins-regular 
        bg-[#0E0C4D]   py-20 md:py-40 
   "
     >
@@ -14,13 +14,17 @@ const Hero = () => {
             Sell your <span className="text-[#00FFFC]">smartphone</span> faster
             and conveniently
           </h2>
-          <p className="poppins-semibold md:text-[20px] md:w-[90%]">
+          <p className="poppins-medium md:text-[20px] md:w-[90%]">
             Fairshop is the easiest place to sell your smartphone and receive
             payment instantly
           </p>
         </div>
         <div className="flex-1 md:flex justify-end">
-          <img src={heroImg} alt="" />
+          <img
+            src={heroImg}
+            alt=""
+            className="md:min-w-[300px] md:min-h-[300px] max-h-[400px] md:max-h-[500px] "
+          />
         </div>
       </div>
 

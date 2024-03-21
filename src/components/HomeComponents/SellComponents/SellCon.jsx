@@ -34,9 +34,9 @@ const SellContainer = ({ title }) => {
 
 const SellCon = () => {
   return (
-    <section className="w-full  px-6  md:px-32  relative poppins-regular pt-40 pb-8">
+    <section className="w-full  px-6  md:px-32  relative poppins-regular  pb-8">
       <SellForm />
-      <div className="pt-60 md:pt-0">
+      <div className="">
         <SellContainer title="Popular smartphones" />
         <SellContainer title="Iphones" />
         <SellContainer title="Other Phones" />

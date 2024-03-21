@@ -22,7 +22,7 @@ const Home = () => {
     <main className="w-full h-full relative ">
       <section className="pt-12 md:pt-0">
         <Hero />
-        <section id="sell" className="relative bg-white ">
+        <section id="sell" className="relative bg-white mb-28 ">
           <div className="h-[80px] bg-white rounded-t-2xl absolute left-[2%] top-[-40px] w-[95%] mx-auto z-10"></div>
           <Brands />
         </section>

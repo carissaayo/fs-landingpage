@@ -31,7 +31,7 @@ const Nav = ({ isBuy }) => {
   return (
     <section
       className={`
-      hidden md:flex z-20 bg-[#0E0C4D] w-full  items-center justify-evenly py-6  px-24 lg:px-32 poppins-regular fixed `}
+      hidden md:flex z-20 bg-[#0E0C4D] w-full  items-center justify-evenly py-6  px-24 lg:px-32 poppins-regular fixed`}
     >
       <div className="flex-1">
         <Link to="/" className="text-white poppins-extrabold text-[40px]">

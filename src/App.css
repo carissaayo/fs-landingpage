@@ -42,6 +42,9 @@ select {
 }
 /* Custom select styles ends */
 
+.hero__height {
+  height: calc(100vh - 100px);
+}
 .gagdet .hero__height {
   height: calc(100vh - 100px);
 }

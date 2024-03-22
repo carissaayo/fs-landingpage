@@ -8,7 +8,7 @@ const Hero = () => {
        bg-[#0E0C4D]  py-16 md:py-8
   "
     >
-      <div className="flex flex-col h-screen gap-24 justify-center ">
+      <div className="flex flex-col h-screen gap-16 md:gap-24 justify-center ">
         <div className="flex flex-col md:flex-row items-center justify-between w-full  gap-12 md:gap-8 ">
           <div className="md:flex-1  ">
             <h2 className="text-white poppins-medium text-3xl   md:text-[40px]  leading-[50px] mb-8   md:w-[90%]">

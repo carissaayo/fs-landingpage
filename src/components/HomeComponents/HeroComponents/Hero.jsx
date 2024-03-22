@@ -4,8 +4,8 @@ import heroImg from "../../../assets/images/hero.png";
 const Hero = () => {
   return (
     <section
-      className=" w-full min-h-screen  text-center md:text-left  px-12 md:px-32  text-white poppins-regular 
-       bg-[#0E0C4D]  py-8
+      className=" w-full md:min-h-screen  text-center md:text-left  px-12 md:px-32  text-white poppins-regular 
+       bg-[#0E0C4D]  py-16 md:py-8
   "
     >
       <div className="flex flex-col h-screen gap-24 justify-center ">

@@ -21,7 +21,7 @@ const Home = () => {
         <div className="">
           <Hero />
         </div>
-        <section id="sell" className="relative bg-white mb-28 ">
+        <section id="sell" className="relative bg-white md:mb-28 ">
           <div className="h-[80px] bg-white rounded-t-2xl absolute left-[2%] top-[-40px] w-[95%] mx-auto z-10"></div>
           <Brands />
         </section>

@@ -4,13 +4,13 @@ import heroImg from "../../../assets/images/hero.png";
 const Hero = () => {
   return (
     <section
-      className=" w-full min-h-screen  text-center md:text-left  px-8 md:px-16 lg:px-20 2xl:px-32  text-white poppins-regular 
+      className=" w-full min-h-screen  text-center md:text-left  px-12 md:px-32  text-white poppins-regular 
        bg-[#0E0C4D]   py-20 md:py-40 
   "
     >
       <div className="flex flex-col md:flex-row items-center justify-between w-full  gap-12 md:gap-8 ">
         <div className="md:flex-1  ">
-          <h2 className="text-white poppins-medium text-3xl   md:text-[40px]  leading-[50px] mb-8   2xl:w-4/5">
+          <h2 className="text-white poppins-medium text-3xl   md:text-[40px]  leading-[50px] mb-8   md:w-[90%]">
             Sell your <span className="text-[#00FFFC]">smartphone</span> faster
             and conveniently
           </h2>

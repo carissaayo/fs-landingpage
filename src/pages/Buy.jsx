@@ -17,7 +17,7 @@ const Buy = () => {
 
   return (
     <main className="w-full h-full relative">
-      <section className="pt-[80px] bg-green-500">
+      <section className="pt-[80px] ">
         <BuyHero />
       </section>
       <SellCon />

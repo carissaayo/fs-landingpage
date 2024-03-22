@@ -21,11 +21,7 @@ const Hero = () => {
             </p>
           </div>
           <div className="flex-1 md:flex justify-end">
-            <img
-              src={heroImg}
-              alt=""
-              className="md:min-w-[300px] md:min-h-[250px] max-h-[400px] md:max-h-[350px] md:max-w-[500px]"
-            />
+            <img src={heroImg} alt="" className="" />
           </div>
         </div>
 

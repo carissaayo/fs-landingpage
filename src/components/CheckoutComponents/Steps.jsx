@@ -4,7 +4,7 @@ const Steps = () => {
   const checkoutStep = useGeneralStore((state) => state.checkoutStep);
   return (
     <section className="mb-8 text-[10px]">
-      <div className="w-full flex items-center my-6 md:my-0">
+      <div className="w-full flex items-center my-6 md:my-0 md:mb-2">
         {/* 1 */}
 
         <div
@@ -13,7 +13,7 @@ const Steps = () => {
           1
         </div>
         {/* Line */}
-        <div className="w-[90px] xs:w-[100px] sx:w-[120px] sm:w-[150px] lg:w-[180px]  h-[2px] bg-[#0E0C4D]"></div>
+        <div className="w-[90px] xs:w-[100px] sx:w-[120px] sm:w-[150px] md:w-[180px]  h-[2px] bg-[#0E0C4D]"></div>
 
         {/* 2 */}
         <div
@@ -27,7 +27,7 @@ const Steps = () => {
         </div>
         {/* Line */}
         <div
-          className={`w-[90px] xs:w-[100px] sx:w-[120px] sm:w-[150px] lg:w-[180px] h-[2px] ${
+          className={`w-[90px] xs:w-[100px] sx:w-[120px] sm:w-[150px] md:w-[180px] h-[2px] ${
             checkoutStep > 1 ? "bg-[#0E0C4D]" : "bg-[#858585]"
           } `}
         ></div>
@@ -44,7 +44,7 @@ const Steps = () => {
         </div>
         {/* Line */}
         <div
-          className={`w-[90px] xs:w-[100px] sx:w-[120px] sm:w-[150px] lg:w-[180px] h-[2px] ${
+          className={`w-[90px] xs:w-[100px] sx:w-[120px] sm:w-[150px] md:w-[180px] h-[2px] ${
             checkoutStep >= 3 ? "bg-[#0E0C4D]" : "bg-[#858585]"
           } `}
         ></div>
@@ -59,7 +59,7 @@ const Steps = () => {
           4
         </div>
       </div>
-      <div className="flex gap-6 xs:gap-10 sm:gap-8 lg:gap-16 items-center text-[#111111] text-[10px] ">
+      <div className="flex gap-12  sm:gap-24  md:gap-32 items-center text-[#111111] text-[10px] ">
         <p className={`${checkoutStep === 1 && "poppins-semibold"} `}>
           KYC details(1)
         </p>

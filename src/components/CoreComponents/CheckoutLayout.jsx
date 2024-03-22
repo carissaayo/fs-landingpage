@@ -88,7 +88,7 @@ const CheckoutLayout = () => {
                 <div className="relative">
                   <div className="h-[40px] w-0 border border-black border-dashed ml-6 absolute bottom-[-16px]"></div>
                 </div>
-                <div className="flex items-center space-x-2  justify-between  py-4 xs:p-4 rounded-xl">
+                <div className="flex items-center space-x-2  justify-between   p-4 rounded-xl">
                   <div className="flex items-center gap-6">
                     <RadioGroupItem value="0" id="r1" />
                     <Label htmlFor="r1">2nd monthly payment</Label>
@@ -98,7 +98,7 @@ const CheckoutLayout = () => {
                 <div className="relative">
                   <div className="h-[40px] w-0 border border-black border-dashed ml-6 absolute bottom-[-16px]"></div>
                 </div>
-                <div className="flex items-center space-x-2  justify-between  py-4 xs:p-4 rounded-xl">
+                <div className="flex items-center space-x-2  justify-between   p-4 rounded-xl">
                   <div className="flex items-center gap-6">
                     <RadioGroupItem value="0" id="r1" />
                     <Label htmlFor="r1">3rd monthly payment</Label>

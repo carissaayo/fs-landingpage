@@ -52,11 +52,8 @@ const MobileNav = () => {
               className=" .MuiDrawer-modal"
             >
               <div className="min-w-[70vw] pt-8 flex flex-col gap-4  text-base text-[#202020] poppins-meidum">
-                <div
-                  className="px-4 cursor-pointer"
-                  onClick={() => setOpenMobile(false)}
-                >
-                  <X className="w-6 h-6" />
+                <div className="px-4 " onClick={() => setOpenMobile(false)}>
+                  <X className="w-6 h-6 cursor-pointer" />
                 </div>
                 <div className="flex flex-col gap-4 items-center px-4 ">
                   <CircleUserRoundIcon className="w-8 h-8" />

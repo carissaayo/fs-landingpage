@@ -1,12 +1,13 @@
+import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-import NavMenu from "./NavMenu";
 import { Button } from "../../ui/button";
+import LoggedInNav from "./LoggedInNav";
+import NavMenu from "./NavMenu";
+
+import { useGeneralStore } from "../../../store/generalStore";
 
 import logoImg from "../../../assets/images/FairShop New Logo PNG 4 1.png";
-import { useGeneralStore } from "../../../store/generalStore";
-import { useEffect } from "react";
-import LoggedInNav from "./LoggedInNav";
 
 const Nav = () => {
   const buyOrSell = useGeneralStore((state) => state.buyOrSell);

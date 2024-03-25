@@ -1,7 +1,13 @@
+import { useLocation } from "react-router-dom";
+
 import { Plus } from "lucide-react";
 import { Button } from "../../ui/button";
 
 const AboutUs = () => {
+  const location = useLocation();
+
+  let pathname = location.pathname;
+
   return (
     <section className="w-full md:con__height bg-white px-6  md:px-32   relative poppins-regular text-[#0C0F4D] py-12 ">
       <div className="mb-6 text-center md:text-left">
@@ -31,7 +37,10 @@ const AboutUs = () => {
       </div>
       <div className="text-center  pt-12">
         <Button className="bg-[#D3D2DE] hover:bg-[#D3D2DE] md:bg-[#140D53]  md:hover:bg-[#140D53] text-[rgb(19,13,82)] md:text-white ]  rounded-2xl   ">
-          <a href="#brands" className=" flex px-2 items-center">
+          <a
+            href={`${pathname === "/sell" ? "#sell" : "/sell"}`}
+            className=" flex px-2 items-center"
+          >
             Sell Now <Plus className="h-4 w-4 ml-2" />
           </a>
         </Button>

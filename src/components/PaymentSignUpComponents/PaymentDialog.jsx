@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
 import {
   Dialog,
@@ -25,9 +26,11 @@ const PaymentDialog = ({ title }) => {
           <DialogTitle className="mb-2">
             Sign up to apply for this device
           </DialogTitle>
-          <DialogDescription>
+          <DialogDescription className="flex items-center gap-2">
             Already have an account?{" "}
-            <span className="text-[#0E0C4D]">Log In</span>
+            <Link to="/login" className="text-[#0E0C4D]">
+              Log In
+            </Link>
           </DialogDescription>
         </DialogHeader>
         <PaymentSignupForm />

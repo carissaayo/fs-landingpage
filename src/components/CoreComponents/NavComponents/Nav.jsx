@@ -8,7 +8,7 @@ import { useGeneralStore } from "../../../store/generalStore";
 import { useEffect } from "react";
 import LoggedInNav from "./LoggedInNav";
 
-const Nav = ({ isBuy }) => {
+const Nav = () => {
   const buyOrSell = useGeneralStore((state) => state.buyOrSell);
   const setBuyOrSell = useGeneralStore((state) => state.setBuyOrSell);
   const isLoggedIn = true;

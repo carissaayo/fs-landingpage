@@ -17,7 +17,7 @@ const GadgetPage = () => {
 
   return (
     <main className="">
-      <section className="px-12 md:px-32 poppins-regular   pt-[75px] md:pt-32">
+      <section className="px-12 md:px-32 poppins-regular   pt-[75px] md:pt-32 mb-12 ">
         <section className="flex flex-col md:flex-row  justify-center md:justify-between md:my-6 gap-12 md:gap-20  mx-auto relative pt-1">
           <div className="flex-1">
             <div className="max-w-[560px] max-h-[600px] mb-10">

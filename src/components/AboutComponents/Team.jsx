@@ -8,7 +8,7 @@ const Team = () => {
     <section className="w-full  bg-[#0E0C4D] flex  ,md:items-center justify-center py-16 ">
       <div className=" w-[90%] md:w-[80%] flex flex-col md:flex-row justify-between gap-12 md:gap-4 text-white">
         <div className="flex flex-col md:flex-1  gap-8 text-center md:text-left">
-          <p className=" poppins-medium text-xl">
+          <p className=" poppins-medium text-xl md:text-3xl ">
             Teams <span className="text-[52px] text-[#00FFFC]">.</span>
           </p>
           <div className="flex flex-col gap-12 md:gap-20  md:text-2xl">

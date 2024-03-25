@@ -5,6 +5,13 @@ import { Label } from "../ui/label";
 
 import PaymentDialog from "../PaymentSignUpComponents/PaymentDialog";
 
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
+
 const PaymentCon = () => {
   return (
     <>
@@ -15,51 +22,54 @@ const PaymentCon = () => {
 
         {/* Payment Con */}
         <div className="border border-gray-100 py-4 rounded-xl px-4 mb-10">
-          <p className="flex justify-between mb-4">
-            Pay Monthly{" "}
-            <span className="">
-              <ChevronUp className="w-5 h-5" />
-            </span>
-          </p>
-          <RadioGroup defaultValue="2">
-            <div className="flex items-center space-x-2  justify-between border p-4 rounded-xl">
-              <div className="flex items-center gap-2">
-                <RadioGroupItem value="2" id="r1" />
-                <Label htmlFor="r1">2 months</Label>
-              </div>
-              <p className="">₦329,800/mo</p>
-            </div>
-            <div className="flex items-center space-x-2 justify-between border p-4 rounded-xl">
-              <div className="flex items-center gap-2">
-                <RadioGroupItem value="3" id="r1" />
-                <Label htmlFor="r1">3 months</Label>
-              </div>
-              <p className="">₦329,800/mo</p>
-            </div>
-            <div className="flex items-center space-x-2 justify-between border p-4 rounded-xl">
-              <div className="flex items-center gap-2">
-                <RadioGroupItem value="4" id="r1" />
-                <Label htmlFor="r1">4 months</Label>
-              </div>
-              <p className="">₦329,800/mo</p>
-            </div>
+          <Accordion type="single" collapsible>
+            <AccordionItem value="item-1">
+              <AccordionTrigger className="hover:no-underline">
+                <p className="flex justify-between mb-4">Pay Monthly </p>
+              </AccordionTrigger>
+              <AccordionContent>
+                <RadioGroup defaultValue="2">
+                  <div className="flex items-center space-x-2  justify-between border p-4 rounded-xl">
+                    <div className="flex items-center gap-2">
+                      <RadioGroupItem value="2" id="r1" />
+                      <Label htmlFor="r1">2 months</Label>
+                    </div>
+                    <p className="">₦329,800/mo</p>
+                  </div>
+                  <div className="flex items-center space-x-2 justify-between border p-4 rounded-xl">
+                    <div className="flex items-center gap-2">
+                      <RadioGroupItem value="3" id="r1" />
+                      <Label htmlFor="r1">3 months</Label>
+                    </div>
+                    <p className="">₦329,800/mo</p>
+                  </div>
+                  <div className="flex items-center space-x-2 justify-between border p-4 rounded-xl">
+                    <div className="flex items-center gap-2">
+                      <RadioGroupItem value="4" id="r1" />
+                      <Label htmlFor="r1">4 months</Label>
+                    </div>
+                    <p className="">₦329,800/mo</p>
+                  </div>
 
-            <div className="flex items-center space-x-2 justify-between border p-4 rounded-xl">
-              <div className="flex items-center gap-2">
-                <RadioGroupItem value="5" id="r1" />
-                <Label htmlFor="r1">5 months</Label>
-              </div>
-              <p className="">₦329,800/mo</p>
-            </div>
+                  <div className="flex items-center space-x-2 justify-between border p-4 rounded-xl">
+                    <div className="flex items-center gap-2">
+                      <RadioGroupItem value="5" id="r1" />
+                      <Label htmlFor="r1">5 months</Label>
+                    </div>
+                    <p className="">₦329,800/mo</p>
+                  </div>
 
-            <div className="flex items-center space-x-2 justify-between border p-4 rounded-xl">
-              <div className="flex items-center gap-2">
-                <RadioGroupItem value="6" id="r1" />
-                <Label htmlFor="r1">6 months</Label>
-              </div>
-              <p className="">₦329,800/mo</p>
-            </div>
-          </RadioGroup>
+                  <div className="flex items-center space-x-2 justify-between border p-4 rounded-xl">
+                    <div className="flex items-center gap-2">
+                      <RadioGroupItem value="6" id="r1" />
+                      <Label htmlFor="r1">6 months</Label>
+                    </div>
+                    <p className="">₦329,800/mo</p>
+                  </div>
+                </RadioGroup>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
 
         {/* Delivery Con */}

@@ -15,7 +15,7 @@ const SellCard = () => {
       <div className="flex flex-col gap-4 px-4 py-4">
         <h1 className="text-left">Apple Macbook Air 13 Inch</h1>
         <h1 className="poppins-bold">₦301,490</h1>
-        <p className="flex items-center">
+        <p className="flex items-center text-[#0E0C4D]">
           <MapPin className="w-4 h-4 mr-2" />
           Kwara
         </p>

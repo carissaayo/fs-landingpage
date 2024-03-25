@@ -29,7 +29,7 @@ const ChecoutFormD = () => {
                 <select
                   name=""
                   id=""
-                  className=" border border-gray-400 p-4 rounded-lg"
+                  className=" border border-gray-400  rounded-lg"
                   defaultValue=""
                   placeholder="Select the Phones Fault Condition"
                 >
@@ -60,7 +60,7 @@ const ChecoutFormD = () => {
               <Label className="">
                 City <span className="text-[#E40C0C]">*</span>
               </Label>
-              <Input className="border border-gray-400 p-4 py-[30px]" />
+              <Input className="border border-gray-400 " />
             </div>
           </div>
           {/* Address */}
@@ -68,10 +68,7 @@ const ChecoutFormD = () => {
             <Label className="">
               Address <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input
-              type="password"
-              className="border border-gray-400 p-4 py-[30px]"
-            />
+            <Input type="password" className="border border-gray-400 " />
           </div>
 
           <div className="flex flex-col  gap-4 ">
@@ -86,7 +83,7 @@ const ChecoutFormD = () => {
 
               {/* Phone Number */}
               <div className="w-[75%] md:w-[90%] flex flex-col gap-4">
-                <Input className="border border-gray-400 p-4 py-[30px] rounded-xl" />
+                <Input className="border border-gray-400  rounded-xl" />
               </div>
             </div>
           </div>

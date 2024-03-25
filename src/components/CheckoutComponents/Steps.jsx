@@ -4,7 +4,7 @@ const Steps = () => {
   const checkoutStep = useGeneralStore((state) => state.checkoutStep);
   return (
     <section className="mb-8 text-[10px]">
-      <div className="w-full flex items-center my-6 md:my-0 md:mb-2">
+      <div className="w-full flex items-center  mb-2">
         {/* 1 */}
 
         <div
@@ -59,7 +59,7 @@ const Steps = () => {
           4
         </div>
       </div>
-      <div className="flex gap-12  sm:gap-24  md:gap-32 items-center text-[#111111] text-[10px] ">
+      <div className="flex gap-12  sm:gap-24  md:gap-32 items-center text-[#111111] text-[10px] poppins-medium ">
         <p className={`${checkoutStep === 1 && "poppins-semibold"} `}>
           KYC details(1)
         </p>

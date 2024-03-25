@@ -30,7 +30,7 @@ const CheckoutFormC = () => {
               <Label className="">
                 First Name <span className="text-[#E40C0C]">*</span>
               </Label>
-              <Input className="border border-gray-400 p-4 py-[30px]" />
+              <Input className="border border-gray-400 " />
             </div>
 
             {/* Last Name */}
@@ -38,7 +38,7 @@ const CheckoutFormC = () => {
               <Label className="">
                 Last Name <span className="text-[#E40C0C]">*</span>
               </Label>
-              <Input className="border border-gray-400 p-4 py-[30px]" />
+              <Input className="border border-gray-400 " />
             </div>
           </div>
 
@@ -48,7 +48,7 @@ const CheckoutFormC = () => {
               <Label className="">
                 Relationship <span className="text-[#E40C0C]">*</span>
               </Label>
-              <Input className="border border-gray-400 p-4 py-[30px]" />
+              <Input className="border border-gray-400 " />
             </div>
 
             {/* Phone Number */}
@@ -56,7 +56,7 @@ const CheckoutFormC = () => {
               <Label className="">
                 Contact Phone Number <span className="text-[#E40C0C]">*</span>
               </Label>
-              <Input className="border border-gray-400 p-4 py-[30px]" />
+              <Input className="border border-gray-400 " />
             </div>
           </div>
         </section>
@@ -72,7 +72,7 @@ const CheckoutFormC = () => {
               <Label className="">
                 First Name <span className="text-[#E40C0C]">*</span>
               </Label>
-              <Input className="border border-gray-400 p-4 py-[30px]" />
+              <Input className="border border-gray-400 " />
             </div>
 
             {/* Last Name */}
@@ -80,7 +80,7 @@ const CheckoutFormC = () => {
               <Label className="">
                 Last Name <span className="text-[#E40C0C]">*</span>
               </Label>
-              <Input className="border border-gray-400 p-4 py-[30px]" />
+              <Input className="border border-gray-400 " />
             </div>
           </div>
 
@@ -98,7 +98,7 @@ const CheckoutFormC = () => {
               <Label className="">
                 Contact Phone Number <span className="text-[#E40C0C]">*</span>
               </Label>
-              <Input className="border border-gray-400 p-4 py-[30px]" />
+              <Input className="border border-gray-400 " />
             </div>
           </div>
         </section>
@@ -114,7 +114,7 @@ const CheckoutFormC = () => {
               <Label className="">
                 First Name <span className="text-[#E40C0C]">*</span>
               </Label>
-              <Input className="border border-gray-400 p-4 py-[30px]" />
+              <Input className="border border-gray-400 " />
             </div>
 
             {/* Last Name */}
@@ -122,7 +122,7 @@ const CheckoutFormC = () => {
               <Label className="">
                 Last Name <span className="text-[#E40C0C]">*</span>
               </Label>
-              <Input className="border border-gray-400 p-4 py-[30px]" />
+              <Input className="border border-gray-400 " />
             </div>
           </div>
 
@@ -132,7 +132,7 @@ const CheckoutFormC = () => {
               <Label className="">
                 Relationship <span className="text-[#E40C0C]">*</span>
               </Label>
-              <Input className="border border-gray-400 p-4 py-[30px]" />
+              <Input className="border border-gray-400 " />
             </div>
 
             {/* Phone Number */}
@@ -140,12 +140,12 @@ const CheckoutFormC = () => {
               <Label className="">
                 Contact Phone Number <span className="text-[#E40C0C]">*</span>
               </Label>
-              <Input className="border border-gray-400 p-4 py-[30px]" />
+              <Input className="border border-gray-400 " />
             </div>
           </div>
         </section>
       </div>
-      <div className="w-full flex justify-center sm:justify-end items-center  gap-6 mb-10  ">
+      <div className="w-full flex justify-center md:justify-end items-center  gap-6 mb-10  ">
         <Link
           to="/buy/checkout/formB"
           className="w-28 bg-[#F0F0F0] hover:bg-[#F0F0F0] text-black hover:text-black text-base rounded-2xl border border-[#ACACAC] h-[50px] flex items-center justify-center "

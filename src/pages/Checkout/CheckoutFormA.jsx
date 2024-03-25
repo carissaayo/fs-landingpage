@@ -23,7 +23,7 @@ const CheckoutFormA = () => {
             <Label className="">
               First Name <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border border-gray-400 p-4 py-[30px]" />
+            <Input className="border border-gray-400" />
           </div>
 
           {/* Last Name */}
@@ -31,7 +31,7 @@ const CheckoutFormA = () => {
             <Label className="">
               Last Name <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border border-gray-400 p-4 py-[30px]" />
+            <Input className="border border-gray-400" />
           </div>
         </div>
 
@@ -40,7 +40,7 @@ const CheckoutFormA = () => {
           <Label className="">
             BVN <span className="text-[#E40C0C]">*</span>
           </Label>
-          <Input className="border border-gray-400 p-4 py-[30px]" />
+          <Input className="border border-gray-400" />
         </div>
 
         {/* Banks */}
@@ -52,7 +52,7 @@ const CheckoutFormA = () => {
             <select
               name=""
               id=""
-              className=" border border-gray-400 p-4 rounded-lg"
+              className=" border border-gray-400  rounded-lg"
               defaultValue=""
               placeholder="Select the Phones Fault Condition"
             >
@@ -83,10 +83,7 @@ const CheckoutFormA = () => {
           <Label className="">
             Account Number <span className="text-[#E40C0C]">*</span>
           </Label>
-          <Input
-            type="password"
-            className="border border-gray-400 p-4 py-[30px]"
-          />
+          <Input type="password" className="border border-gray-400" />
         </div>
       </div>
       <div className="w-full flex justify-center md:justify-end items-center  gap-6 mb-10  ">

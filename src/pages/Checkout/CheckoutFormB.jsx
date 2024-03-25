@@ -23,7 +23,7 @@ const CheckoutFormB = () => {
             <Label className="">
               Phone Number <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border border-gray-400 p-4 py-[30px]" />
+            <Input className="border border-gray-400 " />
           </div>
 
           {/* Email */}
@@ -31,7 +31,7 @@ const CheckoutFormB = () => {
             <Label className="">
               Email <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border border-gray-400 p-4 py-[30px]" />
+            <Input className="border border-gray-400 " />
           </div>
         </div>
 
@@ -45,7 +45,7 @@ const CheckoutFormB = () => {
               <select
                 name=""
                 id=""
-                className=" border border-gray-400 p-4 rounded-lg"
+                className=" border border-gray-400 rounded-lg"
                 defaultValue=""
                 placeholder="Select the Phones Fault Condition"
               >
@@ -76,7 +76,7 @@ const CheckoutFormB = () => {
             <Label className="">
               City<span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border border-gray-400 p-4 py-[30px]" />
+            <Input className="border border-gray-400 " />
           </div>
         </div>
 
@@ -85,10 +85,7 @@ const CheckoutFormB = () => {
           <Label className="">
             Address <span className="text-[#E40C0C]">*</span>
           </Label>
-          <Input
-            type="password"
-            className="border border-gray-400 p-4 py-[30px]"
-          />
+          <Input type="password" className="border border-gray-400 " />
         </div>
 
         <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-20">
@@ -101,7 +98,7 @@ const CheckoutFormB = () => {
               <select
                 name=""
                 id=""
-                className=" border border-gray-400 p-4 rounded-lg"
+                className=" border border-gray-400 rounded-lg"
                 defaultValue=""
                 placeholder="Select the Phones Fault Condition"
               >
@@ -132,7 +129,7 @@ const CheckoutFormB = () => {
             <Label className="">
               NIN<span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border border-gray-400 p-4 py-[30px]" />
+            <Input className="border border-gray-400 " />
           </div>
         </div>
       </div>

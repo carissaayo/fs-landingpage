@@ -1,6 +1,7 @@
 /* all Inputs */
 input {
   outline: none !important;
+  padding: 26px 16px !important;
 }
 input:focus {
   outline: none !important;
@@ -19,6 +20,7 @@ select {
   border-radius: 0.25rem;
   color: #000;
   cursor: pointer;
+  padding: 12px 16px !important;
 }
 .custom-select {
   /* min-width: 350px; */

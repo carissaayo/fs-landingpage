@@ -1,3 +1,11 @@
+/* all Inputs */
+input {
+  outline: none !important;
+}
+input:focus {
+  outline: none !important;
+}
+
 /* Custom select styles starts */
 select {
   appearance: none;

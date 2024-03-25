@@ -43,7 +43,7 @@ const PaymentSignupForm = () => {
         {/* Password */}
         <div className="flex flex-col gap-4">
           <Label className="">
-            Email Address <span className="text-[#E40C0C]">*</span>
+            Password <span className="text-[#E40C0C]">*</span>
           </Label>
           <Input type="password" className="border border-gray-400 " />
         </div>

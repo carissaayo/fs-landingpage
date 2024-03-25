@@ -6,7 +6,7 @@ const HowItWorks = () => {
   return (
     <section
       id="how-it-works"
-      className="w-full md:con__height py-12   px-6 md:px-32  relative poppins-regular bg-[#FAFAFA] md:bg-[#8D8D8D] md:bg-opacity-5 text-[#0C0F4D]"
+      className="w-full md:con__height py-12   px-6 md:px-24 lg:px-32  relative poppins-regular bg-[#FAFAFA] md:bg-[#8D8D8D] md:bg-opacity-5 text-[#0C0F4D]"
     >
       <div className="text-center ">
         <h1 className="poppins-semibold text-3xl mb-4">How it works</h1>

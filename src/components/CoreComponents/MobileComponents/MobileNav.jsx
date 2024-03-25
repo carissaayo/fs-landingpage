@@ -62,7 +62,7 @@ const MobileNav = () => {
                 <hr className="" />
                 <Link
                   className="px-4"
-                  to="/"
+                  to="/sell#how-it-works"
                   onClick={() => setOpenMobile(false)}
                 >
                   How it works
@@ -76,17 +76,17 @@ const MobileNav = () => {
                 </Link>
                 <Link
                   className="px-4"
-                  to="/"
+                  to="/sell#testimonials"
                   onClick={() => setOpenMobile(false)}
                 >
                   Testimonials
                 </Link>
                 <Link
                   className="px-4"
-                  to="/"
+                  to="/sell#FAQs"
                   onClick={() => setOpenMobile(false)}
                 >
-                  FAQ
+                  FAQs
                 </Link>
                 <hr className="" />
                 <Link

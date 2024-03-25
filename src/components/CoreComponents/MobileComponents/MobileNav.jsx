@@ -103,7 +103,7 @@ const MobileNav = () => {
                     <p className="">Sign Out</p>
                   </div>
                 ) : (
-                  <div className="flex flex-col  gap-4 items-center ">
+                  <div className="flex   gap-4 items-center justify-center">
                     <Button className="bg-white hover:bg-white text-[#0E0C4D] hover:text-[#0E0C4D] text-base rounded-2xl">
                       Login
                     </Button>

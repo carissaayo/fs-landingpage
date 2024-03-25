@@ -21,7 +21,7 @@ const ModelsCon = ({ stepContent }) => {
           variant="link"
           className="hidden md:block underline text-[#0E0C4D] text-lg"
         >
-          <a href="#how-it-works">How it works</a>
+          <a href="/sell">How it works</a>
         </Button>
       </div>
       <p className="text-[#111111] text-center md:text-left xs:text-lg md:text-base mb-4">
@@ -30,13 +30,13 @@ const ModelsCon = ({ stepContent }) => {
 
       <Steps step={2} />
       <div className="w-[40%] flex flex-col justify-start border-gray-300 ">
-        <div className="flex items-center gap-3 mt-4  border lg:border-b border-gray-400 py-4 lg:py-2 lg:w-4/5 px-4 rounded-xl">
+        <div className="flex items-center gap-3 mt-4  border lg:border-b border-gray-400 py-4 w-full px-4 rounded-xl">
           <Search className="w-5 h-5 text-[#7D7E7E]" />
 
           <input
             type="text"
             placeholder="Search"
-            className="border-none focus:border-none outline-none focus:outline-none w-full"
+            className="border-none focus:border-none outline-none focus:outline-none w-full py-0 px-0 "
           />
         </div>
       </div>

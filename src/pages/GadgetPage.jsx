@@ -118,7 +118,7 @@ const GadgetPage = () => {
                 <input
                   type="text"
                   placeholder="Initial deposit amount"
-                  className="border-none focus:border-none outline-none focus:outline-none w-full"
+                  className="border-none focus:border-none outline-none focus:outline-none w-full py-0"
                 />
               </div>
             </div>

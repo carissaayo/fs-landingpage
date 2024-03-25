@@ -13,7 +13,7 @@ const SellForm = () => {
           <input
             type="text"
             placeholder="Enter phone name"
-            className="border-none focus:border-none outline-none focus:outline-none w-full text-sm md:text-base"
+            className="border-none focus:border-none outline-none focus:outline-none w-full text-sm md:text-base p-0"
           />
         </div>
       </div>

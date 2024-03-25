@@ -16,7 +16,7 @@ const CheckoutFormC = () => {
   return (
     <section className="w-full ">
       <div className="mb-6 ">
-        <p className="text-[#898686] mb-4   md:text-lg mt-6">
+        <p className="text-[#898686]   md:text-xl ">
           Please provide 3 Guarantor details
         </p>
         {/* First Guarantor */}

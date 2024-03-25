@@ -30,7 +30,7 @@ const CheckoutFormC = () => {
               <Label className="">
                 First Name <span className="text-[#E40C0C]">*</span>
               </Label>
-              <Input className="border border-gray-400 p-4 py-7" />
+              <Input className="border border-gray-400 p-4 py-[30px]" />
             </div>
 
             {/* Last Name */}
@@ -38,7 +38,7 @@ const CheckoutFormC = () => {
               <Label className="">
                 Last Name <span className="text-[#E40C0C]">*</span>
               </Label>
-              <Input className="border border-gray-400 p-4 py-7" />
+              <Input className="border border-gray-400 p-4 py-[30px]" />
             </div>
           </div>
 
@@ -48,7 +48,7 @@ const CheckoutFormC = () => {
               <Label className="">
                 Relationship <span className="text-[#E40C0C]">*</span>
               </Label>
-              <Input className="border border-gray-400 p-4 py-7" />
+              <Input className="border border-gray-400 p-4 py-[30px]" />
             </div>
 
             {/* Phone Number */}
@@ -56,7 +56,7 @@ const CheckoutFormC = () => {
               <Label className="">
                 Contact Phone Number <span className="text-[#E40C0C]">*</span>
               </Label>
-              <Input className="border border-gray-400 p-4 py-7" />
+              <Input className="border border-gray-400 p-4 py-[30px]" />
             </div>
           </div>
         </section>
@@ -72,7 +72,7 @@ const CheckoutFormC = () => {
               <Label className="">
                 First Name <span className="text-[#E40C0C]">*</span>
               </Label>
-              <Input className="border border-gray-400 p-4 py-7" />
+              <Input className="border border-gray-400 p-4 py-[30px]" />
             </div>
 
             {/* Last Name */}
@@ -80,7 +80,7 @@ const CheckoutFormC = () => {
               <Label className="">
                 Last Name <span className="text-[#E40C0C]">*</span>
               </Label>
-              <Input className="border border-gray-400 p-4 py-7" />
+              <Input className="border border-gray-400 p-4 py-[30px]" />
             </div>
           </div>
 
@@ -90,7 +90,7 @@ const CheckoutFormC = () => {
               <Label className="">
                 Relationship <span className="text-[#E40C0C]">*</span>
               </Label>
-              <Input className="border border-gray-400 p-4  py-7" />
+              <Input className="border border-gray-400 p-4  py-[30px]" />
             </div>
 
             {/* Phone Number */}
@@ -98,7 +98,7 @@ const CheckoutFormC = () => {
               <Label className="">
                 Contact Phone Number <span className="text-[#E40C0C]">*</span>
               </Label>
-              <Input className="border border-gray-400 p-4 py-7" />
+              <Input className="border border-gray-400 p-4 py-[30px]" />
             </div>
           </div>
         </section>
@@ -114,7 +114,7 @@ const CheckoutFormC = () => {
               <Label className="">
                 First Name <span className="text-[#E40C0C]">*</span>
               </Label>
-              <Input className="border border-gray-400 p-4 py-7" />
+              <Input className="border border-gray-400 p-4 py-[30px]" />
             </div>
 
             {/* Last Name */}
@@ -122,7 +122,7 @@ const CheckoutFormC = () => {
               <Label className="">
                 Last Name <span className="text-[#E40C0C]">*</span>
               </Label>
-              <Input className="border border-gray-400 p-4 py-7" />
+              <Input className="border border-gray-400 p-4 py-[30px]" />
             </div>
           </div>
 
@@ -132,7 +132,7 @@ const CheckoutFormC = () => {
               <Label className="">
                 Relationship <span className="text-[#E40C0C]">*</span>
               </Label>
-              <Input className="border border-gray-400 p-4 py-7" />
+              <Input className="border border-gray-400 p-4 py-[30px]" />
             </div>
 
             {/* Phone Number */}
@@ -140,7 +140,7 @@ const CheckoutFormC = () => {
               <Label className="">
                 Contact Phone Number <span className="text-[#E40C0C]">*</span>
               </Label>
-              <Input className="border border-gray-400 p-4 py-7" />
+              <Input className="border border-gray-400 p-4 py-[30px]" />
             </div>
           </div>
         </section>

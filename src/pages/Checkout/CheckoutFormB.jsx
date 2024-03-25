@@ -23,7 +23,7 @@ const CheckoutFormB = () => {
             <Label className="">
               Phone Number <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border border-gray-400 p-4 py-7" />
+            <Input className="border border-gray-400 p-4 py-[30px]" />
           </div>
 
           {/* Email */}
@@ -31,7 +31,7 @@ const CheckoutFormB = () => {
             <Label className="">
               Email <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border border-gray-400 p-4 py-7" />
+            <Input className="border border-gray-400 p-4 py-[30px]" />
           </div>
         </div>
 
@@ -76,7 +76,7 @@ const CheckoutFormB = () => {
             <Label className="">
               City<span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border border-gray-400 p-4 py-7" />
+            <Input className="border border-gray-400 p-4 py-[30px]" />
           </div>
         </div>
 
@@ -85,10 +85,13 @@ const CheckoutFormB = () => {
           <Label className="">
             Address <span className="text-[#E40C0C]">*</span>
           </Label>
-          <Input type="password" className="border border-gray-400 p-4 py-7" />
+          <Input
+            type="password"
+            className="border border-gray-400 p-4 py-[30px]"
+          />
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between gap-6 ">
+        <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-20">
           {/* LGA */}
           <div className="flex-1 flex flex-col gap-4">
             <Label className="">
@@ -129,7 +132,7 @@ const CheckoutFormB = () => {
             <Label className="">
               NIN<span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border border-gray-400 p-4 py-7" />
+            <Input className="border border-gray-400 p-4 py-[30px]" />
           </div>
         </div>
       </div>

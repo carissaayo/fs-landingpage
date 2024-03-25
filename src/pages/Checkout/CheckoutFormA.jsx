@@ -23,7 +23,7 @@ const CheckoutFormA = () => {
             <Label className="">
               First Name <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border border-gray-400 p-4 py-7" />
+            <Input className="border border-gray-400 p-4 py-[30px]" />
           </div>
 
           {/* Last Name */}
@@ -31,7 +31,7 @@ const CheckoutFormA = () => {
             <Label className="">
               Last Name <span className="text-[#E40C0C]">*</span>
             </Label>
-            <Input className="border border-gray-400 p-4 py-7" />
+            <Input className="border border-gray-400 p-4 py-[30px]" />
           </div>
         </div>
 
@@ -40,7 +40,7 @@ const CheckoutFormA = () => {
           <Label className="">
             BVN <span className="text-[#E40C0C]">*</span>
           </Label>
-          <Input className="border border-gray-400 p-4 py-7" />
+          <Input className="border border-gray-400 p-4 py-[30px]" />
         </div>
 
         {/* Banks */}
@@ -83,7 +83,10 @@ const CheckoutFormA = () => {
           <Label className="">
             Account Number <span className="text-[#E40C0C]">*</span>
           </Label>
-          <Input type="password" className="border border-gray-400 p-4 py-7" />
+          <Input
+            type="password"
+            className="border border-gray-400 p-4 py-[30px]"
+          />
         </div>
       </div>
       <div className="w-full flex justify-center md:justify-end items-center  gap-6 mb-10  ">

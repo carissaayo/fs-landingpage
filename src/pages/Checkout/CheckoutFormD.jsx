@@ -19,7 +19,7 @@ const ChecoutFormD = () => {
     <section className="w-full ">
       <div className="mb-6">
         <div className="py-6 px-2  flex flex-col gap-8 md:gap-6 ">
-          <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-6 ">
+          <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-20 ">
             {/* State*/}
             <div className="flex-1 flex flex-col gap-4">
               <Label className="">
@@ -60,7 +60,7 @@ const ChecoutFormD = () => {
               <Label className="">
                 City <span className="text-[#E40C0C]">*</span>
               </Label>
-              <Input className="border border-gray-400 p-4 py-7" />
+              <Input className="border border-gray-400 p-4 py-[30px]" />
             </div>
           </div>
           {/* Address */}
@@ -70,7 +70,7 @@ const ChecoutFormD = () => {
             </Label>
             <Input
               type="password"
-              className="border border-gray-400 p-4 py-7"
+              className="border border-gray-400 p-4 py-[30px]"
             />
           </div>
 
@@ -80,13 +80,13 @@ const ChecoutFormD = () => {
             </Label>
             <div className="flex gap-4 md:gap-8">
               {/* Number Code */}
-              <div className="w-[25%] md:w-[20%]  border border-gray-400  p-3  flex rounded-xl">
-                <p className="text-base xs:text-lg">+234</p>
+              <div className="w-[25%] md:w-[20%]  border border-gray-400  p-3   flex rounded-xl">
+                <p className="text-base xs:text-lg flex items-center">+234</p>
               </div>
 
               {/* Phone Number */}
               <div className="w-[75%] md:w-[90%] flex flex-col gap-4">
-                <Input className="border border-gray-400 p-4 py-7 rounded-xl" />
+                <Input className="border border-gray-400 p-4 py-[30px] rounded-xl" />
               </div>
             </div>
           </div>

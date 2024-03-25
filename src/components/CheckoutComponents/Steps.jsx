@@ -59,7 +59,7 @@ const Steps = () => {
           4
         </div>
       </div>
-      <div className="flex gap-12  sm:gap-24  md:gap-32 items-center text-[#111111] text-[10px] poppins-rehular ">
+      <div className="flex gap-12  sm:gap-24  md:gap-32 items-center text-[#111111] text-[10px] md:text-sm poppins-regular ">
         <p className={`${checkoutStep === 1 && "poppins-semibold"} `}>
           KYC details(1)
         </p>

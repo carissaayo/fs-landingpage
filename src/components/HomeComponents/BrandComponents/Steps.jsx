@@ -1,7 +1,7 @@
 const Steps = ({ step }) => {
   return (
     <section className="mb-8 text-[10px]">
-      <div className="w-full flex items-center my-6">
+      <div className="w-full flex items-center mb-2">
         {/* 1 */}
 
         <div
@@ -10,7 +10,7 @@ const Steps = ({ step }) => {
           1
         </div>
         {/* Line */}
-        <div className="w-[70px] xs:w-[87px] sm:w-[110px] md:w-[120px] lg:w-[150px]  h-[2px] bg-[#0E0C4D]"></div>
+        <div className="w-[70px] xs:w-[87px] sm:w-[110px] md:w-[200px]  h-[2px] bg-[#0E0C4D]"></div>
 
         {/* 2 */}
         <div
@@ -24,7 +24,7 @@ const Steps = ({ step }) => {
         </div>
         {/* Line */}
         <div
-          className={`w-[70px] xs:w-[87px] sm:w-[110px] md:w-[120px] lg:w-[150px] h-[2px] ${
+          className={`w-[70px] xs:w-[87px] sm:w-[110px] md:w-[200px] h-[2px] ${
             step > 1 ? "bg-[#0E0C4D]" : "bg-[#858585]"
           } `}
         ></div>
@@ -41,7 +41,7 @@ const Steps = ({ step }) => {
         </div>
         {/* Line */}
         <div
-          className={`w-[70px] xs:w-[87px] sm:w-[110px] md:w-[120px] lg:w-[150px] h-[2px] ${
+          className={`w-[70px] xs:w-[87px] sm:w-[110px] md:w-[200px] h-[2px] ${
             step >= 3 ? "bg-[#0E0C4D]" : "bg-[#858585]"
           } `}
         ></div>
@@ -57,7 +57,7 @@ const Steps = ({ step }) => {
         </div>
         {/* Line */}
         <div
-          className={`w-[70px] xs:w-[87px] sm:w-[110px] md:w-[120px] lg:w-[150px] h-[2px] ${
+          className={`w-[70px] xs:w-[87px] sm:w-[110px] md:w-[200px] h-[2px] ${
             step >= 4 ? "bg-[#0E0C4D]" : "bg-[#858585]"
           } `}
         ></div>
@@ -72,7 +72,7 @@ const Steps = ({ step }) => {
           5{" "}
         </div>
       </div>
-      <div className="flex gap-5 xs:gap-12 lg:gap-16 items-center text-[#111111] text-[10px] sm:text-sm md:text-base">
+      <div className="flex gap-8 xs:gap-16  md:gap-32 items-center text-[#111111] text-[10px] md:text-sm poppins-regular">
         <p className={`${step === 1 && "poppins-semibold"} `}>Select Brand</p>
         <p className={`${step === 2 && "poppins-semibold"} `}>Select Model</p>
         <p className={`${step === 3 && "poppins-semibold"} `}>Gadget Details</p>

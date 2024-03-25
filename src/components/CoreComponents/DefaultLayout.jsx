@@ -6,6 +6,7 @@ import MobileNav from "./MobileComponents/MobileNav";
 import Footer from "./FooterComponents/Footer";
 
 import { useGeneralStore } from "../../store/generalStore";
+import ScrollToAnchor from "./Core/ScrollToAnchor";
 
 const DefaultLayout = () => {
   const [scroll, setScroll] = useState(false);
@@ -28,6 +29,7 @@ const DefaultLayout = () => {
 
   return (
     <main className="w-full h-full relative ">
+      <ScrollToAnchor />
       <Nav />
       <MobileNav scroll={scroll} />
       <Outlet />

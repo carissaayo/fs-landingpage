@@ -20,7 +20,7 @@ const DeliveryDetails = ({ stepContent }) => {
           variant="link"
           className="hidden md:block underline text-[#0E0C4D] text-lg"
         >
-          <a href="/sell">How it works</a>
+          <a href="/sell#how-it-works">How it works</a>
         </Button>
       </div>
       <p className="text-[#111111] text-center md:text-left  md:text-base mb-4 md:mb-12">

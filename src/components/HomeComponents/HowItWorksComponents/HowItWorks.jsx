@@ -1,13 +1,8 @@
-import { useLocation } from "react-router-dom";
 import { Plus } from "lucide-react";
 import { Button } from "../../ui/button";
 import CardsCon from "./CardsCon";
 
 const HowItWorks = () => {
-  const location = useLocation();
-
-  let pathname = location.pathname;
-
   return (
     <section
       id="how-it-works"
@@ -22,10 +17,7 @@ const HowItWorks = () => {
       <CardsCon />
       <div className="text-center ">
         <Button className="bg-[#D3D2DE] hover:bg-[#D3D2DE] md:bg-[#140D53]  md:hover:bg-[#140D53] text-[#130D52] md:text-white rounded-2xl ">
-          <a
-            href={`${pathname === "/sell" ? "#sell" : "/sell"}`}
-            className=" flex px-2 items-center"
-          >
+          <a href={`/sell#sell`} className=" flex px-2 items-center">
             Sell Now <Plus className="h-4 w-4 ml-2" />
           </a>
         </Button>

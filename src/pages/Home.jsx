@@ -17,17 +17,17 @@ const Home = () => {
 
   return (
     <main className="w-full h-full relative ">
-      <section className="">
-        <div className="pt-[80px]">
-          <Hero />
-        </div>
-        <section id="sell" className="relative bg-white md:mb-28 ">
-          <div className="h-[80px] bg-white rounded-t-2xl absolute left-[2%] top-[-40px] w-[95%] mx-auto z-10"></div>
-          <Brands />
-        </section>
+      <div className="pt-[80px]">
+        <Hero />
+      </div>
+      <section id="sell" className="relative bg-white md:mb-28 ">
+        {/* <div className="h-[20px] bg-white rounded-t-2xl absolute left-[2%] top-[-40px] w-[95%] mx-auto z-10"></div> */}
 
-        <HowItWorks />
+        <Brands />
       </section>
+
+      <HowItWorks />
+
       <AboutUs />
       <Testimonial />
       <FAQs />

@@ -4,7 +4,7 @@ import { Label } from "../../ui/label";
 
 const SellForm = () => {
   return (
-    <div className="bg-white w-full  border border-gray-200 rounded-xl  min-h-[150px] flex flex-col md:flex-row items-center justify-center md:justify-start px-8 py-8  z-10 gap-8 md:gap-0 mt-[-80px] mb-[40px]">
+    <div className="bg-white w-full  border border-gray-200 rounded-xl  min-h-[150px] flex flex-col md:flex-row items-center justify-center md:justify-start px-8 py-8 pt-2  z-10 gap-8 md:gap-0 mt-[-80px] mb-[40px]">
       <div className="w-full md:flex-1 px-4  flex flex-col justify-start gap-4 ">
         <Label className="poppins-semibold text-xl ">Search Phone Name</Label>
         <div className="flex items-center gap-3   border md:border-b border-gray-400 py-4 md:py-2 px-4 rounded-xl h-[60px]">

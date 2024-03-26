@@ -10,7 +10,7 @@ const SellContainer = ({ title }) => {
         {title}
       </h1>
       <ScrollArea className=" w-full  ">
-        <div className="flex items-center  gap-1 md:gap-8 mb-6">
+        <div className="flex items-center  gap-1  mb-6">
           <SellCard />
           <SellCard />
           <SellCard />

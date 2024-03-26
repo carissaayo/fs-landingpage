@@ -9,7 +9,7 @@ const ModelsCon = ({ stepContent }) => {
     <section
       className={` ${
         stepContent === 2
-          ? "translate-x-0 w-full md:con__height px-4 xs:px-8 sm:px-12 md:px-16 lg:px-20 2xl:px-32  relative poppins-regular  "
+          ? "translate-x-0 w-full md:con__height px-6 md:px-32  relative poppins-regular  "
           : "translate-x-[-100%] absolute h-0"
       }`}
     >

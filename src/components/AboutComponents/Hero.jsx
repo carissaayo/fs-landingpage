@@ -1,7 +1,7 @@
 const AboutHero = () => {
   return (
     <section
-      className=" w-full  h-screen  text-center md:text-left  px-12 md:px-32  text-white relative poppins-regular 
+      className=" w-full  h-screen  text-center md:text-left  px-6 md:px-32  text-white relative poppins-regular 
        bg-[#0E0C4D]   py-60 md:py-80  
   "
     >

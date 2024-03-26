@@ -1,8 +1,17 @@
+import { useLocation } from "react-router-dom";
 import { Plus } from "lucide-react";
+
 import { Button } from "../../ui/button";
 import CardsCon from "./CardsCon";
 
+import { useGeneralStore } from "../../../store/generalStore";
+
 const HowItWorks = () => {
+  const sellLinkUrl = useGeneralStore((state) => state.sellLinkUrl);
+
+  const location = useLocation();
+  let pathname = location.pathname;
+  pathname = pathname.slice(1, 4);
   return (
     <section
       id="how-it-works"
@@ -17,8 +26,12 @@ const HowItWorks = () => {
       <CardsCon />
       <div className="text-center ">
         <Button className="bg-[#D3D2DE] hover:bg-[#D3D2DE] md:bg-[#140D53]  md:hover:bg-[#140D53] text-[#130D52] md:text-white rounded-2xl ">
-          <a href={`/sell#sell`} className=" flex px-2 items-center">
-            Sell Now <Plus className="h-4 w-4 ml-2" />
+          <a
+            href={`${pathname === sellLinkUrl ? "/sell#sell" : "/#buy"}`}
+            className=" flex px-2 items-center"
+          >
+            {pathname === sellLinkUrl ? "Sell Now" : "Buy Now"}{" "}
+            <Plus className="h-4 w-4 ml-2" />
           </a>
         </Button>
       </div>

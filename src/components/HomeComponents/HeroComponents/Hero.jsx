@@ -10,8 +10,8 @@ const Hero = () => {
     >
       <div className="flex flex-col md:h-screen gap-16 md:gap-24 justify-center ">
         <div className="flex flex-col md:flex-row items-center justify-between w-full  gap-16 md:gap-8 ">
-          <div className="md:flex-1  ">
-            <h2 className="text-white poppins-medium text-3xl   md:text-[40px]  leading-[50px] mb-8   md:w-[90%]">
+          <div className="md:flex-1  mt-6 md:mt-0">
+            <h2 className="text-white poppins-medium text-3xl   md:text-[40px]  leading-[50px] mb-8   md:w-[90%] ">
               Sell your <span className="text-[#00FFFC]">smartphone</span>{" "}
               faster and conveniently
             </h2>

@@ -24,14 +24,12 @@ const Footer = () => {
         </div>
         <div className="flex-[1.5] flex flex-col md:flex-row justify-between gap-4 md:gap-0">
           <ul className="">
-            <li className=" mb-4 md:mb-8 poppins-semibold">
-              <Link to="/">Quick Links</Link>
-            </li>
+            <li className=" mb-4 md:mb-8 poppins-semibold">Quick Links</li>
             <li className="mb-2">
               <Link to="/">Home</Link>
             </li>
             <li className="mb-2">
-              <Link to="/">About Us</Link>
+              <Link to="/about-us">About Us</Link>
             </li>
             <li className="mb-2">
               <Link to="/"> Contact us</Link>
@@ -39,9 +37,7 @@ const Footer = () => {
           </ul>
 
           <ul className="">
-            <li className="mb-4 md:mb-8 poppins-semibold">
-              <Link to="/">Legal</Link>
-            </li>
+            <li className="mb-4 md:mb-8 poppins-semibold">Legal</li>
             <li className="mb-2">
               <Link to="/">Privacy Policy</Link>
             </li>
@@ -49,14 +45,12 @@ const Footer = () => {
               <Link to="/">Terms of use</Link>
             </li>
             <li className="mb-2">
-              <Link to="/">FAQs</Link>
+              <Link to="/#FAQs">FAQs</Link>
             </li>
           </ul>
 
           <ul className="">
-            <li className="mb-4 md:mb-8 poppins-semibold">
-              <Link to="/">Company</Link>
-            </li>
+            <li className="mb-4 md:mb-8 poppins-semibold">Company</li>
             <li className="mb-2">
               <Link to="/">Fairshop for business</Link>
             </li>

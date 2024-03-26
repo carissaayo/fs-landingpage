@@ -67,7 +67,12 @@ const Nav = () => {
       </div>
       <div className="flex items-center flex-1">
         <div className="flex justify-end flex-1 gap-20">
-          <NavMenu />
+          <NavMenu
+            sellLinkUrl={sellLinkUrl}
+            buyLinkUrl={buyLinkUrl}
+            pathname={pathname}
+            location={location}
+          />
           {isLoggedIn ? (
             <div className="">
               <LoggedInNav />

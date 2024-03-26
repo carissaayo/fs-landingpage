@@ -10,6 +10,7 @@ import Footer from "./FooterComponents/Footer";
 import Steps from "../CheckoutComponents/Steps";
 
 import { useGeneralStore } from "../../store/generalStore";
+import ScrollToAnchor from "./Core/ScrollToAnchor";
 
 const CheckoutLayout = () => {
   const [scroll, setScroll] = useState(false);
@@ -30,6 +31,7 @@ const CheckoutLayout = () => {
 
   return (
     <main className="w-full h-full relative ">
+      <ScrollToAnchor />
       <Nav />
       <MobileNav scroll={scroll} />
       <main className="w-full h-full relative">

@@ -62,7 +62,11 @@ const MobileNav = () => {
                 <hr className="" />
                 <Link
                   className="px-4"
-                  to="/sell#how-it-works"
+                  to={`${
+                    pathname === sellLinkUrl
+                      ? "/sell#how-it-works"
+                      : "/#how-it-works"
+                  }`}
                   onClick={() => setOpenMobile(false)}
                 >
                   How it works
@@ -76,14 +80,18 @@ const MobileNav = () => {
                 </Link>
                 <Link
                   className="px-4"
-                  to="/sell#testimonials"
+                  to={`${
+                    pathname === sellLinkUrl
+                      ? "/sell#testimonials"
+                      : "/#testimonials"
+                  }`}
                   onClick={() => setOpenMobile(false)}
                 >
                   Testimonials
                 </Link>
                 <Link
                   className="px-4"
-                  to="/sell#FAQs"
+                  to={`${pathname === sellLinkUrl ? "/sell#FAQs" : "/#FAQs"}`}
                   onClick={() => setOpenMobile(false)}
                 >
                   FAQs
@@ -103,7 +111,7 @@ const MobileNav = () => {
                     <p className="">Sign Out</p>
                   </div>
                 ) : (
-                  <div className="flex   gap-4 items-center justify-center">
+                  <div className="flex   gap-6 items-center justify-center">
                     <Button className="bg-white hover:bg-white text-[#0E0C4D] hover:text-[#0E0C4D] text-base rounded-2xl">
                       Login
                     </Button>

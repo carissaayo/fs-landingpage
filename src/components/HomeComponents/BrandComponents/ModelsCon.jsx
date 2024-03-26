@@ -29,7 +29,7 @@ const ModelsCon = ({ stepContent }) => {
       </p>
 
       <Steps step={2} />
-      <div className="w-[40%] flex flex-col justify-start border-gray-300 ">
+      <div className="w-[60%] md:w-[40%] flex flex-col justify-start border-gray-300 ">
         <div className="flex items-center gap-3 mt-4  border lg:border-b border-gray-400 py-4 w-full px-4 rounded-xl">
           <Search className="w-5 h-5 text-[#7D7E7E]" />
 

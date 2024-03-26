@@ -17,16 +17,16 @@ const GadgetPage = () => {
 
   return (
     <main className="">
-      <section className=" poppins-regular   pt-[75px] md:pt-32 mb-12 md:px-32 ">
-        <section className="flex flex-col md:flex-row  justify-center md:justify-between md:my-6  md:gap-20  mx-auto relative pt-1">
-          <div className="flex-1 ">
-            <div className=" max-h-[600px] mb-10 md:fixed ">
+      <section className=" poppins-regular   pt-[75px] lg:pt-[100px] mb-12 lg:px-12 ">
+        <section className="flex flex-col lg:flex-row  justify-center lg:justify-between lg:my-6  lg:gap-20  mx-auto relative pt-1">
+          <div className="flex-1 lg:w-[50%] ">
+            <div className=" lg:max-h-[600px] mb-10 lg:fixed ">
               <GadgetImageSlider />
             </div>
           </div>
 
           {/* Second row */}
-          <div className="md:flex-1   w-full relative top-[-40%]  md:h-full md:top-0   mx-auto bg-white rounded-t-xl px-6 md:px-32">
+          <div className="lg:flex-1   w-full relative        bg-white rounded-t-xl lg:rounded-t-none px-6 lg:px-12 ">
             {/* Mobile */}
             <section className="">
               <h1 className="  poppins-semibold text-xl mb-8 text-gray-700">
@@ -104,8 +104,8 @@ const GadgetPage = () => {
                 Enter your first deposit below
               </p>
 
-              <div className="flex items-center gap-3 mt-4  border md:border-b border-gray-400    rounded-xl">
-                <span className="bg-[#130D52] text-white poppins-semibold text-xl p-2 md:p-4 px-6 rounded-l-xl">
+              <div className="flex items-center gap-3 mt-4  border lg:border-b border-gray-400    rounded-xl">
+                <span className="bg-[#130D52] text-white poppins-semibold text-xl p-2 lg:p-4 px-6 rounded-l-xl">
                   ₦
                 </span>
                 <input

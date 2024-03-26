@@ -4,13 +4,12 @@ import heroImg from "../../../assets/images/hero.png";
 const Hero = () => {
   return (
     <section
-      className=" w-full md:min-h-700px  text-center md:text-left  px-12 md:px-32  text-white poppins-regular 
-       bg-[#0E0C4D]  py-24 md:py-8
+      className="  w-full md:min-h-[700px] text-center md:text-left  px-12 md:px-32   bg-[#0E0C4D]  text-white relative poppins-regular md:mt-[-80px] py-10 pb-36 md:pb-10
   "
     >
       <div className="flex flex-col md:h-screen gap-16 md:gap-24 justify-center ">
-        <div className="flex flex-col md:flex-row items-center justify-between w-full  gap-16 md:gap-8 ">
-          <div className="md:flex-1  mt-6 md:mt-0">
+        <div className="flex flex-col md:flex-row items-center justify-between w-full  gap-12 md:gap-8 md:h-screen ">
+          <div className="md:flex-1">
             <h2 className="text-white poppins-medium text-3xl   md:text-[40px]  leading-[50px] mb-8   md:w-[90%] ">
               Sell your <span className="text-[#00FFFC]">smartphone</span>{" "}
               faster and conveniently
@@ -21,7 +20,11 @@ const Hero = () => {
             </p>
           </div>
           <div className="flex-1 md:flex justify-end">
-            <img src={heroImg} alt="" className="" />
+            <img
+              src={heroImg}
+              alt=""
+              className="md:min-w-[300px] md:min-h-[300px] max-h-[400px] md:max-h-[500px] "
+            />
           </div>
         </div>
 

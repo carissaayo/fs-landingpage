@@ -14,7 +14,7 @@ const DeviceDetails = () => {
   return (
     <main className="w-full h-full relative ">
       <section id="sell" className="relative bg-white pt-28 ">
-        <PhoneDetails stepContent={3} />
+        <PhoneDetails />
       </section>
       <div className="w-full flex justify-center md:justify-end items-center  gap-6 mt-12 mb-10 md:pr-16">
         <Link

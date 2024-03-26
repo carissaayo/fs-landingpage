@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <main className="w-full h-full relative ">
       <section className="">
-        <div className="">
+        <div className="pt-[80px]">
           <Hero />
         </div>
         <section id="sell" className="relative bg-white md:mb-28 ">

@@ -2,7 +2,7 @@ import userImg from "../../assets/images/user.png";
 const User = () => {
   return (
     <section className="relative w-full  px-6 md:px-32 min-h-[1100px]  md:min-h-[500px]  mb-10">
-      <div className="relative bg-white  rounded-lg flex flex-col md:flex-row justify-between items-start mt-[-70px]  w- border pb-8 ">
+      <div className="relative bg-white  rounded-lg flex flex-col md:flex-row justify-between items-start mt-[-100px] md:mt-[-70px]  w- border pb-8 ">
         {/* About */}
         <div className=" w-full flex-[2] xl:flex-1  flex flex-col gap-6">
           <div className="bg-[#00FFFC] bg-opacity-15 py-6 px-2 flex items-center justify-center">

@@ -17,16 +17,16 @@ const GadgetPage = () => {
 
   return (
     <main className="">
-      <section className=" poppins-regular   pt-[75px] md:pt-32 mb-12 ">
+      <section className=" poppins-regular   pt-[75px] md:pt-32 mb-12 md:px-32 ">
         <section className="flex flex-col md:flex-row  justify-center md:justify-between md:my-6  md:gap-20  mx-auto relative pt-1">
-          <div className="flex-1">
-            <div className=" max-h-[600px] mb-10">
+          <div className="flex-1 ">
+            <div className=" max-h-[600px] mb-10 md:fixed ">
               <GadgetImageSlider />
             </div>
           </div>
 
           {/* Second row */}
-          <div className="md:flex-1   w-full relative top-[-40%]  md:h-full md:top-0   mx-auto bg-white rounded-t-xl pt-8 md:pt-0 px-12 md:px-32">
+          <div className="md:flex-1   w-full relative top-[-40%]  md:h-full md:top-0   mx-auto bg-white rounded-t-xl px-6 md:px-32">
             {/* Mobile */}
             <section className="">
               <h1 className="  poppins-semibold text-xl mb-8 text-gray-700">
@@ -97,7 +97,7 @@ const GadgetPage = () => {
 
             {/* Initial Deposit Con */}
             <div className="mb-10 ">
-              <h1 className="poppins-semibold text-xl mb-4 text-gray-700">
+              <h1 className="poppins-semibold text-xl mb-4 text-[#898686]">
                 Initial deposit
               </h1>
               <p className="text-[#898686]mb-8">

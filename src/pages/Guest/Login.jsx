@@ -1,0 +1,28 @@
+import { Link } from "react-router-dom";
+
+import LoginForm from "../../components/GuestComponents/LoginForm";
+import logoImg from "../../assets/images/footerlogo.png";
+
+const Login = () => {
+  return (
+    <main className="w-full md:w-[80%] md:mx-auto lg:mx-0  lg:flex-[1] pt-10 poppins-regular">
+      <div className="text-center w-full mb-10">
+        <div className="flex items-center justify-center w-full mb-12">
+          <img src={logoImg} alt="" className="w-32" />
+        </div>
+        <h1 className="mb-2 text-xl poppins-semibold">Welcome Back</h1>
+        <p className="">Glad to see you again 🖐</p>
+        <p className="">Login to your account below</p>
+      </div>
+      <LoginForm />
+      <div className="flex justify-center w-full ">
+        <Link to="/guest/register" className=" flex items-center gap-2 ">
+          Don&apos;t have an account?
+          <span className="text-[#0E0C4D] ">Register</span>
+        </Link>
+      </div>
+    </main>
+  );
+};
+
+export default Login;

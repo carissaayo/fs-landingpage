@@ -20,9 +20,14 @@ import CheckoutFormB from "./pages/Checkout/CheckoutFormB";
 import CheckoutFormC from "./pages/Checkout/CheckoutFormC";
 import CheckoutFormD from "./pages/Checkout/CheckoutFormD";
 
+// Guest Pages
+import Register from "./pages/Guest/Register";
+import Login from "./pages/Guest/Login";
+
 // Layouts
 import CheckoutLayout from "./components/CoreComponents/CheckoutLayout";
 import DefaultLayout from "./components/CoreComponents/DefaultLayout";
+import GuestLayout from "./components/CoreComponents/GuestLayout";
 
 const router = createBrowserRouter([
   {
@@ -86,6 +91,20 @@ const router = createBrowserRouter([
       {
         path: "/buy/checkout/formD",
         element: <CheckoutFormD />,
+      },
+    ],
+  },
+  {
+    path: "/guest",
+    element: <GuestLayout />,
+    children: [
+      {
+        path: "/guest/register",
+        element: <Register />,
+      },
+      {
+        path: "/guest/login",
+        element: <Login />,
       },
     ],
   },

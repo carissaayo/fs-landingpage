@@ -16,6 +16,14 @@ const CheckoutFormA = () => {
   useEffect(() => goToTop(), []);
   return (
     <section className="w-full ">
+      <div className="w-full  mb-4 text-center">
+        <h1 className="poppins-semibold text-xl md:text-3xl mb-4">
+          Personal Information (1)
+        </h1>
+        <p className="text-[rgb(17,17,17)] text-center md:text-left  md:text-base mb-4 md:mb-12">
+          Please provide answers for the fields below
+        </p>
+      </div>
       <div className="py-6 px-2  flex flex-col  gap-8  md:gap-12 mb-6">
         <div className="flex flex-col md:flex-row justify-between  gap-8 md:gap-20 ">
           {/* First Name */}

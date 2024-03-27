@@ -14,8 +14,8 @@ const ModelsCon = ({ stepContent }) => {
       }`}
     >
       <Steps step={2} />
-      <div className="">
-        <p className="poppins-medium">Apple</p>
+      <div className="mb-8">
+        <p className="">Apple</p>
       </div>
 
       <div className="w-full items-center justify-center md:justify-between flex mb-4 ">

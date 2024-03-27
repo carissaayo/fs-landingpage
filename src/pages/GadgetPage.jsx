@@ -1,13 +1,15 @@
 import { useEffect } from "react";
 
-import { Badge } from "../components/ui/badge";
+import { Input } from "../components/ui/input";
 import { Button } from "../components/ui/button";
-import { Label } from "../components/ui/label";
 
 import PaymentCon from "../components/GadgetPageComponents/PaymentCon";
 import GadgetImageSlider from "../components/GadgetPageComponents/GadgetImageSlider";
+import { useGadgetPageStore } from "../store/gadgetPageStore";
 
 const GadgetPage = () => {
+  const showPayment = useGadgetPageStore((state) => state.showPayment);
+  const setShowPayment = useGadgetPageStore((state) => state.setShowPayment);
   const goToTop = () => {
     window.scrollTo({
       top: 0,
@@ -76,12 +78,12 @@ const GadgetPage = () => {
                 Please select your purchase preference
               </p>
             </div>
-
             {/* Payment Btns Con */}
             <div className=" flex gap-4 items-center my-4 mb-10 w-full mt-8">
               <Button
                 className="bg-white hover:bg-white px-8 border-[#979797] hover:border-[#979797] flex-1 py-6"
                 variant="outline"
+                onClick={() => setShowPayment(true)}
               >
                 Pay Monthly
               </Button>
@@ -92,31 +94,26 @@ const GadgetPage = () => {
                 Pay Now
               </Button>
             </div>
+            <hr className="w-full border-b border-gray-100 mb-10" />{" "}
+            {showPayment && (
+              <>
+                {/* Initial Deposit Con */}
+                <div className="mb-10 ">
+                  <h1 className="poppins-semibold text-xl mb-4 ">
+                    Initial Deposit
+                  </h1>
+                  <p className="text-[#898686] mb-8">
+                    Enter your first deposit below
+                  </p>
 
-            <hr className="w-full border-b border-gray-100 mb-10" />
+                  <div className="flex items-center ">
+                    <Input className="border border-gray-400" />
+                  </div>
+                </div>
 
-            {/* Initial Deposit Con */}
-            <div className="mb-10 ">
-              <h1 className="poppins-semibold text-xl mb-4 text-[#898686]">
-                Initial deposit
-              </h1>
-              <p className="text-[#898686]mb-8">
-                Enter your first deposit below
-              </p>
-
-              <div className="flex items-center gap-3 mt-4  border lg:border-b border-gray-400    rounded-xl">
-                <span className="bg-[#130D52] text-white poppins-semibold text-xl p-2 lg:p-4 px-6 rounded-l-xl">
-                  ₦
-                </span>
-                <input
-                  type="text"
-                  placeholder="Initial deposit amount"
-                  className="border-none focus:border-none outline-none focus:outline-none w-full py-0"
-                />
-              </div>
-            </div>
-
-            <PaymentCon />
+                <PaymentCon />
+              </>
+            )}
           </div>
         </section>
       </section>

@@ -17,6 +17,15 @@ const ChecoutFormD = () => {
   useEffect(() => goToTop(), []);
   return (
     <section className="w-full ">
+      <div className="w-full  mb-4 text-center">
+        <h1 className="poppins-semibold text-xl md:text-3xl mb-4">
+          Delivery Details
+        </h1>
+        <p className="text-[rgb(17,17,17)] text-center md:text-left  md:text-base mb-4 md:mb-12">
+          Please provide the location details of where you want the phone to be
+          delivered to
+        </p>
+      </div>
       <div className="mb-6">
         <div className="py-6 px-2  flex flex-col gap-8 md:gap-6 ">
           <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-20 ">

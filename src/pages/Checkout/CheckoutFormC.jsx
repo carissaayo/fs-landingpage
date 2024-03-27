@@ -15,10 +15,18 @@ const CheckoutFormC = () => {
   useEffect(() => goToTop(), []);
   return (
     <section className="w-full ">
-      <div className="mb-6 ">
-        <p className="text-[#898686]   md:text-xl ">
+      <div className="w-full  mb-4 text-center">
+        <h1 className="poppins-semibold text-xl md:text-3xl mb-4">
+          Guarantors Information
+        </h1>
+        <p className="text-[rgb(17,17,17)] text-center md:text-left  md:text-base mb-4 md:mb-12">
           Please provide 3 Guarantor details
         </p>
+      </div>
+      <div className="mb-6 ">
+        {/* <p className="text-[#898686]   md:text-xl ">
+          Please provide 3 Guarantor details
+        </p> */}
         {/* First Guarantor */}
         <section className="py-6 px-2  flex flex-col gap-8 md:gap-12">
           <p className="text-[#0E0C4D] text-lg poppins-semibold">

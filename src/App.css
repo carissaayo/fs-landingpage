@@ -10,18 +10,13 @@ input:focus {
 
 /* Custom select styles starts */
 select {
-  appearance: none;
-  /* safari */
-  -webkit-appearance: none;
-  /* other styles for aesthetics */
   width: 100%;
-
   background-color: #fff;
   border: 1px solid #caced1;
   border-radius: 0.25rem;
   color: #000;
   cursor: pointer;
-  padding: 12px 16px;
+  padding: 15px 16px;
   outline: none !important;
 }
 .custom-select {
@@ -29,28 +24,6 @@ select {
   position: relative;
 }
 
-.custom-select::before,
-.custom-select::after {
-  --size: 0.3rem;
-  position: absolute;
-  content: "";
-  right: 1rem;
-  pointer-events: none;
-}
-
-.custom-select::before {
-  border-left: var(--size) solid transparent;
-  border-right: var(--size) solid transparent;
-  border-bottom: var(--size) solid black;
-  top: 40%;
-}
-
-.custom-select::after {
-  border-left: var(--size) solid transparent;
-  border-right: var(--size) solid transparent;
-  border-top: var(--size) solid black;
-  top: 55%;
-}
 /* Custom select styles ends */
 
 .hero__height {

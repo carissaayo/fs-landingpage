@@ -13,7 +13,7 @@ const PhoneDetails = () => {
         w-full md:con__height px-6 md:px-32  relative poppins-regular `}
     >
       <Steps step={3} />
-      <div className="mb-4 flex items-center gap-2">
+      <div className="mb-8 flex items-center gap-2">
         <p className="poppins-medium">Apple</p>
         <span className="">
           <ChevronRight className="h-6 w-6" />

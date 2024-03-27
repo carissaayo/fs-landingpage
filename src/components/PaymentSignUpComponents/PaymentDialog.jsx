@@ -76,10 +76,10 @@ const PaymentDialog = () => {
                 Confirm
               </Link>
             </div>
-            <p className="text-center mt-6 flex items-center gap-2">
+            <p className="text-center mt-6 flex items-center gap-2 text-sm">
               Already have an account?
               <span
-                className="text-[#0E0C4D] poppins-medium"
+                className="text-[#0E0C4D] "
                 onClick={() => setIsLogin(true)}
               >
                 Login
@@ -97,13 +97,13 @@ const PaymentDialog = () => {
               Login
             </Link>
 
-            <p className="text-center flex items-center gap-2">
+            <p className="text-center flex items-center gap-2 text-sm">
               Don&apos;t have an account?
               <span
-                className="text-[#0E0C4D] poppins-medium"
+                className="text-[#0E0C4D] "
                 onClick={() => setIsLogin(false)}
               >
-                Sign up for Free
+                Register
               </span>
             </p>
           </>

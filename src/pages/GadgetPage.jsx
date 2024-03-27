@@ -15,7 +15,10 @@ const GadgetPage = () => {
       top: 0,
     });
   };
-  useEffect(() => goToTop(), []);
+  useEffect(() => {
+    goToTop();
+    setShowPayment(false);
+  }, []);
 
   return (
     <main className="">
@@ -81,7 +84,10 @@ const GadgetPage = () => {
             {/* Payment Btns Con */}
             <div className=" flex gap-4 items-center my-4 mb-10 w-full mt-8">
               <Button
-                className="bg-white hover:bg-white px-8 border-[#979797] hover:border-[#979797] flex-1 py-6"
+                className={` bg-white hover:bg-white px-8 border-[#979797] hover:border-[#979797] flex-1 py-6 ${
+                  showPayment &&
+                  "border-[#0E0C4D]  hover:border-[#0E0C4D] border-2 "
+                }`}
                 variant="outline"
                 onClick={() => setShowPayment(true)}
               >

@@ -20,7 +20,7 @@ const CheckoutFormB = () => {
         <h1 className="poppins-semibold text-xl md:text-3xl mb-4">
           Personal Information (2)
         </h1>
-        <p className="text-[rgb(17,17,17)] text-center md:text-left  md:text-base mb-4 md:mb-12">
+        <p className="text-[rgb(17,17,17)] text-center  md:text-base mb-4 md:mb-12">
           Please provide answers for the fields below
         </p>
       </div>

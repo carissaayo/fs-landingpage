@@ -3,16 +3,7 @@ import { Label } from "../ui/label";
 
 import PaymentDialog from "../PaymentSignUpComponents/PaymentDialog";
 
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "../ui/accordion";
-import { useState } from "react";
-
 const PaymentCon = () => {
-  const [showpayment, setShowpayment] = useState(false);
   return (
     <div className="">
       {/* Payment Terms Con */}
@@ -138,8 +129,8 @@ const PaymentCon = () => {
           </div>
         </RadioGroup>
       </div>
-      {/* Register Dialog and Next Btn*/}
-      <PaymentDialog title="Next" />
+      {/* Register Dialog */}
+      <PaymentDialog />
     </div>
   );
 };

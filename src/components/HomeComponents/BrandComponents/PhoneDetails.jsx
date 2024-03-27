@@ -349,16 +349,16 @@ const PhoneDetails = () => {
               </Label>
               <div className="flex flex-col gap-3">
                 <div className="flex items-center gap-1">
-                  <input type="radio" value="Carton" />
+                  <input type="checkbox" value="Carton" />
                   <Label className="">Carton</Label>
                 </div>
 
                 <div className="flex items-center gap-1">
-                  <input type="radio" value="Charger" />
+                  <input type="checkbox" value="Charger" />
                   <Label className="">Charger</Label>
                 </div>
                 <div className="flex items-center gap-1">
-                  <input type="radio" value="Receipt" />
+                  <input type="checkbox" value="Receipt" />
                   <Label className="">Receipt</Label>
                 </div>
               </div>

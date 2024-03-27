@@ -36,13 +36,14 @@ const LoggedInNav = () => {
           </Link>
         </DropdownMenuItem>
         <DropdownMenuItem className="text-base">
-          <div
+          <Link
+            to="/guest/login"
             className="flex  gap-1 justify-center items-center"
             onClick={() => setOpen(false)}
           >
             <LogOut className="w-6 h-6" />
             <p className="">Sign Out</p>
-          </div>
+          </Link>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

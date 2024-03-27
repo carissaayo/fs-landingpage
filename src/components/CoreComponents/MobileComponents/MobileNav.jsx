@@ -112,12 +112,18 @@ const MobileNav = () => {
                   </div>
                 ) : (
                   <div className="flex   gap-6 items-center justify-center">
-                    <Button className="bg-white hover:bg-white text-[#0E0C4D] hover:text-[#0E0C4D] text-base rounded-2xl">
+                    <Link
+                      to="/guest/login"
+                      className="bg-white hover:bg-white text-[#0E0C4D] hover:text-[#0E0C4D] text-base rounded-2xl"
+                    >
                       Login
-                    </Button>
-                    <Button className="bg-[#00FFFC] hover:bg-[#00FFFC] text-[#0E0C4D] hover:text-[#0E0C4D] text-base rounded-2xl">
+                    </Link>
+                    <Link
+                      to="/guest/register"
+                      className="bg-[#00FFFC] hover:bg-[#00FFFC] text-[#0E0C4D] hover:text-[#0E0C4D] text-base rounded-2xl px-4 py-2"
+                    >
                       Sign Up
-                    </Button>
+                    </Link>
                   </div>
                 )}
               </div>

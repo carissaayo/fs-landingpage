@@ -12,6 +12,7 @@ const DeliveryDetails = ({ stepContent }) => {
           : "translate-x-[-100%] absolute h-0"
       }`}
     >
+      <Steps step={4} />
       <div className="w-full items-center justify-center md:justify-between flex  mb-4">
         <h1 className="poppins-semibold text-xl md:text-3xl">
           Location Details
@@ -24,9 +25,8 @@ const DeliveryDetails = ({ stepContent }) => {
         </Button>
       </div>
       <p className="text-[#111111] text-center md:text-left  md:text-base mb-4 md:mb-12">
-        Please enter the location you are selling from
+        Please select the fairshop location you are selling from
       </p>
-      <Steps step={4} />
 
       <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-20  ">
         {/* State */}

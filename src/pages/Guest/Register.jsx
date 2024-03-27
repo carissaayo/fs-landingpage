@@ -6,7 +6,9 @@ const Register = () => {
     <main className=" poppins-regular flex-[1.5] pt-10 ">
       <div className="text-center w-full mb-10">
         <div className="flex items-center justify-center w-full mb-12">
-          <img src={logoImg} alt="" className="w-32" />
+          <Link to="/">
+            <img src={logoImg} alt="" className="w-32" />
+          </Link>
         </div>
         <h1 className="mb-2 text-xl poppins-semibold">Sign up</h1>
         <p className="">

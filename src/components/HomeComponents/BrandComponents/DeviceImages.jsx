@@ -68,6 +68,7 @@ const DeviceImages = ({ stepContent }) => {
           : "translate-x-[-100%] absolute h-0"
       }`}
     >
+      <Steps step={5} />
       <div className="w-full items-center justify-center md:justify-between flex mb-4">
         <h1 className="poppins-semibold text-xl xs:text-3xl">Phone Images</h1>
         <Button
@@ -80,7 +81,6 @@ const DeviceImages = ({ stepContent }) => {
       <p className="text-[#111111] text-center md:text-left md:text-base mb-12">
         Please upload 2 to 4 clear images of your smartphone
       </p>
-      <Steps step={5} />
 
       <div className="">
         <p className="mb-6">

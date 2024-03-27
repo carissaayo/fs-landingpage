@@ -1,3 +1,4 @@
+import { ChevronRight } from "lucide-react";
 import { Button } from "../../ui/button";
 import { Input } from "../../ui/input";
 import { Label } from "../../ui/label";
@@ -11,6 +12,14 @@ const PhoneDetails = () => {
       className={`
         w-full md:con__height px-6 md:px-32  relative poppins-regular `}
     >
+      <Steps step={3} />
+      <div className="mb-4 flex items-center gap-2">
+        <p className="poppins-medium">Apple</p>
+        <span className="">
+          <ChevronRight className="h-6 w-6" />
+        </span>
+        <p className="poppins-medium">Iphone 13 Pro</p>
+      </div>
       <div className="w-full items-center justify-center md:justify-between flex  mb-4">
         <h1 className="poppins-semibold text-xl md:text-3xl">
           Smartphone Details
@@ -26,12 +35,10 @@ const PhoneDetails = () => {
         Please enter the details of smartphone you want to sell
       </p>
 
-      <Steps step={3} />
-
       <section className=" flex flex-col gap-8  md:gap-12">
         <div className="">
           <h2 className="mb-4 poppins-medium text-xl">Storage</h2>
-          <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-20  ">
+          <div className="flex flex-row justify-between gap-4 text-sm md:text-base md:gap-20  ">
             {/*  Ram */}
             <div className="flex-1 flex flex-col gap-4">
               <Label className="">
@@ -55,7 +62,7 @@ const PhoneDetails = () => {
             Please select the faults your gadget has
           </p>
 
-          <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-20 mb-10 ">
+          <div className="flex flex-row justify-between gap-4 text-sm md:text-base md:gap-20 mb-10 ">
             {/*  Phone Neatness */}
             <div className="flex-1 flex flex-col gap-4">
               <Label className="">
@@ -65,7 +72,7 @@ const PhoneDetails = () => {
                 <select
                   name=""
                   id=""
-                  className="border border-gray-400 rounded-lg "
+                  className="border border-gray-400 rounded-lg px-2 md:px-4 "
                   defaultValue=""
                   placeholder="Select the Phones Fault Condition"
                 >
@@ -90,7 +97,7 @@ const PhoneDetails = () => {
                 <select
                   name=""
                   id=""
-                  className="border border-gray-400 rounded-lg "
+                  className="border border-gray-400 rounded-lg px-2 md:px-4 "
                   defaultValue=""
                   placeholder="Select the Phones Fault Condition"
                 >
@@ -108,7 +115,7 @@ const PhoneDetails = () => {
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-20  mb-10">
+          <div className="flex flex-row justify-between gap-4 text-sm md:text-base md:gap-20  mb-10">
             {/* Screen condition */}
             <div className="flex-1 flex flex-col gap-4">
               <Label className="">
@@ -118,7 +125,7 @@ const PhoneDetails = () => {
                 <select
                   name=""
                   id=""
-                  className="border border-gray-400 rounded-lg "
+                  className="border border-gray-400 rounded-lg px-2 md:px-4 "
                   defaultValue=""
                   placeholder="Select the Phones Fault Condition"
                 >
@@ -144,7 +151,7 @@ const PhoneDetails = () => {
                 <select
                   name=""
                   id=""
-                  className="border border-gray-400 rounded-lg "
+                  className="border border-gray-400 rounded-lg px-2 md:px-4 "
                   defaultValue=""
                   placeholder="Select the Phones Fault Condition"
                 >
@@ -162,7 +169,7 @@ const PhoneDetails = () => {
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-20  mb-10">
+          <div className="flex flex-row justify-between gap-4 text-sm md:text-base md:gap-20  mb-10">
             {/* Camera condition */}
             <div className="flex-1 flex flex-col gap-4">
               <Label className="">
@@ -172,7 +179,7 @@ const PhoneDetails = () => {
                 <select
                   name=""
                   id=""
-                  className="border border-gray-400 rounded-lg "
+                  className="border border-gray-400 rounded-lg px-2 md:px-4 "
                   defaultValue=""
                   placeholder="Select the Phones Fault Condition"
                 >
@@ -198,7 +205,7 @@ const PhoneDetails = () => {
                 <select
                   name=""
                   id=""
-                  className="border border-gray-400 rounded-lg "
+                  className="border border-gray-400 rounded-lg px-2 md:px-4 "
                   defaultValue=""
                   placeholder="Select the Phones Fault Condition"
                 >
@@ -216,7 +223,7 @@ const PhoneDetails = () => {
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-20  mb-10">
+          <div className="flex flex-row justify-between gap-4 text-sm md:text-base md:gap-20  mb-10">
             {/* Finger Print */}
             <div className="flex-1 flex flex-col gap-4">
               <Label className="">
@@ -226,7 +233,7 @@ const PhoneDetails = () => {
                 <select
                   name=""
                   id=""
-                  className="border border-gray-400 rounded-lg "
+                  className="border border-gray-400 rounded-lg px-2 md:px-4 "
                   defaultValue=""
                   placeholder="Select the Phones Fault Condition"
                 >
@@ -252,7 +259,7 @@ const PhoneDetails = () => {
                 <select
                   name=""
                   id=""
-                  className="border border-gray-400 rounded-lg "
+                  className="border border-gray-400 rounded-lg px-2 md:px-4 "
                   defaultValue=""
                   placeholder="Select the Phones Fault Condition"
                 >
@@ -267,7 +274,7 @@ const PhoneDetails = () => {
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-20  mb-10">
+          <div className="flex flex-row justify-between gap-4 text-sm md:text-base md:gap-20  mb-10">
             {/*Speaker */}
             <div className="flex-1 flex flex-col gap-4">
               <Label className="">
@@ -277,7 +284,7 @@ const PhoneDetails = () => {
                 <select
                   name=""
                   id=""
-                  className="border border-gray-400 rounded-lg "
+                  className="border border-gray-400 rounded-lg px-2 md:px-4 "
                   defaultValue=""
                   placeholder="Select the Phones Fault Condition"
                 >
@@ -301,7 +308,7 @@ const PhoneDetails = () => {
                 <select
                   name=""
                   id=""
-                  className="border border-gray-400 rounded-lg "
+                  className="border border-gray-400 rounded-lg px-2 md:px-4 "
                   defaultValue=""
                   placeholder="Select the Phones Fault Condition"
                 >
@@ -317,7 +324,7 @@ const PhoneDetails = () => {
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-20  mb-10">
+          <div className="flex flex-row justify-between gap-4 text-sm md:text-base md:gap-20  mb-10">
             {/*Earpiece*/}
             <div className="flex-1 flex flex-col gap-4">
               <Label className="">
@@ -327,7 +334,7 @@ const PhoneDetails = () => {
                 <select
                   name=""
                   id=""
-                  className="border border-gray-400 rounded-lg "
+                  className="border border-gray-400 rounded-lg px-2 md:px-4 "
                   defaultValue=""
                   placeholder="Select the Phones Fault Condition"
                 >

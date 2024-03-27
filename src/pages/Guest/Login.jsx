@@ -8,7 +8,9 @@ const Login = () => {
     <main className="w-full md:w-[80%] md:mx-auto lg:mx-0  lg:flex-[1] pt-10 poppins-regular">
       <div className="text-center w-full mb-10">
         <div className="flex items-center justify-center w-full mb-12">
-          <img src={logoImg} alt="" className="w-32" />
+          <Link to="/">
+            <img src={logoImg} alt="" className="w-32" />
+          </Link>
         </div>
         <h1 className="mb-2 text-xl poppins-semibold">Welcome Back</h1>
         <p className="">Glad to see you again 🖐</p>

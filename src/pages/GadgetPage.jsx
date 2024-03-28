@@ -10,6 +10,17 @@ import { useGadgetPageStore } from "../store/gadgetPageStore";
 const GadgetPage = () => {
   const showPayment = useGadgetPageStore((state) => state.showPayment);
   const setShowPayment = useGadgetPageStore((state) => state.setShowPayment);
+  const initialDeposit = useGadgetPageStore((state) => state.initialDeposit);
+  const setInitialDeposit = useGadgetPageStore(
+    (state) => state.setInitialDeposit
+  );
+  const showInitialDeposit = useGadgetPageStore(
+    (state) => state.showInitialDeposit
+  );
+  const setShowInitialDeposit = useGadgetPageStore(
+    (state) => state.setShowInitialDeposit
+  );
+
   const goToTop = () => {
     window.scrollTo({
       top: 0,
@@ -17,7 +28,7 @@ const GadgetPage = () => {
   };
   useEffect(() => {
     goToTop();
-    setShowPayment(false);
+    // setShowPayment(false);
   }, []);
 
   return (
@@ -36,6 +47,10 @@ const GadgetPage = () => {
             <section className="">
               <h1 className="  poppins-semibold text-xl mb-8 text-gray-700">
                 Iphone 11 pro
+              </h1>
+
+              <h1 className="  poppins-semibold text-2xl mb-8 text-gray-900">
+                ₦200,000
               </h1>
 
               <div className="grid grid-cols-2 gap-4 mb-4">
@@ -85,11 +100,11 @@ const GadgetPage = () => {
             <div className=" flex gap-4 items-center my-4 mb-10 w-full mt-8">
               <Button
                 className={` bg-white hover:bg-white px-8 border-[#979797] hover:border-[#979797] flex-1 py-6 ${
-                  showPayment &&
+                  showInitialDeposit &&
                   "border-[#0E0C4D]  hover:border-[#0E0C4D] border-2 "
                 }`}
                 variant="outline"
-                onClick={() => setShowPayment(true)}
+                onClick={() => setShowInitialDeposit(true)}
               >
                 Pay Monthly
               </Button>
@@ -101,7 +116,7 @@ const GadgetPage = () => {
               </Button>
             </div>
             <hr className="w-full border-b border-gray-100 mb-10" />{" "}
-            {showPayment && (
+            {showInitialDeposit && (
               <>
                 {/* Initial Deposit Con */}
                 <div className="mb-10 ">
@@ -112,14 +127,30 @@ const GadgetPage = () => {
                     Enter your first deposit below
                   </p>
 
-                  <div className="flex items-center ">
-                    <Input className="border border-gray-400" />
+                  <div className="flex items-center border border-gray-400  p-1  px-3 rounded-lg">
+                    <span className="poppins-bold">₦</span>
+                    <input
+                      className={`h-12 w-full poppins-medium disabled:cursor-not-allowed`}
+                      value={initialDeposit}
+                      onChange={(e) => setInitialDeposit(e.target.value)}
+                      type="number"
+                      disabled={showPayment}
+                    />
+                    {initialDeposit.length > 1 && (
+                      <button
+                        className={`bg-[#0E0C4D] text-white  rounded-lg  text-sm p-3 ${
+                          showPayment && "px-5"
+                        }`}
+                        onClick={() => setShowPayment(!showPayment)}
+                      >
+                        {showPayment ? "Edit" : "Continue"}
+                      </button>
+                    )}
                   </div>
                 </div>
-
-                <PaymentCon />
               </>
             )}
+            <PaymentCon />
           </div>
         </section>
       </section>

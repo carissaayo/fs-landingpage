@@ -30,11 +30,8 @@ const PaymentDialog = () => {
         </div>
       </DialogTrigger>
       <DialogContent
-        className={` ${
-          isLogin
-            ? " min-w-[40%] "
-            : " min-w-[60%] overflow-y-scroll md:overflow-y-hidden"
-        } w-[90%] md:w-full max-h-[90%]`}
+        className={` min-w-[40%] 
+              w-[90%] md:w-full max-h-[90%]`}
       >
         <DialogHeader className="poppins-medium ">
           <img src={logoImg} alt="" className="w-52" />
@@ -52,7 +49,7 @@ const PaymentDialog = () => {
             <>
               <DialogTitle className="mb-2 text-left">Sign up</DialogTitle>
               <DialogDescription className="flex items-center gap-2">
-                Enter your details below to create your account and get started.
+                Create a fairshop account now to purchase this gadget
               </DialogDescription>
             </>
           )}
@@ -64,7 +61,7 @@ const PaymentDialog = () => {
               <DialogClose asChild>
                 <button
                   type="button"
-                  className="bg-white text-black border  py-2 text-lg flex items-center justify-center  rounded-lg"
+                  className="bg-white text-black border  py-2 text-lg flex items-center justify-center border-gray-400  rounded-lg"
                 >
                   Cancel
                 </button>
@@ -73,13 +70,13 @@ const PaymentDialog = () => {
                 to="/buy/checkout/formA"
                 className=" flex justify-center items-center  bg-[#0E0C4D] py-2 text-lg text-white rounded-lg"
               >
-                Confirm
+                Sign Up Now
               </Link>
             </div>
             <p className="text-center mt-6 flex items-center gap-2 text-sm">
               Already have an account?
               <span
-                className="text-[#0E0C4D] "
+                className="text-[#0E0C4D] cursor-pointer"
                 onClick={() => setIsLogin(true)}
               >
                 Login
@@ -100,7 +97,7 @@ const PaymentDialog = () => {
             <p className="text-center flex items-center gap-2 text-sm">
               Don&apos;t have an account?
               <span
-                className="text-[#0E0C4D] "
+                className="text-[#0E0C4D] cursor-pointer"
                 onClick={() => setIsLogin(false)}
               >
                 Register

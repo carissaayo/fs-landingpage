@@ -4,31 +4,7 @@ import { Label } from "../ui/label";
 const PaymentSignupForm = () => {
   return (
     <section className="py-4  ">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 gap-x-8 w-full ">
-        {/* First Name */}
-        <div className="flex flex-col gap-4">
-          <Label className="">
-            First Name <span className="text-[#E40C0C]">*</span>
-          </Label>
-          <Input className="border  border-gray-400 " />
-        </div>
-
-        {/* Last Name */}
-        <div className="flex flex-col gap-4">
-          <Label className="">
-            Last Name <span className="text-[#E40C0C]">*</span>
-          </Label>
-          <Input className="border border-gray-400 " />
-        </div>
-
-        {/* Phone Number */}
-        <div className="flex flex-col gap-4">
-          <Label className="">
-            Phone Number <span className="text-[#E40C0C]">*</span>
-          </Label>
-          <Input className="border border-gray-400 " />
-        </div>
-
+      <div className="grid grid-cols-1  gap-4 gap-x-8 w-full ">
         {/* Email Address */}
         <div className="flex flex-col gap-4">
           <Label className="">

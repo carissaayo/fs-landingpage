@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
 
 import { Input } from "../../components/ui/input";
 import { Label } from "../../components/ui/label";
@@ -10,6 +9,8 @@ import { useGeneralStore } from "../../store/generalStore";
 const ChecoutFormD = () => {
   const setCheckoutStep = useGeneralStore((state) => state.setCheckoutStep);
   const goToTop = () => {
+    setCheckoutStep(4);
+
     window.scrollTo({
       top: 0,
     });

@@ -8,6 +8,8 @@ import { useGeneralStore } from "../../store/generalStore";
 const CheckoutFormC = () => {
   const setCheckoutStep = useGeneralStore((state) => state.setCheckoutStep);
   const goToTop = () => {
+    setCheckoutStep(3);
+
     window.scrollTo({
       top: 0,
     });

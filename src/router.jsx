@@ -28,6 +28,8 @@ import Login from "./pages/Guest/Login";
 import CheckoutLayout from "./components/CoreComponents/CheckoutLayout";
 import DefaultLayout from "./components/CoreComponents/DefaultLayout";
 import GuestLayout from "./components/CoreComponents/GuestLayout";
+import UserDetails from "./pages/Checkout/UserDetails";
+import Summary from "./pages/Checkout/Summary";
 
 const router = createBrowserRouter([
   {
@@ -91,6 +93,14 @@ const router = createBrowserRouter([
       {
         path: "/buy/checkout/formD",
         element: <CheckoutFormD />,
+      },
+      {
+        path: "/buy/checkout/info",
+        element: <UserDetails />,
+      },
+      {
+        path: "/buy/checkout/summary",
+        element: <Summary />,
       },
     ],
   },

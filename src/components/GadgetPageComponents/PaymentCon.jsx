@@ -16,7 +16,8 @@ const PaymentCon = () => {
   const convertToLocaleString = (value) => Number(value).toLocaleString();
   const getdeliveryFee = (delivery) => delivery.slice(0, 4);
   const getDeliveryAddress = (delivery) => delivery.slice(5);
-
+  const initialPaymentTotal = (a, b) =>
+    (Number(a) + Number(b)).toLocaleString();
   return (
     <div className="">
       {/* Payment Terms Con */}
@@ -125,22 +126,29 @@ const PaymentCon = () => {
           {/* Payment structure */}
           <div className=" mb-10">
             <RadioGroup defaultValue="0">
-              <div className="flex items-center space-x-2  justify-between  p-4 rounded-xl">
+              <div className="flex items-center space-x-2  justify-between  px-4 pr-0 rounded-xl">
                 <div className="flex items-center gap-5">
                   <RadioGroupItem value="0" id="r0" />
                   <Label htmlFor="r0">Initial payment</Label>
                 </div>
-                <p className="">₦14,000.00</p>
+                <p className="">
+                  ₦
+                  {initialPaymentTotal(
+                    initialDeposit,
+                    getdeliveryFee(deliveryState)
+                  )}
+                  .00
+                </p>
               </div>
 
-              <div className="flex items-center space-x-2  justify-between  p-4 rounded-xl pl-12">
+              <div className="flex items-center space-x-2  justify-between   rounded-xl pl-20">
                 <Label htmlFor="r1">Initial Deposit</Label>
-                <p className="">
+                <p className="tex">
                   ₦{initialDeposit && convertToLocaleString(initialDeposit)}.00
                 </p>
               </div>
 
-              <div className="flex items-center space-x-2  justify-between  p-4 rounded-xl pl-12">
+              <div className="flex items-center space-x-2  justify-between   rounded-xl pl-20">
                 <Label htmlFor="r1">
                   Delivery Fee (
                   {deliveryState && getDeliveryAddress(deliveryState)})
@@ -165,10 +173,10 @@ const PaymentCon = () => {
               </div>
             </RadioGroup>
           </div>
+          {/* Register Dialog */}
+          <PaymentDialog />
         </>
       )}
-      {/* Register Dialog */}
-      <PaymentDialog />
     </div>
   );
 };

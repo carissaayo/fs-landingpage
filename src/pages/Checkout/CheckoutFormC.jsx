@@ -26,9 +26,6 @@ const CheckoutFormC = () => {
         </p>
       </div>
       <div className="mb-6 ">
-        {/* <p className="text-[#898686]   md:text-xl ">
-          Please provide 3 Guarantor details
-        </p> */}
         {/* First Guarantor */}
         <section className="py-6 px-2  flex flex-col gap-8 md:gap-12">
           <p className="text-[#0E0C4D] text-lg poppins-semibold">

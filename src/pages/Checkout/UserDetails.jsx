@@ -15,11 +15,14 @@ import UserDetailsC from "../../components/UserDetailsComponents/UserDetailsC";
 import UserDetailsD from "../../components/UserDetailsComponents/UserDetailsD";
 import ConfirmDetails from "../../components/UserDetailsComponents/ConfirmDetails";
 
+import { useCheckoutStore } from "../../store/checkoutStore";
 import { useGeneralStore } from "../../store/generalStore";
 
 const UserDetails = () => {
   const setCheckoutStep = useGeneralStore((state) => state.setCheckoutStep);
+  const setShowSteps = useCheckoutStore((state) => state.setShowSteps);
   const goToTop = () => {
+    setShowSteps(false);
     window.scrollTo({
       top: 0,
     });

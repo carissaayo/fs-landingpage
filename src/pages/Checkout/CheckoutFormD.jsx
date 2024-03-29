@@ -5,13 +5,15 @@ import { Label } from "../../components/ui/label";
 import { Checkbox } from "../../components/ui/checkbox";
 
 import { useGeneralStore } from "../../store/generalStore";
+import { useCheckoutStore } from "../../store/checkoutStore";
 import { Link } from "react-router-dom";
 
 const ChecoutFormD = () => {
   const setCheckoutStep = useGeneralStore((state) => state.setCheckoutStep);
+  const setShowSteps = useCheckoutStore((state) => state.setShowSteps);
   const goToTop = () => {
-    setCheckoutStep(4);
-
+    setCheckoutStep(1);
+    setShowSteps(true);
     window.scrollTo({
       top: 0,
     });

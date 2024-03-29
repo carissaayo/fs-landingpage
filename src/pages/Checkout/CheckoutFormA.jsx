@@ -4,11 +4,14 @@ import { Link } from "react-router-dom";
 import { Input } from "../../components/ui/input";
 import { Label } from "../../components/ui/label";
 import { useGeneralStore } from "../../store/generalStore";
+import { useCheckoutStore } from "../../store/checkoutStore";
 
 const CheckoutFormA = () => {
   const setCheckoutStep = useGeneralStore((state) => state.setCheckoutStep);
+  const setShowSteps = useCheckoutStore((state) => state.setShowSteps);
   const goToTop = () => {
     setCheckoutStep(1);
+    setShowSteps(true);
     window.scrollTo({
       top: 0,
     });

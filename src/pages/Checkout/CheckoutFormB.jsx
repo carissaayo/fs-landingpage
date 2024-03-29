@@ -5,12 +5,13 @@ import { Input } from "../../components/ui/input";
 import { Label } from "../../components/ui/label";
 
 import { useGeneralStore } from "../../store/generalStore";
-
+import { useCheckoutStore } from "../../store/checkoutStore";
 const CheckoutFormB = () => {
   const setCheckoutStep = useGeneralStore((state) => state.setCheckoutStep);
+  const setShowSteps = useCheckoutStore((state) => state.setShowSteps);
   const goToTop = () => {
-    setCheckoutStep(2);
-
+    setCheckoutStep(1);
+    setShowSteps(true);
     window.scrollTo({
       top: 0,
     });

@@ -1,23 +1,20 @@
 import { useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 
-import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
-import { Label } from "../ui/label";
-
+import ScrollToAnchor from "./Core/ScrollToAnchor";
 import Nav from "./NavComponents/Nav";
 import MobileNav from "./MobileComponents/MobileNav";
 import Footer from "./FooterComponents/Footer";
 import Steps from "../CheckoutComponents/Steps";
 
 import { useGeneralStore } from "../../store/generalStore";
-import ScrollToAnchor from "./Core/ScrollToAnchor";
+import { useCheckoutStore } from "../../store/checkoutStore";
 
 const CheckoutLayout = () => {
   const [scroll, setScroll] = useState(false);
   const buyOrSell = useGeneralStore((state) => state.buyOrSell);
   const setBuyOrSell = useGeneralStore((state) => state.setBuyOrSell);
-  const checkoutStep = useGeneralStore((state) => state.checkoutStep);
-  const setCheckoutStep = useGeneralStore((state) => state.setCheckoutStep);
+  const showSteps = useCheckoutStore((state) => state.showSteps);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -39,8 +36,8 @@ const CheckoutLayout = () => {
       <MobileNav scroll={scroll} />
       <main className="w-full h-full relative">
         <section className="flex flex-col 2xl:flex-row justify-between px-6 md:px-32 poppins-regular pb-12 gap-12  md:gap-20 w-full mx-auto md:mx-0 pt-24 md:pt-36">
-          <div className="flex-[1.5]   ">
-            <Steps />
+          <div className={`flex-[1.5] ${!showSteps && "pt-8"}  `}>
+            {showSteps && <Steps />}
             <Outlet />
           </div>
         </section>

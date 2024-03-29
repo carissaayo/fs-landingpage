@@ -1,8 +1,17 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Label } from "../../components/ui/label";
 import { RadioGroup, RadioGroupItem } from "../../components/ui/radio-group";
-
+import { useCheckoutStore } from "../../store/checkoutStore";
 const Summary = () => {
+  const setShowSteps = useCheckoutStore((state) => state.setShowSteps);
+  const goToTop = () => {
+    setShowSteps(false);
+    window.scrollTo({
+      top: 0,
+    });
+  };
+  useEffect(() => goToTop(), []);
   return (
     <div className="flex-1">
       {/* Payment Summary */}

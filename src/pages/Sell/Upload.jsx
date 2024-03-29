@@ -6,7 +6,6 @@ const Upload = () => {
   const goToTop = () => {
     window.scrollTo({
       top: 0,
-      // behavior: "smooth",
     });
   };
   useEffect(() => goToTop(), []);
@@ -25,7 +24,7 @@ const Upload = () => {
             Back
           </Link>
           <Link
-            to="/sell/images-upload"
+            to="/sell/gadget-summary"
             className="w-28  text-white bg-[#0C0F4D] text-base rounded-2xl h-[50px] flex items-center justify-center"
           >
             Next

@@ -22,7 +22,7 @@ const UserDetails = () => {
   useEffect(() => goToTop(), []);
   return (
     <main className="w-full h-full poppins-regular text-[10px] md:text-[12px]">
-      <div className="w-full text-center">
+      <div className="w-full text-center md:text-left">
         <h1 className="poppins-semibold text-xl md:text-3xl mb-4">
           Customer{"'"}s Information
         </h1>
@@ -30,13 +30,12 @@ const UserDetails = () => {
           Please check the provided inforamtion before proceeding
         </p>
       </div>
-      <section className="">
-        <h1 className=""></h1>
-        <UserDetailsA />
-        <UserDetailsB />
-        <UserDetailsC />
-        <UserDetailsD />
-      </section>
+
+      <UserDetailsA />
+      <UserDetailsB />
+      <UserDetailsC />
+      <UserDetailsD />
+
       <div className="w-full flex justify-center md:justify-end items-center  gap-6 mb-10  ">
         <Link
           to="/buy/checkout/formA"
@@ -45,13 +44,7 @@ const UserDetails = () => {
         >
           Edit
         </Link>
-        <Link
-          to="/buy/checkout/summary"
-          className="w-28 bg-[#0C0F4D] hover:bg-[#0C0F4D hover:bg-[#0C0F4D] hover:bg-[#0C0F4D text-white hover:text-white rounded-2xl  text-base h-[50px] flex items-center justify-center "
-        >
-          Next
-        </Link>
-        {/* <ConfirmDetails /> */}
+        <ConfirmDetails />
       </div>
     </main>
   );

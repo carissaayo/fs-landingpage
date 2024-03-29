@@ -61,8 +61,7 @@ const PhoneDetails = () => {
           <p className="w-full mb-4">
             Please select the faults your gadget has
           </p>
-
-          <div className="flex flex-row justify-between gap-4 text-sm md:text-base md:gap-20 mb-10 ">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {/*  Phone Neatness */}
             <div className="flex-1 flex flex-col gap-4">
               <Label className="">
@@ -113,9 +112,7 @@ const PhoneDetails = () => {
                 </select>
               </div>
             </div>
-          </div>
 
-          <div className="flex flex-row justify-between gap-4 text-sm md:text-base md:gap-20  mb-10">
             {/* Screen condition */}
             <div className="flex-1 flex flex-col gap-4">
               <Label className="">
@@ -167,9 +164,7 @@ const PhoneDetails = () => {
                 </select>
               </div>
             </div>
-          </div>
 
-          <div className="flex flex-row justify-between gap-4 text-sm md:text-base md:gap-20  mb-10">
             {/* Camera condition */}
             <div className="flex-1 flex flex-col gap-4">
               <Label className="">
@@ -221,9 +216,7 @@ const PhoneDetails = () => {
                 </select>
               </div>
             </div>
-          </div>
 
-          <div className="flex flex-row justify-between gap-4 text-sm md:text-base md:gap-20  mb-10">
             {/* Finger Print */}
             <div className="flex-1 flex flex-col gap-4">
               <Label className="">
@@ -272,9 +265,7 @@ const PhoneDetails = () => {
                 </select>
               </div>
             </div>
-          </div>
 
-          <div className="flex flex-row justify-between gap-4 text-sm md:text-base md:gap-20  mb-10">
             {/*Speaker */}
             <div className="flex-1 flex flex-col gap-4">
               <Label className="">
@@ -322,9 +313,7 @@ const PhoneDetails = () => {
                 </select>
               </div>
             </div>
-          </div>
 
-          <div className="flex flex-row justify-between gap-4 text-sm md:text-base md:gap-20  mb-10">
             {/*Earpiece*/}
             <div className="flex-1 flex flex-col gap-4">
               <Label className="">

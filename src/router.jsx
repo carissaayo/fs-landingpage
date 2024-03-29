@@ -13,12 +13,15 @@ import Model from "./pages/Sell/Model";
 import AddressDetails from "./pages/Sell/AddressDetails";
 import DeviceDetails from "./pages/Sell/DeviceDetails";
 import Upload from "./pages/Sell/Upload";
+import GagdetSummary from "./pages/Sell/GagdetSummary";
 
 // Buy Pages
 import CheckoutFormA from "./pages/Checkout/CheckoutFormA";
 import CheckoutFormB from "./pages/Checkout/CheckoutFormB";
 import CheckoutFormC from "./pages/Checkout/CheckoutFormC";
 import CheckoutFormD from "./pages/Checkout/CheckoutFormD";
+import UserDetails from "./pages/Checkout/UserDetails";
+import Summary from "./pages/Checkout/Summary";
 
 // Guest Pages
 import Register from "./pages/Guest/Register";
@@ -28,8 +31,6 @@ import Login from "./pages/Guest/Login";
 import CheckoutLayout from "./components/CoreComponents/CheckoutLayout";
 import DefaultLayout from "./components/CoreComponents/DefaultLayout";
 import GuestLayout from "./components/CoreComponents/GuestLayout";
-import UserDetails from "./pages/Checkout/UserDetails";
-import Summary from "./pages/Checkout/Summary";
 
 const router = createBrowserRouter([
   {
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
       {
         path: "/sell/images-upload",
         element: <Upload />,
+      },
+      {
+        path: "/sell/gadget-summary",
+        element: <GagdetSummary />,
       },
       {
         path: "/",

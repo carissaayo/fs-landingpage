@@ -82,14 +82,13 @@ const Summary = () => {
       </div>
       <div className="w-full flex justify-center md:justify-end items-center  gap-6  mt-20  ">
         <Link
-          to="/buy/checkout/formC"
+          to="/buy/checkout/info"
           className="w-28 bg-[#F0F0F0] hover:bg-[#F0F0F0] text-black hover:text-black text-base rounded-2xl border border-[#ACACAC] h-[50px] flex items-center justify-center "
-          //   onClick={() => setCheckoutStep(3)}
         >
           Back
         </Link>
         <Link
-          to="/buy/checkout/formD"
+          to="/buy/checkout/summary"
           className="bg-[#0C0F4D] hover:bg-[#0C0F4D] rounded-2xl w-28 h-[50px] flex items-center justify-center text-white"
         >
           Buy Now

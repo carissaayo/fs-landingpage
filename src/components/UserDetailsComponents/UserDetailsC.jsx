@@ -46,7 +46,7 @@ const UserDetailsC = () => {
             {/* Phone Number */}
             <div className="flex-1 flex flex-col gap-4">
               <Label className="">
-                Contact Phone Number <span className="text-[#E40C0C]">*</span>
+                Phone Number <span className="text-[#E40C0C]">*</span>
               </Label>
               <div className="border border-gray-400 py-3 px-4 rounded-lg bg-gray-100">
                 09028938458
@@ -96,7 +96,7 @@ const UserDetailsC = () => {
             {/* Phone Number */}
             <div className="flex-1 flex flex-col gap-4">
               <Label className="">
-                Contact Phone Number <span className="text-[#E40C0C]">*</span>
+                Phone Number <span className="text-[#E40C0C]">*</span>
               </Label>
               <div className="border border-gray-400 py-3 px-4 rounded-lg bg-gray-100">
                 09028938458
@@ -146,7 +146,7 @@ const UserDetailsC = () => {
             {/* Phone Number */}
             <div className="flex-1 flex flex-col gap-4">
               <Label className="">
-                Contact Phone Number <span className="text-[#E40C0C]">*</span>
+                Phone Number <span className="text-[#E40C0C]">*</span>
               </Label>
               <div className="border border-gray-400 py-3 px-4 rounded-lg bg-gray-100">
                 09028938458

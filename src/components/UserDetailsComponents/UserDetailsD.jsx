@@ -4,7 +4,7 @@ const UserDetailsD = () => {
   return (
     <div className="mb-6">
       <h1 className="poppins-medium text-lg"> Delivery Details</h1>
-      <div className="py-6 px-2  grid grid-cols-4 gap-8 md:gap-6 ">
+      <div className="py-6 px-2  grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6 ">
         {/* State*/}
         <div className="flex-1 flex flex-col gap-4">
           <Label className="">

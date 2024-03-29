@@ -4,7 +4,7 @@ const UserDetailsB = () => {
   return (
     <section className="">
       <h1 className="poppins-medium text-lg"> KYC Details 2</h1>
-      <div className="py-6 px-2  grid grid-cols-4  gap-8  mb-6">
+      <div className="py-6 px-2  grid grid-cols-2 md:grid-cols-4  gap-8  mb-6">
         {/* Phone Number */}
         <div className="flex-1 flex flex-col gap-4">
           <Label className="">

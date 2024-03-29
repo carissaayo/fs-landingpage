@@ -4,13 +4,13 @@ const UserDetailsC = () => {
   return (
     <section className="">
       <h1 className="poppins-medium text-lg"> Guarantor{"'"}s Details</h1>
-      <div className="mb-6 grid grid-cols-1 xl:grid-cols-2 gap-x-4  items-center">
+      <div className="mb-6 grid grid-cols-1 md:grid-cols-2   items-center">
         {/* First Guarantor */}
         <section className="py-6 px-2  flex flex-col gap-8 flex-1">
           <p className="text-[#0E0C4D] text-lg poppins-semibold">
             First Guarantor
           </p>
-          <div className="flex flex-col md:flex-row justify-between gap-8  ">
+          <div className="flex flex-row justify-between gap-8  ">
             {/* First Name */}
             <div className="flex-1 flex flex-col gap-4">
               <Label className="">
@@ -32,7 +32,7 @@ const UserDetailsC = () => {
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row justify-between gap-8  ">
+          <div className="flex flex-row justify-between gap-8  ">
             {/* Relationship */}
             <div className="flex-1 flex flex-col gap-4">
               <Label className="">
@@ -60,7 +60,7 @@ const UserDetailsC = () => {
           <p className="text-[#0E0C4D] text-lg poppins-semibold">
             Second Guarantor
           </p>
-          <div className="flex flex-col md:flex-row justify-between gap-8  ">
+          <div className="flex flex-row justify-between gap-8  ">
             {/* First Name */}
             <div className="flex-1 flex flex-col gap-4">
               <Label className="">
@@ -82,7 +82,7 @@ const UserDetailsC = () => {
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row justify-between gap-8  ">
+          <div className="flex flex-row justify-between gap-8  ">
             {/* Relationship */}
             <div className="flex-1 flex flex-col gap-4">
               <Label className="">
@@ -110,7 +110,7 @@ const UserDetailsC = () => {
           <p className="text-[#0E0C4D] text-lg poppins-semibold">
             Third Guarantor
           </p>
-          <div className="flex flex-col md:flex-row justify-between gap-8  ">
+          <div className="flex flex-row justify-between gap-8  ">
             {/* First Name */}
             <div className="flex-1 flex flex-col gap-4">
               <Label className="">
@@ -132,7 +132,7 @@ const UserDetailsC = () => {
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row justify-between gap-8  ">
+          <div className="flex flex-row justify-between gap-8  ">
             {/* Relationship */}
             <div className="flex-1 flex flex-col gap-4">
               <Label className="">

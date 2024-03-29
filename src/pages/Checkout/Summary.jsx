@@ -13,7 +13,7 @@ const Summary = () => {
   };
   useEffect(() => goToTop(), []);
   return (
-    <div className="flex-1">
+    <div className="md:w-3/5 mx-auto">
       {/* Payment Summary */}
       <div className="mb-10 relative">
         <h1 className="poppins-semibold text-2xl mb-4">Payment Summary</h1>

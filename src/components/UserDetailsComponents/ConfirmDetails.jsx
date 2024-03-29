@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -12,6 +12,10 @@ import {
 } from "../ui/alert-dialog";
 
 const ConfirmDetails = () => {
+  const navigate = useNavigate();
+  const goTo = () => {
+    navigate("/buy/checkout/summary");
+  };
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
@@ -32,8 +36,13 @@ const ConfirmDetails = () => {
           <AlertDialogCancel className=" w-1/2 md:flex-1 mt-0">
             Cancel
           </AlertDialogCancel>
-          <AlertDialogAction className=" w-1/2 md:flex-1 bg-[#0C0F4D] hover:bg-[#0C0F4D]">
-            <Link to="/buy/checkout/summary">Continue</Link>
+          <AlertDialogAction
+            className=" w-1/2 md:flex-1 bg-[#0C0F4D] hover:bg-[#0C0F4D]"
+            onClick={goTo}
+          >
+            {/* <Link to="/buy/checkout/summary" className="w-full"> */}
+            Continue
+            {/* </Link> */}
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>

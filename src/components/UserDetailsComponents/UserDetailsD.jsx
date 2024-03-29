@@ -3,6 +3,7 @@ import { Label } from "../ui/label";
 const UserDetailsD = () => {
   return (
     <div className="mb-6">
+      <h1 className="poppins-medium text-lg"> Delivery Details</h1>
       <div className="py-6 px-2  flex flex-col gap-8 md:gap-6 ">
         <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-20 ">
           {/* State*/}
@@ -10,7 +11,7 @@ const UserDetailsD = () => {
             <Label className="">
               State<span className="text-[#E40C0C]">*</span>
             </Label>
-            <div className="border border-gray-400 py-3 px-4 rounded-lg">
+            <div className="border border-gray-400 py-3 px-4 rounded-lg bg-gray-100">
               Kwara State
             </div>
           </div>
@@ -20,7 +21,7 @@ const UserDetailsD = () => {
             <Label className="">
               City <span className="text-[#E40C0C]">*</span>
             </Label>
-            <div className="border border-gray-400 py-3 px-4 rounded-lg">
+            <div className="border border-gray-400 py-3 px-4 rounded-lg bg-gray-100">
               Ilorin
             </div>
           </div>
@@ -32,7 +33,7 @@ const UserDetailsD = () => {
             <Label className="">
               Address <span className="text-[#E40C0C]">*</span>
             </Label>
-            <div className="border border-gray-400 py-3 px-4 rounded-lg">
+            <div className="border border-gray-400 py-3 px-4 rounded-lg bg-gray-100">
               No. 100 fate road, Ilorin.
             </div>
           </div>
@@ -43,7 +44,7 @@ const UserDetailsD = () => {
               Contact Phone Number <span className="text-[#E40C0C]">*</span>
             </Label>
 
-            <div className="border border-gray-400 py-3 px-4 rounded-lg">
+            <div className="border border-gray-400 py-3 px-4 rounded-lg bg-gray-100">
               09028938458
             </div>
           </div>

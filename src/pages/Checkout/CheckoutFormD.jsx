@@ -12,7 +12,7 @@ const ChecoutFormD = () => {
   const setCheckoutStep = useGeneralStore((state) => state.setCheckoutStep);
   const setShowSteps = useCheckoutStore((state) => state.setShowSteps);
   const goToTop = () => {
-    setCheckoutStep(1);
+    setCheckoutStep(4);
     setShowSteps(true);
     window.scrollTo({
       top: 0,

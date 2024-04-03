@@ -1,9 +1,12 @@
 import RegisterForm from "../../components/GuestComponents/RegsiterForm";
 import logoImg from "../../assets/images/footerlogo.png";
 import { Link } from "react-router-dom";
+import Loading from "../../components/CoreComponents/Core/Loading";
+import { useCreateUserStore } from "../../store/auth/createUser";
 const Register = () => {
+  const loading = useCreateUserStore((state) => state.loading);
   return (
-    <main className=" poppins-regular flex-[1.5] pt-10 ">
+    <main className=" poppins-regular flex-[1.5] pt-10 relative">
       <div className="text-center w-full mb-10">
         <div className="flex items-center justify-center w-full mb-12">
           <Link to="/">

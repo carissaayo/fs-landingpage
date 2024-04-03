@@ -68,9 +68,10 @@ const GagdetSummary = () => {
           </div>
         </div>
       </div>
+      {/* Gadget's Faults */}
       <section className="mb-4">
         <h1 className="poppins-medium text-lg mb-4">Faults</h1>
-        <div className="py-6 px-2  grid grid-cols-2 md:grid-cols-4  gap-8  mb-4">
+        <div className=" px-2  grid grid-cols-2 md:grid-cols-4  gap-8  mb-4">
           {/*  Phone Neatness */}
           <div className="flex-1 flex flex-col gap-4">
             <Label className="">

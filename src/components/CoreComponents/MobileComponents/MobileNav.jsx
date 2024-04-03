@@ -5,10 +5,11 @@ import { CircleUserRoundIcon, LogOut, Menu, X } from "lucide-react";
 import { useGeneralStore } from "../../../store/generalStore";
 import logoImg from "../../../assets/images/FairShop New Logo PNG 4 1.png";
 import { Drawer } from "@mui/material";
-import { Button } from "../../ui/button";
+
+import { useCreateUserStore } from "../../../store/auth/createUser";
 
 const MobileNav = () => {
-  const isLoggedIn = false;
+  const user = useCreateUserStore((state) => state.user);
   const [openMobile, setOpenMobile] = useState(false);
   const setBuyOrSell = useGeneralStore((state) => state.setBuyOrSell);
   const location = useLocation();
@@ -49,7 +50,7 @@ const MobileNav = () => {
               open={openMobile}
               onClose={() => setOpenMobile(false)}
               anchor="right"
-              className=" .MuiDrawer-modal"
+              className=" .MuiDrawer-modal md:hidden"
             >
               <div className="min-w-[70vw] pt-8 flex flex-col gap-4  text-base text-[#202020] poppins-meidum">
                 <div className="px-4 " onClick={() => setOpenMobile(false)}>
@@ -57,7 +58,9 @@ const MobileNav = () => {
                 </div>
                 <div className="flex flex-col gap-4 items-center px-4 ">
                   <CircleUserRoundIcon className="w-8 h-8" />
-                  <p className="">Mustapha Sanusi</p>
+                  <p className="capitalize">
+                    {user?.profile.firstName} {user?.profile.lastName}
+                  </p>
                 </div>
                 <hr className="" />
                 <Link
@@ -105,7 +108,7 @@ const MobileNav = () => {
                   My Transactions
                 </Link>
                 <hr className="" />
-                {isLoggedIn ? (
+                {user?.profile ? (
                   <div className="flex  gap-1 justify-center items-center text-[#DD0707]">
                     <LogOut className="w-6 h-6" />
                     <p className="">Sign Out</p>

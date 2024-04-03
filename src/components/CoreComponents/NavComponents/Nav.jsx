@@ -8,11 +8,12 @@ import NavMenu from "./NavMenu";
 import { useGeneralStore } from "../../../store/generalStore";
 
 import logoImg from "../../../assets/images/FairShop New Logo PNG 4 1.png";
+import { useCreateUserStore } from "../../../store/auth/createUser";
 
 const Nav = () => {
   const buyOrSell = useGeneralStore((state) => state.buyOrSell);
   const setBuyOrSell = useGeneralStore((state) => state.setBuyOrSell);
-  const isLoggedIn = true;
+  const user = useCreateUserStore((state) => state.user);
   const location = useLocation();
   const sellLinkUrl = "sel";
   const buyLinkUrl = "buy";
@@ -68,7 +69,7 @@ const Nav = () => {
       <div className="flex items-center flex-1">
         <div className="flex justify-end flex-1 gap-20">
           <NavMenu sellLinkUrl={sellLinkUrl} pathname={pathname} />
-          {isLoggedIn ? (
+          {user?.profile ? (
             <div className="">
               <LoggedInNav />
             </div>

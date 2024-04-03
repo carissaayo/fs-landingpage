@@ -1,7 +1,7 @@
+import { Link } from "react-router-dom";
 import RegisterForm from "../../components/GuestComponents/RegsiterForm";
 import logoImg from "../../assets/images/footerlogo.png";
-import { Link } from "react-router-dom";
-import Loading from "../../components/CoreComponents/Core/Loading";
+
 import { useCreateUserStore } from "../../store/auth/createUser";
 const Register = () => {
   const loading = useCreateUserStore((state) => state.loading);

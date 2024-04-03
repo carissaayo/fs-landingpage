@@ -8,8 +8,10 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "../../ui/dropdown-menu";
+import { useCreateUserStore } from "../../../store/auth/createUser";
 
 const LoggedInNav = () => {
+  const user = useCreateUserStore((state) => state.user);
   const [open, setOpen] = useState(false);
   return (
     <DropdownMenu onOpenChange={() => setOpen(!open)} open={open}>
@@ -27,7 +29,9 @@ const LoggedInNav = () => {
             onClick={() => setOpen(false)}
           >
             <CircleUserRoundIcon className="w-8 h-8" />
-            <p className="">Mustapha Sanusi</p>
+            <p className="capitalize">
+              {user?.profile.firstName} {user?.profile.lastName}
+            </p>
           </div>
         </DropdownMenuItem>
         <DropdownMenuItem className="text-base">

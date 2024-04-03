@@ -1,10 +1,14 @@
 import { useForm } from "react-hook-form";
 import { RefreshCcw } from "lucide-react";
-import { useCreateUserStore } from "../../store/auth/createUser";
+import toast from "react-hot-toast";
+
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
-import axiosClient from "../../lib/axiosClient";
 import ShowToaster from "../CoreComponents/Core/ShowToaster";
+
+import { useCreateUserStore } from "../../store/auth/createUser";
+import axiosClient from "../../lib/axiosClient";
+import RegisterAlert from "./RegisterAlert";
 
 const RegisterForm = () => {
   const {
@@ -14,6 +18,10 @@ const RegisterForm = () => {
   } = useForm();
   const loading = useCreateUserStore((state) => state.loading);
   const setLoading = useCreateUserStore((state) => state.setLoading);
+  const success = useCreateUserStore((state) => state.success);
+  const setSuccess = useCreateUserStore((state) => state.setSuccess);
+  const user = useCreateUserStore((state) => state.user);
+  const setUser = useCreateUserStore((state) => state.setUser);
 
   const onSubmit = async (data) => {
     setLoading(true);
@@ -22,17 +30,26 @@ const RegisterForm = () => {
       .then((response) => {
         setLoading(false);
         console.log(response);
-        localStorage.setItem("data", JSON.stringify(response.data?.data));
+
+        setSuccess(true);
       })
       .catch((err) => {
         setLoading(false);
-
+        toast.error(err.response.data.message);
         console.log(err);
       });
   };
 
   return (
     <section className="py-4  px-8">
+      {success && (
+        <RegisterAlert
+          link="/guest/login"
+          desc={` A verification code has been sent to the email you registered with.
+            Click on {'"'}Continue{'"'} button to verify your email.`}
+          title={"Registration Successful"}
+        />
+      )}
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 gap-x-8 w-full ">
           {/* First Name */}

@@ -26,11 +26,13 @@ import Summary from "./pages/Checkout/Summary";
 // Guest Pages
 import Register from "./pages/Guest/Register";
 import Login from "./pages/Guest/Login";
+import VerifyEmail from "./pages/Guest/VerifyEmail";
 
 // Layouts
 import CheckoutLayout from "./components/CoreComponents/CheckoutLayout";
 import DefaultLayout from "./components/CoreComponents/DefaultLayout";
 import GuestLayout from "./components/CoreComponents/GuestLayout";
+import ResendVerificationCode from "./pages/Guest/ResendVerificationCode";
 
 const router = createBrowserRouter([
   {
@@ -120,6 +122,14 @@ const router = createBrowserRouter([
       {
         path: "/guest/login",
         element: <Login />,
+      },
+      {
+        path: "/guest/verify-email",
+        element: <VerifyEmail />,
+      },
+      {
+        path: "/guest/resend-verificationCode",
+        element: <ResendVerificationCode />,
       },
     ],
   },

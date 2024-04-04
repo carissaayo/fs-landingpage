@@ -8,7 +8,7 @@ import ShowToaster from "../CoreComponents/Core/ShowToaster";
 
 import { useCreateUserStore } from "../../store/auth/createUser";
 import axiosClient from "../../lib/axiosClient";
-import RegisterAlert from "./RegisterAlert";
+
 import { useNavigate } from "react-router-dom";
 
 const RegisterForm = () => {
@@ -20,8 +20,7 @@ const RegisterForm = () => {
   } = useForm();
   const loading = useCreateUserStore((state) => state.loading);
   const setLoading = useCreateUserStore((state) => state.setLoading);
-  const success = useCreateUserStore((state) => state.success);
-  const setSuccess = useCreateUserStore((state) => state.setSuccess);
+
   const user = useCreateUserStore((state) => state.user);
   const setUser = useCreateUserStore((state) => state.setUser);
 
@@ -35,7 +34,6 @@ const RegisterForm = () => {
         localStorage.setItem("data", JSON.stringify(response.data.data));
         setUser(response.data.data);
         navigate("/guest/verify-email");
-        setSuccess(true);
       })
       .catch((err) => {
         setLoading(false);
@@ -46,13 +44,6 @@ const RegisterForm = () => {
 
   return (
     <section className="py-4  px-8">
-      {/* {success && (
-        <RegisterAlert
-          link="/guest/login"
-          desc={` A verification code has been sent to the email you registered with.
-          title={"Registration Successful"}
-        />
-      )} */}
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 gap-x-8 w-full ">
           {/* First Name */}

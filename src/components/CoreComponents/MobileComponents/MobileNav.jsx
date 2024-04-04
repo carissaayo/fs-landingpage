@@ -12,11 +12,10 @@ import { useAuthStore } from "../../../store/authStore";
 
 const MobileNav = () => {
   const user = useCreateUserStore((state) => state.user);
-  const openAlert = useAuthStore((state) => state.openAlert);
+
   const setOpenAlert = useAuthStore((state) => state.setOpenAlert);
 
   const [openMobile, setOpenMobile] = useState(false);
-  // const [openAlert, setOpenAlert] = useState(false);
 
   const setBuyOrSell = useGeneralStore((state) => state.setBuyOrSell);
   const location = useLocation();
@@ -121,6 +120,14 @@ const MobileNav = () => {
                 >
                   My Transactions
                 </Link>
+                <Link
+                  className="px-4"
+                  to="/change-password"
+                  onClick={() => setOpenMobile(false)}
+                >
+                  Change Password
+                </Link>
+
                 <hr className="" />
                 {user?.profile ? (
                   <div

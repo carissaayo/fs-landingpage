@@ -27,12 +27,15 @@ import Summary from "./pages/Checkout/Summary";
 import Register from "./pages/Guest/Register";
 import Login from "./pages/Guest/Login";
 import VerifyEmail from "./pages/Guest/VerifyEmail";
+import ResetPassword from "./pages/Guest/ResetPassword";
+import ResetPasswordB from "./pages/Guest/ResetPasswordB";
+import ResendVerificationCode from "./pages/Guest/ResendVerificationCode";
 
 // Layouts
 import CheckoutLayout from "./components/CoreComponents/CheckoutLayout";
 import DefaultLayout from "./components/CoreComponents/DefaultLayout";
 import GuestLayout from "./components/CoreComponents/GuestLayout";
-import ResendVerificationCode from "./pages/Guest/ResendVerificationCode";
+import ChangePassword from "./pages/Auth/ChangePassword";
 
 const router = createBrowserRouter([
   {
@@ -78,6 +81,10 @@ const router = createBrowserRouter([
       {
         path: "/about-us",
         element: <About />,
+      },
+      {
+        path: "/change-password",
+        element: <ChangePassword />,
       },
     ],
   },
@@ -126,6 +133,14 @@ const router = createBrowserRouter([
       {
         path: "/guest/verify-email",
         element: <VerifyEmail />,
+      },
+      {
+        path: "/guest/reset-password",
+        element: <ResetPassword />,
+      },
+      {
+        path: "/guest/reset-passwordB",
+        element: <ResetPasswordB />,
       },
       {
         path: "/guest/resend-verificationCode",

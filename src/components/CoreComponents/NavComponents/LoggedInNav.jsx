@@ -9,10 +9,16 @@ import {
   DropdownMenuTrigger,
 } from "../../ui/dropdown-menu";
 import { useCreateUserStore } from "../../../store/auth/createUser";
+import { useAuthStore } from "../../../store/authStore";
 
 const LoggedInNav = () => {
   const user = useCreateUserStore((state) => state.user);
   const [open, setOpen] = useState(false);
+  const setOpenAlert = useAuthStore((state) => state.setOpenAlert);
+  const handleAlert = () => {
+    setOpen(false);
+    setOpenAlert(true);
+  };
   return (
     <DropdownMenu onOpenChange={() => setOpen(!open)} open={open}>
       <DropdownMenuTrigger>
@@ -22,7 +28,7 @@ const LoggedInNav = () => {
           </p>
         </div>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56 h-[220px] flex flex-col justify-center items-center gap-4 py-4">
+      <DropdownMenuContent className="w-56 h-[320px] flex flex-col justify-center items-center gap-4 py-4">
         <DropdownMenuItem className="text-base hover:bg-none">
           <div
             className="flex flex-col gap-4  items-center"
@@ -43,13 +49,21 @@ const LoggedInNav = () => {
         </DropdownMenuItem>
         <DropdownMenuItem className="text-base">
           <Link
-            to="/guest/login"
-            className="flex  gap-1 justify-center items-center"
+            to="/change-password"
+            className=""
             onClick={() => setOpen(false)}
+          >
+            Change Password
+          </Link>
+        </DropdownMenuItem>
+        <DropdownMenuItem className="text-base">
+          <div
+            className="flex  gap-1 justify-center items-center text-[#DD0707]"
+            onClick={handleAlert}
           >
             <LogOut className="w-6 h-6" />
             <p className="">Sign Out</p>
-          </Link>
+          </div>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

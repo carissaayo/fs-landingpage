@@ -8,6 +8,7 @@ import { useCreateUserStore } from "../../store/auth/createUser";
 import axiosClient from "../../lib/axiosClient";
 import toast from "react-hot-toast";
 import ShowToaster from "../CoreComponents/Core/ShowToaster";
+import { Link } from "react-router-dom";
 const LoginForm = () => {
   const {
     register,
@@ -79,6 +80,12 @@ const LoginForm = () => {
             </div>
           </div>
         </div>
+        <Link
+          to="/guest/reset-password"
+          className="text-[#0E0C4D] text-sm mt-2"
+        >
+          forgotten password?
+        </Link>
         <div className="mt-10 ">
           <button
             className=" flex justify-center items-center  bg-[#0E0C4D] py-2 text-lg text-white rounded-lg w-2/5 mx-auto"

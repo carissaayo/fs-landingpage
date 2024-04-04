@@ -50,14 +50,7 @@ const VerifyEmail = () => {
     navigate(-1);
   };
   return (
-    <main className=" poppins-regular flex-[1.5] pt-10 relative">
-      {success && (
-        <RegisterAlert
-          link="/"
-          desc={`Your email has been verified successfully`}
-          title={"Verification Successful"}
-        />
-      )}
+    <main className=" poppins-regular flex-1 pt-10 relative">
       <div className="text-center w-full mb-10">
         <div className="flex items-center justify-center w-full mb-12">
           <Link to="/">
@@ -95,7 +88,7 @@ const VerifyEmail = () => {
                   className="border  border-gray-400 "
                   {...register("emailCode", { required: true })}
                 />
-                {errors.firstName && (
+                {errors.emailCode && (
                   <span className="text-[#E40C0C] text-sm">
                     This field is required
                   </span>

@@ -30,11 +30,12 @@ const ResendVerificationCode = () => {
   const onSubmit = async (data) => {
     setLoading(true);
     axiosClient
-      .post(`auth/verify_email`, { ...data })
+      .post(`auth/resend_email_code`, { ...data })
       .then((response) => {
         setLoading(false);
         console.log(response);
-        setSuccess(true);
+        toast.success(response.data.message);
+        // setSuccess(true);
         //    setUser({...user,profile:{
         //    }});
         //    localStorage.setItem("data", JSON.stringify(response.data?.data));
@@ -50,7 +51,7 @@ const ResendVerificationCode = () => {
     navigate(-1);
   };
   return (
-    <main className=" poppins-regular flex-[1.5] pt-10 relative">
+    <main className=" poppins-regular flex-1 pt-10 relative">
       {success && (
         <RegisterAlert
           link="/verify-email"
@@ -66,7 +67,7 @@ const ResendVerificationCode = () => {
         </div>
         <h1 className="mb-2 text-xl poppins-semibold">Email Verification</h1>
         {!user?.profile.emailVerified && (
-          <p className="">Enter the verification code sent to your email.</p>
+          <p className="">Enter your email to receive the verification code</p>
         )}
       </div>
       {user?.profile.emailVerified ? (
@@ -88,14 +89,14 @@ const ResendVerificationCode = () => {
           <form className="py-4 px-8 w-full" onSubmit={handleSubmit(onSubmit)}>
             <div className="flex flex-col gap-4 ">
               <Label className="">
-                Verification code <span className="text-[#E40C0C]">*</span>
+                Email Address <span className="text-[#E40C0C]">*</span>
               </Label>
               <div className="">
                 <Input
                   className="border  border-gray-400 "
-                  {...register("emailCode", { required: true })}
+                  {...register("email", { required: true })}
                 />
-                {errors.firstName && (
+                {errors.email && (
                   <span className="text-[#E40C0C] text-sm">
                     This field is required
                   </span>
@@ -118,10 +119,10 @@ const ResendVerificationCode = () => {
           </form>
           <div className="flex justify-center w-full pb-10 lg:pb-0">
             <Link
-              to="/guest/resend-verificationCode"
+              to="/guest/verify-email"
               className=" flex items-center gap-2 text-[#0E0C4D] "
             >
-              resend verification code
+              verify email address
             </Link>
           </div>
         </div>

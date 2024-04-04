@@ -7,16 +7,28 @@ import logoImg from "../../../assets/images/FairShop New Logo PNG 4 1.png";
 import { Drawer } from "@mui/material";
 
 import { useCreateUserStore } from "../../../store/auth/createUser";
+import LogoutAlert from "../NavComponents/LogoutAlert";
+import { useAuthStore } from "../../../store/authStore";
 
 const MobileNav = () => {
   const user = useCreateUserStore((state) => state.user);
+  const openAlert = useAuthStore((state) => state.openAlert);
+  const setOpenAlert = useAuthStore((state) => state.setOpenAlert);
+
   const [openMobile, setOpenMobile] = useState(false);
+  // const [openAlert, setOpenAlert] = useState(false);
+
   const setBuyOrSell = useGeneralStore((state) => state.setBuyOrSell);
   const location = useLocation();
   const sellLinkUrl = "sel";
   const buyLinkUrl = "buy";
   let pathname = location.pathname;
   pathname = pathname.slice(1, 4);
+
+  const handleAlert = () => {
+    setOpenMobile(false);
+    setOpenAlert(true);
+  };
 
   useEffect(() => {
     if (pathname === sellLinkUrl) {
@@ -56,12 +68,14 @@ const MobileNav = () => {
                 <div className="px-4 " onClick={() => setOpenMobile(false)}>
                   <X className="w-6 h-6 cursor-pointer" />
                 </div>
-                <div className="flex flex-col gap-4 items-center px-4 ">
-                  <CircleUserRoundIcon className="w-8 h-8" />
-                  <p className="capitalize">
-                    {user?.profile.firstName} {user?.profile.lastName}
-                  </p>
-                </div>
+                {user?.profile && (
+                  <div className="flex flex-col gap-4 items-center px-4 ">
+                    <CircleUserRoundIcon className="w-8 h-8" />
+                    <p className="capitalize">
+                      {user?.profile.firstName} {user?.profile.lastName}
+                    </p>
+                  </div>
+                )}
                 <hr className="" />
                 <Link
                   className="px-4"
@@ -109,7 +123,10 @@ const MobileNav = () => {
                 </Link>
                 <hr className="" />
                 {user?.profile ? (
-                  <div className="flex  gap-1 justify-center items-center text-[#DD0707]">
+                  <div
+                    className="flex  gap-1 justify-center items-center text-[#DD0707] cursor-pointer"
+                    onClick={handleAlert}
+                  >
                     <LogOut className="w-6 h-6" />
                     <p className="">Sign Out</p>
                   </div>

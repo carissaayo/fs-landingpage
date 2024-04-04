@@ -1,14 +1,21 @@
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import LoginForm from "../../components/GuestComponents/LoginForm";
 import logoImg from "../../assets/images/footerlogo.png";
 import { useCreateUserStore } from "../../store/auth/createUser";
+import { useEffect } from "react";
 
 const Login = () => {
   const user = useCreateUserStore((state) => state.user);
-  if (user.accessToken) {
-    return <Navigate to="/" />;
-  }
+  console.log(user);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (user?.accessToken) {
+      navigate("/");
+    }
+  }, [user]);
+
   return (
     <main className="w-full md:w-[80%] md:mx-auto lg:mx-0  lg:flex-[1] pt-10 poppins-regular">
       <div className="text-center w-full mb-10">

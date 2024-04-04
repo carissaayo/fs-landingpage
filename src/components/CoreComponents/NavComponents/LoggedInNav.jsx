@@ -29,9 +29,11 @@ const LoggedInNav = () => {
             onClick={() => setOpen(false)}
           >
             <CircleUserRoundIcon className="w-8 h-8" />
-            <p className="capitalize">
-              {user?.profile.firstName} {user?.profile.lastName}
-            </p>
+            {user?.profile && (
+              <p className="capitalize">
+                {user?.profile?.firstName} {user?.profile?.lastName}
+              </p>
+            )}
           </div>
         </DropdownMenuItem>
         <DropdownMenuItem className="text-base">

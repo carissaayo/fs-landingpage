@@ -1,5 +1,7 @@
 import axios from "axios";
 const user = JSON.parse(localStorage.getItem("data")) || [];
+console.log(user);
+
 const accessToken = user.accessToken ?? "";
 const refreshtoken = user.refreshtoken ?? "";
 

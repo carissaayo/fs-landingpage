@@ -36,9 +36,8 @@ const VerifyEmail = () => {
         setLoading(false);
         console.log(response);
         setSuccess(true);
-        //    setUser({...user,profile:{
-        //    }});
-        //    localStorage.setItem("data", JSON.stringify(response.data?.data));
+        setUser(response.data.data);
+        localStorage.setItem("data", JSON.stringify(response.data?.data));
       })
       .catch((err) => {
         setLoading(false);

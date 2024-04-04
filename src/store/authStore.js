@@ -6,7 +6,8 @@ export const useAuthStore = create((set) => ({
   verificationDone: false,
   loading: false,
   success: false,
-
+  openAlert: false,
+  setOpenAlert: (value) => set(() => ({ openAlert: value })),
   setSuccess: (sucess) => set(() => ({ success: sucess })),
   setLoading: (loading) => set(() => ({ loading: loading })),
   setIsLogin: (value) => set({ isLogin: value }),

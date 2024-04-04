@@ -9,8 +9,10 @@ import ShowToaster from "../CoreComponents/Core/ShowToaster";
 import { useCreateUserStore } from "../../store/auth/createUser";
 import axiosClient from "../../lib/axiosClient";
 import RegisterAlert from "./RegisterAlert";
+import { useNavigate } from "react-router-dom";
 
 const RegisterForm = () => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -30,7 +32,9 @@ const RegisterForm = () => {
       .then((response) => {
         setLoading(false);
         console.log(response);
-
+        localStorage.setItem("data", JSON.stringify(response.data.data));
+        setUser(response.data.data);
+        navigate("/guest/verify-email");
         setSuccess(true);
       })
       .catch((err) => {
@@ -42,14 +46,13 @@ const RegisterForm = () => {
 
   return (
     <section className="py-4  px-8">
-      {success && (
+      {/* {success && (
         <RegisterAlert
           link="/guest/login"
           desc={` A verification code has been sent to the email you registered with.
-            Click on {'"'}Continue{'"'} button to verify your email.`}
           title={"Registration Successful"}
         />
-      )}
+      )} */}
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 gap-x-8 w-full ">
           {/* First Name */}

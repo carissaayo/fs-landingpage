@@ -1,5 +1,3 @@
-import { Button } from "../../ui/button";
-import { Plus } from "lucide-react";
 import heroImg from "../../../assets/images/hero.png";
 const Hero = () => {
   return (
@@ -25,14 +23,6 @@ const Hero = () => {
             className="w-[300px] h-[250px] lg:w-[400px] lg:h-[350px] "
           />
         </div>
-      </div>
-
-      <div className="text-center ">
-        <Button className="bg-white bg-opacity-10 hover:bg-white hover:bg-opacity-10 rounded-2xl">
-          <a href="#sell" className=" flex items-center">
-            Sell Now <Plus className="h-4 w-4 ml-2" />
-          </a>
-        </Button>
       </div>
     </section>
   );

@@ -14,6 +14,7 @@ import AddressDetails from "./pages/Sell/AddressDetails";
 import DeviceDetails from "./pages/Sell/DeviceDetails";
 import Upload from "./pages/Sell/Upload";
 import GagdetSummary from "./pages/Sell/GagdetSummary";
+import DeviceVariant from "./pages/Sell/DeviceVariant";
 
 // Buy Pages
 import CheckoutFormA from "./pages/Checkout/CheckoutFormA";
@@ -22,6 +23,8 @@ import CheckoutFormC from "./pages/Checkout/CheckoutFormC";
 import CheckoutFormD from "./pages/Checkout/CheckoutFormD";
 import UserDetails from "./pages/Checkout/UserDetails";
 import Summary from "./pages/Checkout/Summary";
+import DeviceDetailsB from "./pages/Sell/DeviceDetailsB";
+import DeviceDetailsC from "./pages/Sell/DeviceDetailsC";
 
 // Guest Pages
 import Register from "./pages/Guest/Register";
@@ -36,6 +39,7 @@ import CheckoutLayout from "./components/CoreComponents/CheckoutLayout";
 import DefaultLayout from "./components/CoreComponents/DefaultLayout";
 import GuestLayout from "./components/CoreComponents/GuestLayout";
 import ChangePassword from "./pages/Auth/ChangePassword";
+import Accessories from "./pages/Sell/Accessories";
 
 const router = createBrowserRouter([
   {
@@ -55,8 +59,24 @@ const router = createBrowserRouter([
         element: <Model />,
       },
       {
-        path: "/sell/brand/model/details",
+        path: "/sell/phone-variant",
+        element: <DeviceVariant />,
+      },
+      {
+        path: "/sell/device-details",
         element: <DeviceDetails />,
+      },
+      {
+        path: "/sell/device-detailsB",
+        element: <DeviceDetailsB />,
+      },
+      {
+        path: "/sell/device-detailsC",
+        element: <DeviceDetailsC />,
+      },
+      {
+        path: "/sell/phone-accessories",
+        element: <Accessories />,
       },
       {
         path: "/sell/images-upload",

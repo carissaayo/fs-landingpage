@@ -8,7 +8,7 @@ const GoBack = () => {
   };
   return (
     <div
-      className="p-2 flex gap-2 items-center bg-gray-200 w-[max-content] mt-2 rounded-sm cursor-pointer md:hidden"
+      className="p-2 px-4 flex gap-2 items-center  w-[max-content] mb-6 rounded-sm cursor-pointer bg-[#0E0C4D] text-white"
       onClick={goBack}
     >
       <MoveLeft className="h-6 w-6" />

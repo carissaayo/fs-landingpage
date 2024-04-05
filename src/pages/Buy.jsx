@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import AboutUs from "../components/HomeComponents/AboutUsComponents/AboutUs";
 import Testimonial from "../components/HomeComponents/TestimonialComponents/Testimonial";
 import FAQs from "../components/HomeComponents/FAQsComponents/FAQs";
-import SellCon from "../components/HomeComponents/SellComponents/SellCon";
+import BuyCon from "../components/HomeComponents/BuyComponents/BuyCon";
 import BuyHero from "../components/HomeComponents/BuyNav.jsx/BuyHero";
 import HowItWorks from "../components/HomeComponents/HowItWorksComponents/HowItWorks";
 const Buy = () => {
@@ -19,7 +19,7 @@ const Buy = () => {
       <section className="pt-[80px] ">
         <BuyHero />
       </section>
-      <SellCon />
+      <BuyCon />
       <HowItWorks />
 
       <AboutUs />

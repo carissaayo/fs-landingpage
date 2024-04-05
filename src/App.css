@@ -160,6 +160,13 @@ select {
     min-height: 300px !important;
   }
 }
+
+/* Device Variant Box-Shadow */
+.box-shadow {
+  box-shadow: 4px 4px 18px -10px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 4px 4px 18px -10px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 4px 4px 18px -10px rgba(0, 0, 0, 0.5);
+}
 /*  */
 /* Google Font */
 .poppins-regular {

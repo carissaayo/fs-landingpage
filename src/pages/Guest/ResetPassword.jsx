@@ -37,7 +37,9 @@ const ResetPassword = () => {
       .catch((err) => {
         setLoading(false);
         console.log(err);
-        toast.error(err.response.data.message);
+        toast.error(err.response.data.message, {
+          id: "resetPasswordAError",
+        });
       });
   };
   return (

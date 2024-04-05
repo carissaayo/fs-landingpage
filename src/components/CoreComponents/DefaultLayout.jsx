@@ -29,10 +29,8 @@ const DefaultLayout = () => {
   };
 
   useEffect(() => {
-    if (!user?.accessToken) navigate("/guest/login");
-
     goToTop();
-  }, [user]);
+  }, []);
 
   return (
     <main className="w-full h-full relative ">

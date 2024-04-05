@@ -8,19 +8,18 @@ import { useCreateUserStore } from "../../store/auth/createUser";
 import axiosClient from "../../lib/axiosClient";
 import toast from "react-hot-toast";
 import ShowToaster from "../CoreComponents/Core/ShowToaster";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const LoginForm = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const navigate = useNavigate();
   const loading = useCreateUserStore((state) => state.loading);
   const setLoading = useCreateUserStore((state) => state.setLoading);
-  const success = useCreateUserStore((state) => state.success);
-  const setSuccess = useCreateUserStore((state) => state.setSuccess);
-  const user = useCreateUserStore((state) => state.user);
   const setUser = useCreateUserStore((state) => state.setUser);
+
   const onSubmit = async (data) => {
     console.log(data);
     setLoading(true);
@@ -32,10 +31,13 @@ const LoginForm = () => {
 
         setUser(response.data?.data);
         localStorage.setItem("data", JSON.stringify(response.data?.data));
+        navigate("/");
       })
       .catch((err) => {
         setLoading(false);
-        toast.error(err.response.data.message);
+        toast.error(err.response.data.message, {
+          id: "loginError",
+        });
         console.log(err);
       });
   };

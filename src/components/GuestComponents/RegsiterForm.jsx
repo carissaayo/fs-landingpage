@@ -37,7 +37,9 @@ const RegisterForm = () => {
       })
       .catch((err) => {
         setLoading(false);
-        toast.error(err.response.data.message);
+        toast.error(err.response.data.message, {
+          id: "registerError",
+        });
         console.log(err);
       });
   };

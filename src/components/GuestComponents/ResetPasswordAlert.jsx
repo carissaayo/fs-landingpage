@@ -21,14 +21,22 @@ const ResetPasswordAlert = () => {
     <AlertDialog open={success}>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Reset Password</AlertDialogTitle>
-          <AlertDialogDescription>
+          <AlertDialogTitle className="text-center">
+            Reset Password
+          </AlertDialogTitle>
+          <AlertDialogDescription className="text-center">
             Your password has been reset successfully
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
           <div className="flex items-center justify-center w-full">
-            <AlertDialogAction onClick={goToLogin}> Login </AlertDialogAction>
+            <AlertDialogAction
+              onClick={goToLogin}
+              className="bg-[#0E0C4D] hover:bg-[#0E0C4D]"
+            >
+              {" "}
+              Login{" "}
+            </AlertDialogAction>
           </div>
         </AlertDialogFooter>
       </AlertDialogContent>

@@ -31,7 +31,17 @@ const VerifyEmail = () => {
   const onSubmit = async (data) => {
     setLoading(true);
     axiosClient
-      .post(`auth/verify_email`, { ...data })
+      .post(
+        `auth/verify_email`,
+
+        { ...data },
+        {
+          headers: {
+            refreshtoken: user.refreshtoken && user.refreshtoken,
+            Authorization: user.accessToken && `Bearer ${user.accessToken}`,
+          },
+        }
+      )
       .then((response) => {
         setLoading(false);
         console.log(response);
@@ -42,7 +52,9 @@ const VerifyEmail = () => {
       .catch((err) => {
         setLoading(false);
         console.log(err);
-        toast.error(err.response.data.message);
+        toast.error(err.response.data.message, {
+          id: "verifyEmailError",
+        });
       });
   };
 
@@ -51,6 +63,11 @@ const VerifyEmail = () => {
   };
   return (
     <main className=" poppins-regular flex-1 pt-10 relative">
+      <RegisterAlert
+        link="/"
+        title="Email Verification"
+        desc="Your email has been verified successfully"
+      />
       <div className="text-center w-full mb-10">
         <div className="flex items-center justify-center w-full mb-12">
           <Link to="/">

@@ -9,12 +9,13 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "../ui/alert-dialog";
+import { useAuthStore } from "../../store/authStore";
 
-const RegisterAlert = (link, title, desc) => {
+const RegisterAlert = ({ link, title, desc }) => {
   const navigate = useNavigate();
-  const success = useCreateUserStore((state) => state.success);
-  const setSuccess = useCreateUserStore((state) => state.setSuccess);
-  const goToVerificationPage = (link) => {
+  const success = useAuthStore((state) => state.success);
+  const setSuccess = useAuthStore((state) => state.setSuccess);
+  const goToVerificationPage = () => {
     setSuccess(!success);
     navigate(link);
   };
@@ -23,12 +24,16 @@ const RegisterAlert = (link, title, desc) => {
     <AlertDialog open={success} onOpenChange={() => goToVerificationPage()}>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>{title}</AlertDialogTitle>
-          <AlertDialogDescription>{desc}</AlertDialogDescription>
+          <AlertDialogTitle className="text-center">{title}</AlertDialogTitle>
+          <AlertDialogDescription className="text-center">
+            {desc}
+          </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
           <div className="flex items-center justify-center w-full">
-            <AlertDialogAction>Continue</AlertDialogAction>
+            <AlertDialogAction className="bg-[#0E0C4D] hover:bg-[#0E0C4D]">
+              Continue
+            </AlertDialogAction>
           </div>
         </AlertDialogFooter>
       </AlertDialogContent>

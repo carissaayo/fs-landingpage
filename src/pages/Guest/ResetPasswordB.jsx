@@ -27,11 +27,12 @@ const ResetPasswordB = () => {
   } = useForm();
   const loading = useAuthStore((state) => state.loading);
   const setLoading = useAuthStore((state) => state.setLoading);
-  const success = useAuthStore((state) => state.success);
-  const setSuccess = useAuthStore((state) => state.setSuccess);
+  const success = useCreateUserStore((state) => state.success);
+  const setSuccess = useCreateUserStore((state) => state.setSuccess);
   const user = useCreateUserStore((state) => state.user);
   const setUser = useCreateUserStore((state) => state.setUser);
   const onSubmit = async (data) => {
+    setSuccess(false);
     console.log(data.email);
     setLoading(true);
     axiosClient
@@ -49,7 +50,9 @@ const ResetPasswordB = () => {
       .catch((err) => {
         setLoading(false);
         console.log(err);
-        toast.error(err.response.data.message);
+        toast.error(err.response.data.message, {
+          id: "ResetPasswordBError",
+        });
       });
   };
   return (
@@ -64,7 +67,7 @@ const ResetPasswordB = () => {
         <h1 className="mb-2 text-xl poppins-semibold">Reset Password</h1>
 
         <p className="">
-          Enter your email address and a reset code will be sent to you.
+          Enter the reset code sent to your email and your new passwords.
         </p>
       </div>
 

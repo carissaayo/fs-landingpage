@@ -14,6 +14,7 @@ import axiosClient from "../../lib/axiosClient";
 
 import { useAuthStore } from "../../store/authStore";
 import { useCreateUserStore } from "../../store/auth/createUser";
+import RegisterAlert from "../../components/GuestComponents/RegisterAlert";
 
 const ChangePassword = () => {
   const navigate = useNavigate();
@@ -29,14 +30,25 @@ const ChangePassword = () => {
   const setSuccess = useAuthStore((state) => state.setSuccess);
   const user = useCreateUserStore((state) => state.user);
   const setUser = useCreateUserStore((state) => state.setUser);
+
+  console.log(user);
   const onSubmit = async (data) => {
     console.log(data.email);
     setLoading(true);
     axiosClient
-      .patch(`auth/change_password`, {
-        resetAction: "verify",
-        ...data,
-      })
+      .patch(
+        `auth/change_password`,
+        {
+          resetAction: "verify",
+          ...data,
+        },
+        {
+          headers: {
+            refreshtoken: user.refreshtoken && user.refreshtoken,
+            Authorization: user.accessToken && `Bearer ${user.accessToken}`,
+          },
+        }
+      )
       .then((response) => {
         setLoading(false);
         console.log(response);
@@ -51,7 +63,11 @@ const ChangePassword = () => {
   };
   return (
     <main className=" poppins-regular max-w-4/5 md:max-w-[50%] pt-10 relative mx-auto mb-8">
-      <ResetPasswordAlert />
+      <RegisterAlert
+        link="/"
+        title="Reset Password"
+        desc="Your password has been reset successfully"
+      />
 
       <div className="text-center w-full mb-10">
         <div className="flex items-center justify-center w-full mb-12">

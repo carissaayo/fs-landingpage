@@ -1,18 +1,53 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-import phoneImg from "../../assets/images/phone_14_01.jpg";
 import { Button } from "../../components/ui/button";
-import { Link } from "react-router-dom";
 import GoBack from "../../components/CoreComponents/Core/GoBack";
 
+import phoneImg from "../../assets/images/phone_14_01.jpg";
+
+import { useBrandsAndModelsStore } from "../../store/sell/brandsAndModelsStore";
+import { useDeviceDetailsStore } from "../../store/sell/deviceDetailsStore";
+
+import { convertToLocaleString } from "../../lib/utils";
+
 const DeviceVariant = () => {
-  const [showPrice, setShowPrice] = useState(false);
+  const navigate = useNavigate();
+
+  const selectedModel = useBrandsAndModelsStore((state) => state.selectedModel);
+  const selectedVariant = useBrandsAndModelsStore(
+    (state) => state.selectedVariant
+  );
+  const setSelectedVariant = useBrandsAndModelsStore(
+    (state) => state.setSelectedVariant
+  );
+
+  const phoneDetails = useDeviceDetailsStore((state) => state.phoneDetails);
+  const setPhoneDetails = useDeviceDetailsStore(
+    (state) => state.setPhoneDetails
+  );
+  const models = useBrandsAndModelsStore((state) => state.models);
+  const selectedModelList = useBrandsAndModelsStore(
+    (state) => state.selectedModelList
+  );
   const goToTop = () => {
     window.scrollTo({
       top: 0,
     });
   };
+
   useEffect(() => goToTop(), []);
+  useEffect(() => {
+    !selectedModel && navigate("/sell");
+  }, []);
+
+  useEffect(() => {
+    setPhoneDetails({
+      ...phoneDetails,
+      variant: selectedVariant.id,
+      model: selectedModelList[0],
+    });
+  }, [selectedVariant]);
 
   return (
     <main className="w-full min-h-[90vh] px-6 md:px-32  relative poppins-regular pt-36 pb-16 bg-white  text-sm md:text-base">
@@ -29,36 +64,29 @@ const DeviceVariant = () => {
           {/* Variant Con Starts */}
           <div className="mb-12 text-sm poppins-medium">
             <div className="flex  flex-wrap  gap-4 items-center">
-              <label
-                className="flex items-center gap-4 border px-6 py-2 cursor-pointer"
-                onClick={() => setShowPrice(true)}
-              >
-                <input type="radio" value="Carton" name="variant" />
-                <span className="cursor-pointer">64GB/4GB</span>
-              </label>
-
-              <label
-                className="flex items-center gap-4 border px-6 py-2 cursor-pointer"
-                onClick={() => setShowPrice(true)}
-              >
-                <input type="radio" value="Charger" name="variant" />
-                <span className="cursor-pointer">128GB/4GB</span>
-              </label>
-              <label
-                className="flex items-center gap-4 border px-6 py-2 cursor-pointer"
-                onClick={() => setShowPrice(true)}
-              >
-                <input type="radio" value="Receipt" name="variant" />
-                <span className="cursor-pointer">128GB/8GB</span>
-              </label>
+              {selectedModel &&
+                models
+                  .filter((model) => model._id === selectedModel)[0]
+                  ?.variants.map((variant) => (
+                    <label
+                      className="flex items-center gap-4 border px-6 py-2 cursor-pointer"
+                      onClick={() => setSelectedVariant(variant)}
+                      key={variant.id}
+                    >
+                      <input type="radio" value={variant.id} name="variant" />
+                      <span className="cursor-pointer uppercase">
+                        {variant.name}
+                      </span>
+                    </label>
+                  ))}
             </div>
           </div>
           {/* Variant Con Ends */}
-          {showPrice && (
+          {selectedVariant?.maxPurchasePrice && (
             <div className="">
               <p className="mb-4">Get Up To</p>
               <h1 className="poppins-bold text-3xl text-[#FF6565] mb-4">
-                ₦300,000.00
+                ₦{convertToLocaleString(selectedVariant.maxPurchasePrice)}.00
               </h1>
 
               <Button className="bg-[#130D52] hover:bg-[#130D52] h-[max-content] px-0">

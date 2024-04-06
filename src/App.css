@@ -28,12 +28,82 @@ select {
   border-radius: 0.25rem;
   color: #000;
   cursor: pointer;
-  padding: 15px 16px;
+  padding: 15px 0px 15px 16px;
   outline: none !important;
+  position: relative;
+  appearance: none;
+  /* safari */
+  -webkit-appearance: none;
+}
+.custom-select::before,
+.custom-select::after {
+  --size: 0.3rem;
+  position: absolute;
+  content: "";
+  right: 1rem;
+  pointer-events: none;
+}
+
+.custom-select::before {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-bottom: var(--size) solid black;
+  top: 40%;
+}
+
+.custom-select::after {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-top: var(--size) solid black;
+  top: 55%;
 }
 .custom-select {
   /* min-width: 350px; */
   position: relative;
+}
+
+.sellform__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  grid-template-areas:
+    "state state lga lga"
+    "brand brand model model"
+    ". button button .";
+}
+
+@media (max-width: 640px) {
+  .sellform__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    grid-template-areas:
+      "state state"
+      " lga lga"
+      "brand brand"
+      " model model"
+      "button button ";
+  }
+}
+
+.sellform__grid .state {
+  grid-area: state;
+}
+
+.sellform__grid .lga {
+  grid-area: lga;
+}
+
+.sellform__grid .brand {
+  grid-area: brand;
+}
+
+.sellform__grid .model {
+  grid-area: model;
+}
+
+.sellform__grid .btn {
+  grid-area: button;
 }
 
 /* Custom select styles ends */
@@ -168,6 +238,7 @@ select {
   -moz-box-shadow: 4px 4px 18px -10px rgba(0, 0, 0, 0.5);
 }
 /*  */
+
 /* Google Font */
 .poppins-regular {
   font-family: "Poppins", sans-serif;

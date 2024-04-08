@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { RefreshCcw } from "lucide-react";
@@ -16,6 +16,10 @@ import { useCreateUserStore } from "../../store/auth/createUser";
 
 const VerifyEmail = () => {
   const navigate = useNavigate();
+  const {
+    state: { fromSell },
+  } = useLocation();
+
   const {
     register,
     handleSubmit,
@@ -58,13 +62,13 @@ const VerifyEmail = () => {
       });
   };
 
-  const goBack = () => {
-    navigate(-1);
+  const goToLogin = () => {
+    navigate("/guest/login");
   };
   return (
     <main className=" poppins-regular flex-1 pt-10 relative">
       <RegisterAlert
-        link="/"
+        link={`${fromSell ? "/sell/phone-accessories" : "/"}`}
         title="Email Verification"
         desc="Your email has been verified successfully"
       />
@@ -87,9 +91,9 @@ const VerifyEmail = () => {
             </p>
             <button
               className="flex justify-center items-center  bg-[#0E0C4D] py-2 text-lg text-white rounded-lg w-1/5 mx-auto"
-              onClick={goBack}
+              onClick={goToLogin}
             >
-              Go Back
+              Login
             </button>
           </div>
         </div>

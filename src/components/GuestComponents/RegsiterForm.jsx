@@ -11,7 +11,7 @@ import axiosClient from "../../lib/axiosClient";
 
 import { useNavigate } from "react-router-dom";
 
-const RegisterForm = () => {
+const RegisterForm = ({ onRegisterPage, fromSell }) => {
   const navigate = useNavigate();
   const {
     register,
@@ -33,7 +33,11 @@ const RegisterForm = () => {
         console.log(response);
         localStorage.setItem("data", JSON.stringify(response.data.data));
         setUser(response.data.data);
-        navigate("/guest/verify-email");
+        navigate("/guest/verify-email", {
+          state: {
+            fromSell: fromSell ? true : false,
+          },
+        });
       })
       .catch((err) => {
         setLoading(false);
@@ -45,7 +49,7 @@ const RegisterForm = () => {
   };
 
   return (
-    <section className="py-4  px-8">
+    <section className={`py-4 ${onRegisterPage && "px-8"} `}>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 gap-x-8 w-full ">
           {/* First Name */}

@@ -9,7 +9,7 @@ import axiosClient from "../../lib/axiosClient";
 import toast from "react-hot-toast";
 import ShowToaster from "../CoreComponents/Core/ShowToaster";
 import { Link, useNavigate } from "react-router-dom";
-const LoginForm = () => {
+const LoginForm = ({ fromSell }) => {
   const {
     register,
     handleSubmit,
@@ -19,7 +19,7 @@ const LoginForm = () => {
   const loading = useCreateUserStore((state) => state.loading);
   const setLoading = useCreateUserStore((state) => state.setLoading);
   const setUser = useCreateUserStore((state) => state.setUser);
-
+  const url = fromSell ? "/sell/phone-accessories" : "/";
   const onSubmit = async (data) => {
     console.log(data);
     setLoading(true);
@@ -31,7 +31,7 @@ const LoginForm = () => {
 
         setUser(response.data?.data);
         localStorage.setItem("data", JSON.stringify(response.data?.data));
-        navigate("/");
+        navigate(url);
       })
       .catch((err) => {
         setLoading(false);

@@ -4,10 +4,15 @@ import { Button } from "../../ui/button";
 import { Link } from "react-router-dom";
 import { useBrandsAndModelsStore } from "../../../store/sell/brandsAndModelsStore";
 import { useLocationStore } from "../../../store/sell/locationsStore";
+import { useDeviceDetailsStore } from "../../../store/sell/deviceDetailsStore";
 
 const SellForm = () => {
   const models = useBrandsAndModelsStore((state) => state.models);
   const brands = useBrandsAndModelsStore((state) => state.brands);
+  const setPhoneDetails = useDeviceDetailsStore(
+    (state) => state.setPhoneDetails
+  );
+  const phoneDetails = useDeviceDetailsStore((state) => state.phoneDetails);
   const setSelectedBrandId = useBrandsAndModelsStore(
     (state) => state.setSelectedBrandId
   );
@@ -58,6 +63,9 @@ const SellForm = () => {
     );
     setSelectedCitiesList(selectedState);
   }, [selectedStateId]);
+  //   useEffect(() => setPhoneDetails({
+
+  //   }), []);
   return (
     <div className="bg-white w-full  border border-gray-200 rounded-xl  min-h-[150px]  sellform__grid  px-2 md:px-8 py-8   z-20  gap-4 md:gap-8  mt-[-70px] mb-[40px] ">
       <div className="w-full lg:flex-1 px-4 lg:px-0   flex flex-col justify-start gap-4 state">
@@ -97,6 +105,9 @@ const SellForm = () => {
           <select
             className="border border-gray-400 p-4 rounded-lg text-sm md:text-base focus:outline-none"
             disabled={!selectedStateId}
+            onChange={(e) =>
+              setPhoneDetails({ ...phoneDetails, cityId: e.target.value })
+            }
           >
             {selectedCitiesList &&
               selectedCitiesList.map((city) => (
@@ -141,7 +152,10 @@ const SellForm = () => {
           <select
             className="border border-gray-400 p-4 rounded-lg text-sm md:text-base focus:outline-none"
             disabled={!selectedBrandId}
-            onChange={(e) => setSelectedModel(e.target.value)}
+            onChange={(e) => {
+              setSelectedModel(e.target.value);
+              setPhoneDetails({ ...phoneDetails, modelId: e.target.value });
+            }}
           >
             {selectedModelList &&
               selectedModelList.map((model) => (

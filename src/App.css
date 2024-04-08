@@ -58,7 +58,6 @@ select {
   top: 55%;
 }
 .custom-select {
-  /* min-width: 350px; */
   position: relative;
 }
 
@@ -70,6 +69,23 @@ select {
     "state state lga lga"
     "brand brand model model"
     ". button button .";
+}
+
+@media (max-width: 1024px) {
+  .device___details__con {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    grid-template-areas:
+      "summary"
+      "details";
+  }
+  .device___details__con .details {
+    grid-area: details;
+  }
+  .device___details__con .summary {
+    grid-area: summary;
+  }
 }
 
 @media (max-width: 640px) {

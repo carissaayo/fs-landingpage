@@ -4,7 +4,7 @@ import { Label } from "../ui/label";
 const PaymentSignupForm = () => {
   return (
     <section className="py-4  ">
-      <div className="grid grid-cols-1  gap-4 gap-x-8 w-full ">
+      <div className="grid grid-cols-2  gap-4 gap-x-8 w-full ">
         {/* Email Address */}
         <div className="flex flex-col gap-4">
           <Label className="">

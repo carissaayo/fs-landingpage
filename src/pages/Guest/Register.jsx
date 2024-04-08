@@ -18,7 +18,7 @@ const Register = () => {
           Enter your details below to create your account and get started.
         </p>
       </div>
-      <RegisterForm />
+      <RegisterForm onRegisterPage />
       <div className="flex justify-center w-full pb-10 lg:pb-0">
         <Link to="/guest/login" className=" flex items-center gap-2 ">
           Already have an account?

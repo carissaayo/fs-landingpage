@@ -44,9 +44,10 @@ const DeviceVariant = () => {
   useEffect(() => {
     setPhoneDetails({
       ...phoneDetails,
-      variant: selectedVariant.id,
+      variantId: selectedVariant.id,
       model: selectedModelList[0],
     });
+    console.log(phoneDetails);
   }, [selectedVariant]);
 
   return (
@@ -55,8 +56,12 @@ const DeviceVariant = () => {
       <p className=" text-center md:text-left   mb-12 text-2xl poppins-semibold text-[#0E0C4D]">
         Sell Your Old Iphone 14 Pro Max
       </p>
-      <section className="w-full bg-white flex flex-col  md:flex-row gap-8 lg:gap-20 py-16 px-10 lg:px-20 box-shadow">
-        <img src={phoneImg} alt="" className="max-w-[350px] max-h-[400px]" />
+      <section className="w-4/5 md:w-full bg-white flex flex-col   items-center md:flex-row gap-8 lg:gap-20 py-16 px-10 md:px-8 lg:px-20 box-shadow mx-auto md:mx-0">
+        <img
+          src={phoneImg}
+          alt=""
+          className="max-w-[300px] lg:max-w-[350px] max-h-[400px]"
+        />
         <div className="flex flex-col gap-4">
           <h1 className="poppins-bold text-lg">Iphone 14 Pro Max</h1>
           <p className="">Choose a variant</p>
@@ -92,7 +97,7 @@ const DeviceVariant = () => {
               <Button className="bg-[#130D52] hover:bg-[#130D52] h-[max-content] px-0">
                 <Link
                   to="/sell/device-details"
-                  className="w-full px-12 text-base py-2"
+                  className="w-full px-8 lg:px-12 text-base py-2"
                 >
                   Get Exact Price
                 </Link>

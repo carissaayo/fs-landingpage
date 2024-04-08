@@ -1,3 +1,7 @@
+import { useEffect, useState } from "react";
+
+import { useDeviceDetailsStore } from "../../../store/sell/deviceDetailsStore";
+
 import scratchImg from "../../../assets/images/scratch.svg";
 import screenlineImg from "../../../assets/images/screenline.svg";
 import brokenscreenImg from "../../../assets/images/brokenscreen.svg";
@@ -6,24 +10,86 @@ import backcoverImg from "../../../assets/images/backcover.png";
 import dentedImg from "../../../assets/images/dented.svg";
 import bodyscratchedImg from "../../../assets/images/bodyscratched.svg";
 
-const Fault = ({ image, text }) => {
+const Fault = ({ image, text, name }) => {
+  const [selected, setSelected] = useState(false);
+  const setOption = useDeviceDetailsStore((state) => state.setOption);
+  const phoneDetails = useDeviceDetailsStore((state) => state.phoneDetails);
+  const setPhoneDetails = useDeviceDetailsStore(
+    (state) => state.setPhoneDetails
+  );
+
+  const handleClick = () => {
+    setSelected((prevValue) => !prevValue);
+    setOption(selected);
+  };
+  useEffect(() => {
+    setPhoneDetails({
+      ...phoneDetails,
+      phoneConditions: {
+        ...phoneDetails.phoneConditions,
+        [name]: selected,
+      },
+    });
+    console.log(phoneDetails);
+    console.log(selected);
+  }, [selected]);
   return (
-    <div className="border p-4 cursor-pointer">
-      <img src={image} alt="" className="max-h-[100px] mb-4" />
-      <p className="text-sm">{text}</p>
+    <div
+      className={`${
+        selected && "border-[#0C0F4D]"
+      } border  cursor-pointer border-gray-400 rounded-lg  `}
+      onClick={handleClick}
+    >
+      <img src={image} alt="" className="md:min-h-[100px] mb-4" />
+      <p
+        className={`text-sm p-4 min-h-[112px] ${
+          selected && "bg-[#0C0F4D] text-white rounded-b-sm"
+        }`}
+      >
+        {text}
+      </p>
     </div>
   );
 };
-const BodyCon = () => {
+const BodyCon = ({ phoneConditions }) => {
+  const phoneConditionsOptions = phoneConditions?.three?.options;
   return (
     <section className="grid grid-cols-2  md:grid-cols-4 gap-4 md:gap-2 xl:gap-4 mb-8">
-      <Fault image={scratchImg} text="Screen is scratched" />
-      <Fault image={screenlineImg} text="Screen has spots or lines" />
-      <Fault image={brokenscreenImg} text="Screen is broken" />
-      <Fault image={brokenglassImg} text="Camera glass broken" />
-      <Fault image={backcoverImg} text="Bank cover/glass broken or scratched" />
-      <Fault image={dentedImg} text="Phone's body dented/broken" />
-      <Fault image={bodyscratchedImg} text="Phone's body is scratched" />
+      <Fault
+        image={scratchImg}
+        text={phoneConditionsOptions?.scratchedScreen?.description}
+        name="scratchedScreen"
+      />
+      <Fault
+        image={screenlineImg}
+        text={phoneConditionsOptions?.brokenScreen?.description}
+        name="brokenScreen"
+      />
+      <Fault
+        image={brokenscreenImg}
+        text={phoneConditionsOptions?.brokenCameraGlass?.description}
+        name="brokenCameraGlass"
+      />
+      <Fault
+        image={brokenglassImg}
+        text={phoneConditionsOptions?.damagedBackCoverGlass?.description}
+        name="damagedBackCoverGlass"
+      />
+      <Fault
+        image={backcoverImg}
+        text={phoneConditionsOptions?.brokenPhoneBody?.description}
+        name="brokenPhoneBody"
+      />
+      <Fault
+        image={dentedImg}
+        text={phoneConditionsOptions?.brokenPhoneBody?.description}
+        name="brokenPhoneBody"
+      />
+      <Fault
+        image={bodyscratchedImg}
+        text={phoneConditionsOptions?.scratchedPhoneBody?.description}
+        name="scratchedPhoneBody"
+      />
     </section>
   );
 };

@@ -1,24 +1,25 @@
 import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import phoneImg from "../../assets/images/phone_14_01.jpg";
 import { useDeviceDetailsStore } from "../../store/sell/deviceDetailsStore";
 import { useBrandsAndModelsStore } from "../../store/sell/brandsAndModelsStore";
+import DeviceDetailsSummary from "../../components/HomeComponents/SellComponents/DeviceDetailsSummary";
 
 const DeviceDetails = () => {
   const navigate = useNavigate();
   const phoneDetails = useDeviceDetailsStore((state) => state.phoneDetails);
+
   const setPhoneDetails = useDeviceDetailsStore(
     (state) => state.setPhoneDetails
-  );
-  const selectedModelList = useBrandsAndModelsStore(
-    (state) => state.selectedModelList
   );
 
   const phoneConditions = useBrandsAndModelsStore(
     (state) => state.phoneConditions
   );
-  console.log(phoneDetails);
+
+  const showNextBtn =
+    phoneDetails?.phoneConditions?.makeAndReceiveCalls !== null &&
+    phoneDetails?.phoneConditions?.phoneStarting !== null;
 
   const goToTop = () => {
     window.scrollTo({
@@ -27,51 +28,12 @@ const DeviceDetails = () => {
   };
   useEffect(() => goToTop(), []);
   useEffect(() => {
-    !phoneDetails.variant && navigate("/sell");
+    !phoneDetails.variantId && navigate("/sell");
   }, []);
 
   return (
-    <main className="w-full min-h-[90vh]  px-6  md:px-16  relative poppins-regular pt-36 pb-16 bg-white flex flex-col lg:flex-row  justify-between gap-12 lg:gap-6 text-sm md:text-base">
-      <section className="block lg:hidden bg-white flex-1 rounded-md  box-shadow py-16 px-6">
-        <div className="flex mb-4 px-3 gap-4 items-center">
-          <img src={phoneImg} alt="" className="max-w-[80px] max-h-[80px]" />
-          <p className="poppins-bold flex gap-1 ">
-            {phoneDetails && phoneDetails?.model?.name}
-
-            <span className="uppercase">
-              (
-              {
-                phoneDetails?.model?.variants.filter(
-                  (variant) => variant.id === phoneDetails.variant
-                )[0].name
-              }
-              )
-            </span>
-          </p>
-        </div>
-        <hr className="mb-12" />
-        <div className="poppins-bold">
-          <h1 className="text-lg">Device Evaluation</h1>
-          <ul className="pl-12 pt-4">
-            {phoneDetails?.phoneConditions?.phoneStarting && (
-              <li className="text-sm list-disc">
-                {phoneDetails?.phoneConditions?.phoneStarting === "true"
-                  ? "Can turn on/off"
-                  : "Can't turn on/off"}
-              </li>
-            )}
-
-            {phoneDetails?.phoneConditions?.makeAndReceiveCalls && (
-              <li className="text-sm list-disc">
-                {phoneDetails?.phoneConditions?.makeAndReceiveCalls === "true"
-                  ? "Can make calls"
-                  : "Can't  make calls"}
-              </li>
-            )}
-          </ul>
-        </div>
-      </section>
-      <section className="w-full bg-white  py-16  px-6 md:px-12 box-shadow flex-[2] rounded-md">
+    <main className="w-full min-h-[90vh]  px-6  md:px-16  relative poppins-regular pt-36 pb-16 bg-white flex flex-col lg:flex-row  justify-between gap-12 lg:gap-6 text-sm md:text-base device___details__con">
+      <section className="w-full bg-white  py-16  px-6 md:px-12 box-shadow flex-[2] rounded-md details">
         <p className="poppins-bold text-lg text-center mb-8">
           {phoneConditions?.one?.description}
         </p>
@@ -93,15 +55,17 @@ const DeviceDetails = () => {
                   <label
                     className="flex items-center gap-4 border rounded-sm px-6 py-2 cursor-pointer flex-1"
                     key={id}
-                    onClick={(e) =>
+                    onClick={(e) => {
                       setPhoneDetails({
                         ...phoneDetails,
                         phoneConditions: {
                           ...phoneDetails.phoneConditions,
-                          phoneStarting: e.target.value,
+                          phoneStarting:
+                            e.target.value === "true" ? true : false,
                         },
-                      })
-                    }
+                      });
+                      // console.log(phoneDetails);
+                    }}
                   >
                     <input type="radio" value={option} name="phoneStarting" />
                     <span className="cursor-pointer">
@@ -138,7 +102,8 @@ const DeviceDetails = () => {
                         ...phoneDetails,
                         phoneConditions: {
                           ...phoneDetails.phoneConditions,
-                          makeAndReceiveCalls: e.target.value,
+                          makeAndReceiveCalls:
+                            e.target.value === "true" ? true : false,
                         },
                       })
                     }
@@ -167,30 +132,16 @@ const DeviceDetails = () => {
           >
             Back
           </Link>
+
           <Link
-            to="/sell/device-detailsB"
+            to={showNextBtn ? "/sell/device-detailsB" : "/sell/device-details"}
             className="w-28  text-white bg-[#0C0F4D] text-base rounded-2xl h-[50px] flex items-center justify-center"
           >
             Next
           </Link>
         </div>
       </section>
-      <section className="hidden lg:block bg-white flex-1 rounded-md  box-shadow py-16 px-6">
-        <div className="flex mb-4 px-3 gap-4 items-center">
-          <img src={phoneImg} alt="" className="max-w-[80px] max-h-[80px]" />
-          <p className="poppins-bold flex gap-1 ">
-            Iphone 14 Pro Max <span className="">(128GB/4GB)</span>
-          </p>
-        </div>
-        <hr className="mb-12" />
-        <div className="poppins-bold">
-          <h1 className="text-lg">Device Evaluation</h1>
-          <ul className="pl-12 pt-4">
-            <li className="text-sm list-disc">Can turn on/off</li>
-            <li className="text-sm list-disc">Can make calls</li>
-          </ul>
-        </div>
-      </section>
+      <DeviceDetailsSummary />
     </main>
   );
 };

@@ -12,7 +12,6 @@ import About from "./pages/About";
 import Model from "./pages/Sell/Model";
 import AddressDetails from "./pages/Sell/AddressDetails";
 import DeviceDetails from "./pages/Sell/DeviceDetails";
-import Upload from "./pages/Sell/Upload";
 import GagdetSummary from "./pages/Sell/GagdetSummary";
 import DeviceVariant from "./pages/Sell/DeviceVariant";
 
@@ -40,6 +39,7 @@ import DefaultLayout from "./components/CoreComponents/DefaultLayout";
 import GuestLayout from "./components/CoreComponents/GuestLayout";
 import ChangePassword from "./pages/Auth/ChangePassword";
 import Accessories from "./pages/Sell/Accessories";
+import CustomerDetails from "./pages/Sell/CustomerDetails";
 
 const router = createBrowserRouter([
   {
@@ -79,9 +79,10 @@ const router = createBrowserRouter([
         element: <Accessories />,
       },
       {
-        path: "/sell/images-upload",
-        element: <Upload />,
+        path: "/sell/customer-details",
+        element: <CustomerDetails />,
       },
+
       {
         path: "/sell/gadget-summary",
         element: <GagdetSummary />,

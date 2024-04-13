@@ -7,8 +7,10 @@ import {
   TableRow,
 } from "../ui/table";
 import BoughtRow from "./BoughtRow";
+import { useTransactionsStore } from "../../store/user/transactionsStore";
 
 const BoughtTable = () => {
+  const transactions = useTransactionsStore((state) => state.transactions);
   return (
     <ScrollArea className="w-full ">
       <Table className="min-w-[800px] mb-4">

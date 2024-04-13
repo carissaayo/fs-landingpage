@@ -8,8 +8,10 @@ import {
 } from "../ui/table";
 
 import SoldRow from "./SoldRow";
+import { useTransactionsStore } from "../../store/user/transactionsStore";
 
 const SoldTable = () => {
+  const transactions = useTransactionsStore((state) => state.transactions);
   return (
     <ScrollArea className="w-full ">
       <Table className=" min-w-[800px]   mb-4">
@@ -23,10 +25,10 @@ const SoldTable = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          <SoldRow />
-          <SoldRow />
-          <SoldRow />
-          <SoldRow />
+          {transactions.length > 0 &&
+            transactions.map((transaction) => (
+              <SoldRow key={transaction._id} transaction={transaction} />
+            ))}
         </TableBody>
       </Table>
       <ScrollBar orientation="horizontal" />

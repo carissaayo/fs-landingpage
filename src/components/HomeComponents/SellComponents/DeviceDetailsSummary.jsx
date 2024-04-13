@@ -1,20 +1,9 @@
 import phoneImg from "../../../assets/images/phone_14_01.jpg";
 import { useDeviceDetailsStore } from "../../../store/sell/deviceDetailsStore";
-import { useBrandsAndModelsStore } from "../../../store/sell/brandsAndModelsStore";
+
 const DeviceDetailsSummary = () => {
   const phoneDetails = useDeviceDetailsStore((state) => state.phoneDetails);
-  const setPhoneDetails = useDeviceDetailsStore(
-    (state) => state.setPhoneDetails
-  );
-  const selectedModelList = useBrandsAndModelsStore(
-    (state) => state.selectedModelList
-  );
 
-  const phoneConditions = useBrandsAndModelsStore(
-    (state) => state.phoneConditions
-  );
-
-  const handlePhoneConditions = (phoneConditions = {}) => {};
   return (
     <section className=" bg-white flex-1 rounded-md  box-shadow py-16 px-6 summary">
       <div className="flex mb-4 px-3 gap-4 items-center">
@@ -26,7 +15,7 @@ const DeviceDetailsSummary = () => {
             (
             {
               phoneDetails?.model?.variants.filter(
-                (variant) => variant.id === phoneDetails.variant
+                (variant) => variant.id === phoneDetails.variantId
               )[0].name
             }
             )
@@ -38,127 +27,127 @@ const DeviceDetailsSummary = () => {
         <h1 className="text-lg">Device Evaluation</h1>
         <ul className="pl-12 pt-4">
           {/* Phone Starting */}
-          {phoneDetails?.phoneConditions?.phoneStarting !== undefined && (
+          {phoneDetails?.phoneCondition?.phoneStarting !== undefined && (
             <li className="text-sm list-disc mb-2">
-              {phoneDetails?.phoneConditions?.phoneStarting === true
+              {phoneDetails?.phoneCondition?.phoneStarting === true
                 ? "Can turn on/off"
                 : "Can't turn on/off"}
             </li>
           )}
 
           {/* makeAndReceiveCalls  */}
-          {phoneDetails?.phoneConditions?.makeAndReceiveCalls !== undefined && (
+          {phoneDetails?.phoneCondition?.makeAndReceiveCalls !== undefined && (
             <li className="text-sm list-disc mb-2">
-              {phoneDetails?.phoneConditions?.makeAndReceiveCalls === true
+              {phoneDetails?.phoneCondition?.makeAndReceiveCalls === true
                 ? "Can make calls"
                 : "Can't  make calls"}
             </li>
           )}
 
           {/* faultyVolumeButtons  */}
-          {phoneDetails?.phoneConditions?.faultyVolumeButtons === true && (
+          {phoneDetails?.phoneCondition?.faultyVolumeButtons === true && (
             <li className="text-sm list-disc mb-2">
               Volume buttons not working
             </li>
           )}
 
           {/* faultyFingerPrint  */}
-          {phoneDetails?.phoneConditions?.faultyFingerPrint === true && (
+          {phoneDetails?.phoneCondition?.faultyFingerPrint === true && (
             <li className="text-sm list-disc mb-2">
               Fingerprint scanner not working
             </li>
           )}
 
           {/* missingSimCardTray  */}
-          {phoneDetails?.phoneConditions?.missingSimCardTray === true && (
+          {phoneDetails?.phoneCondition?.missingSimCardTray === true && (
             <li className="text-sm list-disc mb-2">Simcard tray missing</li>
           )}
 
           {/* faultySpeakers  */}
-          {phoneDetails?.phoneConditions?.faultySpeakers === true && (
+          {phoneDetails?.phoneCondition?.faultySpeakers === true && (
             <li className="text-sm list-disc mb-2">Speaker not working</li>
           )}
 
           {/* faultyEarpiece  */}
-          {phoneDetails?.phoneConditions?.faultyEarpiece === true && (
+          {phoneDetails?.phoneCondition?.faultyEarpiece === true && (
             <li className="text-sm list-disc mb-2">Earpiece not working</li>
           )}
 
           {/* faultyPowerButton  */}
-          {phoneDetails?.phoneConditions?.faultyPowerButton === true && (
+          {phoneDetails?.phoneCondition?.faultyPowerButton === true && (
             <li className="text-sm list-disc mb-2">Power button not working</li>
           )}
 
           {/* faultyChargingPort  */}
-          {phoneDetails?.phoneConditions?.faultyChargingPort === true && (
+          {phoneDetails?.phoneCondition?.faultyChargingPort === true && (
             <li className="text-sm list-disc mb-2">
               Charging port not working
             </li>
           )}
           {/* faultyBackCamera  */}
-          {phoneDetails?.phoneConditions?.faultyBackCamera === true && (
+          {phoneDetails?.phoneCondition?.faultyBackCamera === true && (
             <li className="text-sm list-disc mb-2">Main camera not working</li>
           )}
 
           {/* faultyFrontCamera  */}
-          {phoneDetails?.phoneConditions?.faultyFrontCamera === true && (
+          {phoneDetails?.phoneCondition?.faultyFrontCamera === true && (
             <li className="text-sm list-disc mb-2">
               Selfie camera not working
             </li>
           )}
 
           {/* scratchedScreen  */}
-          {phoneDetails?.phoneConditions?.scratchedScreen === true && (
+          {phoneDetails?.phoneCondition?.scratchedScreen === true && (
             <li className="text-sm list-disc mb-2">Screen is scratched</li>
           )}
 
           {/* spottedScreen */}
-          {phoneDetails?.phoneConditions?.spottedScreen === true && (
+          {phoneDetails?.phoneCondition?.spottedScreen === true && (
             <li className="text-sm list-disc mb-2">
               Screen has spots or lines
             </li>
           )}
 
           {/* brokenScreen  */}
-          {phoneDetails?.phoneConditions?.brokenScreen === true && (
+          {phoneDetails?.phoneCondition?.brokenScreen === true && (
             <li className="text-sm list-disc mb-2">Screen is broken</li>
           )}
 
           {/* brokenCameraGlass  */}
-          {phoneDetails?.phoneConditions?.brokenCameraGlass === true && (
+          {phoneDetails?.phoneCondition?.brokenCameraGlass === true && (
             <li className="text-sm list-disc mb-2">Camera glass broken</li>
           )}
 
           {/* damagedBackCoverGlass */}
-          {phoneDetails?.phoneConditions?.damagedBackCoverGlass === true && (
+          {phoneDetails?.phoneCondition?.damagedBackCoverGlass === true && (
             <li className="text-sm list-disc mb-2">
               Back cover/glass broken or scratched
             </li>
           )}
 
           {/* brokenPhoneBody  */}
-          {phoneDetails?.phoneConditions?.brokenPhoneBody === true && (
+          {phoneDetails?.phoneCondition?.brokenPhoneBody === true && (
             <li className="text-sm list-disc mb-2">
               Phone{"'"}s body dented/broken
             </li>
           )}
 
           {/* scratchedPhoneBody */}
-          {phoneDetails?.phoneConditions?.scratchedPhoneBody === true && (
+          {phoneDetails?.phoneCondition?.scratchedPhoneBody === true && (
             <li className="text-sm list-disc mb-2">
               Phone{"'"}s body is scratched
             </li>
           )}
 
           {/* originalCharger  */}
-          {phoneDetails?.phoneConditions?.originalCharger === true && (
+          {phoneDetails?.phoneCondition?.originalCharger === true && (
             <li className="text-sm list-disc mb-2">
               Original charger plug of device present
             </li>
           )}
 
           {/* originalChargerCable  */}
-          {phoneDetails?.phoneConditions?.originalChargerCable === true && (
+          {phoneDetails?.phoneCondition?.originalChargerCable === true && (
             <li className="text-sm list-disc mb-2">
               {" "}
               Original charger cable of device present
@@ -166,19 +155,19 @@ const DeviceDetailsSummary = () => {
           )}
 
           {/*  receipt  */}
-          {phoneDetails?.phoneConditions?.receipt === true && (
+          {phoneDetails?.phoneCondition?.receipt === true && (
             <li className="text-sm list-disc mb-2">
               receipt with the same IMEI present
             </li>
           )}
 
           {/* originalBox  */}
-          {phoneDetails?.phoneConditions?.originalBox === true && (
+          {phoneDetails?.phoneCondition?.originalBox === true && (
             <li className="text-sm list-disc mb-2">Original Box present</li>
           )}
 
           {/* brandWarranty */}
-          {phoneDetails?.phoneConditions?.brandWarranty === true && (
+          {phoneDetails?.phoneCondition?.brandWarranty === true && (
             <li className="text-sm list-disc mb-2">
               Phone under brand warranty
             </li>

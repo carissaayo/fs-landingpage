@@ -1,11 +1,11 @@
 import { create } from "zustand";
 
 export const useDeviceDetailsStore = create((set) => ({
+  loading: false,
+  success: false,
   phoneConditions: {},
   phoneDetails: {
-    phoneConditions: {
-      phoneStarting: false,
-      makeAndReceiveCalls: false,
+    phoneCondition: {
       faultyVolumeButtons: false,
       faultyFingerPrint: false,
       missingSimCardTray: false,
@@ -31,7 +31,8 @@ export const useDeviceDetailsStore = create((set) => ({
   },
   option: false,
   setOption: (value) => set({ option: value }),
-
+  setLoading: (value) => set({ loading: value }),
+  setSuccess: (value) => set({ success: value }),
   setPhoneDetails: (value) => set({ phoneDetails: value }),
   setPhoneConditions: (value) => set({ phoneConditions: value }),
 }));

@@ -6,21 +6,53 @@ import { TableCell, TableRow } from "../ui/table";
 import { Button } from "../ui/button";
 
 import phoneImg from "../../assets/images/gadget.png";
+import { useBrandsAndModelsStore } from "../../store/sell/brandsAndModelsStore";
+import GadgetConditons from "./GadgetConditons";
 
-const SoldRow = () => {
+const SoldRow = ({ transaction }) => {
   const [openDetails, setOpenDetails] = useState(false);
+  const models = useBrandsAndModelsStore((state) => state.models);
 
   return (
     <TableRow>
       <TableCell className="">
         <div className="flex items-center gap-2">
-          <img src={phoneImg} alt="" className="w-[100px]" />
-          <p className="poppins-medium">Redmi Note 9s</p>
+          {transaction?.procurementImages?.frontImage[0] ? (
+            <img
+              src={transaction?.procurementImages?.frontImage[0]}
+              alt=""
+              className="w-[100px]"
+            />
+          ) : (
+            <img src={phoneImg} alt="" className="w-[100px]" />
+          )}
+          <p className="poppins-medium">
+            {transaction?.procurementGadgetNameAndModel ||
+              models.filter(
+                (model) => model._id === transaction?.phoneModelId
+              )[0]?.name}
+          </p>
         </div>
       </TableCell>
-      <TableCell>01 March 2024</TableCell>
+      <TableCell>{transaction?.createdAt.substr(0, 10)}</TableCell>
       <TableCell>₦301,490</TableCell>
-      <TableCell className="text-green-600">Completed</TableCell>
+      <TableCell className="text-orange-600">
+        {transaction?.procurementInitiated === true &&
+          transaction?.procurementApprovedInitiated === false && (
+            <span className="text-yellow-500">Awaiting Approval</span>
+          )}
+        {transaction?.procurementInitiated === true &&
+          transaction?.procurementApprovedInitiated === true && (
+            <span className="text-blue-500">Ongoing</span>
+          )}
+        {transaction?.procured === true && (
+          <span className="text-green-500"> Completed</span>
+        )}
+
+        {transaction?.procurementInitiated === false && (
+          <span className="">Awaiting Initiation</span>
+        )}
+      </TableCell>
       <TableCell className="">
         <Button
           variant="outline"
@@ -47,61 +79,97 @@ const SoldRow = () => {
 
             <div className="mb-4">
               <h1 className="poppins-semibold  text-2xl mb-2">
-                Iphone xr 16gb
+                {transaction?.procurementGadgetNameAndModel ||
+                  models.filter(
+                    (model) => model._id === transaction?.phoneModelId
+                  )[0]?.name}
               </h1>
               <p className="">View smartphone details below</p>
             </div>
 
             <div className="">
-              <img src={phoneImg} alt="" className="w-[300px]" />
+              {transaction?.procurementImages?.frontImage[0] ? (
+                <img
+                  src={transaction?.procurementImages?.frontImage[0]}
+                  alt=""
+                  className="max-w-[300px]"
+                />
+              ) : (
+                <img src={phoneImg} alt="" className="max-w-[300px]" />
+              )}
             </div>
 
             <div className="flex flex-col gap-4">
               <div className="flex justify-between items-center">
                 <p className="text-[#8B8B8B]">Smartphone Brand</p>
-                <p className="">Apple</p>
+                <p className="">
+                  {transaction?.procurementGadgetNameAndModel ||
+                    models.filter(
+                      (model) => model._id === transaction?.phoneModelId
+                    )[0]?.brandId.name}
+                </p>
               </div>
 
               <div className="flex justify-between items-center">
                 <p className="text-[#8B8B8B]">Smartphone Model </p>
-                <p className="">Iphone XR</p>
+                <p className="">
+                  {transaction?.procurementGadgetNameAndModel ||
+                    models.filter(
+                      (model) => model._id === transaction?.phoneModelId
+                    )[0]?.name}
+                </p>
               </div>
 
               <div className="flex justify-between items-center">
                 <p className="text-[#8B8B8B]">RAM </p>
-                <p className="">16GB</p>
+                <p className="uppercase">
+                  {transaction?.refGadgetDescription.substr(0, 3)}
+                </p>
               </div>
 
               <div className="flex justify-between items-center">
                 <p className="text-[#8B8B8B]">Storage </p>
-                <p className="">64GB</p>
-              </div>
-
-              <div className="flex justify-between items-center">
-                <p className="text-[#8B8B8B]">Fault Condition</p>
-                <p className="">None</p>
-              </div>
-
-              <div className="flex justify-between items-center">
-                <p className="text-[#8B8B8B]">Screen Condition</p>
-                <p className="">Broken</p>
-              </div>
-
-              <div className="flex justify-between items-center">
-                <p className="text-[#8B8B8B]">Device Type</p>
-                <p className="">Used</p>
-              </div>
-
-              <div className="flex justify-between items-center">
-                <p className="text-[#8B8B8B]">
-                  How long have you been using this device?
+                <p className="uppercase">
+                  {transaction?.refGadgetDescription.substr(4, 9)}
                 </p>
-                <p className="">2-3 Months</p>
+              </div>
+              {/* <div className="flex justify-between items-center">
+                <p className="text-[#8B8B8B]">Procured</p>
+                <p className="">{transaction?.procured ? "Yes" : "No"}</p>
+              </div> */}
+              <div className="flex justify-between items-center">
+                <p className="text-[#8B8B8B]">Status</p>
+                <p className="text-orange-500">
+                  {transaction?.procurementInitiated === true &&
+                    transaction?.procurementApprovedInitiated === false && (
+                      <span className="text-yellow-500">Awaiting Approval</span>
+                    )}
+                  {transaction?.procurementInitiated === true &&
+                    transaction?.procurementApprovedInitiated === true && (
+                      <span className="text-blue-500">Ongoing</span>
+                    )}
+                  {transaction?.procured === true && (
+                    <span className="text-green-500"> Completed</span>
+                  )}
+
+                  {transaction?.procurementInitiated === false && (
+                    <span className="">Awaiting Initiation</span>
+                  )}
+                </p>
               </div>
 
               <div className="flex justify-between items-center">
-                <p className="text-[#8B8B8B]">Location</p>
-                <p className="">Kwara</p>
+                <p className="text-[#8B8B8B]">State</p>
+                <p className="">{transaction?.refGadgetState}</p>
+              </div>
+              <div className="flex justify-between items-center">
+                <p className="text-[#8B8B8B]">City</p>
+                <p className="">{transaction?.refGadgetCity}</p>
+              </div>
+              <div className="">
+                <p className="text-[#8B8B8B]">Phone Conditions</p>
+
+                <GadgetConditons phoneCondition={transaction?.phoneCondition} />
               </div>
             </div>
           </div>

@@ -58,8 +58,8 @@ const DeviceDetails = () => {
                     onClick={(e) => {
                       setPhoneDetails({
                         ...phoneDetails,
-                        phoneConditions: {
-                          ...phoneDetails.phoneConditions,
+                        phoneCondition: {
+                          ...phoneDetails.phoneCondition,
                           phoneStarting:
                             e.target.value === "true" ? true : false,
                         },
@@ -100,8 +100,8 @@ const DeviceDetails = () => {
                     onClick={(e) =>
                       setPhoneDetails({
                         ...phoneDetails,
-                        phoneConditions: {
-                          ...phoneDetails.phoneConditions,
+                        phoneCondition: {
+                          ...phoneDetails.phoneCondition,
                           makeAndReceiveCalls:
                             e.target.value === "true" ? true : false,
                         },

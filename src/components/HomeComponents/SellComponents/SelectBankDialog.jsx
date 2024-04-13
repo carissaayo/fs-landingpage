@@ -1,4 +1,8 @@
+import toast from "react-hot-toast";
+import { useMutation } from "@tanstack/react-query";
+import { RefreshCcw } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
+
 import {
   AlertDialog,
   AlertDialogAction,
@@ -10,18 +14,17 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "../../ui/alert-dialog";
-
+import { Input } from "../../ui/input";
+import { Label } from "../../ui/label";
 import { Button } from "../../ui/button";
+
+import ShowToaster from "../../CoreComponents/Core/ShowToaster";
+import Loading from "../../CoreComponents/Core/Loading";
+
 import axiosClient from "../../../lib/axiosClient";
-import toast from "react-hot-toast";
-import { useMutation } from "@tanstack/react-query";
+
 import { useCreateUserStore } from "../../../store/auth/createUser";
 import { useBankStore } from "../../../store/sell/bankStore";
-import Loading from "../../CoreComponents/Core/Loading";
-import { Input } from "../../ui/input";
-import { Label } from "@radix-ui/react-label";
-import ShowToaster from "../../CoreComponents/Core/ShowToaster";
-import { RefreshCcw } from "lucide-react";
 
 const SelectBankDialog = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -37,6 +40,12 @@ const SelectBankDialog = () => {
   const setVerifyNumberLoading = useBankStore(
     (state) => state.setVerifyNumberLoading
   );
+  const setVerifiedAccountName = useBankStore(
+    (state) => state.setVerifiedAccountName
+  );
+  const verifiedAccountName = useBankStore(
+    (state) => state.verifiedAccountName
+  );
 
   //   adding account number loading
   const addingAccountNumberLoading = useBankStore(
@@ -45,7 +54,11 @@ const SelectBankDialog = () => {
   const setAddingAccountNumberLoading = useBankStore(
     (state) => state.setAddingAccountNumberLoading
   );
+  const setRefreshUserBanks = useBankStore(
+    (state) => state.setRefreshUserBanks
+  );
 
+  const refreshUserBanks = useBankStore((state) => state.refreshUserBanks);
   const setBanks = useBankStore((state) => state.setBanks);
   const banks = useBankStore((state) => state.banks);
   const selectedBank = useBankStore((state) => state.selectedBank);
@@ -54,6 +67,7 @@ const SelectBankDialog = () => {
   const setAccountNumber = useBankStore((state) => state.setAccountNumber);
   const accountVerified = useBankStore((state) => state.accountVerified);
   const setAccountVerified = useBankStore((state) => state.setAccountVerified);
+
   const fetchSupportedBanks = useCallback(async () => {
     setLoading(true);
     await axiosClient
@@ -94,7 +108,11 @@ const SelectBankDialog = () => {
       )
       .then((response) => {
         console.log(response);
+        setVerifiedAccountName(response.data.data.accountBearerName);
         setAccountVerified(true);
+        toast.success("account verified", {
+          id: "accountNumberVerified",
+        });
         setVerifyNumberLoading(false);
       })
       .catch((error) => {
@@ -122,11 +140,14 @@ const SelectBankDialog = () => {
       )
       .then((response) => {
         console.log(response);
-        setAccountVerified(true);
+        setAccountVerified(false);
         setAddingAccountNumberLoading(false);
+        setVerifiedAccountName("");
+        setRefreshUserBanks(true);
         toast.success("Your account has been verified successfully", {
           id: "verifiedSuccess",
         });
+
         setOpenModal(false);
       })
       .catch((error) => {
@@ -135,6 +156,12 @@ const SelectBankDialog = () => {
         toast.error(error.response.data.message), { id: "verifyAccountNumber" };
       });
   };
+
+  const handleEdit = () => {
+    setAccountVerified(false);
+    setVerifiedAccountName("");
+  };
+
   useEffect(() => {
     banks.length === 0 && fetchSupportedBanksFn();
     setAccountNumber("");
@@ -145,10 +172,11 @@ const SelectBankDialog = () => {
     <AlertDialog open={openModal}>
       <AlertDialogTrigger asChild>
         <Button
-          className="bg-[#130D52] hover:bg-[#130D52]"
+          variant="ghost"
+          className="poppins-medium"
           onClick={() => setOpenModal(true)}
         >
-          Add An Account
+          Add New Account
         </Button>
       </AlertDialogTrigger>
       <AlertDialogContent className="min-w-[70vw]">
@@ -176,6 +204,8 @@ const SelectBankDialog = () => {
                     className="border border-gray-400 p-4 rounded-lg text-sm md:text-base focus:outline-none"
                     onChange={(e) => setSelectedBank(e.target.value)}
                   >
+                    <option className="">Select Bank</option>
+
                     {banks &&
                       banks.map((bank) => (
                         <option value={bank.code} key={bank.id} className="">
@@ -187,13 +217,46 @@ const SelectBankDialog = () => {
               </div>
               <div className="w-full   px-4 lg:px-0  flex flex-col justify-start gap-4 ">
                 <Label className="  ">Enter the account number</Label>
-                <div className="flex items-center gap-6">
+                <div className="flex items-center gap-6 border-[1px] border-gray-500 rounded-lg pr-4 py-1">
                   <Input
-                    className="text-black"
+                    className="text-black border-none"
                     disabled={!selectedBank}
                     value={accountNumber}
                     onChange={(e) => setAccountNumber(e.target.value)}
                   />
+                  <Button className="px-5" onClick={handleEdit}>
+                    Edit{" "}
+                  </Button>
+                </div>
+              </div>
+              {accountVerified && (
+                <p className="text-sm poppins-medium px-4">
+                  {verifiedAccountName}
+                  {/* <span className=""> verified</span> */}
+                </p>
+              )}
+            </div>
+
+            <AlertDialogFooter>
+              <div className="w-full  flex justify-center items-center gap-6">
+                <AlertDialogCancel
+                  className="px-8 text-base text-red-600 hover:text-red-600 hover:bg-white"
+                  onClick={() => setOpenModal(false)}
+                >
+                  Cancel
+                </AlertDialogCancel>
+                {accountVerified ? (
+                  <AlertDialogAction
+                    className="px-8 text-base bg-[#130D52] hover:bg-[#130D52]"
+                    disabled={!accountVerified}
+                    onClick={addAccountNumber}
+                  >
+                    {addingAccountNumberLoading && (
+                      <RefreshCcw className="h-4 w-4 animate-spin mr-4" />
+                    )}
+                    Add Account Number
+                  </AlertDialogAction>
+                ) : (
                   <Button
                     className="bg-[#130D52] hover:bg-[#130D52] h-[55px]"
                     onClick={verifyAccountNumber}
@@ -203,27 +266,7 @@ const SelectBankDialog = () => {
                       ? "verifying ..."
                       : "verify account number"}
                   </Button>
-                </div>
-              </div>
-            </div>
-            <AlertDialogFooter>
-              <div className="w-full  flex justify-center items-center gap-6">
-                <AlertDialogCancel
-                  className="px-8 text-base text-red-600 hover:text-red-600 hover:bg-white"
-                  onClick={() => setOpenModal(false)}
-                >
-                  Cancel
-                </AlertDialogCancel>
-                <AlertDialogAction
-                  className="px-8 text-base bg-[#130D52] hover:bg-[#130D52]"
-                  //   disabled={!accountVerified}
-                  onClick={addAccountNumber}
-                >
-                  {addingAccountNumberLoading && (
-                    <RefreshCcw className="h-4 w-4 animate-spin mr-4" />
-                  )}
-                  Add Account Number
-                </AlertDialogAction>
+                )}
               </div>
             </AlertDialogFooter>
           </>

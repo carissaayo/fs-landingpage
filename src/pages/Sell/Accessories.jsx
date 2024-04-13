@@ -46,9 +46,12 @@ const Accessories = () => {
             Back
           </Link>
           {user?.accessToken ? (
-            <Button className="bg-[#0E0C4D] border-[#B1B1B1] hover:bg-[#0E0C4D] hover:border-[#B1B1B1]   h-[50px] px-10 text-lg text-white rounded-2xl">
+            <Link
+              to="/sell/customer-details"
+              className="bg-[#0E0C4D]  h-[50px] flex items-center justify-center text-lg text-white rounded-2xl px-10"
+            >
               Next
-            </Button>
+            </Link>
           ) : (
             <SellDialog />
           )}

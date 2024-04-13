@@ -1,26 +1,39 @@
-import { useCallback, useEffect } from "react";
-import { useCreateUserStore } from "../../store/auth/createUser";
-import { Link } from "react-router-dom";
-import { ChevronRight } from "lucide-react";
-import { Label } from "../../components/ui/label";
-
-import SelectBankDialog from "../../components/HomeComponents/SellComponents/SelectBankDialog";
-import { useBankStore } from "../../store/sell/bankStore";
-import axiosClient from "../../lib/axiosClient";
 import toast from "react-hot-toast";
-import ShowToaster from "../../components/CoreComponents/Core/ShowToaster";
+import { useCallback, useEffect } from "react";
 import { useMutation } from "@tanstack/react-query";
-import { AccountBalance } from "@mui/icons-material";
+import { Link, useNavigate } from "react-router-dom";
+import { ChevronRight } from "lucide-react";
+
+import { Label } from "../../components/ui/label";
+import { Button } from "../../components/ui/button";
+
+import Loading from "../../components/CoreComponents/Core/Loading";
+import SelectBankDialog from "../../components/HomeComponents/SellComponents/SelectBankDialog";
+import ShowToaster from "../../components/CoreComponents/Core/ShowToaster";
+
+import axiosClient from "../../lib/axiosClient";
+
+import { useBankStore } from "../../store/sell/bankStore";
+import { useCreateUserStore } from "../../store/auth/createUser";
+import { useDeviceDetailsStore } from "../../store/sell/deviceDetailsStore";
 
 const CustomerDetails = () => {
+  const navigate = useNavigate();
   const user = useCreateUserStore((state) => state.user);
   const loading = useBankStore((state) => state.loading);
   const setLoading = useBankStore((state) => state.setLoading);
-
+  const selectedBankId = useBankStore((state) => state.selectedBankId);
+  const setSelectedBankId = useBankStore((state) => state.setSelectedBankId);
   const userBankAccounts = useBankStore((state) => state.userBankAccounts);
   const setUserBankAccounts = useBankStore(
     (state) => state.setUserBankAccounts
   );
+  const setPhoneDetails = useDeviceDetailsStore(
+    (state) => state.setPhoneDetails
+  );
+  const phoneDetails = useDeviceDetailsStore((state) => state.phoneDetails);
+
+  const refreshUserBanks = useBankStore((state) => state.refreshUserBanks);
 
   const fetchUserBankAccounts = useCallback(async () => {
     setLoading(true);
@@ -34,7 +47,6 @@ const CustomerDetails = () => {
       .then((response) => {
         console.log(response);
         setUserBankAccounts(response.data.data.banks);
-        console.log(response.data.data.banks);
         setLoading(false);
       })
       .catch((error) => {
@@ -43,19 +55,30 @@ const CustomerDetails = () => {
 
         toast.error("something went wrong");
       });
-  }, []);
+  }, [refreshUserBanks]);
+
   const { mutate: fetchUserBankAccountsFn } = useMutation({
     mutationFn: () => fetchUserBankAccounts(),
   });
+
   const goToTop = () => {
     window.scrollTo({
       top: 0,
     });
   };
-  useEffect(() => goToTop(), []);
+
+  useEffect(
+    () => setPhoneDetails({ ...phoneDetails, bankId: selectedBankId }),
+    [selectedBankId]
+  );
   useEffect(() => {
-    userBankAccounts.length === 0 && fetchUserBankAccountsFn();
-  }, [userBankAccounts]);
+    !phoneDetails.variantId && navigate("/sell");
+    goToTop();
+  }, []);
+  useEffect(() => {
+    fetchUserBankAccountsFn();
+  }, [refreshUserBanks]);
+
   return (
     <main className="px-6  md:px-16  relative poppins-regular pt-36 pb-16 bg-white min-h-[50vh]">
       <div className="flex items-center gap-2 mb-10">
@@ -69,54 +92,67 @@ const CustomerDetails = () => {
           {user?.profile?.firstName} {user?.profile?.lastName}
         </h1>
       </div>
-
-      <section className="w-full bg-white  py-16 px-6 md:px-12 lg:px-6 xl:px-12 box-shadow rounded-md">
-        <h1 className="capitalize poppins-semibold text-xl text-center mb-6">
-          Select the Account Number You want to use for this transaction!
-        </h1>
-        {userBankAccounts.length === 0 && (
-          <div className="flex items-center justify-between mb-6 px-12">
-            <p className="poppins-medium ">
-              You have not added a bank account yet!
-            </p>
-            <SelectBankDialog />
-          </div>
-        )}
-
-        <div className="w-full   px-4 lg:px-0  flex flex-col justify-start gap-4 lga">
-          <Label className="poppins-semibold text-xl ">
-            Select A Bank Account
-          </Label>
-          <div className="flex items-center w-full gap-12">
-            <div className="custom-select w-full">
-              <select className="border border-gray-400 p-4 rounded-lg text-sm md:text-base focus:outline-none">
-                {userBankAccounts &&
-                  userBankAccounts.map((account) => (
-                    <option value={account._id} className="" key={account._id}>
-                      {account.accountNumber} ({account.bank})
-                    </option>
-                  ))}
-                <option value="3" className="">
-                  Tecno
-                </option>
-                <option value="1" className="">
-                  Apple
-                </option>{" "}
-                <option value="3" className="">
-                  Tecno
-                </option>{" "}
-                <option value="1" className="">
-                  Apple
-                </option>{" "}
-                <option value="3" className="">
-                  Tecno
-                </option>
-              </select>
-            </div>
-            <SelectBankDialog />
-          </div>
+      {loading ? (
+        <div className=" w-full flex items-center justify-center h-[30vh]">
+          <Loading />
         </div>
-      </section>
+      ) : (
+        <section className="w-full bg-white  py-16 px-6 md:px-12 lg:px-6 xl:px-12 box-shadow rounded-md">
+          <h1 className="capitalize poppins-semibold text-xl text-center mb-6">
+            Select the Account Number You want to use for this transaction!
+          </h1>
+          {userBankAccounts.length === 0 && (
+            <div className="flex items-center justify-between mb-6 px-12">
+              <p className="poppins-medium ">
+                You have not added a bank account yet!
+              </p>
+              <SelectBankDialog />
+            </div>
+          )}
+
+          <div className="w-full   px-4 lg:px-0  flex flex-col justify-start gap-4 lga">
+            <Label className="poppins-semibold text-xl ">
+              Select A Bank Account
+            </Label>
+            <div className="flex items-center w-full gap-12">
+              <div className="custom-select w-full">
+                <select
+                  className="border border-gray-400 p-4 rounded-lg text-sm md:text-base focus:outline-none"
+                  onChange={(e) => {
+                    setSelectedBankId(e.target.value);
+                  }}
+                >
+                  <option className="">Select Bank</option>
+
+                  {userBankAccounts &&
+                    userBankAccounts.map((account) => (
+                      <option
+                        value={account._id}
+                        className=""
+                        key={account._id}
+                      >
+                        {account.accountNumber} {account.accountBearerName} (
+                        {account.bank})
+                      </option>
+                    ))}
+                </select>
+              </div>
+              <span className="">Or</span>
+              <SelectBankDialog />
+            </div>
+            <div className="w-full flex items-center justify-center mt-4">
+              <Button
+                className="bg-[#130D52] hover:bg-[#130D52] h-[55px] px-12 text-lg  text-white flex items-center justify-center disabled:cursor-not-allowed"
+                disabled={!selectedBankId}
+              >
+                <Link to="/sell/gadget-summary" className="">
+                  Continue
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+      )}
       <ShowToaster />
     </main>
   );

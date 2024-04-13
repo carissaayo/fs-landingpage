@@ -30,6 +30,7 @@ const SellForm = () => {
   const setSelectedModel = useBrandsAndModelsStore(
     (state) => state.setSelectedModel
   );
+  const selectedModel = useBrandsAndModelsStore((state) => state.selectedModel);
 
   //   location State
   const states = useLocationStore((state) => state.states);
@@ -76,25 +77,16 @@ const SellForm = () => {
           <select
             className="border border-gray-400 p-4 rounded-lg text-sm md:text-base focus:outline-none"
             onChange={(e) => setSelectedStateId(e.target.value)}
+            disabled={!states?.length > 0}
           >
+            <option className="">Select State</option>
+
             {states &&
               states.map((state) => (
                 <option value={state._id} className="" key={state._id}>
                   {state.name}
                 </option>
               ))}
-            <option value="" className="">
-              Samsung
-            </option>{" "}
-            <option value="" className="">
-              Tecno
-            </option>{" "}
-            <option value="" className="">
-              Infinix
-            </option>{" "}
-            <option value="" className="">
-              Xiaomi
-            </option>
           </select>
         </div>
       </div>
@@ -109,6 +101,8 @@ const SellForm = () => {
               setPhoneDetails({ ...phoneDetails, cityId: e.target.value })
             }
           >
+            <option className="">Select City</option>
+
             {selectedCitiesList &&
               selectedCitiesList.map((city) => (
                 <option value={city._id} className="" key={city._id}>
@@ -125,6 +119,8 @@ const SellForm = () => {
             className="border border-gray-400 p-4 rounded-lg text-sm md:text-base focus:outline-none"
             onChange={(e) => setSelectedBrandId(e.target.value)}
           >
+            <option className="">Select Brand</option>
+
             {brands &&
               brands.map((brand) => (
                 <option
@@ -136,12 +132,6 @@ const SellForm = () => {
                   {brand.name}
                 </option>
               ))}
-            <option value="1" className="">
-              Apple
-            </option>{" "}
-            <option value="3" className="">
-              Tecno
-            </option>
           </select>
         </div>
       </div>
@@ -157,6 +147,8 @@ const SellForm = () => {
               setPhoneDetails({ ...phoneDetails, modelId: e.target.value });
             }}
           >
+            <option className="">Select Model</option>
+
             {selectedModelList &&
               selectedModelList.map((model) => (
                 <option
@@ -168,23 +160,14 @@ const SellForm = () => {
                   {model.name}
                 </option>
               ))}
-            <option value="" className="">
-              Samsung
-            </option>{" "}
-            <option value="" className="">
-              Tecno
-            </option>{" "}
-            <option value="" className="">
-              Infinix
-            </option>{" "}
-            <option value="" className="">
-              Xiaomi
-            </option>
           </select>
         </div>
       </div>
       <div className="w-full flex items-center btn">
-        <Button className="bg-[#130D52] hover:bg-[#130D52] px-0 h-[max-content] w-4/5 mx-auto sm:mx-0 sm:w-full ">
+        <Button
+          className="bg-[#130D52] hover:bg-[#130D52] px-0 h-[max-content] w-4/5 mx-auto sm:mx-0 sm:w-full "
+          disabled={!selectedModel}
+        >
           <Link
             to="/sell/phone-variant"
             className="w-full px-12 text-base py-[7px]"

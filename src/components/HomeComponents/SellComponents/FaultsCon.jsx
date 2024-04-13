@@ -26,13 +26,11 @@ const Fault = ({ image, text, name }) => {
   useEffect(() => {
     setPhoneDetails({
       ...phoneDetails,
-      phoneConditions: {
-        ...phoneDetails.phoneConditions,
+      phoneCondition: {
+        ...phoneDetails.phoneCondition,
         [name]: selected,
       },
     });
-    console.log(phoneDetails);
-    console.log(selected);
   }, [selected]);
   return (
     <div

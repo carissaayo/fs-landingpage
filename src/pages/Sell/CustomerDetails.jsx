@@ -101,56 +101,56 @@ const CustomerDetails = () => {
           <h1 className="capitalize poppins-semibold text-xl text-center mb-6">
             Select the Account Number You want to use for this transaction!
           </h1>
-          {userBankAccounts.length === 0 && (
+          {userBankAccounts.length > 0 ? (
             <div className="flex items-center justify-between mb-6 px-12">
               <p className="poppins-medium ">
                 You have not added a bank account yet!
               </p>
               <SelectBankDialog />
             </div>
-          )}
+          ) : (
+            <div className="w-full   px-4 lg:px-0  flex flex-col justify-start gap-4 lga">
+              <Label className="poppins-semibold text-xl ">
+                Select A Bank Account
+              </Label>
+              <div className="flex items-center w-full gap-12">
+                <div className="custom-select w-full">
+                  <select
+                    className="border border-gray-400 p-4 rounded-lg text-sm md:text-base focus:outline-none"
+                    onChange={(e) => {
+                      setSelectedBankId(e.target.value);
+                    }}
+                  >
+                    <option className="">Select Bank</option>
 
-          <div className="w-full   px-4 lg:px-0  flex flex-col justify-start gap-4 lga">
-            <Label className="poppins-semibold text-xl ">
-              Select A Bank Account
-            </Label>
-            <div className="flex items-center w-full gap-12">
-              <div className="custom-select w-full">
-                <select
-                  className="border border-gray-400 p-4 rounded-lg text-sm md:text-base focus:outline-none"
-                  onChange={(e) => {
-                    setSelectedBankId(e.target.value);
-                  }}
-                >
-                  <option className="">Select Bank</option>
-
-                  {userBankAccounts &&
-                    userBankAccounts.map((account) => (
-                      <option
-                        value={account._id}
-                        className=""
-                        key={account._id}
-                      >
-                        {account.accountNumber} {account.accountBearerName} (
-                        {account.bank})
-                      </option>
-                    ))}
-                </select>
+                    {userBankAccounts &&
+                      userBankAccounts.map((account) => (
+                        <option
+                          value={account._id}
+                          className=""
+                          key={account._id}
+                        >
+                          {account.accountNumber} {account.accountBearerName} (
+                          {account.bank})
+                        </option>
+                      ))}
+                  </select>
+                </div>
+                <span className="">Or</span>
+                <SelectBankDialog />
               </div>
-              <span className="">Or</span>
-              <SelectBankDialog />
+              <div className="w-full flex items-center justify-center mt-4">
+                <Button
+                  className="bg-[#130D52] hover:bg-[#130D52] h-[55px] px-12 text-lg  text-white flex items-center justify-center disabled:cursor-not-allowed"
+                  disabled={!selectedBankId}
+                >
+                  <Link to="/sell/gadget-summary" className="">
+                    Continue
+                  </Link>
+                </Button>
+              </div>
             </div>
-            <div className="w-full flex items-center justify-center mt-4">
-              <Button
-                className="bg-[#130D52] hover:bg-[#130D52] h-[55px] px-12 text-lg  text-white flex items-center justify-center disabled:cursor-not-allowed"
-                disabled={!selectedBankId}
-              >
-                <Link to="/sell/gadget-summary" className="">
-                  Continue
-                </Link>
-              </Button>
-            </div>
-          </div>
+          )}
         </section>
       )}
       <ShowToaster />

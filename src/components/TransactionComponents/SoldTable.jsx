@@ -21,7 +21,7 @@ const SoldTable = () => {
             <TableHead className="text-black">Date</TableHead>
             <TableHead className="text-black">Amount</TableHead>
             <TableHead className="text-black">Status</TableHead>
-            <TableHead className="text-black">Actions</TableHead>
+            <TableHead className="text-black pl-12">Actions</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>

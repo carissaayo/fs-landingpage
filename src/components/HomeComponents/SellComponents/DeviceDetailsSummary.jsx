@@ -5,7 +5,7 @@ const DeviceDetailsSummary = () => {
   const phoneDetails = useDeviceDetailsStore((state) => state.phoneDetails);
 
   return (
-    <section className=" bg-white flex-1 rounded-md  box-shadow py-16 px-6 summary">
+    <section className="hidden lg:block bg-white flex-1 rounded-md  box-shadow py-16 px-6 summary">
       <div className="flex mb-4 px-3 gap-4 items-center">
         <img src={phoneImg} alt="" className="max-w-[80px] max-h-[80px]" />
         <p className="poppins-bold flex gap-1 ">

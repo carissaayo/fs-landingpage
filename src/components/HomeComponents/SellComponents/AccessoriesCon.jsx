@@ -7,16 +7,14 @@ import { useEffect, useState } from "react";
 import { useDeviceDetailsStore } from "../../../store/sell/deviceDetailsStore";
 
 const Fault = ({ image, text, name }) => {
-  const [selected, setSelected] = useState(false);
-  const setOption = useDeviceDetailsStore((state) => state.setOption);
   const phoneDetails = useDeviceDetailsStore((state) => state.phoneDetails);
   const setPhoneDetails = useDeviceDetailsStore(
     (state) => state.setPhoneDetails
   );
+  const [selected, setSelected] = useState(phoneDetails.phoneCondition[name]);
 
   const handleClick = () => {
     setSelected((prevValue) => !prevValue);
-    setOption(selected);
   };
   useEffect(() => {
     setPhoneDetails({

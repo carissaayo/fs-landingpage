@@ -8,10 +8,16 @@ import { Button } from "../ui/button";
 import phoneImg from "../../assets/images/gadget.png";
 import { useBrandsAndModelsStore } from "../../store/sell/brandsAndModelsStore";
 import GadgetConditons from "./GadgetConditons";
+import { useNavigate } from "react-router-dom";
 
 const SoldRow = ({ transaction }) => {
+  const navigate = useNavigate();
   const [openDetails, setOpenDetails] = useState(false);
   const models = useBrandsAndModelsStore((state) => state.models);
+
+  const handleEditSale = () => {
+    navigate("/sell/edit-sale", { state: { transaction } });
+  };
 
   return (
     <TableRow>
@@ -36,32 +42,32 @@ const SoldRow = ({ transaction }) => {
       </TableCell>
       <TableCell>{transaction?.createdAt.substr(0, 10)}</TableCell>
       <TableCell>₦301,490</TableCell>
-      <TableCell className="text-orange-600">
-        {transaction?.procurementInitiated === true &&
-          transaction?.procurementApprovedInitiated === false && (
-            <span className="text-yellow-500">Awaiting Approval</span>
-          )}
-        {transaction?.procurementInitiated === true &&
-          transaction?.procurementApprovedInitiated === true && (
-            <span className="text-blue-500">Ongoing</span>
-          )}
-        {transaction?.procured === true && (
+      <TableCell className="">
+        {transaction?.procured === true ? (
           <span className="text-green-500"> Completed</span>
-        )}
-
-        {transaction?.procurementInitiated === false && (
-          <span className="">Awaiting Initiation</span>
+        ) : (
+          <span className="text-yellow-500"> Pending</span>
         )}
       </TableCell>
       <TableCell className="">
-        <Button
-          variant="outline"
-          className="border-[#C8C8C8] rounded-xl"
-          onClick={() => setOpenDetails(true)}
-        >
-          {" "}
-          Details
-        </Button>
+        <div className="flex gap-2">
+          <Button
+            variant="outline"
+            className="border-[#C8C8C8] rounded-xl"
+            onClick={handleEditSale}
+          >
+            {" "}
+            Edit
+          </Button>
+          <Button
+            variant="outline"
+            className="border-[#C8C8C8] rounded-xl"
+            onClick={() => setOpenDetails(true)}
+          >
+            {" "}
+            Details
+          </Button>
+        </div>
 
         <Drawer
           open={openDetails}

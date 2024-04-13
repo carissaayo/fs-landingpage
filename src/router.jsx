@@ -40,6 +40,7 @@ import GuestLayout from "./components/CoreComponents/GuestLayout";
 import ChangePassword from "./pages/Auth/ChangePassword";
 import Accessories from "./pages/Sell/Accessories";
 import CustomerDetails from "./pages/Sell/CustomerDetails";
+import EditSell from "./pages/Sell/EditSell";
 
 const router = createBrowserRouter([
   {
@@ -86,6 +87,10 @@ const router = createBrowserRouter([
       {
         path: "/sell/gadget-summary",
         element: <GagdetSummary />,
+      },
+      {
+        path: "/sell/edit-sale",
+        element: <EditSell />,
       },
       {
         path: "/",

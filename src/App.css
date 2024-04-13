@@ -71,6 +71,14 @@ select {
     ". button button .";
 }
 
+.edit__sellform__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100px 100px;
+  grid-template-areas:
+    "state  lga"
+    "brand  model";
+}
 @media (max-width: 1024px) {
   .device___details__con {
     display: grid;

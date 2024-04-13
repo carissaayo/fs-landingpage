@@ -1,12 +1,8 @@
-import { useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
-
 import { useDeviceDetailsStore } from "../../store/sell/deviceDetailsStore";
 import { useBrandsAndModelsStore } from "../../store/sell/brandsAndModelsStore";
 import DeviceDetailsSummary from "../../components/HomeComponents/SellComponents/DeviceDetailsSummary";
 
 const DeviceDetails = () => {
-  const navigate = useNavigate();
   const phoneDetails = useDeviceDetailsStore((state) => state.phoneDetails);
 
   const setPhoneDetails = useDeviceDetailsStore(
@@ -18,18 +14,8 @@ const DeviceDetails = () => {
   );
 
   const showNextBtn =
-    phoneDetails?.phoneCondition?.makeAndReceiveCalls !== undefined &&
-    phoneDetails?.phoneCondition?.phoneStarting !== undefined;
-
-  const goToTop = () => {
-    window.scrollTo({
-      top: 0,
-    });
-  };
-  useEffect(() => goToTop(), []);
-  useEffect(() => {
-    !phoneDetails.variantId && navigate("/sell");
-  }, []);
+    phoneDetails?.phoneConditions?.makeAndReceiveCalls !== null &&
+    phoneDetails?.phoneConditions?.phoneStarting !== null;
 
   return (
     <main className="w-full min-h-[90vh]  px-6  md:px-16  relative poppins-regular pt-36 pb-16 bg-white flex flex-col lg:flex-row  justify-between gap-12 lg:gap-6 text-sm md:text-base device___details__con">
@@ -64,6 +50,7 @@ const DeviceDetails = () => {
                             e.target.value === "true" ? true : false,
                         },
                       });
+                      // console.log(phoneDetails);
                     }}
                   >
                     <input type="radio" value={option} name="phoneStarting" />
@@ -124,21 +111,6 @@ const DeviceDetails = () => {
         </div>
 
         <hr className="mb-12" />
-        <div className="w-full flex justify-center  items-center  gap-6 ">
-          <Link
-            to="/sell/phone-variant"
-            className="w-28 bg-[#F0F0F0] hover:bg-[#F0F0F0] text-black text-base rounded-2xl border border-[#ACACAC] h-[50px] flex items-center justify-center"
-          >
-            Back
-          </Link>
-
-          <Link
-            to={showNextBtn ? "/sell/device-detailsB" : "/sell/device-details"}
-            className="w-28  text-white bg-[#0C0F4D] text-base rounded-2xl h-[50px] flex items-center justify-center"
-          >
-            Next
-          </Link>
-        </div>
       </section>
       <DeviceDetailsSummary />
     </main>

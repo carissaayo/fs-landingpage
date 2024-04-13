@@ -11,16 +11,14 @@ import dentedImg from "../../../assets/images/dented.svg";
 import bodyscratchedImg from "../../../assets/images/bodyscratched.svg";
 
 const Fault = ({ image, text, name }) => {
-  const [selected, setSelected] = useState(false);
-  const setOption = useDeviceDetailsStore((state) => state.setOption);
   const phoneDetails = useDeviceDetailsStore((state) => state.phoneDetails);
   const setPhoneDetails = useDeviceDetailsStore(
     (state) => state.setPhoneDetails
   );
+  const [selected, setSelected] = useState(phoneDetails.phoneCondition[name]);
 
   const handleClick = () => {
     setSelected((prevValue) => !prevValue);
-    setOption(selected);
   };
   useEffect(() => {
     setPhoneDetails({
@@ -75,8 +73,8 @@ const BodyCon = ({ phoneConditions }) => {
       />
       <Fault
         image={backcoverImg}
-        text={phoneConditionsOptions?.brokenPhoneBody?.description}
-        name="brokenPhoneBody"
+        text={phoneConditionsOptions?.damagedBackCoverGlass?.description}
+        name="damagedBackCoverGlass"
       />
       <Fault
         image={dentedImg}

@@ -54,7 +54,7 @@ const DeviceVariant = () => {
     <main className="w-full min-h-[90vh] px-6 md:px-32  relative poppins-regular pt-36 pb-16 bg-white  text-sm md:text-base">
       <GoBack />
       <p className=" text-center md:text-left   mb-12 text-2xl poppins-semibold text-[#0E0C4D]">
-        Sell Your Old Iphone 14 Pro Max
+        Sell Your Old {selectedModelList[0]?.name}
       </p>
       <section className="w-4/5 md:w-full bg-white flex flex-col   items-center md:flex-row gap-8 lg:gap-20 py-16 px-10 md:px-8 lg:px-20 box-shadow mx-auto md:mx-0">
         <img
@@ -63,7 +63,7 @@ const DeviceVariant = () => {
           className="max-w-[300px] lg:max-w-[350px] max-h-[400px]"
         />
         <div className="flex flex-col gap-4">
-          <h1 className="poppins-bold text-lg">Iphone 14 Pro Max</h1>
+          <h1 className="poppins-bold text-lg">{selectedModelList[0]?.name}</h1>
           <p className="">Choose a variant</p>
 
           {/* Variant Con Starts */}

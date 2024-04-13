@@ -1,4 +1,6 @@
 import { useCallback, useEffect } from "react";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import toast from "react-hot-toast";
 
 import HowItWorks from "../components/HomeComponents/HowItWorksComponents/HowItWorks";
 import AboutUs from "../components/HomeComponents/AboutUsComponents/AboutUs";
@@ -6,10 +8,10 @@ import Testimonial from "../components/HomeComponents/TestimonialComponents/Test
 import FAQs from "../components/HomeComponents/FAQsComponents/FAQs";
 import Hero from "../components/HomeComponents/HeroComponents/Hero";
 import SellForm from "../components/HomeComponents/SellComponents/SellForm";
+
 import axiosClient from "../lib/axiosClient";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+
 import { useBrandsAndModelsStore } from "../store/sell/brandsAndModelsStore";
-import toast from "react-hot-toast";
 import { useLocationStore } from "../store/sell/locationsStore";
 
 const Home = () => {

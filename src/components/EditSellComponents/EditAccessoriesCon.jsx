@@ -20,7 +20,7 @@ const Fault = ({ image, text, name }) => {
     setPhoneDetails({
       ...phoneDetails,
       phoneCondition: {
-        ...phoneDetails.phoneCondition,
+        ...phoneDetails?.phoneCondition,
         [name]: selected,
       },
     });
@@ -32,13 +32,13 @@ const Fault = ({ image, text, name }) => {
       } border  cursor-pointer border-gray-400 rounded-lg `}
       onClick={handleClick}
     >
-      <img src={image} alt="" className=" md:min-h-[100px] mb-4" />
+      <img src={image && image} alt="" className=" md:min-h-[100px] mb-4" />
       <p
         className={`text-sm p-4 min-h-[112px] ${
           selected && "bg-[#0C0F4D] text-white rounded-b-sm"
         }`}
       >
-        {text}
+        {text && text}
       </p>
     </div>
   );

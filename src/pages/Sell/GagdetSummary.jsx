@@ -22,7 +22,7 @@ const GagdetSummary = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const fromEditPage = location?.state.transaction._id ? true : false;
+  const fromEditPage = location?.state?.transaction?._id ? true : false;
   const user = useCreateUserStore((state) => state.user);
   const loading = useDeviceDetailsStore((state) => state.loading);
   const setLoading = useDeviceDetailsStore((state) => state.setLoading);

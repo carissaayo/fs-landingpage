@@ -9,15 +9,22 @@ import phoneImg from "../../assets/images/gadget.png";
 import { useBrandsAndModelsStore } from "../../store/sell/brandsAndModelsStore";
 import GadgetConditons from "./GadgetConditons";
 import { useNavigate } from "react-router-dom";
+import { useUpdateSaleStore } from "../../store/sell/updateSaleStore";
 
 const SoldRow = ({ transaction }) => {
   const navigate = useNavigate();
   const [openDetails, setOpenDetails] = useState(false);
   const models = useBrandsAndModelsStore((state) => state.models);
-  console.log(models);
+  const setCurrentTransaction = useUpdateSaleStore(
+    (state) => state.setCurrentTransaction
+  );
+  const currentTransaction = useUpdateSaleStore(
+    (state) => state.currentTransaction
+  );
 
   const handleEditSale = () => {
-    navigate("/sell/edit-sale", { state: { transaction } });
+    setCurrentTransaction(transaction);
+    navigate("/sell/edit-sale");
   };
 
   return (

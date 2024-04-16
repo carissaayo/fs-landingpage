@@ -12,38 +12,36 @@ import DeviceDetailsC from "../../components/EditSellComponents/DeviceDetailsC";
 import Accessories from "../../components/EditSellComponents/Accessories";
 
 import { useUpdateSaleStore } from "../../store/sell/updateSaleStore";
-import { useCreateUserStore } from "../../store/auth/createUser";
 import { useLocationStore } from "../../store/sell/locationsStore";
 import { useBrandsAndModelsStore } from "../../store/sell/brandsAndModelsStore";
 
 import axiosClient from "../../lib/axiosClient";
+import Loading from "../../components/CoreComponents/Core/Loading";
 
 const EditSell = () => {
-  const location = useLocation();
-
-  console.log(location);
   const queryClient = useQueryClient();
-
+  const navigate = useNavigate();
   //   Brands and Models states
   const brands = useBrandsAndModelsStore((state) => state.brands);
   const setBrands = useBrandsAndModelsStore((state) => state.setBrands);
   const models = useBrandsAndModelsStore((state) => state.models);
   const setModels = useBrandsAndModelsStore((state) => state.setModels);
-  const setPhoneConditions = useBrandsAndModelsStore(
-    (state) => state.setPhoneConditions
-  );
+
   const phoneConditions = useBrandsAndModelsStore(
     (state) => state.phoneConditions
+  );
+  const setPhoneConditions = useBrandsAndModelsStore(
+    (state) => state.setPhoneConditions
   );
   const selectedModel = useBrandsAndModelsStore((state) => state.selectedModel);
 
   // Location States
 
   const states = useLocationStore((state) => state.states);
+  console.log(states);
   const setStates = useLocationStore((state) => state.setStates);
   const cities = useLocationStore((state) => state.cities);
   const setCities = useLocationStore((state) => state.setCities);
-
   //   Update Sale States
   const showDetails = useUpdateSaleStore((state) => state.showDetails);
   const showDetailsB = useUpdateSaleStore((state) => state.showDetailsB);
@@ -56,6 +54,8 @@ const EditSell = () => {
     (state) => state.setCurrentTransaction
   );
 
+  const phoneDetails = useUpdateSaleStore((state) => state.phoneDetails);
+  const setPhoneDetails = useUpdateSaleStore((state) => state.setPhoneDetails);
   const setLoading = useUpdateSaleStore((state) => state.setLoading);
 
   const fetchLocations = useCallback(async () => {
@@ -76,8 +76,7 @@ const EditSell = () => {
         toast.error("something went wrong");
       });
   }, []);
-  const phoneDetails = useUpdateSaleStore((state) => state.phoneDetails);
-  const setPhoneDetails = useUpdateSaleStore((state) => state.setPhoneDetails);
+
   const fetchBrandsAndModels = useCallback(async () => {
     setLoading(true);
     await axiosClient
@@ -112,7 +111,6 @@ const EditSell = () => {
       phoneConditions.length === 0) &&
       fetchBrandsAndModelsFn();
   }, []);
-  console.log(phoneConditions);
 
   const goToTop = () => {
     window.scrollTo({
@@ -120,17 +118,17 @@ const EditSell = () => {
     });
   };
   useEffect(() => {
+    !currentTransaction._id && navigate("/transactions");
     goToTop();
   }, []);
 
   useEffect(() => {
-    setCurrentTransaction(location?.state?.transaction);
     setPhoneDetails({
       ...phoneDetails,
-      phoneCondition: location?.state?.transaction?.phoneCondition[0],
+      phoneCondition: currentTransaction?.phoneCondition[0],
     });
   }, []);
-  console.log(phoneDetails);
+  console.log(currentTransaction);
 
   return (
     <main className="w-full  px-6  md:px-16  relative poppins-regular pt-36 pb-16 bg-white justify-between gap-12 lg:gap-6 text-sm md:text-base">

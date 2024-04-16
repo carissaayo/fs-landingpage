@@ -1,6 +1,6 @@
 import { useCallback, useEffect } from "react";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+
 import { useMutation } from "@tanstack/react-query";
 
 import TransactionsTab from "../components/TransactionComponents/TransactionsTab";
@@ -12,26 +12,49 @@ import { useTransactionsStore } from "../store/user/transactionsStore";
 import { useBrandsAndModelsStore } from "../store/sell/brandsAndModelsStore";
 import Loading from "../components/CoreComponents/Core/Loading";
 import { useUpdateSaleStore } from "../store/sell/updateSaleStore";
+import { useLocationStore } from "../store/sell/locationsStore";
 
 const Transactions = () => {
-  const navigate = useNavigate();
   const user = useCreateUserStore((state) => state.user);
   const loading = useTransactionsStore((state) => state.loading);
   const setLoading = useTransactionsStore((state) => state.setLoading);
-  const brands = useBrandsAndModelsStore((state) => state.brands);
+  const setCities = useLocationStore((state) => state.setCities);
+  const setStates = useLocationStore((state) => state.setStates);
+  const setSelectedBrandId = useBrandsAndModelsStore(
+    (state) => state.setSelectedBrandId
+  );
   const setBrands = useBrandsAndModelsStore((state) => state.setBrands);
-  const models = useBrandsAndModelsStore((state) => state.models);
-  const setModels = useBrandsAndModelsStore((state) => state.setModels);
 
-  const setPhoneDetails = useUpdateSaleStore((state) => state.setPhoneDetails);
+  const setModels = useBrandsAndModelsStore((state) => state.setModels);
+  const setPhoneConditions = useBrandsAndModelsStore(
+    (state) => state.setPhoneConditions
+  );
   const setTransactions = useTransactionsStore(
     (state) => state.setTransactions
   );
-
+  const states = useLocationStore((state) => state.states);
+  console.log(states);
   const setCurrentTransaction = useUpdateSaleStore(
     (state) => state.setCurrentTransaction
   );
+  const setShowDetails = useUpdateSaleStore((state) => state.setShowDetails);
+  const setShowDetailsB = useUpdateSaleStore((state) => state.setShowDetailsB);
 
+  const setPhoneDetails = useUpdateSaleStore((state) => state.setPhoneDetails);
+  const phoneDetails = useUpdateSaleStore((state) => state.phoneDetails);
+  const setSelectedStateId = useLocationStore(
+    (state) => state.setSelectedStateId
+  );
+  const setSelectedCitiesList = useLocationStore(
+    (state) => state.setSelectedCitiesList
+  );
+  const setSelectedModel = useBrandsAndModelsStore(
+    (state) => state.setSelectedModel
+  );
+
+  const setSelectedModelList = useBrandsAndModelsStore(
+    (state) => state.setSelectedModelList
+  );
   const fetchSells = useCallback(async () => {
     setLoading(true);
     await axiosClient
@@ -62,7 +85,7 @@ const Transactions = () => {
         setBrands(response.data.data.brands);
         setModels(response.data.data.models);
         setPhoneConditions(response.data.data.phoneCondition);
-        console.log(response.data.data.phoneCondition);
+
         setLoading(false);
       })
       .catch((error) => {
@@ -91,7 +114,19 @@ const Transactions = () => {
   useEffect(() => {
     fetchSellsFn();
     fetchBrandsAndModelsFn();
+    setCurrentTransaction({});
+    setPhoneDetails({});
+    setShowDetails(false);
+    setShowDetailsB(false);
+    setStates([]);
+    setSelectedBrandId("");
+    setSelectedModelList("");
+    setSelectedStateId("");
+    setSelectedCitiesList();
+    setSelectedModel("");
   }, []);
+
+  console.log(phoneDetails);
 
   return (
     <main className="w-full h-full relative">

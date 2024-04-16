@@ -47,10 +47,6 @@ const EditSellForm = () => {
     (state) => state.setSelectedCitiesList
   );
 
-  const currentTransaction = useUpdateSaleStore(
-    (state) => state.currentTransaction
-  );
-
   useEffect(() => {
     // Get the selected brand models
     let selectedModels = [];

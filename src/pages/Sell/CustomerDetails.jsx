@@ -20,7 +20,7 @@ import { useUpdateSaleStore } from "../../store/sell/updateSaleStore";
 
 const CustomerDetails = () => {
   const location = useLocation();
-  const fromEditPage = location?.state.currentTransaction ? true : false;
+  const fromEditPage = location?.state?.currentTransaction ? true : false;
 
   const navigate = useNavigate();
   const user = useCreateUserStore((state) => state.user);
@@ -40,12 +40,6 @@ const CustomerDetails = () => {
   );
   const phoneDetails = useDeviceDetailsStore((state) => state.phoneDetails);
 
-  const currentTransaction = useUpdateSaleStore(
-    (state) => state.currentTransaction
-  );
-  const setCurrentTransaction = useUpdateSaleStore(
-    (state) => state.setCurrentTransaction
-  );
   const editPhoneDetails = useUpdateSaleStore((state) => state.phoneDetails);
   const setEditPhoneDetails = useUpdateSaleStore(
     (state) => state.setPhoneDetails
@@ -104,7 +98,7 @@ const CustomerDetails = () => {
 
   useEffect(() => {
     fromEditPage &&
-      setSelectedBankId(location?.state?.currentTransaction.sellingBankId._id);
+      setSelectedBankId(location?.state?.currentTransaction?.sellingBankId._id);
   }, []);
 
   return (

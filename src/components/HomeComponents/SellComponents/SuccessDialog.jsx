@@ -19,14 +19,15 @@ const SuccessDialog = ({ fromEditPage }) => {
   const setCurrentTransaction = useUpdateSaleStore(
     (state) => state.setCurrentTransaction
   );
+
   return (
     <AlertDialog open={success}>
       <AlertDialogContent className="min-w-[70vw]">
         <AlertDialogHeader>
           <AlertDialogTitle className="text-center poppins-medium text-lg">
             {fromEditPage
-              ? "Your sell order has been created successfuly"
-              : " Your sell order has been updated successfuly"}
+              ? " Your sell order has been updated successfuly"
+              : "Your sell order has been created successfuly"}
           </AlertDialogTitle>
           <AlertDialogDescription>
             <p className="text-center poppins-regular text-base text-black">
@@ -53,10 +54,11 @@ const SuccessDialog = ({ fromEditPage }) => {
 
             <Link
               to="/transactions"
+              state={{ reload: true }}
               className="px-8 text-base hover:bg-white flex items-center gap-2 border border-gray-500 rounded-lg py-3"
               onClick={() => {
-                setCurrentTransaction({});
-                setPhoneDetails({});
+                // setCurrentTransaction({});
+                // setPhoneDetails({});
                 setSuccess(false);
               }}
             >

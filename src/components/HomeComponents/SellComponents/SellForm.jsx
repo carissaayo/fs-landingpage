@@ -50,8 +50,8 @@ const SellForm = () => {
   useEffect(() => {
     // Get the selected brand models
     let selectedModels = [];
-    selectedModels = models.filter(
-      (model) => model.brandId._id === selectedBrandId
+    selectedModels = models?.filter(
+      (model) => model?.brandId?._id === selectedBrandId
     );
     setSelectedModelList(selectedModels);
   }, [selectedBrandId]);
@@ -59,8 +59,8 @@ const SellForm = () => {
   useEffect(() => {
     // Get the selected state cities
     let selectedState = [];
-    selectedState = cities.filter(
-      (city) => city.stateId._id === selectedStateId
+    selectedState = cities?.filter(
+      (city) => city?.stateId?._id === selectedStateId
     );
     setSelectedCitiesList(selectedState);
   }, [selectedStateId]);

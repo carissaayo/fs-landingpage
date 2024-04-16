@@ -14,6 +14,7 @@ const SoldRow = ({ transaction }) => {
   const navigate = useNavigate();
   const [openDetails, setOpenDetails] = useState(false);
   const models = useBrandsAndModelsStore((state) => state.models);
+  console.log(models);
 
   const handleEditSale = () => {
     navigate("/sell/edit-sale", { state: { transaction } });
@@ -40,7 +41,7 @@ const SoldRow = ({ transaction }) => {
           </p>
         </div>
       </TableCell>
-      <TableCell>{transaction?.createdAt.substr(0, 10)}</TableCell>
+      <TableCell>{transaction?.updatedAt.substr(0, 10)}</TableCell>
       <TableCell>₦301,490</TableCell>
       <TableCell className="">
         {transaction?.procured === true ? (

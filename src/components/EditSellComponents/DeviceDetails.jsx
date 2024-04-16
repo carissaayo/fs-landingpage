@@ -1,119 +1,170 @@
-import { useDeviceDetailsStore } from "../../store/sell/deviceDetailsStore";
 import { useBrandsAndModelsStore } from "../../store/sell/brandsAndModelsStore";
-import DeviceDetailsSummary from "../../components/HomeComponents/SellComponents/DeviceDetailsSummary";
+import { Button } from "../ui/button";
+import { useUpdateSaleStore } from "../../store/sell/updateSaleStore";
 
 const DeviceDetails = () => {
-  const phoneDetails = useDeviceDetailsStore((state) => state.phoneDetails);
-
-  const setPhoneDetails = useDeviceDetailsStore(
-    (state) => state.setPhoneDetails
-  );
-
+  const phoneDetails = useUpdateSaleStore((state) => state.phoneDetails);
+  const setPhoneDetails = useUpdateSaleStore((state) => state.setPhoneDetails);
+  const setShowDetailsB = useUpdateSaleStore((state) => state.setShowDetailsB);
   const phoneConditions = useBrandsAndModelsStore(
     (state) => state.phoneConditions
   );
-
-  const showNextBtn =
-    phoneDetails?.phoneConditions?.makeAndReceiveCalls !== null &&
-    phoneDetails?.phoneConditions?.phoneStarting !== null;
+  console.log(phoneConditions);
 
   return (
-    <main className="w-full min-h-[90vh]  px-6  md:px-16  relative poppins-regular pt-36 pb-16 bg-white flex flex-col lg:flex-row  justify-between gap-12 lg:gap-6 text-sm md:text-base device___details__con">
-      <section className="w-full bg-white  py-16  px-6 md:px-12 box-shadow flex-[2] rounded-md details">
-        <p className="poppins-bold text-lg text-center mb-8">
-          {phoneConditions?.one?.description}
+    <section className="w-full bg-white  py-8  flex-[2] rounded-md details">
+      <p className="poppins-bold text-lg text-center mb-8">
+        {phoneConditions?.one?.description}
+      </p>
+
+      {/* Check 1 */}
+      <div className="flex flex-col gap-4">
+        <p className="poppins-bold">
+          1. {phoneConditions?.one?.options?.phoneStarting?.description}
+        </p>
+        <p className="">{phoneConditions?.one?.options?.phoneStarting?.info}</p>
+
+        {/* Check Con Starts */}
+        <div className="mb-12 text-sm poppins-medium">
+          <div className="flex flex-wrap md:flex-nowrap gap-4 items-center w-3/5 poppins-bold">
+            <form
+              onSubmit={(e) => e.preventDefault()}
+              className="flex gap-4 w-full items-center"
+            >
+              <label
+                className="flex items-center gap-4 border rounded-sm px-6 py-2 cursor-pointer flex-1"
+                onClick={() =>
+                  setPhoneDetails({
+                    ...phoneDetails,
+                    phoneCondition: {
+                      ...phoneDetails.phoneCondition,
+                      phoneStarting: true,
+                    },
+                  })
+                }
+              >
+                <input
+                  type="radio"
+                  value={true}
+                  checked={phoneDetails?.phoneCondition?.phoneStarting === true}
+                  name="phoneStarting"
+                />
+                <span className="cursor-pointer">
+                  {/* {option === true ? "Yes" : "No"} */}
+                  Yes
+                </span>
+              </label>
+
+              <label
+                className="flex items-center gap-4 border rounded-sm px-6 py-2 cursor-pointer flex-1"
+                onClick={() =>
+                  setPhoneDetails({
+                    ...phoneDetails,
+                    phoneCondition: {
+                      ...phoneDetails.phoneCondition,
+                      phoneStarting: false,
+                    },
+                  })
+                }
+              >
+                <input
+                  type="radio"
+                  value={false}
+                  checked={
+                    phoneDetails?.phoneCondition?.phoneStarting === false
+                  }
+                />
+                <span className="cursor-pointer">
+                  {/* {option === true ? "Yes" : "No"} */}
+                  No
+                </span>
+              </label>
+            </form>
+            {/* ) */}
+            {/* )} */}
+          </div>
+        </div>
+        {/* Check Con Ends */}
+      </div>
+
+      {/* Check 2 */}
+
+      <div className="flex flex-col gap-4">
+        <p className="poppins-bold">
+          1. {phoneConditions?.one?.options?.makeAndReceiveCalls?.description}
+        </p>
+        <p className="">
+          {phoneConditions?.one?.options?.makeAndReceiveCalls?.info}
         </p>
 
-        {/* Check 1 */}
-        <div className="flex flex-col gap-4">
-          <p className="poppins-bold">
-            1. {phoneConditions?.one?.options?.phoneStarting?.description}
-          </p>
-          <p className="">
-            {phoneConditions?.one?.options?.phoneStarting?.info}
-          </p>
+        {/* Check Con Starts */}
+        <div className="mb-12 text-sm poppins-medium">
+          <div className="flex flex-wrap md:flex-nowrap gap-4 items-center w-3/5 poppins-bold">
+            <form
+              onSubmit={(e) => e.preventDefault()}
+              className="flex gap-4 w-full items-center"
+            >
+              <label
+                className="flex items-center gap-4 border rounded-sm px-6 py-2 cursor-pointer flex-1"
+                onClick={() => {
+                  setPhoneDetails({
+                    ...phoneDetails,
+                    phoneCondition: {
+                      ...phoneDetails.phoneCondition,
+                      makeAndReceiveCalls: true,
+                    },
+                  });
+                }}
+              >
+                <input
+                  type="radio"
+                  value={true}
+                  checked={
+                    phoneDetails?.phoneCondition?.makeAndReceiveCalls === true
+                  }
+                />
+                <span className="cursor-pointer">Yes</span>
+              </label>
 
-          {/* Check Con Starts */}
-          <div className="mb-12 text-sm poppins-medium">
-            <div className="flex flex-wrap md:flex-nowrap gap-4 items-center w-3/5 poppins-bold">
-              {phoneConditions?.one?.options?.phoneStarting?.options.map(
-                (option, id) => (
-                  <label
-                    className="flex items-center gap-4 border rounded-sm px-6 py-2 cursor-pointer flex-1"
-                    key={id}
-                    onClick={(e) => {
-                      setPhoneDetails({
-                        ...phoneDetails,
-                        phoneCondition: {
-                          ...phoneDetails.phoneCondition,
-                          phoneStarting:
-                            e.target.value === "true" ? true : false,
-                        },
-                      });
-                      // console.log(phoneDetails);
-                    }}
-                  >
-                    <input type="radio" value={option} name="phoneStarting" />
-                    <span className="cursor-pointer">
-                      {option === true ? "Yes" : "No"}
-                    </span>
-                  </label>
-                )
-              )}
-            </div>
+              <label
+                className="flex items-center gap-4 border rounded-sm px-6 py-2 cursor-pointer flex-1"
+                onClick={() =>
+                  setPhoneDetails({
+                    ...phoneDetails,
+                    phoneCondition: {
+                      ...phoneDetails.phoneCondition,
+                      makeAndReceiveCalls: false,
+                    },
+                  })
+                }
+              >
+                <input
+                  type="radio"
+                  value={false}
+                  checked={
+                    phoneDetails?.phoneCondition?.makeAndReceiveCalls === false
+                  }
+                  name="makeAndReceiveCalls"
+                />
+                <span className="cursor-pointer">No</span>
+              </label>
+            </form>
+            {/* ) */}
+            {/* )} */}
           </div>
-          {/* Check Con Ends */}
         </div>
-
-        {/* Check 2 */}
-
-        <div className="flex flex-col gap-4">
-          <p className="poppins-bold">
-            1. {phoneConditions?.one?.options?.makeAndReceiveCalls?.description}
-          </p>
-          <p className="">
-            {phoneConditions?.one?.options?.makeAndReceiveCalls?.info}
-          </p>
-
-          {/* Check Con Starts */}
-          <div className="mb-12 text-sm poppins-medium">
-            <div className="flex flex-wrap md:flex-nowrap gap-4 items-center w-3/5 poppins-bold">
-              {phoneConditions?.one?.options?.makeAndReceiveCalls?.options.map(
-                (option, id) => (
-                  <label
-                    className="flex items-center gap-4 border rounded-sm px-6 py-2 cursor-pointer flex-1"
-                    key={id}
-                    onClick={(e) =>
-                      setPhoneDetails({
-                        ...phoneDetails,
-                        phoneCondition: {
-                          ...phoneDetails.phoneCondition,
-                          makeAndReceiveCalls:
-                            e.target.value === "true" ? true : false,
-                        },
-                      })
-                    }
-                  >
-                    <input
-                      type="radio"
-                      value={option}
-                      name="makeAndReceiveCalls"
-                    />
-                    <span className="cursor-pointer">
-                      {option === true ? "Yes" : "No"}
-                    </span>
-                  </label>
-                )
-              )}
-            </div>
-          </div>
-          {/* Check Con Ends */}
-        </div>
-
-        <hr className="mb-12" />
-      </section>
-      <DeviceDetailsSummary />
-    </main>
+        {/* Check Con Ends */}
+      </div>
+      <div className="w-full flex items-center justify-center">
+        <Button
+          onClick={() => setShowDetailsB(true)}
+          className="w-28  text-white bg-[#0C0F4D] hover:bg-[#0C0F4D] text-base rounded-2xl h-[50px] flex items-center justify-center"
+        >
+          Continue
+        </Button>
+      </div>
+      <hr className="mb-12 mt-4" />
+    </section>
   );
 };
 

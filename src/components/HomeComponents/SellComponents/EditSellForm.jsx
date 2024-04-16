@@ -3,18 +3,15 @@ import { Label } from "../../ui/label";
 
 import { useBrandsAndModelsStore } from "../../../store/sell/brandsAndModelsStore";
 import { useLocationStore } from "../../../store/sell/locationsStore";
-import { useDeviceDetailsStore } from "../../../store/sell/deviceDetailsStore";
+
 import { useUpdateSaleStore } from "../../../store/sell/updateSaleStore";
 
 const EditSellForm = () => {
   const models = useBrandsAndModelsStore((state) => state.models);
   const brands = useBrandsAndModelsStore((state) => state.brands);
-  console.log(brands);
 
-  const setPhoneDetails = useDeviceDetailsStore(
-    (state) => state.setPhoneDetails
-  );
-  const phoneDetails = useDeviceDetailsStore((state) => state.phoneDetails);
+  const phoneDetails = useUpdateSaleStore((state) => state.phoneDetails);
+  const setPhoneDetails = useUpdateSaleStore((state) => state.setPhoneDetails);
   const setSelectedBrandId = useBrandsAndModelsStore(
     (state) => state.setSelectedBrandId
   );
@@ -58,7 +55,7 @@ const EditSellForm = () => {
     // Get the selected brand models
     let selectedModels = [];
     selectedModels = models?.filter(
-      (model) => model.brandId._id === selectedBrandId
+      (model) => model?.brandId?._id === selectedBrandId
     );
     setSelectedModelList(selectedModels);
   }, [selectedBrandId]);
@@ -66,9 +63,11 @@ const EditSellForm = () => {
   useEffect(() => {
     // Get the selected state cities
     let selectedState = [];
+
     selectedState = cities?.filter(
-      (city) => city.stateId._id === selectedStateId
+      (city) => city?.stateId?._id === selectedStateId
     );
+
     setSelectedCitiesList(selectedState);
   }, [selectedStateId]);
   return (
@@ -94,7 +93,7 @@ const EditSellForm = () => {
       </div>
 
       <div className="w-full   px-4 lg:px-0  flex flex-col justify-start gap-4 lga">
-        <Label className="poppins-semibold  ">Select LGA</Label>
+        <Label className="poppins-semibold  ">Select City</Label>
         <div className="custom-select">
           <select
             className="border border-gray-400 p-4 rounded-lg text-sm md:text-base focus:outline-none"
@@ -107,12 +106,7 @@ const EditSellForm = () => {
 
             {selectedCitiesList &&
               selectedCitiesList.map((city) => (
-                <option
-                  selected={city._id === currentTransaction?.sellingCityId}
-                  value={city._id}
-                  className=""
-                  key={city._id}
-                >
+                <option value={city._id} className="" key={city._id}>
                   {city.name}
                 </option>
               ))}
@@ -131,7 +125,6 @@ const EditSellForm = () => {
             {brands &&
               brands.map((brand) => (
                 <option
-                  selected={brand._id === currentTransaction?.sellingStateId}
                   value={brand._id}
                   className=""
                   key={brand._id}

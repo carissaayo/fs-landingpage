@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 
 import { useBrandsAndModelsStore } from "../../store/sell/brandsAndModelsStore";
-import { useDeviceDetailsStore } from "../../store/sell/deviceDetailsStore";
 
 import { convertToLocaleString } from "../../lib/utils";
 import { useUpdateSaleStore } from "../../store/sell/updateSaleStore";
@@ -19,10 +18,8 @@ const EditSellVariant = () => {
   const selectedModelList = useBrandsAndModelsStore(
     (state) => state.selectedModelList
   );
-  const phoneDetails = useDeviceDetailsStore((state) => state.phoneDetails);
-  const setPhoneDetails = useDeviceDetailsStore(
-    (state) => state.setPhoneDetails
-  );
+  const phoneDetails = useUpdateSaleStore((state) => state.phoneDetails);
+  const setPhoneDetails = useUpdateSaleStore((state) => state.setPhoneDetails);
 
   const currentTransaction = useUpdateSaleStore(
     (state) => state.currentTransaction
@@ -35,11 +32,10 @@ const EditSellVariant = () => {
       variantId: selectedVariant.id,
       model: selectedModelList[0],
     });
-    console.log(phoneDetails);
   }, [selectedVariant]);
 
   return (
-    <main className="w-full   relative poppins-regular  pb-16 bg-white  text-sm md:text-base">
+    <main className="w-full   relative poppins-regular  bg-white  text-sm md:text-base">
       <div className="flex flex-col gap-4">
         <p className="">Choose a {selectedModelList[0]?.name} variant</p>
         <div className="flex gap-12 items-center w-full">

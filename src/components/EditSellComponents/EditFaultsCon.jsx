@@ -1,22 +1,21 @@
-import volumeImg from "../../../assets/images/volume.svg";
-import fingerprintImg from "../../../assets/images/fingerprint.svg";
-import simcardImg from "../../../assets/images/simcard-tray.svg";
-import speakerImg from "../../../assets/images/speaker.svg";
-import earpieceImg from "../../../assets/images/earpiece.svg";
-import powerImg from "../../../assets/images/power-buttons.svg";
-import chargingImg from "../../../assets/images/charging-port.svg";
-import cameraImg from "../../../assets/images/main-camera.svg";
-import selfieImg from "../../../assets/images/selfie-camera.svg";
-
 import { useEffect, useState } from "react";
-import { useDeviceDetailsStore } from "../../../store/sell/deviceDetailsStore";
+import volumeImg from "../../assets/images/volume.svg";
+import fingerprintImg from "../../assets/images/fingerprint.svg";
+import simcardImg from "../../assets/images/simcard-tray.svg";
+import speakerImg from "../../assets/images/speaker.svg";
+import earpieceImg from "../../assets/images/earpiece.svg";
+import powerImg from "../../assets/images/power-buttons.svg";
+import chargingImg from "../../assets/images/charging-port.svg";
+import cameraImg from "../../assets/images/main-camera.svg";
+import selfieImg from "../../assets/images/selfie-camera.svg";
 
+import { useUpdateSaleStore } from "../../store/sell/updateSaleStore";
+import { useBrandsAndModelsStore } from "../../store/sell/brandsAndModelsStore";
 const Fault = ({ image, text, name }) => {
-  const phoneDetails = useDeviceDetailsStore((state) => state.phoneDetails);
-  const setPhoneDetails = useDeviceDetailsStore(
-    (state) => state.setPhoneDetails
-  );
-  const [selected, setSelected] = useState(phoneDetails.phoneCondition[name]);
+  const phoneDetails = useUpdateSaleStore((state) => state.phoneDetails);
+  const setPhoneDetails = useUpdateSaleStore((state) => state.setPhoneDetails);
+
+  const [selected, setSelected] = useState(phoneDetails?.phoneCondition[name]);
 
   const handleClick = () => {
     setSelected((prevValue) => !prevValue);
@@ -48,8 +47,12 @@ const Fault = ({ image, text, name }) => {
     </div>
   );
 };
-const FaultsCon = ({ phoneConditions }) => {
+const EditFaultsCon = () => {
+  const phoneConditions = useBrandsAndModelsStore(
+    (state) => state.phoneConditions
+  );
   const phoneConditionsOptions = phoneConditions?.two?.options;
+
   return (
     <section className="grid grid-cols-2  md:grid-cols-4 gap-4 md:gap-2 xl:gap-4 mb-8">
       <Fault
@@ -101,4 +104,4 @@ const FaultsCon = ({ phoneConditions }) => {
   );
 };
 
-export default FaultsCon;
+export default EditFaultsCon;

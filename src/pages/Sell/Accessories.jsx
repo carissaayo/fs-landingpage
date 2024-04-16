@@ -8,7 +8,6 @@ import DeviceDetailsSummary from "../../components/HomeComponents/SellComponents
 import { useDeviceDetailsStore } from "../../store/sell/deviceDetailsStore";
 import { useBrandsAndModelsStore } from "../../store/sell/brandsAndModelsStore";
 import { useCreateUserStore } from "../../store/auth/createUser";
-import { Button } from "../../components/ui/button";
 
 const Accessories = () => {
   const navigate = useNavigate();

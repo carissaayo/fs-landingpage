@@ -14,6 +14,9 @@ import AddressDetails from "./pages/Sell/AddressDetails";
 import DeviceDetails from "./pages/Sell/DeviceDetails";
 import GagdetSummary from "./pages/Sell/GagdetSummary";
 import DeviceVariant from "./pages/Sell/DeviceVariant";
+import Accessories from "./pages/Sell/Accessories";
+import CustomerDetails from "./pages/Sell/CustomerDetails";
+import EditSell from "./pages/Sell/EditSell";
 
 // Buy Pages
 import CheckoutFormA from "./pages/Checkout/CheckoutFormA";
@@ -32,15 +35,12 @@ import VerifyEmail from "./pages/Guest/VerifyEmail";
 import ResetPassword from "./pages/Guest/ResetPassword";
 import ResetPasswordB from "./pages/Guest/ResetPasswordB";
 import ResendVerificationCode from "./pages/Guest/ResendVerificationCode";
+import ChangePassword from "./pages/Auth/ChangePassword";
 
 // Layouts
 import CheckoutLayout from "./components/CoreComponents/CheckoutLayout";
 import DefaultLayout from "./components/CoreComponents/DefaultLayout";
 import GuestLayout from "./components/CoreComponents/GuestLayout";
-import ChangePassword from "./pages/Auth/ChangePassword";
-import Accessories from "./pages/Sell/Accessories";
-import CustomerDetails from "./pages/Sell/CustomerDetails";
-import EditSell from "./pages/Sell/EditSell";
 
 const router = createBrowserRouter([
   {

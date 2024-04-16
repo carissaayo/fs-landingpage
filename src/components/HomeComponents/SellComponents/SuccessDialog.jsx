@@ -1,3 +1,4 @@
+import { Home, Notebook } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import {
@@ -10,16 +11,22 @@ import {
 } from "../../ui/alert-dialog";
 
 import { useDeviceDetailsStore } from "../../../store/sell/deviceDetailsStore";
-import { Home } from "lucide-react";
-const SuccessDialog = () => {
+import { useUpdateSaleStore } from "../../../store/sell/updateSaleStore";
+const SuccessDialog = ({ fromEditPage }) => {
   const success = useDeviceDetailsStore((state) => state.success);
   const setSuccess = useDeviceDetailsStore((state) => state.setSuccess);
+  const setPhoneDetails = useUpdateSaleStore((state) => state.setPhoneDetails);
+  const setCurrentTransaction = useUpdateSaleStore(
+    (state) => state.setCurrentTransaction
+  );
   return (
     <AlertDialog open={success}>
       <AlertDialogContent className="min-w-[70vw]">
         <AlertDialogHeader>
           <AlertDialogTitle className="text-center poppins-medium text-lg">
-            Your sell order has been created successfuly
+            {fromEditPage
+              ? "Your sell order has been created successfuly"
+              : " Your sell order has been updated successfuly"}
           </AlertDialogTitle>
           <AlertDialogDescription>
             <p className="text-center poppins-regular text-base text-black">
@@ -34,17 +41,27 @@ const SuccessDialog = () => {
             <Link
               to="/sell"
               className="px-8 text-base hover:bg-white flex items-center gap-2 border border-gray-500 rounded-lg py-3"
-              onClick={() => setSuccess(false)}
+              onClick={() => {
+                setCurrentTransaction({});
+                setPhoneDetails({});
+                setSuccess(false);
+              }}
             >
-              {/* <Home className="w-6 h-6" /> */}
-              Go Home
+              <Home className="w-6 h-6" />
+              Home
             </Link>
 
             <Link
               to="/transactions"
               className="px-8 text-base hover:bg-white flex items-center gap-2 border border-gray-500 rounded-lg py-3"
+              onClick={() => {
+                setCurrentTransaction({});
+                setPhoneDetails({});
+                setSuccess(false);
+              }}
             >
-              Go To Transactions
+              <Notebook className="w-6 h-6" />
+              Transactions
             </Link>
           </div>
         </AlertDialogFooter>

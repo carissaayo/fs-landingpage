@@ -11,19 +11,25 @@ import { useCreateUserStore } from "../store/auth/createUser";
 import { useTransactionsStore } from "../store/user/transactionsStore";
 import { useBrandsAndModelsStore } from "../store/sell/brandsAndModelsStore";
 import Loading from "../components/CoreComponents/Core/Loading";
+import { useUpdateSaleStore } from "../store/sell/updateSaleStore";
 
 const Transactions = () => {
   const navigate = useNavigate();
   const user = useCreateUserStore((state) => state.user);
   const loading = useTransactionsStore((state) => state.loading);
   const setLoading = useTransactionsStore((state) => state.setLoading);
-  const transactions = useTransactionsStore((state) => state.transactions);
-  const setBrands = useBrandsAndModelsStore((state) => state.setBrands);
-  const setModels = useBrandsAndModelsStore((state) => state.setModels);
   const brands = useBrandsAndModelsStore((state) => state.brands);
+  const setBrands = useBrandsAndModelsStore((state) => state.setBrands);
   const models = useBrandsAndModelsStore((state) => state.models);
+  const setModels = useBrandsAndModelsStore((state) => state.setModels);
+
+  const setPhoneDetails = useUpdateSaleStore((state) => state.setPhoneDetails);
   const setTransactions = useTransactionsStore(
     (state) => state.setTransactions
+  );
+
+  const setCurrentTransaction = useUpdateSaleStore(
+    (state) => state.setCurrentTransaction
   );
 
   const fetchSells = useCallback(async () => {
@@ -55,7 +61,8 @@ const Transactions = () => {
         console.log(response);
         setBrands(response.data.data.brands);
         setModels(response.data.data.models);
-
+        setPhoneConditions(response.data.data.phoneCondition);
+        console.log(response.data.data.phoneCondition);
         setLoading(false);
       })
       .catch((error) => {
@@ -65,7 +72,6 @@ const Transactions = () => {
         toast.error("something went wrong");
       });
   }, []);
-
   const { mutate: fetchBrandsAndModelsFn } = useMutation({
     mutationFn: () => fetchBrandsAndModels(),
   });
@@ -84,10 +90,9 @@ const Transactions = () => {
 
   useEffect(() => {
     fetchSellsFn();
+    fetchBrandsAndModelsFn();
   }, []);
-  useEffect(() => {
-    (brands.length === 0 || models.length === 0) && fetchBrandsAndModelsFn();
-  }, []);
+
   return (
     <main className="w-full h-full relative">
       <section className=" px-6  md:px-32 poppins-regular pb-12 pt-28">

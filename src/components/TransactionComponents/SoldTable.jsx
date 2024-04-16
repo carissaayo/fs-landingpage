@@ -12,6 +12,7 @@ import { useTransactionsStore } from "../../store/user/transactionsStore";
 
 const SoldTable = () => {
   const transactions = useTransactionsStore((state) => state.transactions);
+
   return (
     <ScrollArea className="w-full ">
       <Table className=" min-w-[800px]   mb-4">

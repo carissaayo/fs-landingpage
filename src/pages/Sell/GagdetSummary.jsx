@@ -169,10 +169,10 @@ const GagdetSummary = () => {
                 </Label>
                 <div className="border border-gray-400 py-3 px-4 rounded-lg bg-gray-100 uppercase">
                   {fromEditPage
-                    ? editPhoneDetails?.model?.variants.filter(
+                    ? editPhoneDetails?.model?.variants?.filter(
                         (variant) => variant.id === editPhoneDetails.variantId
                       )[0].ram
-                    : phoneDetails?.model?.variants.filter(
+                    : phoneDetails?.model?.variants?.filter(
                         (variant) => variant.id === phoneDetails.variantId
                       )[0].ram}
                 </div>
@@ -183,10 +183,10 @@ const GagdetSummary = () => {
                 </Label>
                 <div className="border border-gray-400 py-3 px-4 rounded-lg bg-gray-100 uppercase">
                   {fromEditPage
-                    ? editPhoneDetails?.model?.variants.filter(
+                    ? editPhoneDetails?.model?.variants?.filter(
                         (variant) => variant.id === editPhoneDetails.variantId
                       )[0].storage
-                    : phoneDetails?.model?.variants.filter(
+                    : phoneDetails?.model?.variants?.filter(
                         (variant) => variant.id === phoneDetails.variantId
                       )[0].storage}
                 </div>

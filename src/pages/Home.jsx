@@ -13,6 +13,7 @@ import axiosClient from "../lib/axiosClient";
 
 import { useBrandsAndModelsStore } from "../store/sell/brandsAndModelsStore";
 import { useLocationStore } from "../store/sell/locationsStore";
+import { useDeviceDetailsStore } from "../store/sell/deviceDetailsStore";
 
 const Home = () => {
   const queryClient = useQueryClient();
@@ -26,9 +27,31 @@ const Home = () => {
   );
 
   // Location States
-  const setLocationLoading = useLocationStore((state) => state.setLoading);
   const setStates = useLocationStore((state) => state.setStates);
   const setCities = useLocationStore((state) => state.setCities);
+
+  const setSelectedBrandId = useBrandsAndModelsStore(
+    (state) => state.setSelectedBrandId
+  );
+  const setSelectedStateId = useLocationStore(
+    (state) => state.setSelectedStateId
+  );
+  const setSelectedCitiesList = useLocationStore(
+    (state) => state.setSelectedCitiesList
+  );
+  const setSelectedVariant = useBrandsAndModelsStore(
+    (state) => state.setSelectedVariant
+  );
+  const setSelectedModel = useBrandsAndModelsStore(
+    (state) => state.setSelectedModel
+  );
+
+  const setSelectedModelList = useBrandsAndModelsStore(
+    (state) => state.setSelectedModelList
+  );
+  const setPhoneDetails = useDeviceDetailsStore(
+    (state) => state.setPhoneDetails
+  );
 
   const fetchBrandsAndModels = useCallback(async () => {
     setLoading(true);
@@ -83,6 +106,17 @@ const Home = () => {
       top: 0,
     });
   };
+  useEffect(() => {
+    setStates([]);
+    setSelectedBrandId("");
+    setSelectedModelList("");
+    setSelectedStateId("");
+    setSelectedCitiesList();
+    setSelectedModel("");
+    setSelectedVariant("");
+    setPhoneDetails({});
+  }, []);
+
   useEffect(() => goToTop(), []);
 
   return (

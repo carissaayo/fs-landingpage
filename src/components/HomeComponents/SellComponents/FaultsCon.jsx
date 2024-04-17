@@ -39,7 +39,7 @@ const Fault = ({ image, text, name }) => {
     >
       <img src={image} alt="" className="md:min-h-[100px] mb-4" />
       <p
-        className={`text-sm p-4 min-h-[112px] ${
+        className={`text-sm p-4 min-h-[112px] flex items-center justify-center  ${
           selected && "bg-[#0C0F4D] text-white rounded-b-sm"
         }`}
       >

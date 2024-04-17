@@ -44,7 +44,7 @@ const DeviceVariant = () => {
   useEffect(() => {
     setPhoneDetails({
       ...phoneDetails,
-      variantId: selectedVariant.id,
+      variantId: selectedVariant?.id,
       model: selectedModelList[0],
     });
     console.log(phoneDetails);
@@ -71,16 +71,16 @@ const DeviceVariant = () => {
             <div className="flex  flex-wrap  gap-4 items-center">
               {selectedModel &&
                 models
-                  .filter((model) => model._id === selectedModel)[0]
+                  ?.filter((model) => model._id === selectedModel)[0]
                   ?.variants.map((variant) => (
                     <label
                       className="flex items-center gap-4 border px-6 py-2 cursor-pointer"
                       onClick={() => setSelectedVariant(variant)}
-                      key={variant.id}
+                      key={variant?.id}
                     >
-                      <input type="radio" value={variant.id} name="variant" />
+                      <input type="radio" value={variant?.id} name="variant" />
                       <span className="cursor-pointer uppercase">
-                        {variant.name}
+                        {variant?.name}
                       </span>
                     </label>
                   ))}

@@ -18,10 +18,22 @@ const Transactions = () => {
   const user = useCreateUserStore((state) => state.user);
   const loading = useTransactionsStore((state) => state.loading);
   const setLoading = useTransactionsStore((state) => state.setLoading);
-  const setCities = useLocationStore((state) => state.setCities);
   const setStates = useLocationStore((state) => state.setStates);
   const setSelectedBrandId = useBrandsAndModelsStore(
     (state) => state.setSelectedBrandId
+  );
+  const setSelectedStateId = useLocationStore(
+    (state) => state.setSelectedStateId
+  );
+  const setSelectedCitiesList = useLocationStore(
+    (state) => state.setSelectedCitiesList
+  );
+  const setSelectedModel = useBrandsAndModelsStore(
+    (state) => state.setSelectedModel
+  );
+
+  const setSelectedModelList = useBrandsAndModelsStore(
+    (state) => state.setSelectedModelList
   );
   const setBrands = useBrandsAndModelsStore((state) => state.setBrands);
 
@@ -42,19 +54,6 @@ const Transactions = () => {
 
   const setPhoneDetails = useUpdateSaleStore((state) => state.setPhoneDetails);
   const phoneDetails = useUpdateSaleStore((state) => state.phoneDetails);
-  const setSelectedStateId = useLocationStore(
-    (state) => state.setSelectedStateId
-  );
-  const setSelectedCitiesList = useLocationStore(
-    (state) => state.setSelectedCitiesList
-  );
-  const setSelectedModel = useBrandsAndModelsStore(
-    (state) => state.setSelectedModel
-  );
-
-  const setSelectedModelList = useBrandsAndModelsStore(
-    (state) => state.setSelectedModelList
-  );
   const fetchSells = useCallback(async () => {
     setLoading(true);
     await axiosClient

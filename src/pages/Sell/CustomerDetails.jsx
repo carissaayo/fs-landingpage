@@ -62,6 +62,7 @@ const CustomerDetails = () => {
       .catch((error) => {
         console.log(error);
         setLoading(false);
+        localStorage.removeItem("data");
         navigate("/sell");
         toast.error("something went wrong");
       });

@@ -128,7 +128,6 @@ const EditSell = () => {
       phoneCondition: currentTransaction?.phoneCondition[0],
     });
   }, []);
-  console.log(currentTransaction);
 
   return (
     <main className="w-full  px-6  md:px-16  relative poppins-regular pt-36 pb-16 bg-white justify-between gap-12 lg:gap-6 text-sm md:text-base">

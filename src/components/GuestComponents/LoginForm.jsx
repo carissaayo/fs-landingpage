@@ -43,7 +43,7 @@ const LoginForm = ({ fromSell }) => {
   };
 
   return (
-    <section className="py-4 ">
+    <section className={`py-4 ${!fromSell && "px-8"} `}>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="grid grid-cols-1  gap-4 gap-x-8 w-full ">
           {/* Email Address */}

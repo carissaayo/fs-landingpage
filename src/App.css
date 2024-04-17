@@ -70,6 +70,19 @@ select {
     "brand brand model model"
     ". button button .";
 }
+@media (max-width: 640px) {
+  .sellform__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    grid-template-areas:
+      "state state"
+      " lga lga"
+      "brand brand"
+      " model model"
+      "button button ";
+  }
+}
 
 .edit__sellform__grid {
   display: grid;
@@ -78,6 +91,18 @@ select {
   grid-template-areas:
     "state  lga"
     "brand  model";
+}
+@media (max-width: 640px) {
+  .edit__sellform__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    grid-template-areas:
+      "state state"
+      " lga lga"
+      "brand brand"
+      " model model";
+  }
 }
 @media (max-width: 1024px) {
   .device___details__con {
@@ -96,33 +121,23 @@ select {
   }
 }
 
-@media (max-width: 640px) {
-  .sellform__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-    grid-template-areas:
-      "state state"
-      " lga lga"
-      "brand brand"
-      " model model"
-      "button button ";
-  }
-}
-
-.sellform__grid .state {
+.sellform__grid .state,
+.edit__sellform__grid .state {
   grid-area: state;
 }
 
-.sellform__grid .lga {
+.sellform__grid .lga,
+.edit__sellform__grid .lga {
   grid-area: lga;
 }
 
-.sellform__grid .brand {
+.sellform__grid .brand,
+.edit__sellform__grid .brand {
   grid-area: brand;
 }
 
-.sellform__grid .model {
+.sellform__grid .model,
+.edit__sellform__grid .model {
   grid-area: model;
 }
 

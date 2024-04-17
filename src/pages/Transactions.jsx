@@ -13,9 +13,12 @@ import { useBrandsAndModelsStore } from "../store/sell/brandsAndModelsStore";
 import Loading from "../components/CoreComponents/Core/Loading";
 import { useUpdateSaleStore } from "../store/sell/updateSaleStore";
 import { useLocationStore } from "../store/sell/locationsStore";
+import { useNavigate } from "react-router-dom";
 
 const Transactions = () => {
+  const navigate = useNavigate();
   const user = useCreateUserStore((state) => state.user);
+  const setUser = useCreateUserStore((state) => state.setUser);
   const loading = useTransactionsStore((state) => state.loading);
   const setLoading = useTransactionsStore((state) => state.setLoading);
   const setStates = useLocationStore((state) => state.setStates);
@@ -31,6 +34,9 @@ const Transactions = () => {
   const setSelectedModel = useBrandsAndModelsStore(
     (state) => state.setSelectedModel
   );
+  const setSelectedVariant = useBrandsAndModelsStore(
+    (state) => state.setSelectedVariant
+  );
 
   const setSelectedModelList = useBrandsAndModelsStore(
     (state) => state.setSelectedModelList
@@ -44,8 +50,7 @@ const Transactions = () => {
   const setTransactions = useTransactionsStore(
     (state) => state.setTransactions
   );
-  const states = useLocationStore((state) => state.states);
-  console.log(states);
+
   const setCurrentTransaction = useUpdateSaleStore(
     (state) => state.setCurrentTransaction
   );
@@ -53,7 +58,7 @@ const Transactions = () => {
   const setShowDetailsB = useUpdateSaleStore((state) => state.setShowDetailsB);
 
   const setPhoneDetails = useUpdateSaleStore((state) => state.setPhoneDetails);
-  const phoneDetails = useUpdateSaleStore((state) => state.phoneDetails);
+
   const fetchSells = useCallback(async () => {
     setLoading(true);
     await axiosClient
@@ -71,6 +76,11 @@ const Transactions = () => {
       .catch((error) => {
         console.log(error);
         setLoading(false);
+
+        if (error.response.data.statusCode === 403) {
+          setUser({});
+          navigate("/guest/login");
+        }
 
         toast.error("something went wrong");
       });
@@ -123,9 +133,8 @@ const Transactions = () => {
     setSelectedStateId("");
     setSelectedCitiesList();
     setSelectedModel("");
+    setSelectedVariant("");
   }, []);
-
-  console.log(phoneDetails);
 
   return (
     <main className="w-full h-full relative">

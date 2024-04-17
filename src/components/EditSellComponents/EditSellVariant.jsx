@@ -38,7 +38,7 @@ const EditSellVariant = () => {
     <main className="w-full   relative poppins-regular  bg-white  text-sm md:text-base">
       <div className="flex flex-col gap-4">
         <p className="">Choose a {selectedModelList[0]?.name} variant</p>
-        <div className="flex gap-12 items-center w-full">
+        <div className="flex  flex-col md:flex-row gap-4 md:gap-12 items-center w-full">
           {/* Variant Con Starts */}
           <div className=" text-sm poppins-medium">
             <div className="flex  flex-wrap  gap-4 items-center">

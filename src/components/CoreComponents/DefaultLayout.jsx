@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, Outlet, useNavigate } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 import Nav from "./NavComponents/Nav";
 import MobileNav from "./MobileComponents/MobileNav";
@@ -8,12 +8,8 @@ import Footer from "./FooterComponents/Footer";
 import { useGeneralStore } from "../../store/generalStore";
 import ScrollToAnchor from "./Core/ScrollToAnchor";
 import LogoutAlert from "./NavComponents/LogoutAlert";
-import { useCreateUserStore } from "../../store/auth/createUser";
 
 const DefaultLayout = () => {
-  const navigate = useNavigate();
-  const user = useCreateUserStore((state) => state.user);
-
   const [scroll, setScroll] = useState(false);
   const buyOrSell = useGeneralStore((state) => state.buyOrSell);
   const setBuyOrSell = useGeneralStore((state) => state.setBuyOrSell);

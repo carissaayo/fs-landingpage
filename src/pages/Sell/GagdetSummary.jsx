@@ -57,7 +57,7 @@ const GagdetSummary = () => {
         console.log(error);
         setLoading(false);
 
-        toast.error("something went wrong");
+        toast.error("something went wrong", { id: "sendSaleError" });
       });
   }, []);
   const updateSellRequest = useCallback(async () => {
@@ -91,7 +91,7 @@ const GagdetSummary = () => {
       .catch((error) => {
         console.log(error);
         setLoading(false);
-        toast.error("something went wrong");
+        toast.error("something went wrong", { id: "updateSellError" });
       });
   }, []);
 

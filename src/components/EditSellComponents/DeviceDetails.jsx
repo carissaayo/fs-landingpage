@@ -12,7 +12,7 @@ const DeviceDetails = () => {
   console.log(phoneConditions);
 
   return (
-    <section className="w-full bg-white  py-8  flex-[2] rounded-md details">
+    <section className="w-full bg-white  py-8  flex-[2] rounded-md details mt-8">
       <p className="poppins-bold text-lg text-center mb-8">
         {phoneConditions?.one?.description}
       </p>

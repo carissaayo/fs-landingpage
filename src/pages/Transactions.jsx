@@ -82,7 +82,7 @@ const Transactions = () => {
           navigate("/guest/login");
         }
 
-        toast.error("something went wrong");
+        toast.error("something went wrong", { id: "TransactionError" });
       });
   }, []);
   const fetchBrandsAndModels = useCallback(async () => {

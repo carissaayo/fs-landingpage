@@ -73,7 +73,7 @@ const EditSell = () => {
         console.log(error);
         setLoading(false);
 
-        toast.error("something went wrong");
+        toast.error("something went wrong", { id: "editSaleError" });
       });
   }, []);
 

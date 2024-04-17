@@ -135,7 +135,7 @@ const CustomerDetails = () => {
               <Label className="poppins-semibold text-xl ">
                 Select A Bank Account
               </Label>
-              <div className="flex items-center w-full gap-12">
+              <div className="flex items-center flex-col md:flex-row w-full gap-2 md:gap-12">
                 <div className="custom-select w-full">
                   <select
                     className="border border-gray-400 p-4 rounded-lg text-sm md:text-base focus:outline-none"

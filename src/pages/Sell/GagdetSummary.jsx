@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import toast from "react-hot-toast";
@@ -21,7 +21,7 @@ import { useUpdateSaleStore } from "../../store/sell/updateSaleStore";
 const GagdetSummary = () => {
   const navigate = useNavigate();
   const location = useLocation();
-
+  const [goUp, setGoUp] = useState(false);
   const fromEditPage = location?.state?.transaction?._id ? true : false;
   const user = useCreateUserStore((state) => state.user);
   const loading = useDeviceDetailsStore((state) => state.loading);
@@ -29,6 +29,7 @@ const GagdetSummary = () => {
   const setSuccess = useDeviceDetailsStore((state) => state.setSuccess);
 
   const phoneDetails = useDeviceDetailsStore((state) => state.phoneDetails);
+  console.log(phoneDetails);
   const editPhoneDetails = useUpdateSaleStore((state) => state.phoneDetails);
   const cities = useLocationStore((state) => state.cities);
   const userBankAccounts = useBankStore((state) => state.userBankAccounts);
@@ -38,6 +39,7 @@ const GagdetSummary = () => {
 
   const sendSellRequest = useCallback(async () => {
     setLoading(true);
+    setGoUp(true);
     await axiosClient
       .post(`/sell`, phoneDetails, {
         headers: {
@@ -60,6 +62,9 @@ const GagdetSummary = () => {
   }, []);
   const updateSellRequest = useCallback(async () => {
     setLoading(true);
+
+    setGoUp(true);
+
     await axiosClient
       .put(
         `/sell/${currentTransaction._id}`,
@@ -104,12 +109,13 @@ const GagdetSummary = () => {
   };
   useEffect(() => {
     !fromEditPage && !phoneDetails?.variantId && navigate("/sell");
-    goToTop();
   }, []);
   useEffect(() => {
     fromEditPage && !currentTransaction?._id && navigate("/transactions");
-    goToTop();
   }, []);
+  useEffect(() => {
+    goToTop();
+  }, [goUp]);
 
   return (
     <main className="w-full h-full poppins-regular text-[10px] md:text-[12px] pt-28 px-6 md:px-32 relative">

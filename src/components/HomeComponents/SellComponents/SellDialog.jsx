@@ -15,6 +15,7 @@ import { useAuthStore } from "../../../store/authStore";
 import RegisterForm from "../../GuestComponents/RegsiterForm";
 import LoginForm from "../../GuestComponents/LoginForm";
 import { useState } from "react";
+import ShowToaster from "../../CoreComponents/Core/ShowToaster";
 
 const SellDialog = () => {
   const isLogin = useAuthStore((state) => state.isLogin);
@@ -34,7 +35,9 @@ const SellDialog = () => {
       </DialogTrigger>
       <DialogContent
         className={` min-w-[70%] 
-              w-[90%] md:w-full max-h-[90%] overflow-y-scroll`}
+              w-[90%] md:w-full max-h-[90%]  ${
+                !isLogin && "overflow-y-scroll"
+              }`}
       >
         <DialogHeader className="poppins-medium ">
           <img src={logoImg} alt="" className="w-52" />
@@ -59,10 +62,9 @@ const SellDialog = () => {
         </DialogHeader>
         {!isLogin ? (
           <>
-            {/* <PaymentSignupForm /> */}
             <RegisterForm fromSell />
 
-            <p className="text-center mt-6 flex items-center gap-2 text-sm">
+            <p className="text-center flex items-center gap-2 text-sm">
               Already have an account?
               <span
                 className="text-[#0E0C4D] cursor-pointer"
@@ -74,7 +76,6 @@ const SellDialog = () => {
           </>
         ) : (
           <>
-            {/* <PaymentLoginForm /> */}
             <LoginForm fromSell />
 
             <p className="text-center flex items-center gap-2 text-sm">
@@ -88,6 +89,9 @@ const SellDialog = () => {
             </p>
           </>
         )}
+        <div className="flex w-full items-center z-30 ">
+          <ShowToaster />
+        </div>
       </DialogContent>
     </Dialog>
   );

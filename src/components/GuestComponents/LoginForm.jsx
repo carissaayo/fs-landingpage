@@ -43,7 +43,7 @@ const LoginForm = ({ fromSell }) => {
   };
 
   return (
-    <section className="py-4  px-8">
+    <section className="py-4 ">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="grid grid-cols-1  gap-4 gap-x-8 w-full ">
           {/* Email Address */}
@@ -90,7 +90,7 @@ const LoginForm = ({ fromSell }) => {
         </Link>
         <div className="mt-10 ">
           <button
-            className=" flex justify-center items-center  bg-[#0E0C4D] py-2 text-lg text-white rounded-lg w-2/5 mx-auto"
+            className=" flex justify-center items-center  bg-[#0E0C4D] py-2 text-lg text-white rounded-lg mx-auto px-6"
             disabled={loading}
             type="submit"
           >

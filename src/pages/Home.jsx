@@ -97,15 +97,16 @@ const Home = () => {
   const { mutate: fetchLocationsFn } = useMutation({
     mutationFn: () => fetchLocations(),
   });
-  useEffect(() => {
-    fetchLocationsFn();
-    fetchBrandsAndModelsFn();
-  }, []);
+
   const goToTop = () => {
     window.scrollTo({
       top: 0,
     });
   };
+  useEffect(() => {
+    fetchLocationsFn();
+    fetchBrandsAndModelsFn();
+  }, []);
   useEffect(() => {
     setStates([]);
     setSelectedBrandId("");
@@ -114,7 +115,31 @@ const Home = () => {
     setSelectedCitiesList();
     setSelectedModel("");
     setSelectedVariant("");
-    setPhoneDetails({});
+    setPhoneDetails({
+      phoneCondition: {
+        faultyVolumeButtons: false,
+        faultyFingerPrint: false,
+        missingSimCardTray: false,
+        faultySpeakers: false,
+        faultyEarpiece: false,
+        faultyPowerButton: false,
+        faultyChargingPort: false,
+        faultyFrontCamera: false,
+        faultyBackCamera: false,
+        scratchedScreen: false,
+        spottedScreen: false,
+        brokenScreen: false,
+        brokenCameraGlass: false,
+        damagedBackCoverGlass: false,
+        brokenPhoneBody: false,
+        scratchedPhoneBody: false,
+        originalCharger: false,
+        originalChargerCable: false,
+        receipt: false,
+        originalBox: false,
+        brandWarranty: false,
+      },
+    });
   }, []);
 
   useEffect(() => goToTop(), []);

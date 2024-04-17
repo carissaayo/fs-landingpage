@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 
 const RegisterForm = ({ onRegisterPage, fromSell }) => {
   const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -26,6 +27,7 @@ const RegisterForm = ({ onRegisterPage, fromSell }) => {
 
   const onSubmit = async (data) => {
     setLoading(true);
+
     axiosClient
       .post(`auth/sign_up`, { ...data })
       .then((response) => {
@@ -41,6 +43,7 @@ const RegisterForm = ({ onRegisterPage, fromSell }) => {
       })
       .catch((err) => {
         setLoading(false);
+
         toast.error(err.response.data.message, {
           id: "registerError",
         });
@@ -50,7 +53,7 @@ const RegisterForm = ({ onRegisterPage, fromSell }) => {
 
   return (
     <section className={`py-4 ${onRegisterPage && "px-8"} `}>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} className="relative">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 gap-x-8 w-full ">
           {/* First Name */}
           <div className="flex flex-col gap-4">
@@ -164,7 +167,7 @@ const RegisterForm = ({ onRegisterPage, fromSell }) => {
         </div>
         <div className="mt-10 ">
           <button
-            className=" flex justify-center items-center  bg-[#0E0C4D] py-2 text-lg text-white rounded-lg w-2/5 mx-auto"
+            className=" flex justify-center items-center  bg-[#0E0C4D] py-2 text-lg text-white rounded-lg  mx-auto px-6"
             disabled={loading}
             type="submit"
           >
@@ -174,7 +177,6 @@ const RegisterForm = ({ onRegisterPage, fromSell }) => {
           </button>
         </div>
       </form>
-      <ShowToaster />
     </section>
   );
 };

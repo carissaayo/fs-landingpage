@@ -17,7 +17,7 @@ const Fault = ({ image, text, name }) => {
     (state) => state.setPhoneDetails
   );
   const [selected, setSelected] = useState(phoneDetails.phoneCondition[name]);
-
+  console.log(phoneDetails);
   const handleClick = () => {
     setSelected((prevValue) => !prevValue);
   };

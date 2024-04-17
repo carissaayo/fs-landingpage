@@ -24,6 +24,7 @@ const CustomerDetails = () => {
 
   const navigate = useNavigate();
   const user = useCreateUserStore((state) => state.user);
+  const setUser = useCreateUserStore((state) => state.setUser);
 
   const loading = useBankStore((state) => state.loading);
   const setLoading = useBankStore((state) => state.setLoading);
@@ -63,6 +64,7 @@ const CustomerDetails = () => {
         console.log(error);
         setLoading(false);
         localStorage.removeItem("data");
+        setUser({});
         navigate("/sell");
         toast.error("something went wrong");
       });

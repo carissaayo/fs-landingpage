@@ -62,7 +62,7 @@ const CustomerDetails = () => {
       .catch((error) => {
         console.log(error);
         setLoading(false);
-
+        navigate("/sell");
         toast.error("something went wrong");
       });
   }, [refreshUserBanks]);
@@ -124,7 +124,7 @@ const CustomerDetails = () => {
             Select the Account Number You want to use for this transaction!
           </h1>
           {userBankAccounts.length === 0 ? (
-            <div className="flex items-center justify-between mb-6 px-12">
+            <div className="flex items-center justify-between flex-col md:flex-row mb-6 px-12 ">
               <p className="poppins-medium ">
                 You have not added a bank account yet!
               </p>

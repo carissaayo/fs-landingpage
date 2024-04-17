@@ -125,7 +125,9 @@ const GagdetSummary = () => {
         </div>
       ) : (
         <>
-          <SuccessDialog fromEditPage={fromEditPage} />
+          <div className="w-[80%] md:w-full">
+            <SuccessDialog fromEditPage={fromEditPage} />
+          </div>
           <div className="w-full text-center md:text-left">
             <h1 className="poppins-semibold text-xl md:text-3xl mb-4">
               Gadget{"'"}s Information

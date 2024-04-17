@@ -21,8 +21,8 @@ const SuccessDialog = ({ fromEditPage }) => {
   );
 
   return (
-    <AlertDialog open={success}>
-      <AlertDialogContent className="min-w-[70vw]">
+    <AlertDialog open={success} className="">
+      <AlertDialogContent className="px-4 max-w-[90%] md:min-w-[70vw] rounded-lg">
         <AlertDialogHeader>
           <AlertDialogTitle className="text-center poppins-medium text-lg">
             {fromEditPage
@@ -38,10 +38,10 @@ const SuccessDialog = ({ fromEditPage }) => {
         <div className=""></div>
 
         <AlertDialogFooter>
-          <div className="w-full  flex justify-center items-center gap-6">
+          <div className="w-full  flex flex-col sm:flex-row justify-center items-center gap-6">
             <Link
               to="/sell"
-              className="px-8 text-base hover:bg-white flex items-center gap-2 border border-gray-500 rounded-lg py-3"
+              className=" px-12 sm:px-8 text-base hover:bg-white flex items-center gap-2 border border-gray-500 rounded-lg py-3"
               onClick={() => {
                 setCurrentTransaction({});
                 setPhoneDetails({});

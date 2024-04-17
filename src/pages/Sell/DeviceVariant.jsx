@@ -56,11 +56,11 @@ const DeviceVariant = () => {
       <p className=" text-center md:text-left   mb-12 text-2xl poppins-semibold text-[#0E0C4D]">
         Sell Your Old {selectedModelList[0]?.name}
       </p>
-      <section className="w-4/5 md:w-full bg-white flex flex-col   items-center md:flex-row gap-8 lg:gap-20 py-16 px-10 md:px-8 lg:px-20 box-shadow mx-auto md:mx-0">
+      <section className="sm:w-4/5 md:w-full bg-white flex flex-col   items-center md:flex-row gap-8 lg:gap-20 py-16 px-10 md:px-8 lg:px-20 box-shadow mx-auto md:mx-0">
         <img
           src={phoneImg}
           alt=""
-          className="max-w-[300px] lg:max-w-[350px] max-h-[400px]"
+          className=" max-w-[200px] sm:max-w-[300px] lg:max-w-[350px] max-h-[400px]"
         />
         <div className="flex flex-col gap-4">
           <h1 className="poppins-bold text-lg">{selectedModelList[0]?.name}</h1>

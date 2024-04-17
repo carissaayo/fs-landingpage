@@ -34,7 +34,7 @@ const SellDialog = () => {
       </DialogTrigger>
       <DialogContent
         className={` min-w-[70%] 
-              w-[90%] md:w-full max-h-[90%]`}
+              w-[90%] md:w-full max-h-[90%] overflow-y-scroll`}
       >
         <DialogHeader className="poppins-medium ">
           <img src={logoImg} alt="" className="w-52" />

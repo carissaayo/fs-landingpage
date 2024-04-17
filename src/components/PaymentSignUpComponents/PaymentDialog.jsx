@@ -21,7 +21,7 @@ const PaymentDialog = () => {
   const setIsLogin = useAuthStore((state) => state.setIsLogin);
 
   return (
-    <Dialog className="w-full">
+    <Dialog className="w-full h-full">
       <DialogTrigger className="w-full">
         <div className="w-full ">
           <Button className="bg-[#0E0C4D] border-[#B1B1B1] hover:bg-[#0E0C4D] hover:border-[#B1B1B1] w-full py-8 text-lg text-white">
@@ -31,7 +31,7 @@ const PaymentDialog = () => {
       </DialogTrigger>
       <DialogContent
         className={` min-w-[40%] 
-              w-[90%] md:w-full max-h-[90%]`}
+              w-[90%] md:w-full h-full md:max-h-[90%] overflow-y-scroll`}
       >
         <DialogHeader className="poppins-medium ">
           <img src={logoImg} alt="" className="w-52" />

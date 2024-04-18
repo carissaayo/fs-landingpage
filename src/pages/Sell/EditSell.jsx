@@ -16,7 +16,8 @@ import { useLocationStore } from "../../store/sell/locationsStore";
 import { useBrandsAndModelsStore } from "../../store/sell/brandsAndModelsStore";
 
 import axiosClient from "../../lib/axiosClient";
-import Loading from "../../components/CoreComponents/Core/Loading";
+
+import { Button } from "../../components/ui/button";
 
 const EditSell = () => {
   const queryClient = useQueryClient();
@@ -146,14 +147,20 @@ const EditSell = () => {
         >
           Go Back
         </Link>
-        {/* <EditDialog /> */}
-        <Link
-          to="/sell/customer-details"
-          state={{ currentTransaction }}
+
+        <Button
+          disabled={!showDetailsB}
+          onClick={() => {
+            navigate("/sell/customer-details", {
+              state: { currentTransaction },
+            });
+          }}
+          // to="/sell/customer-details"
+          // state={{ currentTransaction }}
           className="bg-[#0C0F4D] w-28  text-white text-base rounded-2xl border border-[#ACACAC] h-[50px] flex items-center justify-center"
         >
           Continue
-        </Link>
+        </Button>
       </div>
     </main>
   );

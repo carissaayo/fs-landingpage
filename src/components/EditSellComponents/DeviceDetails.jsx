@@ -6,6 +6,7 @@ const DeviceDetails = () => {
   const phoneDetails = useUpdateSaleStore((state) => state.phoneDetails);
   const setPhoneDetails = useUpdateSaleStore((state) => state.setPhoneDetails);
   const setShowDetailsB = useUpdateSaleStore((state) => state.setShowDetailsB);
+  const showDetailsB = useUpdateSaleStore((state) => state.showDetailsB);
   const phoneConditions = useBrandsAndModelsStore(
     (state) => state.phoneConditions
   );
@@ -155,7 +156,11 @@ const DeviceDetails = () => {
         </div>
         {/* Check Con Ends */}
       </div>
-      <div className="w-full flex items-center justify-center">
+      <div
+        className={`w-full flex items-center justify-center ${
+          showDetailsB && "hidden"
+        }`}
+      >
         <Button
           onClick={() => setShowDetailsB(true)}
           className="w-28  text-white bg-[#0C0F4D] hover:bg-[#0C0F4D] text-base rounded-2xl h-[50px] flex items-center justify-center"

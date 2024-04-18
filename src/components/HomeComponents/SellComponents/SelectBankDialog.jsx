@@ -179,7 +179,7 @@ const SelectBankDialog = () => {
           Add New Account
         </Button>
       </AlertDialogTrigger>
-      <AlertDialogContent className="min-w-[70vw]">
+      <AlertDialogContent className="px-4 max-w-[90%] md:min-w-[70vw] rounded-lg">
         {loading ? (
           <div className="w-full flex items-center justify-center">
             <Loading />
@@ -238,9 +238,9 @@ const SelectBankDialog = () => {
             </div>
 
             <AlertDialogFooter>
-              <div className="w-full  flex justify-center items-center gap-6">
+              <div className="w-full  flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 ">
                 <AlertDialogCancel
-                  className="px-8 text-base text-red-600 hover:text-red-600 hover:bg-white"
+                  className="px-14 sm:px-8 text-base text-red-600 hover:text-red-600 hover:bg-white"
                   onClick={() => setOpenModal(false)}
                 >
                   Cancel
@@ -258,7 +258,7 @@ const SelectBankDialog = () => {
                   </AlertDialogAction>
                 ) : (
                   <Button
-                    className="bg-[#130D52] hover:bg-[#130D52] h-[55px]"
+                    className="bg-[#130D52] hover:bg-[#130D52] h-[40px]"
                     onClick={verifyAccountNumber}
                     disabled={accountVerified}
                   >

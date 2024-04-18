@@ -73,7 +73,9 @@ const EditSellForm = () => {
         <div className="custom-select">
           <select
             className="border border-gray-400 p-4 rounded-lg text-sm md:text-base focus:outline-none"
-            onChange={(e) => setSelectedStateId(e.target.value)}
+            onChange={(e) =>
+              e.target.value.length > 0 && setSelectedStateId(e.target.value)
+            }
             disabled={!states?.length > 0}
           >
             <option className="">Select State</option>
@@ -95,6 +97,7 @@ const EditSellForm = () => {
             className="border border-gray-400 p-4 rounded-lg text-sm md:text-base focus:outline-none"
             disabled={!selectedStateId}
             onChange={(e) =>
+              e.target.value.length > 0 &&
               setPhoneDetails({ ...phoneDetails, cityId: e.target.value })
             }
           >
@@ -114,7 +117,9 @@ const EditSellForm = () => {
         <div className="custom-select">
           <select
             className="border border-gray-400 p-4 rounded-lg text-sm md:text-base focus:outline-none"
-            onChange={(e) => setSelectedBrandId(e.target.value)}
+            onChange={(e) =>
+              e.target.value.length > 0 && setSelectedBrandId(e.target.value)
+            }
           >
             <option className="">Select Brand</option>
 
@@ -140,6 +145,7 @@ const EditSellForm = () => {
             className="border border-gray-400 p-4 rounded-lg text-sm md:text-base focus:outline-none"
             disabled={!selectedBrandId}
             onChange={(e) => {
+              if (e.target.value.length === 0) return;
               setSelectedModel(e.target.value);
               setPhoneDetails({ ...phoneDetails, modelId: e.target.value });
             }}

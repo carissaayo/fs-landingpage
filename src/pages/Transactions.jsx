@@ -58,12 +58,10 @@ const Transactions = () => {
   const setShowDetailsB = useUpdateSaleStore((state) => state.setShowDetailsB);
 
   const setPhoneDetails = useUpdateSaleStore((state) => state.setPhoneDetails);
-  const setPageCount = useTransactionsStore((state) => state.setPageCount);
+
   const setPaginatedTransactions = useTransactionsStore(
     (state) => state.setPaginatedTransactions
   );
-
-  const pageCount = useTransactionsStore((state) => state.pageCount);
 
   const fetchSells = useCallback(async () => {
     setLoading(true);

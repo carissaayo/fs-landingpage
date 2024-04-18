@@ -36,7 +36,7 @@ const GagdetSummary = () => {
   const currentTransaction = useUpdateSaleStore(
     (state) => state.currentTransaction
   );
-  console.log(currentTransaction._id);
+  console.log(editPhoneDetails);
   const sendSellRequest = useCallback(async () => {
     setLoading(true);
     setGoUp(true);
@@ -73,7 +73,7 @@ const GagdetSummary = () => {
           variantId: editPhoneDetails?.variantId,
           cityId: editPhoneDetails?.cityId,
           bankId: editPhoneDetails?.bankId,
-          phoneCondition: currentTransaction?.phoneCondition[0],
+          phoneCondition: editPhoneDetails?.phoneCondition,
         },
         {
           headers: {

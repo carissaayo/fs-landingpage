@@ -12,6 +12,10 @@ import { useTransactionsStore } from "../../store/user/transactionsStore";
 
 const SoldTable = () => {
   const transactions = useTransactionsStore((state) => state.transactions);
+  const paginatedTransactions = useTransactionsStore(
+    (state) => state.paginatedTransactions
+  );
+  console.log(transactions);
 
   return (
     <ScrollArea className="w-full ">
@@ -27,7 +31,8 @@ const SoldTable = () => {
         </TableHeader>
         <TableBody>
           {transactions.length > 0 &&
-            transactions.map((transaction) => (
+            paginatedTransactions.length > 0 &&
+            paginatedTransactions.map((transaction) => (
               <SoldRow key={transaction._id} transaction={transaction} />
             ))}
         </TableBody>

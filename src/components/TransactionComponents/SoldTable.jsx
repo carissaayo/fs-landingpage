@@ -15,7 +15,6 @@ const SoldTable = () => {
   const paginatedTransactions = useTransactionsStore(
     (state) => state.paginatedTransactions
   );
-  console.log(transactions);
 
   return (
     <ScrollArea className="w-full ">

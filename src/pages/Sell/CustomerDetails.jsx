@@ -45,7 +45,6 @@ const CustomerDetails = () => {
   const setEditPhoneDetails = useUpdateSaleStore(
     (state) => state.setPhoneDetails
   );
-  console.log(fromEditPage);
 
   const fetchUserBankAccounts = useCallback(async () => {
     setLoading(true);
@@ -64,10 +63,13 @@ const CustomerDetails = () => {
       .catch((error) => {
         console.log(error);
         setLoading(false);
-        localStorage.removeItem("data");
-        setUser({});
-        navigate("/sell");
-        toast.error("something went wrong");
+        if (error.response.data.statusCode === 403) {
+          setUser({});
+          navigate("/guest/login", {
+            state: { link: "/sell/customer-details" },
+          });
+        }
+        toast.error("something went wrong", { id: "userBanksError" });
       });
   }, [refreshUserBanks]);
 

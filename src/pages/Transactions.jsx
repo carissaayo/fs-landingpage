@@ -83,7 +83,7 @@ const Transactions = () => {
 
         if (error.response.data.statusCode === 403) {
           setUser({});
-          navigate("/guest/login");
+          navigate("/guest/login", { state: { link: "/transactions" } });
         }
 
         toast.error("something went wrong", { id: "TransactionError" });

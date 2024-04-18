@@ -232,7 +232,6 @@ const SelectBankDialog = () => {
               {accountVerified && (
                 <p className="text-sm poppins-medium px-4">
                   {verifiedAccountName}
-                  {/* <span className=""> verified</span> */}
                 </p>
               )}
             </div>

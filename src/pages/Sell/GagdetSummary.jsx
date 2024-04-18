@@ -24,6 +24,7 @@ const GagdetSummary = () => {
   const [goUp, setGoUp] = useState(false);
   const fromEditPage = location?.state?.transaction?._id ? true : false;
   const user = useCreateUserStore((state) => state.user);
+  const setUser = useCreateUserStore((state) => state.setUser);
   const loading = useDeviceDetailsStore((state) => state.loading);
   const setLoading = useDeviceDetailsStore((state) => state.setLoading);
   const setSuccess = useDeviceDetailsStore((state) => state.setSuccess);
@@ -56,7 +57,10 @@ const GagdetSummary = () => {
       .catch((error) => {
         console.log(error);
         setLoading(false);
-
+        if (error.response.data.statusCode === 403) {
+          setUser({});
+          navigate("/guest/login", { state: { link: "/sell/gadget-summary" } });
+        }
         toast.error("something went wrong", { id: "sendSaleError" });
       });
   }, []);
@@ -92,6 +96,10 @@ const GagdetSummary = () => {
         console.log(error);
         setLoading(false);
         toast.error(error.response.data.message, { id: "updateSellError" });
+        if (error.response.data.statusCode === 403) {
+          setUser({});
+          navigate("/guest/login", { state: { link: "/sell/gadget-summary" } });
+        }
       });
   }, []);
 

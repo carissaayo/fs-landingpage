@@ -8,8 +8,10 @@ import { useCreateUserStore } from "../../store/auth/createUser";
 import axiosClient from "../../lib/axiosClient";
 import toast from "react-hot-toast";
 import ShowToaster from "../CoreComponents/Core/ShowToaster";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 const LoginForm = ({ fromSell }) => {
+  const location = useLocation();
+  console.log(location.state.link);
   const {
     register,
     handleSubmit,
@@ -19,7 +21,11 @@ const LoginForm = ({ fromSell }) => {
   const loading = useCreateUserStore((state) => state.loading);
   const setLoading = useCreateUserStore((state) => state.setLoading);
   const setUser = useCreateUserStore((state) => state.setUser);
-  const url = fromSell ? "/sell/phone-accessories" : "/";
+  const url = fromSell
+    ? "/sell/phone-accessories"
+    : location.state?.link
+    ? location.state.link
+    : "/";
   const onSubmit = async (data) => {
     console.log(data);
     setLoading(true);

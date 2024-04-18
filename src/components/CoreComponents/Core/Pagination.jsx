@@ -25,7 +25,7 @@ const PaginationCon = ({
     const newItems = items?.slice(firstPostIndex, lastPostIndex);
     setItems(newItems);
   }, [currentPage]);
-  console.log(pages);
+
   return (
     <div className="pagination">
       {pages.map((page, index) => {

@@ -45,6 +45,7 @@ const CustomerDetails = () => {
   const setEditPhoneDetails = useUpdateSaleStore(
     (state) => state.setPhoneDetails
   );
+  console.log(fromEditPage);
 
   const fetchUserBankAccounts = useCallback(async () => {
     setLoading(true);
@@ -147,7 +148,7 @@ const CustomerDetails = () => {
                     }}
                     defaultValue={
                       fromEditPage &&
-                      location?.state?.currentTransaction.sellingBankId._id
+                      location?.state?.currentTransaction?.sellingBankId?._id
                     }
                   >
                     <option className="">Select Bank</option>

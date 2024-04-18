@@ -29,14 +29,14 @@ const GagdetSummary = () => {
   const setSuccess = useDeviceDetailsStore((state) => state.setSuccess);
 
   const phoneDetails = useDeviceDetailsStore((state) => state.phoneDetails);
-  console.log(phoneDetails);
+
   const editPhoneDetails = useUpdateSaleStore((state) => state.phoneDetails);
   const cities = useLocationStore((state) => state.cities);
   const userBankAccounts = useBankStore((state) => state.userBankAccounts);
   const currentTransaction = useUpdateSaleStore(
     (state) => state.currentTransaction
   );
-
+  console.log(currentTransaction._id);
   const sendSellRequest = useCallback(async () => {
     setLoading(true);
     setGoUp(true);
@@ -91,7 +91,7 @@ const GagdetSummary = () => {
       .catch((error) => {
         console.log(error);
         setLoading(false);
-        toast.error("something went wrong", { id: "updateSellError" });
+        toast.error(error.response.data.message, { id: "updateSellError" });
       });
   }, []);
 

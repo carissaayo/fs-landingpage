@@ -118,7 +118,10 @@ const GagdetSummary = () => {
     });
   };
   useEffect(() => {
-    !fromEditPage && !phoneDetails?.variantId && navigate("/sell");
+    !fromEditPage &&
+      !location?.state?.link &&
+      !phoneDetails?.variantId &&
+      navigate("/sell");
   }, []);
   useEffect(() => {
     fromEditPage && !currentTransaction?._id && navigate("/transactions");

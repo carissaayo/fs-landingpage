@@ -37,7 +37,7 @@ const LoginForm = ({ fromSell }) => {
 
         setUser(response.data?.data);
         localStorage.setItem("data", JSON.stringify(response.data?.data));
-        navigate(url);
+        navigate(url, { state: { link: url } });
       })
       .catch((err) => {
         setLoading(false);

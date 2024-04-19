@@ -55,7 +55,6 @@ const SellForm = () => {
     );
     setSelectedModelList(selectedModels);
   }, [selectedBrandId]);
-  console.log(phoneDetails);
 
   useEffect(() => {
     // Get the selected state cities

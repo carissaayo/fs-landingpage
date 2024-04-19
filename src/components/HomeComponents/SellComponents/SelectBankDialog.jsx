@@ -25,10 +25,14 @@ import axiosClient from "../../../lib/axiosClient";
 
 import { useCreateUserStore } from "../../../store/auth/createUser";
 import { useBankStore } from "../../../store/sell/bankStore";
+import { useNavigate } from "react-router-dom";
 
 const SelectBankDialog = () => {
   const [openModal, setOpenModal] = useState(false);
+
+  const navigate = useNavigate();
   const user = useCreateUserStore((state) => state.user);
+  const setUser = useCreateUserStore((state) => state.setUser);
 
   //   Get supported banks loading
   const loading = useCreateUserStore((state) => state.loading);
@@ -117,8 +121,17 @@ const SelectBankDialog = () => {
       })
       .catch((error) => {
         console.log(error);
-        setVerifyNumberLoading(false);
-        toast.error(error.response.data.message), { id: "verifyAccountNumber" };
+
+        if (error.response.data.statusCode === 403) {
+          setUser({});
+          navigate("/guest/login", {
+            state: { link: "/sell/customer-details" },
+          });
+        } else {
+          setVerifyNumberLoading(false);
+          toast.error(error.response.data.message),
+            { id: "verifyAccountNumber" };
+        }
       });
   };
   const addAccountNumber = async () => {
@@ -153,7 +166,16 @@ const SelectBankDialog = () => {
       .catch((error) => {
         console.log(error);
         setAddingAccountNumberLoading(false);
-        toast.error(error.response.data.message), { id: "verifyAccountNumber" };
+        if (error.response.data.statusCode === 403) {
+          setUser({});
+          navigate("/guest/login", {
+            state: { link: "/sell/customer-details" },
+          });
+          toast.error("Please log in again", { id: "sendSaleError" });
+        } else {
+          toast.error(error.response.data.message),
+            { id: "verifyAccountNumber" };
+        }
       });
   };
 

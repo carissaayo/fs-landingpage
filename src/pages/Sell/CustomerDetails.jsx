@@ -65,11 +65,11 @@ const CustomerDetails = () => {
         setLoading(false);
         if (error.response.data.statusCode === 403) {
           setUser({});
-          navigate("/guest/login", {
-            state: { link: "/sell/customer-details" },
-          });
+          navigate("/guest/login", { state: { link: "/transactions" } });
+          toast.error("Please log in again", { id: "sendSaleError" });
+        } else {
+          toast.error("something went wrong", { id: "userBanksError" });
         }
-        toast.error("something went wrong", { id: "userBanksError" });
       });
   }, [refreshUserBanks]);
 

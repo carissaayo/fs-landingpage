@@ -60,8 +60,10 @@ const GagdetSummary = () => {
         if (error.response.data.statusCode === 403) {
           setUser({});
           navigate("/guest/login", { state: { link: "/sell/gadget-summary" } });
+          toast.error("Please log in again", { id: "sendSaleError" });
+        } else {
+          toast.error("something went wrong", { id: "sendSaleError" });
         }
-        toast.error("something went wrong", { id: "sendSaleError" });
       });
   }, []);
   const updateSellRequest = useCallback(async () => {

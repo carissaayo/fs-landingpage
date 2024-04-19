@@ -11,7 +11,7 @@ import ShowToaster from "../CoreComponents/Core/ShowToaster";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 const LoginForm = ({ fromSell }) => {
   const location = useLocation();
-  console.log(location.state.link);
+
   const {
     register,
     handleSubmit,

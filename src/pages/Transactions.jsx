@@ -84,9 +84,10 @@ const Transactions = () => {
         if (error.response.data.statusCode === 403) {
           setUser({});
           navigate("/guest/login", { state: { link: "/transactions" } });
+          toast.error("Please log in again", { id: "TransactionError" });
+        } else {
+          toast.error("something went wrong", { id: "TransactionError" });
         }
-
-        toast.error("something went wrong", { id: "TransactionError" });
       });
   }, []);
   const fetchBrandsAndModels = useCallback(async () => {
@@ -142,7 +143,7 @@ const Transactions = () => {
   }, []);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(3);
+  const [postsPerPage, setPostsPerPage] = useState(5);
   const lastPostIndex = currentPage * postsPerPage;
   const firstPostIndex = lastPostIndex - postsPerPage;
 

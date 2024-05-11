@@ -6,9 +6,9 @@ import { useCreateUserStore } from "../../store/auth/createUser";
 
 const Login = () => {
   const user = useCreateUserStore((state) => state.user);
-  if (user.accessToken) {
-    return <Navigate to="/" />;
-  }
+  // if (user.accessToken) {
+  //   return <Navigate to="/" />;
+  // }
   return (
     <main className="w-full md:w-[80%] md:mx-auto lg:mx-0  lg:flex-[1] pt-10 poppins-regular">
       <div className="text-center w-full mb-10">

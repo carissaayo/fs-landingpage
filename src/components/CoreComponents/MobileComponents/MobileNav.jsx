@@ -58,9 +58,7 @@ const MobileNav = () => {
                 </div>
                 <div className="flex flex-col gap-4 items-center px-4 ">
                   <CircleUserRoundIcon className="w-8 h-8" />
-                  <p className="capitalize">
-                    {user?.profile.firstName} {user?.profile.lastName}
-                  </p>
+                  <p className="capitalize">John Doe</p>
                 </div>
                 <hr className="" />
                 <Link
@@ -117,7 +115,7 @@ const MobileNav = () => {
                   <div className="flex   gap-6 items-center justify-center">
                     <Link
                       to="/guest/login"
-                      className="bg-white hover:bg-white text-[#0E0C4D] hover:text-[#0E0C4D] text-base rounded-2xl"
+                      className="bg-white hover:bg-white text-[#0E0C4D] hover:text-[#0E0C4D] text-base rounded-2xl "
                     >
                       Login
                     </Link>

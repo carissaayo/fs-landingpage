@@ -9,8 +9,10 @@ import ShowToaster from "../CoreComponents/Core/ShowToaster";
 import { useCreateUserStore } from "../../store/auth/createUser";
 import axiosClient from "../../lib/axiosClient";
 import RegisterAlert from "./RegisterAlert";
+import { useNavigate } from "react-router-dom";
 
 const RegisterForm = () => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -24,20 +26,22 @@ const RegisterForm = () => {
   const setUser = useCreateUserStore((state) => state.setUser);
 
   const onSubmit = async (data) => {
-    setLoading(true);
-    axiosClient
-      .post(`auth/sign_up`, { ...data })
-      .then((response) => {
-        setLoading(false);
-        console.log(response);
+    navigate("/");
 
-        setSuccess(true);
-      })
-      .catch((err) => {
-        setLoading(false);
-        toast.error(err.response.data.message);
-        console.log(err);
-      });
+    // setLoading(true);
+    // axiosClient
+    //   .post(`auth/sign_up`, { ...data })
+    //   .then((response) => {
+    //     setLoading(false);
+    //     console.log(response);
+
+    //     setSuccess(true);
+    //   })
+    //   .catch((err) => {
+    //     setLoading(false);
+    //     toast.error(err.response.data.message);
+    //     console.log(err);
+    //   });
   };
 
   return (

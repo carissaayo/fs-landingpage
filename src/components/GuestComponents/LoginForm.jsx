@@ -8,7 +8,9 @@ import { useCreateUserStore } from "../../store/auth/createUser";
 import axiosClient from "../../lib/axiosClient";
 import toast from "react-hot-toast";
 import ShowToaster from "../CoreComponents/Core/ShowToaster";
+import { useNavigate } from "react-router-dom";
 const LoginForm = () => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -21,22 +23,23 @@ const LoginForm = () => {
   const user = useCreateUserStore((state) => state.user);
   const setUser = useCreateUserStore((state) => state.setUser);
   const onSubmit = async (data) => {
-    console.log(data);
-    setLoading(true);
-    axiosClient
-      .post(`auth/sign_in`, { ...data })
-      .then((response) => {
-        setLoading(false);
-        console.log(response);
+    navigate("/");
+    // console.log(data);
+    // setLoading(true);
+    // axiosClient
+    //   .post(`auth/sign_in`, { ...data })
+    //   .then((response) => {
+    //     setLoading(false);
+    //     console.log(response);
 
-        setUser(response.data?.data);
-        localStorage.setItem("data", JSON.stringify(response.data?.data));
-      })
-      .catch((err) => {
-        setLoading(false);
-        toast.error(err.response.data.message);
-        console.log(err);
-      });
+    //     setUser(response.data?.data);
+    //     localStorage.setItem("data", JSON.stringify(response.data?.data));
+    //   })
+    //   .catch((err) => {
+    //     setLoading(false);
+    //     toast.error(err.response.data.message);
+    //     console.log(err);
+    //   });
   };
 
   return (

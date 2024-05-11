@@ -497,7 +497,7 @@ const GagdetSummary = () => {
           Edit
         </Link>
         <Link
-          to="/sell/gadget-summary"
+          to="/sell"
           className="w-28  text-white bg-[#0C0F4D] text-base rounded-2xl h-[50px] flex items-center justify-center"
         >
           Next

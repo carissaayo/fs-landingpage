@@ -77,13 +77,13 @@ const Nav = () => {
             <div className="flex gap-4 items-center">
               <Link
                 to="/guest/login"
-                className="bg-white hover:bg-white text-[#0E0C4D] hover:text-[#0E0C4D] text-base rounded-2xl"
+                className="bg-white hover:bg-white text-[#0E0C4D] hover:text-[#0E0C4D] text-base rounded-2xl px-3 py-1"
               >
                 Login
               </Link>
               <Link
                 to="/guest/register"
-                className="bg-[#00FFFC] hover:bg-[#00FFFC] text-[#0E0C4D] hover:text-[#0E0C4D] text-base rounded-2xl"
+                className="bg-[#00FFFC] hover:bg-[#00FFFC] text-[#0E0C4D] hover:text-[#0E0C4D] text-base rounded-2xl px-3 py-1"
               >
                 Sign Up
               </Link>

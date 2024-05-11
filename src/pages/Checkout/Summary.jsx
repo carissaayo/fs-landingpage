@@ -88,7 +88,7 @@ const Summary = () => {
           Back
         </Link>
         <Link
-          to="/buy/checkout/summary"
+          to="/"
           className="bg-[#0C0F4D] hover:bg-[#0C0F4D] rounded-2xl w-28 h-[50px] flex items-center justify-center text-white"
         >
           Buy Now
